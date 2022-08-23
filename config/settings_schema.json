@@ -20,7 +20,7 @@
         "type": "range",
         "id": "logo_max_width",
         "label": "t:settings_schema.logo.settings.logo_max_width.label",
-        "min": 100,
+        "min": 30,
         "max": 800,
         "step": 10,
         "default": 150,
