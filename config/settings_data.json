@@ -138,7 +138,7 @@
           "footer-3"
         ],
         "settings": {
-          "footer_show_payments": false,
+          "footer_show_payments": true,
           "show_language_selector": true,
           "show_country_selector": true
         }
