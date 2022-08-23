@@ -4645,7 +4645,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  margin-left: -10px;
+  column-gaps: 15px;
 }
 .collection-products h3.empty {
   display: block;
@@ -4659,7 +4659,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   padding-left: 10px;
   margin-bottom: 10px;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0.2);
-}
+  background-color: white;
 .collection-products .collection-product.two {
   width: 50%;
 }
