@@ -4645,7 +4645,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-content: flex-start;
-  column-gaps: 15px;
+  column-gap: 15px;
 }
 .collection-products h3.empty {
   display: block;
