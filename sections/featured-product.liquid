@@ -1,0 +1,812 @@
+{% assign product = all_products[section.settings.featured_product] %}
+{% if product != blank %}
+  {% render 'product' with product as product %}
+{% else %}
+  {% render 'dummie-product' %}
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.featured-product.name",
+  "class": "section-featured-products",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "available_stock_units",
+      "name": "t:sections.main-product.blocks.available_stock_units.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.available_stock_units.content"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.main-product.blocks.text.name",
+      "settings": [
+        {
+          "id": "text",
+          "type": "text",
+          "label": "t:sections.main-product.blocks.text.settings.text.label",
+          "default": {
+            "ar": "نص",
+            "bg": "Текст",
+            "ca": "Text",
+            "cs": "Text",
+            "da": "Tekst",
+            "de": "Text",
+            "el": "Κείμενο",
+            "en": "Text",
+            "es": "Texto",
+            "fi": "Teksti",
+            "fr": "Texte",
+            "he": "טֶקסט",
+            "hr": "Tekst",
+            "hu": "Szöveg",
+            "id": "Teks",
+            "it": "Testo",
+            "ja": "文章",
+            "ko": "텍스트",
+            "lt": "Tekstas",
+            "nb": "Tekst",
+            "nl": "Tekst",
+            "pl": "Tekst",
+            "pt-BR": "Texto",
+            "pt-PT": "Texto",
+            "ro": "Text",
+            "ru": "Текст",
+            "sk": "Text",
+            "sl": "Besedilo",
+            "sv": "Text",
+            "th": "ข้อความ",
+            "tr": "Metin",
+            "vi": "Bản văn",
+            "zh-CN": "文本",
+            "zh-TW": "文本"
+          }
+        },
+        {
+          "type": "select",
+          "id": "text_style",
+          "label": "t:sections.main-product.blocks.text.settings.text_style.label",
+          "options": [
+            {
+              "value": "body",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "t:sections.main-product.blocks.title.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "t:sections.main-product.blocks.price.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "vendor",
+      "name": "t:sections.main-product.blocks.vendor.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "quantity_selector",
+      "name": "t:sections.main-product.blocks.quantity_selector.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "variant_picker",
+      "name": "t:sections.main-product.blocks.variant_picker.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "picker_type",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__1.label"
+            },
+            {
+              "value": "radios",
+              "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.options__2.label"
+            }
+          ],
+          "default": "radios"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.main-product.blocks.variant_picker.settings.swatches_selector.header"
+        },
+        {
+          "type": "text",
+          "id": "swatches_selector",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.swatches_selector.label",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.swatches_selector.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.main-product.blocks.variant_picker.settings.popup_selector.header"
+        },
+        {
+          "type": "text",
+          "id": "popup_selector",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.popup_selector.label",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.popup_selector.info",
+          "default": {
+            "ar": "مقاس",
+            "bg": "размер",
+            "ca": "Talla",
+            "cs": "Velikost",
+            "da": "Størrelse",
+            "de": "Größe",
+            "el": "Μέγεθος",
+            "en": "Size",
+            "es": "Talla",
+            "fi": "Koko",
+            "fr": "Taille",
+            "he": "גודל",
+            "hr": "Veličina",
+            "hu": "Méret",
+            "id": "Ukuran",
+            "it": "Misurare",
+            "ja": "サイズ",
+            "ko": "크기",
+            "lt": "Dydis",
+            "nb": "Størrelse",
+            "nl": "Maat",
+            "pl": "Rozmiar",
+            "pt-BR": "Tamanho",
+            "pt-PT": "Tamanho",
+            "ro": "mărimea",
+            "ru": "Размер",
+            "sk": "Veľkosť",
+            "sl": "Velikost",
+            "sv": "Storlek",
+            "th": "ขนาด",
+            "tr": "Boy",
+            "vi": "Kích thước",
+            "zh-CN": "尺寸",
+            "zh-TW": "尺寸"
+          }
+        },
+        {
+          "type": "text",
+          "id": "popup_text",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.popup_text.label",
+          "default": {
+            "ar": "دليل المقاسات",
+            "bg": "Ръководство за размери",
+            "ca": "Guia de talles",
+            "cs": "Průvodce velikostí",
+            "da": "Størrelsesguide",
+            "de": "Größentabelle",
+            "el": "Οδηγός μεγέθους",
+            "en": "Size guide",
+            "es": "Guia de tallas",
+            "fi": "Koko opas",
+            "fr": "Guide des tailles",
+            "he": "מדריך מידות",
+            "hr": "Vodič za veličinu",
+            "hu": "Mérettáblázat",
+            "id": "Panduan ukuran",
+            "it": "Guida alle taglie",
+            "ja": "サイズガイド",
+            "ko": "사이즈 안내",
+            "lt": "Dydžių vadovas",
+            "nb": "Størrelsesguide",
+            "nl": "Maattabel",
+            "pl": "Tabela rozmiarów",
+            "pt-BR": "Guia de tamanho",
+            "pt-PT": "Guia de tamanho",
+            "ro": "Ghid marimi",
+            "ru": "Руководство по размерам",
+            "sk": "Sprievodca veľkosťou",
+            "sl": "Vodnik po velikosti",
+            "sv": "Storleksguide",
+            "th": "คู่มือขนาด",
+            "tr": "Ölçü Rehberi",
+            "vi": "Hướng dẫn kích thước",
+            "zh-CN": "尺码指南",
+            "zh-TW": "尺碼指南"
+          }
+        },
+        {
+          "type": "page",
+          "id": "popup_page",
+          "label": "t:sections.main-product.blocks.variant_picker.settings.popup_page.label",
+          "info": "t:sections.main-product.blocks.variant_picker.settings.popup_page.info"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "t:sections.main-product.blocks.buy_buttons.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_dynamic_checkout",
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_dynamic_checkout.info",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_pickup_availability",
+          "label": "t:sections.main-product.blocks.buy_buttons.settings.show_pickup_availability.label",
+          "info": "t:sections.main-product.blocks.buy_buttons.settings.show_pickup_availability.info",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.main-product.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.main-product.blocks.image.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-product.blocks.share.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.share.settings.title_info.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "facebook_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.facebook_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.twitter_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "pinterest_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.pinterest_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.main-product.blocks.custom_liquid.name",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.label",
+          "info": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "collapsible_tab",
+      "name": "t:sections.main-product.blocks.collapsible_tab.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "default": {
+            "ar": "عنوان علامة التبويب",
+            "bg": "Заглавие на раздела",
+            "ca": "Títol de la pestanya",
+            "cs": "Název karty",
+            "da": "Fanetitel",
+            "de": "Tab-Titel",
+            "el": "Τίτλος καρτέλας",
+            "en": "Tab title",
+            "es": "Título de la pestaña",
+            "fi": "Välilehden otsikko",
+            "fr": "Titre de l'onglet",
+            "he": "כותרת הכרטיסייה",
+            "hr": "Naslov kartice",
+            "hu": "Lap címe",
+            "id": "Judul tab",
+            "it": "Titolo della scheda",
+            "ja": "タブタイトル",
+            "ko": "탭 제목",
+            "lt": "Skirtuko pavadinimas",
+            "nb": "Fanetittel",
+            "nl": "Tabtitel",
+            "pl": "Tytuł karty",
+            "pt-BR": "Título da guia",
+            "pt-PT": "Título da guia",
+            "ro": "Titlul filei",
+            "ru": "Название вкладки",
+            "sk": "Názov karty",
+            "sl": "Naslov zavihka",
+            "sv": "Flikens titel",
+            "th": "ชื่อแท็บ",
+            "tr": "Sekme başlığı",
+            "vi": "Tiêu đề tab",
+            "zh-CN": "标签标题",
+            "zh-TW": "標籤標題"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label",
+          "info": "t:sections.main-product.blocks.collapsible_tab.settings.content.info",
+          "default": {
+            "ar": "<p> محتوى علامة التبويب </p>",
+            "bg": "<p>Съдържание на раздел</p>",
+            "ca": "<p>Contingut de la pestanya</p>",
+            "cs": "<p>Obsah karty</p>",
+            "da": "<p>Faneindhold</p>",
+            "de": "<p>Tab-Inhalt</p>",
+            "el": "<p>Περιεχόμενο καρτέλας</p>",
+            "en": "<p>Tab content</p>",
+            "es": "<p>Contenido de la pestaña</p>",
+            "fi": "<p>Välilehden sisältö</p>",
+            "fr": "<p>Contenu de l'onglet</p>",
+            "he": "<p>תוכן כרטיסייה</p>",
+            "hr": "<p>Sadržaj kartice</p>",
+            "hu": "<p>Tartalom lap</p>",
+            "id": "<p>Konten tab</p>",
+            "it": "<p>Contenuto della scheda</p>",
+            "ja": "<p>タブコンテンツ</p>",
+            "ko": "<p>탭 콘텐츠</p>",
+            "lt": "<p>Skirtuko turinys</p>",
+            "nb": "<p>Faneinnhold</p>",
+            "nl": "<p>Tabbladinhoud</p>",
+            "pl": "<p>Zawartość karty</p>",
+            "pt-BR": "<p>Conteúdo da guia</p>",
+            "pt-PT": "<p>Conteúdo da guia</p>",
+            "ro": "<p>Conținutul filei</p>",
+            "ru": "<p>Содержимое вкладки</p>",
+            "sk": "<p>Obsah karty</p>",
+            "sl": "<p>Vsebina zavihka</p>",
+            "sv": "<p>Flikinnehåll</p>",
+            "th": "<p>เนื้อหาแท็บ</p>",
+            "tr": "<p>Sekme içeriği</p>",
+            "vi": "<p> Nội dung tab </p>",
+            "zh-CN": "<p>标签内容</p>",
+            "zh-TW": "<p>標籤內容</p>"
+          }
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
+            }
+          ],
+          "default": "check_mark",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "t:sections.main-product.blocks.rating.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.rating.settings.paragraph.content"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "featured_product",
+      "label": "t:sections.main-product.settings.featured_product.label"
+    },
+    {
+      "type": "select",
+      "id": "thumbnails_position",
+      "label": "t:sections.main-product.settings.thumbnails_position.label",
+      "default": "right",
+      "info": "t:sections.main-product.settings.thumbnails_position.info",
+      "options": [
+        {
+          "value": "bottom",
+          "label": "t:sections.main-product.settings.thumbnails_position.options__1"
+        },
+        {
+          "value": "left",
+          "label": "t:sections.main-product.settings.thumbnails_position.options__2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.main-product.settings.thumbnails_position.options__3"
+        },
+        {
+          "value": "stack",
+          "label": "t:sections.main-product.settings.thumbnails_position.options__4"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_sticky_info",
+      "label": "t:sections.main-product.settings.enable_sticky_info.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-product.settings.header.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-product.settings.header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "zoom_enable",
+      "label": "t:sections.main-product.settings.zoom_enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "t:sections.main-product.settings.enable_video_looping.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "first_variant_media_enabled",
+      "label": "t:sections.main-product.settings.first_variant_media_enabled.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-product.presets.name",
+      "settings": {
+        "thumbnails_position": "stack",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false
+      },
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "price"
+        },
+        {
+          "type": "variant_picker"
+        },
+        {
+          "type": "buy_buttons"
+        },
+        {
+          "type": "description",
+          "settings": {
+            "increase_space_before_block": true
+          }
+        },
+        {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "washing",
+            "increase_space_before_block": true
+          }
+        },
+        {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "leaf"
+          }
+        },
+        {
+          "type": "collapsible_tab",
+          "settings": {
+            "icon": "truck"
+          }
+        },
+        {
+          "type": "share",
+          "settings": {
+            "increase_space_before_block": true
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

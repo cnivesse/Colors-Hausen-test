@@ -1,0 +1,356 @@
+{
+  "general": {
+    "404": {
+      "section_title": "404ページが見つかりません",
+      "title": "申し訳ありませんが、リクエストしたページは存在しません。",
+      "continue_shopping": "ショッピングを続ける",
+      "open_menu": "メニューを開く"
+    },
+    "accessibility": {
+      "skip_to_content": "コンテンツにスキップ",
+      "close_modal": "選ぶ",
+      "video_player": "ビデオプレーヤー",
+      "star_reviews_info": "{{ rating_max }}の星のうち{{ rating_value }}"
+    },
+    "meta": {
+      "tags": "タグ付き「{{ tags }}」",
+      "page": "ページ{{ page }}"
+    },
+    "search": {
+      "title": "検索",
+      "placeholder": "検索...",
+      "no_results_for": "「{{ terms }}」を検索しても結果は得られませんでした。",
+      "heading": {
+        "one": "検索結果",
+        "other": "の検索結果"
+      },
+      "results_count": {
+        "zero": "結果はありません",
+        "one": "{{ count }}の結果",
+        "other": "{{ count }}の結果"
+      },
+      "results_with_count": {
+        "one": "「{{ terms }}」の{{ count }}の結果：",
+        "other": "「{{ terms }}」の{{ count }}の結果："
+      },
+      "page": "ページ",
+      "article": "ブログ"
+    },
+    "navigation": {
+      "header_label": "メニュー",
+      "cancel_html": "または{{ link }}",
+      "return_to_store": "店舗に戻る"
+    },
+    "newsletter_form": {
+      "newsletter_email": "あなたのメール",
+      "submit": "購読",
+      "confirmation": "購読していただきありがとうございます。"
+    },
+    "page_title": {
+      "tagged": "タグ付き「{{ tags }}」",
+      "pagination": "ページ{{ current_page }}"
+    },
+    "password_page": {
+      "opening_soon": "まもなくオープン",
+      "login_form_heading": "パスワードを使用してストアに入る：",
+      "login_form_password_placeholder": "あなたのパスワード",
+      "login_form_submit": "入力",
+      "signup_form_heading": "私たちが開くときに調べてください：",
+      "signup_form_email_placeholder": "あなたのメール",
+      "signup_form_submit": "送信",
+      "signup_form_success": "開店直前にメールをお送りします！",
+      "social_heading": "私たちも見つけてください：",
+      "admin_link_html": "あなたは店主ですか？ <a href=\"/ admin\"class=\"text-link\">ここからログイン</a>",
+      "password_link_html": "パスワードで入力",
+      "back_link_html": "戻る",
+      "powered_by_shopify_html": "このショップは{{ shopify }}によって運営されます"
+    },
+    "country": {
+      "dropdown_label": "国/地域"
+    },
+    "language": {
+      "dropdown_label": "言語"
+    }
+  },
+  "blogs": {
+    "general": {
+      "no_articles": "申し訳ありませんが、現在記事はありません。"
+    },
+    "article": {
+      "meta_html": "{{ date }}に投稿",
+      "read_entire_article_html": "記事全体を読む",
+      "next_article_html": "新しい投稿&rarr;",
+      "previous_article_html": "&larr;古い投稿"
+    },
+    "comment_form": {
+      "title": "コメントを残す",
+      "name": "名前",
+      "email": "Eメール",
+      "message": "メッセージ",
+      "post": "送信",
+      "moderated": "コメントは公開する前に承認する必要があることに注意してください",
+      "success_moderated_html": "コメントは正常に投稿されました。<br>ブログがモデレートされているため、しばらくしてから公開します。",
+      "success": "コメントは正常に投稿されました。ありがとう！"
+    }
+  },
+  "collections": {
+    "general": {
+      "catalog": "カタログ",
+      "collections": "コレクション",
+      "no_collections": "申し訳ありませんが、現在コレクションはありません。",
+      "no_products": "製品が見つかりません",
+      "arrow": "→",
+      "filter_and_sort": "フィルタリングと並べ替え",
+      "sort_button": "選別",
+      "filter_button": "フィルター",
+      "sort_by": "並び替え：",
+      "filter_by": "フィルター：",
+      "filters_selected": "{{ count }}が選択されました",
+      "max_price": "最高価格は{{ price }}",
+      "product_count": "{{ total }}製品の{{ count }}を表示",
+      "from": "から",
+      "to": "に",
+      "reset": "リセット",
+      "apply": "申し込み",
+      "clear": "クリア",
+      "clear_all": "すべてクリア"
+    },
+    "tags": {
+      "all": "すべて"
+    }
+  },
+  "products": {
+    "product": {
+      "buy_html": "今すぐ購入<br>",
+      "on_sale_html": "セール",
+      "from_lowest_price_html": "{{ lowest_price }}から",
+      "sold_out_html": "完売",
+      "new_html": "新しい",
+      "unavailable": "利用できません",
+      "quantity": "量",
+      "available_units_html": "<span class ='units'> {{ units }}</span>使用可能な単位",
+      "add_to_cart": "カートに追加",
+      "pre_order": "予約注文",
+      "share_on": "{{ platform}}で共有する",
+      "view_in_space": "あなたのスペースで見る",
+      "view_in_space_label": "スペースで表示し、拡張現実ウィンドウにアイテムをロードします",
+      "total_reviews": {
+        "zero": "レビューなし",
+        "one": "{{ count }}レビュー",
+        "other": "{{ count }}レビュー"
+      }
+    },
+    "zoom": {
+      "next": "次へ（右矢印キー）",
+      "prev": "前（左矢印キー）",
+      "close": "閉じる（Esc）"
+    }
+  },
+  "contact": {
+    "form": {
+      "section_title": "連絡先",
+      "title": "連絡する",
+      "name": "名前",
+      "email": "Eメール",
+      "phone": "電話番号（オプション）",
+      "message": "メッセージ",
+      "send": "送信",
+      "post_success": "お問い合わせいただきありがとうございます。できるだけ早くご連絡いたします。"
+    }
+  },
+  "customer": {
+    "login": {
+      "section_title": "サインイン",
+      "title": "新しいセッションを開始します",
+      "email": "Eメール",
+      "password": "パスワード",
+      "sign_in_button": "サインイン",
+      "forgot_password": "パスワードをお忘れですか？",
+      "register": "新しいアカウントを作成する",
+      "password_section_title": "あなたのパスワードをリセット",
+      "password_title": "手順が記載されたメールが届きます",
+      "password_action": "メールを送る",
+      "password_cancel": "キャンセル",
+      "guest_section_title": "登録したくないですか？",
+      "guest_title": "ゲストとして続行",
+      "guest_action": "登録をスキップ"
+    },
+    "reset_password": {
+      "section_title": "アカウントのパスワードをリセットする",
+      "title": "{{ email }}の新しいパスワードを入力してください",
+      "password": "パスワード",
+      "password_confirm": "パスワードを認証する",
+      "submit": "パスワードを再設定する"
+    },
+    "register": {
+      "section_title": "新しいアカウントを作成する",
+      "title": "連絡先情報を提供する",
+      "first_name": "ファーストネーム",
+      "last_name": "苗字",
+      "email": "Eメール",
+      "password": "パスワード",
+      "submit": "アカウントを作成する",
+      "login": "すでにアカウントをお持ちですか？"
+    },
+    "account": {
+      "section_title": "マイアカウント",
+      "title": "おかえりなさい{{ customer_name }}",
+      "add_address_html": "住所を追加する",
+      "edit_addresses_html": "アドレスを編集する（{{ count }}）"
+    },
+    "orders": {
+      "order": "{{ id }}を注文する",
+      "order_description_html": "<b> {{ date }} </ b> — {{ order }}が配置され、現在のステータスは{{ financial_status }}と{{ fulfillment_status }}です。",
+      "empty": "注文はありません。"
+    },
+    "order": {
+      "section_title": "注文履歴",
+      "date": "{{ date }}に配置",
+      "canceled": "{{ date }}に注文がキャンセルされました",
+      "canceled_reason": "理由は次のとおりです：{{ reason }}",
+      "billing_address": "請求先住所",
+      "payment_status": "支払い状況",
+      "shipping_address": "お届け先の住所",
+      "fulfillment_status": "フルフィルメントステータス",
+      "discount": "割引",
+      "price": "価格",
+      "unit_price": "単価",
+      "quantity": "量",
+      "subtotal": "小計",
+      "tax": "税",
+      "total": "合計",
+      "return_to_account": "アカウントに戻る"
+    },
+    "activate_account": {
+      "section_title": "アカウントをアクティブ化する",
+      "title": "アカウントをアクティブ化するためのパスワードを設定する",
+      "password": "パスワード",
+      "password_confirm": "パスワードを認証する",
+      "submit": "アカウントをアクティブ化する",
+      "cancel": "招待を辞退する"
+    },
+    "addresses": {
+      "section_title": "アカウント詳細",
+      "title": "住所録",
+      "subtitle": "これらはあなたのアカウントにリンクされているアドレスです",
+      "empty": "現在、アドレス帳は空です。",
+      "default": "デフォルトの住所",
+      "add_new": "新しいアドレス",
+      "edit_address": "アドレスを編集",
+      "recipient": "受信者",
+      "first_name": "ファーストネーム",
+      "last_name": "苗字",
+      "company": "会社",
+      "address": "住所",
+      "address1": "住所（1",
+      "address2": "アドレス2",
+      "city": "市",
+      "country": "国",
+      "province": "州",
+      "zip": "郵便番号",
+      "phone": "電話",
+      "phone_label": "電話。",
+      "set_default_label": "デフォルトのアドレスとして設定しますか？",
+      "set_default_action": "はい、お願いします。",
+      "add_address": "新しい住所を追加する",
+      "update": "住所の更新",
+      "cancel": "キャンセル",
+      "edit": "編集",
+      "save": "アドレスを保存",
+      "delete": "消去",
+      "delete_question": "このアドレスを削除してもよろしいですか？",
+      "return": "アカウントに戻る"
+    }
+  },
+  "sections": {
+    "onboarding": {
+      "featured_product_title": "注目の製品の例",
+      "add_products_html": "<br>製品を追加する",
+      "add_collection": "コレクション名",
+      "vendor": "ベンダー",
+      "product_title": "製品タイトル",
+      "product_description": "製品説明。一部のテキストを製品と組み合わせて、機能を強調します。この革製のキャリアは、ツインブランケットを素晴らしいキャンプ仲間にするために作られています。キャンプ用毛布は、野生で飼いならされていない太平洋岸北西部の厳しい要求を満たすために最初に設計され、北西部の初期の羊飼いのお気に入りでした。今日、これらの暖かくて丈夫な毛布は、何年にもわたる暖かさと快適さを提供する卓越したサービスと頑丈なスタイリングを提供します。",
+      "blog_title": "あなたのブログのタイトル",
+      "post_title": "あなたの投稿のタイトル",
+      "post_excerpt": "あなたのストアはまだブログ投稿を公開していません。ブログを使用して、新製品の発売、ヒント、または顧客と共有したいその他のニュースについて話すことができます。 Shopifyのeコマースブログで、自分のストアやブログのインスピレーションやアドバイスを確認できます。",
+      "page_title": "あなたのページのタイトル",
+      "page_excerpt_html": "現在、この段落にはページコンテンツは含まれていません。<br>サイドバーを使用してページの1つを選択してください。",
+      "no_content_html": "現在、このセクションにはコンテンツが含まれていません。<br>サイドバーを使用してこのセクションにコンテンツを追加してください。"
+    }
+  },
+  "cart": {
+    "general": {
+      "section_title": "カート",
+      "total_items": {
+        "zero": "あなたのカートは現在空です",
+        "one": "{{ count }}アイテム",
+        "other": "{{ count }}アイテム"
+      },
+      "note": "売り手のための特別な指示：",
+      "subtotal": "小計",
+      "taxes_and_shipping_policy_at_checkout_html": "チェックアウト時に計算される税金と<ahref=\"{{ link }}\">送料</a>。",
+      "taxes_included_but_shipping_at_checkout": "税込で、チェックアウト時に送料が計算されます。",
+      "taxes_included_and_shipping_policy_html": "税込み。 <ahref = \"{{ link }}\">送料</a>はチェックアウト時に計算されます。",
+      "taxes_and_shipping_at_checkout": "送料と税金はチェックアウト時に計算されます。",
+      "update_html": "カートの更新",
+      "checkout_html": "チェックアウト",
+      "empty": "あなたのカートは現在空です。",
+      "continue_browsing": "ブラウジングを続ける"
+    }
+  },
+  "map": {
+    "errors": {
+      "address_error": "そのアドレスの検索中にエラーが発生しました",
+      "address_no_results": "そのアドレスの結果はありません",
+      "address_query_limit_html": "GoogleAPIの使用制限を超えました。 <ahref=\"https://developers.google.com/maps/premium/usage-limits\">プレミアムプラン</a>へのアップグレードを検討してください。",
+      "auth_error_html": "GoogleMapsAPIキーの認証に問題がありました。"
+    }
+  },
+  "store_availability": {
+    "general": {
+      "view_store_info": "ストア情報を表示する",
+      "check_other_stores": "他の店舗で空き状況を確認する",
+      "pick_up_available": "ピックアップ可能",
+      "pick_up_currently_unavailable": "ピックアップは現在利用できません",
+      "pick_up_available_at_html": "ピックアップは<b>{{ location_name }}</b>でご利用いただけます",
+      "pick_up_unavailable_at_html": "ピックアップは現在<b>{{ location_name }}</b>ではご利用いただけません"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "page_title": "こちらが{{ shop }}の{{ value }}ギフトカードです。",
+      "section_title": "ギフトカード",
+      "title": "これがあなたのギフトカードです！",
+      "amount_left_html": "{{ amount }}<small>左</small>",
+      "redeem": "チェックアウト時にこのコードを使用して利用します。",
+      "shop_link": "買い物を始める",
+      "print": "ギフトカードを印刷する",
+      "disabled": "このギフトカードは無効になっています",
+      "expired": "{{ expiry }}に期限切れ",
+      "active": "{{ expiry }}で有効期限が切れます",
+      "add_apple_wallet": "Appleウォレットに追加"
+    }
+  },
+  "layout": {
+    "side_nav": {
+      "account": "貴方のアカウント",
+      "logout": "ログアウト",
+      "signin": "サインイン",
+      "back": "戻る"
+    },
+    "footer": {
+      "newsletter": "メーリングリストにサインアップしてください",
+      "newsletter_placeholder": "あなたのメール",
+      "newsletter_submit": "加入",
+      "newsletter_success": "購読していただきありがとうございます。",
+      "social": "私達と接続",
+      "platform": "{{ platform }}の{{ name }}",
+      "copyright_html": "&copy; 著作権{{ year }}、{{ shop_name }}。"
+    }
+  },
+  "date_formats": {
+    "day_month_and_year": "%B %e, %Y",
+    "month_and_year": "%B %Y",
+    "date_and_time": "%B%e、%Y at%I：%M%P"
+  }
+}

@@ -1,0 +1,51 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div class="inner with-layout-options centered">
+    {% if page.title != blank %}
+      <h2 class="shopify-section-title">{{ page.title }}</h2>
+    {% else %}
+      <h2 class="shopify-section-title">{{ 'contact.form.section_title' | t }}</h2>
+    {% endif %}
+    <h1>{{ 'contact.form.title' | t }}</h1>
+    <div class="page-details rte">
+      {{ page.content }}
+    </div>
+    {% form 'contact' %}
+      {% if form.posted_successfully? %}
+        <div class="row with-top-border with-bottom-border">
+          <h2 class="success">{{ 'contact.form.post_success' | t }}</h2>
+        </div>
+      {% else %}
+        <div class="row with-top-border with-bottom-border">
+          <input class="text long {% if form.errors contains 'name' %} error{% endif %}" type="text" id="contactFormName" name="contact[name]" placeholder="{{ 'contact.form.name' | t }}" autocapitalize="words" value="{% if form.name %}{{ form.name }}{% elsif customer %}{{ customer.name }}{% endif %}" aria-label="{{ 'contact.form.name' | t }}">
+          {% render 'form-field-error', form: form, field: 'name' %}
+        </div>
+        <div class="row with-bottom-border">
+          <input class="text long {% if form.errors contains 'email' %} error{% endif %}" type="email" id="contactFormEmail" name="contact[email]" placeholder="{{ 'contact.form.email' | t }}" autocorrect="off" autocapitalize="off" value="{% if form.email %}{{ form.email }}{% elsif customer %}{{ customer.email }}{% endif %}" aria-label="{{ 'contact.form.email' | t }}">
+          {% render 'form-field-error', form: form, field: 'email' %}
+        </div>
+        <div class="row with-bottom-border">
+          <input class="text long {% if form.errors contains 'phone' %} error{% endif %}" type="tel" id="contactFormPhone" name="contact[phone]" placeholder="{{ 'contact.form.phone' | t }}" pattern="[0-9]*" value="{% if form.phone %}{{ form.phone }}{% elsif customer %}{{ customer.phone }}{% endif %}" aria-label="{{ 'contact.form.phone' | t }}">
+          {% render 'form-field-error', form: form, field: 'phone' %}
+        </div>
+        <div class="row with-bottom-border">
+          <textarea class="text long {% if form.errors contains 'body' %} error{% endif %}" rows="3" id="contactFormMessage" name="contact[body]" placeholder="{{ 'contact.form.message' | t }}" aria-label="{{ 'contact.form.message' | t }}">{% if form.body %}{{ form.body }}{% endif %}</textarea>
+          {% render 'form-field-error', form: form, field: 'body' %}
+        </div>
+        {% render 'form-errors', form: form %}
+        <div class="row expanded-top actions">
+          <button class="btn solid" name="commit" type="submit" formnovalidate="formnovalidate">
+            {{ 'contact.form.send' | t }}
+          </button>
+        </div>
+        {% render 'return-to-store' %}
+      {% endif %}
+    {% endform %}  
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.contact.name",
+  "class": "section-standalone section-contact"
+}
+{% endschema %}

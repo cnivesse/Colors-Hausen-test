@@ -1,0 +1,54 @@
+{%- capture collection_products_classes -%}
+  {%- render 'get-collection-products-classes', with_previews: true -%}
+{%- endcapture -%}
+
+<div class="collection-products {{- collection_products_classes -}}" data-count="{{ collection.products_count }}">
+  {% assign products_per_page = settings.products_per_page | times: 1 %}
+  {% if collection != blank and collection.products_count > 0 %}
+    {% if template != 'collection' %}
+      {% for product in collection.products limit: products_per_page %}
+        {% render 'collection-product', collection: collection, product: product %}
+      {% endfor %}
+      {% if collection.products_count > products_per_page %}
+        {% comment %}
+          Forced to do this fake pagination as pagination
+          doesn't work at the home page when more than one
+          pagination is on place.
+        {% endcomment %}
+        {% assign total_pages = collection.products_count | divided_by: products_per_page %}
+        {% assign modulo_pages = collection.products_count | modulo: products_per_page %}
+        {% if modulo_pages > 0 %}
+          {% assign total_pages = total_pages | plus: 1 %}
+        {% endif %}
+        <div class="pagination">
+          <span class="page current">1</span>
+          <span class="page"><a href="{{ collection.url }}/?page=2">2</a></span>
+          {% if total_pages > 2 %}
+            <span class="page"><a href="{{ collection.url }}/?page=3">3</a></span>
+          {% endif %}
+          {% if total_pages > 4 %}
+            <span class="deco">…</span>
+            <span class="page"><a href="{{ collection.url }}/?page={{ total_pages }}">{{ total_pages }}</a></span>
+          {% endif %}
+          <span class="next"><a href="{{ collection.url }}/?page=2">→</a></span>
+        </div>
+      {% endif %}
+    {% else %}
+      {% paginate collection.products by products_per_page %}
+        {% for product in collection.products %}
+          {% render 'collection-product', collection: collection, product: product %}
+        {% endfor %}
+        {% render 'pagination' with paginate as paginate %}
+      {% endpaginate %}
+    {% endif %}
+  {% else %}
+    {% if collection != blank %}
+      <h3 class="empty">{{ 'collections.general.no_products' | t }}</h3>
+    {% else %}
+      {% for i in (1..products_per_page) %}
+        {% capture col_index %}{% cycle 'collection-index': '1', '2', '3', '4', '5', '6' %}{% endcapture %}
+        {% render 'dummie-collection-product', col_index: col_index %}
+      {% endfor %}
+    {% endif %}
+  {% endif %}
+</div>

@@ -1,0 +1,25 @@
+{% assign layout_class = "four" %}
+<a class="collection-product dummie {{ layout_class }}">
+  <div class="inner">
+    <div class="image">
+      {{ 'product-' | append: col_index | placeholder_svg_tag: 'placeholder-svg' }}
+    </div>
+    {% if settings.product_grid_titles_enable or settings.product_grid_prices_enable %}
+      <div class="info">
+        <div class="metas">
+          <div class="line">
+            <div class="collection-product-price">
+              <div class="price">
+                {{ 1999 | money }}
+              </div>
+            </div>
+            <div class="collection-product-title">
+              <div class="title">{{ 'sections.onboarding.product_title' | t }}</div>
+              <div class="vendor"><span>{{ 'sections.onboarding.vendor' | t }}</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endif %}
+  </div>
+</a>

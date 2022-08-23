@@ -1,0 +1,113 @@
+<div class="content featured-image {% render 'content-classes', scope: section %}" data-section-type="featured-image">
+  {% if section.settings.heading != blank %}
+    <h2 class="shopify-section-title">{{ section.settings.heading | escape }}</h2>
+  {% endif %}
+  {% if section.settings.link %}<a href="{{ section.settings.link }}">{% endif %}
+    {% if section.settings.image != blank %}
+      <picture>
+        {% assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: ","%}
+
+        {% if section.settings.image_mobile != blank %}
+          <source media="(max-width: 620px)" srcset=
+            "{% for dimension in dimensions %}
+              {% assign img_url = dimension | append: 'x' %}
+              {% if squared %}
+                {% assign img_url = img_url | append: dimension %}
+              {% endif %}
+              {{ section.settings.image_mobile | img_url: img_url }} {{ dimension }}w,
+            {% endfor %}"
+            sizes="100vw"
+          >
+        {% endif %}
+        <source {% if section.settings.image_mobile != blank %}media="(min-width: 621px)"{% endif %} srcset=
+          "{% for dimension in dimensions %}
+            {% assign img_url = dimension | append: 'x' %}
+            {% if squared %}
+              {% assign img_url = img_url | append: dimension %}
+            {% endif %}
+            {{ section.settings.image | img_url: img_url }} {{ dimension }}w,
+          {% endfor %}"
+          sizes="100vw"
+        >
+        <img src="{{ section.settings.image | img_url: '2048x' }}">
+      </picture>
+
+    {% else %}
+      {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+    {% endif %}
+  {% if section.settings.link %}</a>{% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-image.name",
+  "class": "section-featured-image",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.featured-image.settings.image.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:sections.featured-image.settings.image_mobile.label",
+      "info": "t:sections.featured-image.settings.image_mobile.info"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.settings.heading.label",
+      "info": "t:sections.settings.heading.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "presets": [{
+    "name": "t:sections.featured-image.presets.name"
+  }]
+}
+{% endschema %}

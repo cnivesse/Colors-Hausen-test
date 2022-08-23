@@ -1,0 +1,237 @@
+{%- liquid
+  assign collection_count = 0
+  if section.settings.collections_to_show == 'all'
+    for collection in collections
+      unless collection.handle == 'frontpage' or collection.handle == 'all'
+        assign collection_count = collection_count | plus: 1
+      endunless
+    endfor
+  else
+    assign collection_count = section.blocks | size
+  endif
+-%}
+
+<div class="content list-collections {% if collection_count == 0 %}empty extra-padding{% endif %} {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="collections">
+  {% if collection_count > 0 %}
+    <style type="text/css">
+      .list-collections .collections-items a.collections-item h1 { color: {{ section.settings.collection_text_color }}; }
+    </style>
+    <div class="inner">
+      {% if section.settings.heading != blank %}
+        <h2 class="shopify-section-title">{{ section.settings.heading | escape }}</h2>
+      {% endif %}
+
+      {% assign collection_index = 0 %}
+      <div class="collections-items {% if section.settings.collection_titles == 'visible-on-mouse-over' %}interactive{% endif %}">
+        {% if section.settings.collections_to_show == 'all' %}
+          {% for collection in collections %}
+            {% unless collection.handle == 'frontpage' or collection.handle == 'all' %}
+              {% render 'collections-item', collection: collection, collection_count: collection_count, collection_index: collection_index %}
+              {% assign collection_index = collection_index | plus: 1 %}
+            {% endunless %}
+          {% endfor %}
+        {% else %}
+          {% for block in section.blocks %}
+          {% assign collection = collections[block.settings.collection] %}
+            {% if collection.empty? %}
+              {% capture collection_id %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+              {% render 'dummie-collections-item', collection_count: collection_count, collection_index: collection_index, collection_id: collection_id, block_attributes: block.shopify_attributes %}
+            {% else %}
+              {% render 'collections-item', collection: collection, collection_count: collection_count, collection_index: collection_index, block_attributes: block.shopify_attributes %}
+            {% endif %}
+            {% assign collection_index = collection_index | plus: 1 %}
+          {% endfor %}
+        {% endif %}
+      </div>
+
+    </div>
+  {% else %}
+    <div class="inner with-layout-options centered">
+      <h2>{{ 'collections.general.collections' | t }}</h2>
+      <h1>{{ 'collections.general.no_collections' | t }}</h1>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-list-collections.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-list-collections.settings.paragraph.content"
+    },
+    {
+      "type": "select",
+      "id": "collections_to_show",
+      "label": "t:sections.main-list-collections.settings.collections_to_show.label",
+      "default": "all",
+      "options": [
+        {
+          "value": "all",
+          "label": "t:sections.main-list-collections.settings.collections_to_show.options__1"
+        },
+        {
+          "value": "selected",
+          "label": "t:sections.main-list-collections.settings.collections_to_show.options__2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-list-collections.settings.header__1.content"
+    },
+    {
+      "type": "select",
+      "id": "collection_titles",
+      "label": "t:sections.main-list-collections.settings.collection_titles.label",
+      "default": "visible",
+      "options": [
+        {
+          "value": "visible",
+          "label": "t:sections.main-list-collections.settings.collection_titles.options__1"
+        },
+        {
+          "value": "visible-on-mouse-over",
+          "label": "t:sections.main-list-collections.settings.collection_titles.options__2"
+        },
+        {
+          "value": "hidden",
+          "label": "t:sections.main-list-collections.settings.collection_titles.options__3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_underline",
+      "label": "t:sections.main-list-collections.settings.collection_underline.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_show_arrow",
+      "label": "t:sections.main-list-collections.settings.collection_show_arrow.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "collection_alignment",
+      "label": "t:sections.main-list-collections.settings.collection_alignment.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.main-list-collections.settings.collection_alignment.options__1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.main-list-collections.settings.collection_alignment.options__2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.main-list-collections.settings.collection_alignment.options__3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection_height",
+      "label": "t:sections.main-list-collections.settings.collection_height.label",
+      "default": "medium",
+      "options": [
+        {
+          "value": "short",
+          "label": "t:sections.main-list-collections.settings.collection_height.options__1"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.main-list-collections.settings.collection_height.options__2"
+        },
+        {
+          "value": "tall",
+          "label": "t:sections.main-list-collections.settings.collection_height.options__3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection_image_size",
+      "label": "t:sections.main-list-collections.settings.collection_image_size.label",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "t:sections.main-list-collections.settings.collection_image_size.options__1"
+        },
+        {
+          "value": "contain",
+          "label": "t:sections.main-list-collections.settings.collection_image_size.options__2"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "collection_image_opacity",
+      "label": "t:sections.main-list-collections.settings.collection_image_opacity.label",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "default": 90,
+      "unit": "%",
+      "info": "t:sections.main-list-collections.settings.collection_image_opacity.info"
+    },
+    {
+      "type": "color",
+      "id": "collection_text_color",
+      "label": "t:sections.main-list-collections.settings.collection_text_color.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.settings.heading.label",
+      "info": "t:sections.settings.heading.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": "t:sections.main-list-collections.blocks.collection.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.main-list-collections.blocks.collection.settings.collection.label"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

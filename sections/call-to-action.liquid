@@ -1,0 +1,185 @@
+<div class="content call-to-action {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }}">
+    <div class="rte">
+      <div class="flex-row">
+        {% for block in section.blocks %}
+          <div class="banner">
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}">
+            {% endif %}
+            <div class="info">
+              {% if block.settings.title != blank %}
+                <h2 style="max-width: 300px;">{{ block.settings.title }}</h2>
+              {% endif %}
+              {% if block.settings.subtitle != blank %}
+                <h6>{{ block.settings.subtitle }}</h6>
+              {% endif %}
+            </div>
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.call-to-action.name",
+    "class": "call-to-action",
+    "settings": [
+      {
+        "type": "header",
+        "content": "t:sections.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_background",
+        "label": "t:sections.settings.show_background.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded",
+        "label": "t:sections.settings.expanded.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded_content",
+        "label": "t:sections.settings.expanded_content.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "t:sections.settings.collapsed.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_desktop",
+        "label": "t:sections.settings.show_on_desktop.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_mobile",
+        "label": "t:sections.settings.show_on_mobile.label",
+        "default": true
+      }
+    ],
+    "max_blocks": 2,
+    "blocks": [
+      {
+        "type": "banner",
+        "name": "t:sections.call-to-action.blocks.banner.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "title",
+            "label": "t:sections.call-to-action.blocks.banner.settings.title.label",
+            "default": {
+              "ar": "عنوان عبارة الحث على اتخاذ إجراء",
+              "bg": "Заглавие на призив за действие",
+              "ca": "Títol de la crida a l'acció",
+              "cs": "Název výzvy k akci",
+              "da": "Opfordring til handling titel",
+              "de": "Call-to-Action-Titel",
+              "el": "Τίτλος παρότρυνσης για δράση",
+              "en": "Call to action title",
+              "es": "Título de la llamada a la acción",
+              "fi": "Toimintakehotuksen otsikko",
+              "fr": "Titre de l'appel à l'action",
+              "he": "כותרת קריאה לפעולה",
+              "hr": "Naslov poziva na radnju",
+              "hu": "Cselekvésre ösztönző cím",
+              "id": "Judul ajakan bertindak",
+              "it": "Titolo dell'invito all'azione",
+              "ja": "召喚状のタイトル",
+              "ko": "클릭 유도문안 제목",
+              "lt": "Raginimo veikti pavadinimas",
+              "nb": "Oppfordring til handling tittel",
+              "nl": "Titel van oproep tot actie",
+              "pl": "Tytuł wezwania do działania",
+              "pt-BR": "Título da chamada para ação",
+              "pt-PT": "Título da chamada para ação",
+              "ro": "Titlul îndemnului la acțiune",
+              "ru": "Название призыва к действию",
+              "sk": "Názov výzvy na akciu",
+              "sl": "Naslov poziva k dejanju",
+              "sv": "Uppmaningstitel",
+              "th": "ชื่อเรียกร้องให้ดำเนินการ",
+              "tr": "Eylem başlığı",
+              "vi": "Tiêu đề lời kêu gọi hành động",
+              "zh-CN": "号召性用语标题",
+              "zh-TW": "號召性用語標題"
+            }
+          },
+          {
+            "type": "text",
+            "id": "subtitle",
+            "label": "t:sections.call-to-action.blocks.banner.settings.subtitle.label",
+            "default": {
+              "ar": "عبارة تحث على اتخاذ إجراء",
+              "bg": "Подзаглавие на призив за действие",
+              "ca": "Subtítol de crida a l'acció",
+              "cs": "Podtitul výzvy k akci",
+              "da": "Opfordring til handling undertekst",
+              "de": "Call-to-Action-Untertitel",
+              "el": "Υπότιτλος παρότρυνσης για δράση",
+              "en": "Call to action subtitle",
+              "es": "Subtítulo de llamada a la acción",
+              "fi": "Toimintakehotuksen alaotsikko",
+              "fr": "Sous-titre d'appel à l'action",
+              "he": "כתובית קריאה לפעולה",
+              "hr": "Podnaslov poziva na akciju",
+              "hu": "Cselekvésre ösztönző alcím",
+              "id": "Subjudul ajakan bertindak",
+              "it": "Sottotitolo di invito all'azione",
+              "ja": "召喚状の字幕",
+              "ko": "클릭 유도문안 자막",
+              "lt": "Raginimo veikti paantraštė",
+              "nb": "Oppfordring til handling undertekst",
+              "nl": "Oproep tot actie ondertitel",
+              "pl": "Podtytuł wezwania do działania",
+              "pt-BR": "Legenda de chamada para ação",
+              "pt-PT": "Legenda de chamada para ação",
+              "ro": "Subtitrare îndemn la acțiune",
+              "ru": "Подзаголовок призыва к действию",
+              "sk": "Podnadpis výzvy na akciu",
+              "sl": "Podnaslov poziva k dejanju",
+              "sv": "Underrubrik för uppmaning till handling",
+              "th": "คำบรรยายคำกระตุ้นการตัดสินใจ",
+              "tr": "Harekete geçirici mesaj altyazısı",
+              "vi": "Phụ đề lời kêu gọi hành động",
+              "zh-CN": "号召性用语字幕",
+              "zh-TW": "號召性用語字幕"
+            }
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.call-to-action.blocks.banner.settings.link.label",
+            "info": "t:sections.call-to-action.blocks.banner.settings.link.info"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.call-to-action.presets.name",
+        "blocks": [
+          {
+            "type": "banner"
+          },
+          {
+            "type": "banner"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

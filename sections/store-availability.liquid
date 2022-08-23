@@ -1,0 +1,51 @@
+<div class="store-availability" data-section-id="{{ section.id }}" data-section-type="store-availability">
+  {%- assign pick_up_availabilities = product_variant.store_availabilities | where: 'pick_up_enabled', true -%}
+  {%- if pick_up_availabilities.size > 0 -%}
+    <div class="location">
+      {%- assign closest_location = pick_up_availabilities.first -%}
+      {%- if closest_location.available -%}
+        {% render 'icon-in-stock' %}
+      {%- else -%}
+        {% render 'icon-out-of-stock' %}
+      {%- endif -%}
+      <div class="information">
+        {%- if closest_location.available -%}
+          <p>
+            {{ 'store_availability.general.pick_up_available_at_html' | t: location_name: closest_location.location.name }}
+          </p>
+          <p class="small">
+            {{ closest_location.pick_up_time }}
+          </p>
+          <p class="small link">
+            <a href="#" data-action="toggle-pick" aria-haspopup="dialog">
+              {%- if pick_up_availabilities.size == 1 -%}
+                {{ 'store_availability.general.view_store_info' | t }}
+              {%- else -%}
+                {{ 'store_availability.general.check_other_stores' | t }}
+              {%- endif -%}
+            </a>
+          </p>
+        {%- else -%}
+          <p>
+            {{ 'store_availability.general.pick_up_unavailable_at_html' | t: location_name: closest_location.location.name }}
+          </p>
+          {%- if pick_up_availabilities.size > 1 -%}
+            <p class="small link">
+              <a href="#" data-action="toggle-pick" aria-haspopup="dialog">
+                {{ 'store_availability.general.check_other_stores' | t }}
+              </a>
+            </p>
+          {%- endif -%}
+        {%- endif -%}
+      </div>
+    </div>
+    {% render 'side-pick', product_variant: product_variant, pick_up_availabilities: pick_up_availabilities %}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": {},
+  "settings": []
+}
+{% endschema %}

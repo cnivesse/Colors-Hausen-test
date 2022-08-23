@@ -1,0 +1,190 @@
+{% if section.settings.enable_popup %}
+  <div class="popup newsletter" data-section-id="{{ section.id }}" data-section-type="popup" data-delay="{{ section.settings.delay }}" data-frequency="{{ section.settings.frequency }}" data-test="{{ section.settings.enable_test }}">
+    <div class="modal animated hidden">
+      <div class="background"></div>
+      <div class="frame" style="max-width: {{ section.settings.content_max_width }}px;">
+        <div class="rte">
+          <h1>{{ section.settings.title }}</h1>
+          {{ section.settings.content }}
+        </div> 
+        <div class="content">
+          {% if section.settings.newsletter_enable %}
+            {% form 'customer', id: 'PopupForm' %}
+              {% if form.posted_successfully? %}
+                <p class="success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+              {% else %}
+                <div class="table">
+                  <input type="hidden" name="contact[tags]" value="newsletter">
+                  <label for="email" class="hide">{{ 'contact.form.email' | t }}</label>
+                  <input class="text {% if form.errors contains 'email' %} error{% endif %}" type="email" name="contact[email]" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off" id="email" aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}">
+                  <span class="input-group-btn">
+                    <input type="submit" class="btn solid" value="{{ 'general.newsletter_form.submit' | t }}">
+                  </span>
+                </div>
+                {% if form.errors %}
+                  {% for field in form.errors %}
+                    <div class="field-error">{{ form.errors.messages[field] }}</div>
+                  {% endfor %}
+                {% endif %}
+              {% endif %}
+            {% endform %}
+          {% endif %}
+          {% if section.settings.button_enable and section.settings.button_label != blank %}
+            <a class="btn button {{ section.settings.button_style }} {{ section.settings.button_size }}" href="{{ section.settings.button_link }}">{{ section.settings.button_label }}</a>
+          {% endif %}
+        </div>
+        <a href="#" data-action="close-modal" class="close" aria-label="{{ 'general.accessibility.close_modal' | t }}">
+          <i class="fc fc-close"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.popup.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_popup",
+      "label": "t:sections.popup.settings.enable_popup.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_test",
+      "label": "t:sections.popup.settings.enable_test.label",
+      "info": "t:sections.popup.settings.enable_test.info",
+      "default": false
+    },
+    {
+      "id": "delay",
+      "type": "range",
+      "min": 2,
+      "max": 60,
+      "step": 1,
+      "unit": "sec",
+      "default": 5,
+      "label": "t:sections.popup.settings.delay.label",
+      "info": "t:sections.popup.settings.delay.info"
+    },
+    {
+      "id": "frequency",
+      "type": "range",
+      "min": 2,
+      "max": 30,
+      "step": 1,
+      "unit": "day",
+      "default": 30,
+      "label": "t:sections.popup.settings.frequency.label"
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.popup.settings.content_max_width.label",
+      "default": 650,
+      "min": 400,
+      "max": 1200,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.popup.settings.header__1.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.popup.settings.title.label",
+      "default": {
+        "en": "Sign up and save",
+        "es": "Apúntate y consigue descuentos"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "t:sections.popup.settings.content.label",
+      "default": {
+        "en": "<p>Subscribe today and get 10% off your first purchase.</p>",
+        "es": "<p>Suscríbete hoy y obtén un 10% de descuento en tu primera compra</p>"
+      }
+    },
+    {
+      "type": "header",
+      "content": "t:sections.popup.settings.header__2.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "newsletter_enable",
+      "label": "t:sections.popup.settings.newsletter_enable.label",
+      "default": true
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.popup.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.popup.settings.header__3.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "button_enable",
+      "label": "t:sections.popup.settings.button_enable.label",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "t:sections.popup.settings.button_label.label",
+      "default": {
+        "en": "Optional button",
+        "es": "Botón opcional"
+      }
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "t:sections.popup.settings.button_link.label"
+    },
+    {
+      "type": "select",
+      "id": "button_style",
+      "label": "t:sections.popup.settings.button_style.label",
+      "default": "solid",
+      "options": [
+        {
+          "value": "accent",
+          "label": "t:sections.popup.settings.button_style.options__1"
+        },
+        {
+          "value": "solid",
+          "label": "t:sections.popup.settings.button_style.options__2"
+        },
+        {
+          "value": "border",
+          "label": "t:sections.popup.settings.button_style.options__3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "button_size",
+      "label": "t:sections.popup.settings.button_size.label",
+      "default": "normal",
+      "options": [
+        {
+          "value": "small",
+          "label": "t:sections.popup.settings.button_size.options__1"
+        },
+        {
+          "value": "normal",
+          "label": "t:sections.popup.settings.button_size.options__2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,43 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'customer.register.section_title' | t }}</h2>
+    <h1>{{ 'customer.register.title' | t }}</h1>
+    {% form 'create_customer' %}
+      <div class="row with-top-border with-bottom-border">
+        <input class="text long{% if form.errors contains 'first_name' %} error{% endif %}" name="customer[first_name]" id="first_name" placeholder="{{ 'customer.register.first_name' | t }}" autocapitalize="words" type="text" autofocus="autofocus" aria-label="{{ 'customer.register.first_name' | t }}">
+        {% render 'form-field-error', form: form, field: 'first_name' %}
+      </div>
+      <div class="row with-bottom-border">
+        <input class="text long{% if form.errors contains 'last_name' %} error{% endif %}" name="customer[last_name]" id="last_name" placeholder="{{ 'customer.register.last_name' | t }}" type="text" autocapitalize="words" aria-label="{{ 'customer.register.last_name' | t }}">
+        {% render 'form-field-error', form: form, field: 'last_name' %}
+      </div>
+      <div class="row with-bottom-border">
+        <input class="text long{% if form.errors contains 'email' %} error{% endif %}" name="customer[email]" id="email" placeholder="{{ 'customer.register.email' | t }}" type="email" autocorrect="off" autocapitalize="off" aria-label="{{ 'customer.register.email' | t }}">
+        {% render 'form-field-error', form: form, field: 'email' %}
+      </div>
+      <div class="row with-bottom-border">
+        <input class="text long{% if form.errors contains 'password' %} error{% endif %}" name="customer[password]" id="create_password" placeholder="{{ 'customer.register.password' | t }}" type="password" aria-label="{{ 'customer.register.password' | t }}">
+        {% render 'form-field-error', form: form, field: 'password' %}
+      </div>
+      {% render 'form-errors', form: form %}
+      <div class="row actions expanded-top">
+        <button class="btn solid" name="commit" type="submit" formnovalidate="formnovalidate">
+          {{ 'customer.register.submit' | t }}
+        </button>
+      </div>
+    {% endform %}
+    <div class="row expanded-top">
+      <a class="underline" href="{{ routes.account_login_url }}">{{ 'customer.register.login' | t }}</a>
+    </div>
+    <div class="row">
+      <a class="underline" href="{{ routes.root_url }}">{{ 'general.navigation.return_to_store' | t }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.account-register.name",
+  "class": "section-standalone section-account"
+}
+{% endschema %}

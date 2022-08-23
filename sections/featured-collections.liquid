@@ -1,0 +1,226 @@
+<div class="content featured-collections featured-collections-{{ section.id }} {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="collections">
+  {% assign collection_count = section.blocks.size %}
+  {% assign collection_index = 0 %}
+  <style type="text/css">
+    .featured-collections-{{ section.id }} .collections-items a.collections-item h1 {
+      color: {{ section.settings.collection_text_color }};
+    }
+  </style>
+  {% if section.settings.title != blank %}
+    <a href="{{ routes.collections_url }}">
+      <h2 class="shopify-section-title">{{ section.settings.title | escape }}</h2>
+    </a>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="collections-items {% if section.settings.collection_titles == 'visible-on-mouse-over' %}interactive{% endif %}">
+      {% for block in section.blocks limit: section.blocks.size %}
+        {% assign collection = collections[block.settings.collection] %}
+        {% if collection.empty? %}
+          {% capture collection_id %}{% cycle 1, 2, 3, 4, 5, 6 %}{% endcapture %}
+          {% render 'dummie-collections-item', collection_count: collection_count, collection_index: collection_index, collection_id: collection_id, block_attributes: block.shopify_attributes %}
+        {% else %}
+          {% render 'collections-item', collection: collection, collection_count: collection_count, collection_index: collection_index, block_attributes: block.shopify_attributes %}
+        {% endif %}
+        {% assign collection_index = collection_index | plus: 1 %}
+      {% endfor %}
+    </div>
+  {% else %}
+    {% render 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-collections.name",
+  "max_blocks": 9,
+  "settings": [
+    {
+      "type": "select",
+      "id": "collection_titles",
+      "label": "t:sections.featured-collections.settings.collection_titles.label",
+      "default": "visible",
+      "options": [
+        {
+          "value": "visible",
+          "label": "t:sections.featured-collections.settings.collection_titles.options__1"
+        },
+        {
+          "value": "visible-on-mouse-over",
+          "label": "t:sections.featured-collections.settings.collection_titles.options__2"
+        },
+        {
+          "value": "hidden",
+          "label": "t:sections.featured-collections.settings.collection_titles.options__3"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_underline",
+      "label": "t:sections.featured-collections.settings.collection_underline.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collection_show_arrow",
+      "label": "t:sections.featured-collections.settings.collection_show_arrow.label",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "collection_alignment",
+      "label": "t:sections.featured-collections.settings.collection_alignment.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.featured-collections.settings.collection_alignment.options__1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.featured-collections.settings.collection_alignment.options__2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.featured-collections.settings.collection_alignment.options__3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection_height",
+      "label": "t:sections.featured-collections.settings.collection_height.label",
+      "default": "medium",
+      "options": [
+        {
+          "value": "short",
+          "label": "t:sections.featured-collections.settings.collection_height.options__1"
+        },
+        {
+          "value": "medium",
+          "label": "t:sections.featured-collections.settings.collection_height.options__2"
+        },
+        {
+          "value": "tall",
+          "label": "t:sections.featured-collections.settings.collection_height.options__3"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "collection_image_size",
+      "label": "t:sections.featured-collections.settings.collection_image_size.label",
+      "default": "cover",
+      "options": [
+        {
+          "value": "cover",
+          "label": "t:sections.featured-collections.settings.collection_image_size.options__1"
+        },
+        {
+          "value": "contain",
+          "label": "t:sections.featured-collections.settings.collection_image_size.options__2"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "collection_image_opacity",
+      "label": "t:sections.featured-collections.settings.collection_image_opacity.label",
+      "min": 50,
+      "max": 100,
+      "step": 10,
+      "default": 90,
+      "unit": "%",
+      "info": "t:sections.featured-collections.settings.collection_image_opacity.info"
+    },
+    {
+      "type": "color",
+      "id": "collection_text_color",
+      "label": "t:sections.featured-collections.settings.collection_text_color.label",
+      "default": "#121212"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "t:sections.settings.heading.label",
+      "info": "t:sections.settings.heading.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "collection",
+      "name": {
+        "en": "Collection",
+        "es": "Colección"
+      },
+      "settings": [
+        {
+          "label": {
+            "en": "Collection",
+            "es": "Colección"
+          },
+          "id": "collection",
+          "type": "collection"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-collections.presets.name",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

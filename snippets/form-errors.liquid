@@ -1,0 +1,9 @@
+{% if form.errors %}
+  {% for field in form.errors %}
+    {% if field == 'form' %}
+      <div class="row expanded-top expanded-bottom error">
+        <div class="field-error">{{ form.errors.messages[field] }}</div>
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}

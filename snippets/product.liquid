@@ -1,0 +1,105 @@
+<div class="content product {% if section.settings.enable_sticky_info %}sticky{% endif %} {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="product">
+  <div class="item">
+    <div class="left">
+      <div class="product-media {% if product.media.size > 1 %}{{ section.settings.thumbnails_position }}{% endif %}">
+        <div class="frame">
+          <div class="table">
+            <div class="cell">
+              <div>
+                {%- if product.selected_variant or section.settings.first_variant_media_enabled -%}
+                  {%- assign featured_media = product.selected_or_first_available_variant.featured_media | default: product.featured_media -%}
+                {%- else -%}
+                  {%- assign featured_media = product.featured_media -%}
+                {%- endif -%}
+                {%- if product.selected_or_first_available_variant.featured_media != null -%}
+                  {% render 'media', media: product.selected_or_first_available_variant.featured_media, featured_media: featured_media %}
+                {%- endif -%}
+                {%- for media in product.media -%}
+                  {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
+                    {% render 'media', media: media, featured_media: featured_media %}
+                  {%- endunless -%}
+                {%- else -%}
+                  <div class="media" tabindex="-1">
+                    <img src="//cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_740x740.gif" width="740" height="740" style="width: 740px; height: auto;">
+                  </div>
+                {%- endfor -%}
+              </div>
+              
+              {% assign first_3d_model = product.media | where: "media_type", "model" | first %}
+              {%- if first_3d_model -%}
+                <button
+                  aria-label="{{ 'products.product.view_in_space_label' | t }}"
+                  class="view-in-space"
+                  data-shopify-xr
+                  data-shopify-model3d-id="{{ first_3d_model.id }}"
+                  data-shopify-title="{{ product.title }}"
+                  data-shopify-xr-hidden
+                >
+                  {% render 'icon-3d-badge-full-color' %}<span class='text'>{{ 'products.product.view_in_space' | t }}</span>
+                </button>
+              {%- endif -%}
+
+            </div>
+          </div>
+        </div>
+        {% if product.media.size > 1 %}
+          <div class="gallery">
+            {% for media in product.media %}
+              <div class="thumb {% cycle product.handle: 'col-0', 'col-1', 'col-2', 'col-3' %}">
+                <a href="{{ media.preview_image | img_url: '1024x1024' }}" data-action="show-product-media" data-id="{{ media.id }}">
+                  <div>
+                    {% assign alt = media.alt | escape %}
+                    {% render 'resp-img',
+                      image: media.preview_image,
+                      sizes: "240px",
+                      default_size: "240x240",
+                      squared: true,
+                      alt: alt
+                    %}
+                    {%- if media.media_type == 'video' or media.media_type =='external_video' -%}
+                      <div class="badge">
+                        {% render 'icon-video-badge-full-color' %}
+                      </div>
+                    {%- endif -%}
+                    {%- if media.media_type == 'model' -%}
+                      <div class="badge">
+                        {% render 'icon-3d-badge-full-color' %}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </a>
+              </div>
+            {% endfor %}    
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="right">
+      {% render 'product-blocks', product: product %}
+      <a data-action="close-preview" class="close">
+        <i class="fc fc-close"></i>
+      </a>
+    </div>
+    <script>
+      window.product = {{ product | json }};
+      window.product.inventory = {};
+      window.product.policy = {};
+      {%- for variant in product.variants -%}
+        window.product.inventory[{{ variant.id }}] = {{ variant.inventory_quantity }};
+        window.product.policy[{{ variant.id }}] = "{{ variant.inventory_policy }}";
+      {%- endfor -%}
+      window.product.money_format = "{{ shop.money_format }}";
+      window.product.add_label = {% if product.options.size == 1 %}true{% else %}false{% endif %};
+      window.product.label = "{{ product.options.first | escape }}";
+    </script>
+
+    {% unless product.empty? %}
+      <script type="application/json" id="ProductJson-{{ section.id }}">
+        {{ product | json }}
+      </script>
+      <script type="application/json" id="ModelJson-{{ section.id }}">
+        {{ product.media | where: 'media_type', 'model' | json }}
+      </script>
+    {% endunless %}
+  </div>
+</div>

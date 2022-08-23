@@ -1,0 +1,180 @@
+<div class="content newsletter {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="newsletter">
+  <div class="inner extended" style="max-width: {{ section.settings.content_max_width }}px;">
+    <div class="rte">
+      {% unless section.settings.heading == blank %}
+        <h1>{{ section.settings.heading | escape }}</h1>
+      {% endunless %}
+      {% unless section.settings.subheading == blank %}
+        {{ section.settings.subheading }}
+      {% endunless %}
+    </div>
+    {% assign form_id = "SectionForm-" | append: section.id %}
+    {% form 'customer', id: form_id %}
+      {% if form.posted_successfully? %}
+        <p class="success">{{ 'general.newsletter_form.confirmation' | t }}</p>
+      {% else %}
+        <div class="table">
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <label for="email" class="hide">{{ 'contact.form.email' | t }}</label>
+          <input class="text {% if form.errors contains 'email' %} error{% endif %}" type="email" name="contact[email]" placeholder="{{ 'general.newsletter_form.newsletter_email' | t }}" autocorrect="off" autocapitalize="off" id="email"  aria-label="{{ 'general.newsletter_form.newsletter_email' | t }}">
+          <span class="input-group-btn">
+            <input type="submit" class="btn solid" value="{{ 'general.newsletter_form.submit' | t }}">
+          </span>
+        </div>
+        {% if form.errors %}
+          {% for field in form.errors %}
+            <div class="field-error">
+            {{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}
+            </div>
+          {% endfor %}
+        {% endif %}
+      {% endif %}
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.newsletter.name",
+    "class": "newsletter-section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "heading",
+        "label": "t:sections.newsletter.settings.heading.label",
+        "default": {
+          "ar": "اشترك في نشرتنا الإخبارية",
+          "bg": "Абонирайте се за нашия бюлетин",
+          "ca": "Subscriu-te al nostre butlletí",
+          "cs": "Přihlaste se k odběru našeho newsletteru",
+          "da": "Abonner på vores nyhedsbrev",
+          "de": "Abonnieren Sie unseren Newsletter",
+          "el": "Εγγραφείτε στο ενημερωτικό μας δελτίο",
+          "en": "Subscribe to our newsletter",
+          "es": "Suscríbete a nuestro boletín",
+          "fi": "tilaa uutiskirjeemme",
+          "fr": "Abonnez-vous à notre newsletter",
+          "he": "הירשם לניוזלטר שלנו",
+          "hr": "Pretplatite se na naše obavijesti",
+          "hu": "Iratkozzon fel hírlevelünkre",
+          "id": "Berlangganan newsletter kami",
+          "it": "Iscriviti alla nostra Newsletter",
+          "ja": "ニュースレターを購読する",
+          "ko": "뉴스레터 구독",
+          "lt": "Prenumeruokite mūsų naujienlaiškį",
+          "nb": "Abonner på vårt nyhetsbrev",
+          "nl": "Abonneer op onze nieuwsbrief",
+          "pl": "Zapisz się do naszego newslettera",
+          "pt-BR": "Assine a nossa newsletter",
+          "pt-PT": "Assine a nossa newsletter",
+          "ro": "Aboneaza-te la newsletter-ul nostru",
+          "ru": "Подпишитесь на нашу рассылку",
+          "sk": "prihlásiť sa ku odberu noviniek",
+          "sl": "Naročite se na naše novice",
+          "sv": "Prenumerera på vårt nyhetsbrev",
+          "th": "สมัครรับจดหมายข่าวของเรา",
+          "tr": "Haber bültenimize abone ol",
+          "vi": "Theo dõi bản tin của chúng tôi",
+          "zh-CN": "订阅我们的新闻",
+          "zh-TW": "訂閱我們的新聞"
+        }
+      },
+      {
+        "type": "richtext",
+        "id": "subheading",
+        "label": "t:sections.newsletter.settings.subheading.label",
+        "default": {
+          "ar": "<p> العروض الترويجية والمنتجات الجديدة والمبيعات. مباشرة إلى بريدك الوارد. </p>",
+          "bg": "<p>Промоции, нови продукти и разпродажби. Директно във входящата ви поща.</p>",
+          "ca": "<p>Promocions, nous productes i vendes. Directament a la teva safata d'entrada.</p>",
+          "cs": "<p>Propagace, nové produkty a prodeje. Přímo do vaší doručené pošty.</p>",
+          "da": "<p>Kampagner, nye produkter og salg. Direkte til din indbakke.</p>",
+          "de": "<p>Aktionen, neue Produkte und Sonderangebote. Direkt in Ihren Posteingang.</p>",
+          "el": "<p>Προσφορές, νέα προϊόντα και εκπτώσεις. Απευθείας στα εισερχόμενά σας.</p>",
+          "en": "<p>Promotions, new products and sales. Directly to your inbox.</p>",
+          "es": "<p>Promociones, nuevos productos y rebajas. Directamente a su bandeja de entrada.</p>",
+          "fi": "<p>Tarjoukset, uudet tuotteet ja myynti. Suoraan postilaatikkoosi.</p>",
+          "fr": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.</p>",
+          "he": "<p>מבצעים, מוצרים חדשים ומכירות. ישירות לתיבת הדואר הנכנס שלך.</p>",
+          "hr": "<p>Promocije, novi proizvodi i rasprodaje. Izravno u vašu pristiglu poštu.</p>",
+          "hu": "<p>Akciók, új termékek és értékesítés. Közvetlenül a postaládájába.</p>",
+          "id": "<p>Promosi, produk baru, dan penjualan. Langsung ke kotak masuk Anda.</p>",
+          "it": "<p>Promozioni, nuovi prodotti e saldi. Direttamente nella tua casella di posta.</p>",
+          "ja": "<p>プロモーション、新製品、販売。受信トレイに直接送信します。</p>",
+          "ko": "<p>프로모션, 신제품 및 판매. 받은편지함으로 바로 이동합니다.</p>",
+          "lt": "<p>Akcijos, nauji produktai ir išpardavimas. Tiesiogiai į gautuosius.</p>",
+          "nb": "<p>Kampanjer, nye produkter og salg. Direkte til innboksen din.</p>",
+          "nl": "<p>Promoties, nieuwe producten en verkopen. Rechtstreeks in je inbox.</p>",
+          "pl": "<p>Promocje, nowe produkty i wyprzedaże. Bezpośrednio do Twojej skrzynki odbiorczej.</p>",
+          "pt-BR": "<p>Promoções, novos produtos e vendas. Diretamente para sua caixa de entrada.</p>",
+          "pt-PT": "<p>Promoções, novos produtos e vendas. Diretamente para sua caixa de entrada.</p>",
+          "ro": "<p>Promoții, produse noi și vânzări. Direct în căsuța dvs. de e-mail.</p>",
+          "ru": "<p>Акции, новые продукты и распродажи. Прямо в ваш почтовый ящик.</p>",
+          "sk": "<p>Propagácie, nové produkty a výpredaje. Priamo do vašej doručenej pošty.</p>",
+          "sl": "<p>Promocije, novi izdelki in razprodaje. Neposredno v vaš nabiralnik.</p>",
+          "sv": "<p>Kampanjer, nya produkter och försäljning. Direkt till din inkorg.</p>",
+          "th": "<p>โปรโมชั่น ผลิตภัณฑ์ใหม่และการขาย ส่งตรงไปยังกล่องจดหมายของคุณ</p>",
+          "tr": "<p>Promosyonlar, yeni ürünler ve indirimler. Doğrudan gelen kutunuza.</p>",
+          "vi": "<p> Khuyến mại, sản phẩm mới và bán hàng. Trực tiếp đến hộp thư đến của bạn. </p>",
+          "zh-CN": "<p>促销、新产品和销售。直接发送到您的收件箱。</p>",
+          "zh-TW": "<p>促銷、新產品和銷售。直接發送到您的收件箱。</p>"
+        }
+      },
+      {
+        "type": "paragraph",
+        "content": "t:sections.newsletter.settings.paragraph.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_background",
+        "label": "t:sections.settings.show_background.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded",
+        "label": "t:sections.settings.expanded.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded_content",
+        "label": "t:sections.settings.expanded_content.label",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "content_max_width",
+        "label": "t:sections.settings.content_max_width.label",
+        "default": 700,
+        "min": 400,
+        "max": 2000,
+        "step": 50,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "t:sections.settings.collapsed.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_desktop",
+        "label": "t:sections.settings.show_on_desktop.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_mobile",
+        "label": "t:sections.settings.show_on_mobile.label",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.newsletter.presets.name"
+      }
+    ]
+  }
+{% endschema %}

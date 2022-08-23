@@ -1,0 +1,356 @@
+{
+  "general": {
+    "404": {
+      "section_title": "404 No s'ha trobat la pàgina",
+      "title": "Ho sentim, la pàgina que has sol·licitat no existeix.",
+      "continue_shopping": "Continuar amb la compra",
+      "open_menu": "Obre el menú"
+    },
+    "accessibility": {
+      "skip_to_content": "Saltar al contingut",
+      "close_modal": "Tanca",
+      "video_player": "Reproductor de vídeo",
+      "star_reviews_info": "{{ rating_value }} de {{ rating_max }} estrelles"
+    },
+    "meta": {
+      "tags": "Etiquetat amb \"{{ tags }}\"",
+      "page": "Pàgina {{ page }}"
+    },
+    "search": {
+      "title": "Cerca",
+      "placeholder": "Cerca...",
+      "no_results_for": "La vostra cerca de \"{{ terms }}\" no ha donat cap resultat.",
+      "heading": {
+        "one": "Resultat de la cerca",
+        "other": "Resultats de la cerca"
+      },
+      "results_count": {
+        "zero": "No hi ha resultats",
+        "one": "{{ count }} resultat",
+        "other": "{{ count }} resultats"
+      },
+      "results_with_count": {
+        "one": "{{ count }} resultat per a “{{ terms }}”:",
+        "other": "{{ count }} resultats per a “{{ terms }}”:"
+      },
+      "page": "Pàgina",
+      "article": "Bloc"
+    },
+    "navigation": {
+      "header_label": "MENÚ",
+      "cancel_html": "o {{ link }}",
+      "return_to_store": "Tornar a la botiga"
+    },
+    "newsletter_form": {
+      "newsletter_email": "El teu email",
+      "submit": "Subscriu-te",
+      "confirmation": "Gràcies per subscriure't."
+    },
+    "page_title": {
+      "tagged": "etiquetat \"{{ tags }}\"",
+      "pagination": "Pàgina {{ current_page }}"
+    },
+    "password_page": {
+      "opening_soon": "Obertura aviat",
+      "login_form_heading": "Entra a la botiga amb la contrasenya:",
+      "login_form_password_placeholder": "La teva contrasenya",
+      "login_form_submit": "Entra",
+      "signup_form_heading": "Descobriu-ho quan obrim:",
+      "signup_form_email_placeholder": "El teu email",
+      "signup_form_submit": "Presentar",
+      "signup_form_success": "T'enviarem un correu electrònic just abans d'obrir!",
+      "social_heading": "Troba'ns també a:",
+      "admin_link_html": "Ets el propietari de la botiga? <a href=\"/admin\" class=\"text-link\">Inicieu la sessió aquí</a>",
+      "password_link_html": "Entra amb contrasenya",
+      "back_link_html": "Tornar",
+      "powered_by_shopify_html": "Aquesta botiga funcionarà amb {{ shopify }}"
+    },
+    "country": {
+      "dropdown_label": "País/regió"
+    },
+    "language": {
+      "dropdown_label": "Idioma"
+    }
+  },
+  "blogs": {
+    "general": {
+      "no_articles": "Ho sentim, actualment no hi ha articles."
+    },
+    "article": {
+      "meta_html": "Publicat el {{ date }}",
+      "read_entire_article_html": "Llegeix l'article sencer",
+      "next_article_html": "Publicació més recent &rarr;",
+      "previous_article_html": "&larr; Publicació més antiga"
+    },
+    "comment_form": {
+      "title": "Deixa un comentari",
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "message": "Missatge",
+      "post": "Enviar",
+      "moderated": "Tingueu en compte que els comentaris s'han d'aprovar abans de publicar-los",
+      "success_moderated_html": "El teu comentari s'ha publicat correctament.<br>El publicarem d'aquí a una estona, ja que el nostre blog està moderat.",
+      "success": "El teu comentari s'ha publicat correctament! Gràcies!"
+    }
+  },
+  "collections": {
+    "general": {
+      "catalog": "Catàleg",
+      "collections": "Col·leccions",
+      "no_collections": "Ho sentim, actualment no hi ha cap col·lecció.",
+      "no_products": "No s'han trobat productes",
+      "arrow": "→",
+      "filter_and_sort": "Filtrar i ordenar",
+      "sort_button": "Ordena",
+      "filter_button": "Filtre",
+      "sort_by": "Ordenar per:",
+      "filter_by": "Filtra per:",
+      "filters_selected": "{{ count }} seleccionat",
+      "max_price": "El preu més alt és {{ price }}",
+      "product_count": "Es mostren {{ count }} de {{ total }} productes",
+      "from": "Des de",
+      "to": "A",
+      "reset": "Restableix",
+      "apply": "Aplicar",
+      "clear": "Neteja",
+      "clear_all": "Esborra-ho tot"
+    },
+    "tags": {
+      "all": "Tots"
+    }
+  },
+  "products": {
+    "product": {
+      "buy_html": "Compra<br>ara",
+      "on_sale_html": "Oferta",
+      "from_lowest_price_html": "A partir de {{ lowest_price }}",
+      "sold_out_html": "Esgotat",
+      "new_html": "Nou",
+      "unavailable": "No disponible",
+      "quantity": "Quantitat",
+      "available_units_html": "<span class='units'>{{ units }}</span> unitats disponibles",
+      "add_to_cart": "Afegeix a la cistella",
+      "pre_order": "Comanda prèvia",
+      "share_on": "Comparteix a {{ platform}}",
+      "view_in_space": "Veure al teu espai",
+      "view_in_space_label": "Visualitza al teu espai, carrega l'element a la finestra de realitat augmentada",
+      "total_reviews": {
+        "zero": "Sense ressenyes",
+        "one": "{{ count }} ressenya",
+        "other": "{{ count }} ressenyes"
+      }
+    },
+    "zoom": {
+      "next": "Següent (tecla de fletxa dreta)",
+      "prev": "Anterior (tecla de fletxa esquerra)",
+      "close": "Tanca (Esc)"
+    }
+  },
+  "contact": {
+    "form": {
+      "section_title": "Contacte",
+      "title": "Posar-se en contacte",
+      "name": "Nom",
+      "email": "Correu electrònic",
+      "phone": "Número de telèfon (opcional)",
+      "message": "Missatge",
+      "send": "Enviar",
+      "post_success": "Gràcies per contactar amb nosaltres. Ens posarem en contacte amb tu el més aviat possible."
+    }
+  },
+  "customer": {
+    "login": {
+      "section_title": "Inicia sessió",
+      "title": "Comença una nova sessió",
+      "email": "Correu electrònic",
+      "password": "Contrasenya",
+      "sign_in_button": "Inicia sessió",
+      "forgot_password": "Has oblidat la teva contrasenya?",
+      "register": "Crear un nou compte",
+      "password_section_title": "Restablir la contrasenya",
+      "password_title": "Rebràs un correu electrònic amb instruccions",
+      "password_action": "Envia un correu electrònic",
+      "password_cancel": "Cancel·lar",
+      "guest_section_title": "No us voleu registrar?",
+      "guest_title": "Continua com a convidat",
+      "guest_action": "Omet el registre"
+    },
+    "reset_password": {
+      "section_title": "Restableix la contrasenya del compte",
+      "title": "Introduïu una contrasenya nova per a {{ email }}",
+      "password": "Contrasenya",
+      "password_confirm": "Confirma la contrassenya",
+      "submit": "Restablir la contrasenya"
+    },
+    "register": {
+      "section_title": "Crear un nou compte",
+      "title": "Proporcioneu informació de contacte",
+      "first_name": "Nom",
+      "last_name": "Cognom",
+      "email": "Correu electrònic",
+      "password": "Contrasenya",
+      "submit": "Crear compte",
+      "login": "Ja tens un compte?"
+    },
+    "account": {
+      "section_title": "El meu compte",
+      "title": "Benvingut de nou {{ customer_name }}",
+      "add_address_html": "Afegeix la teva adreça",
+      "edit_addresses_html": "Edita adreces ({{ count }})"
+    },
+    "orders": {
+      "order": "Comanda {{ id }}",
+      "order_description_html": "<b>{{ date }}</b> — {{ order }} s'ha completat i el seu estat actual és {{ financial_status }} i {{ fulfillment_status }}",
+      "empty": "No hi ha ordres."
+    },
+    "order": {
+      "section_title": "Historial de comandes",
+      "date": "Creade el {{ date }}",
+      "canceled": "Comanda cancel·lada el {{ date }}",
+      "canceled_reason": "El motiu va ser: {{ reason }}",
+      "billing_address": "Adreça de facturació",
+      "payment_status": "Estat de pagament",
+      "shipping_address": "Adreça d'enviament",
+      "fulfillment_status": "Estat de tramitació",
+      "discount": "Descompte",
+      "price": "Preu",
+      "unit_price": "Preu unitari",
+      "quantity": "Quantitat",
+      "subtotal": "Subtotal",
+      "tax": "Impostos",
+      "total": "Total",
+      "return_to_account": "Torna al teu compte"
+    },
+    "activate_account": {
+      "section_title": "Activa el compte",
+      "title": "Establiu la vostra contrasenya per activar el vostre compte",
+      "password": "Contrasenya",
+      "password_confirm": "Confirma la contrassenya",
+      "submit": "Activa el compte",
+      "cancel": "Rebutja la invitació"
+    },
+    "addresses": {
+      "section_title": "Detalls del compte",
+      "title": "Llibreta d'adreces",
+      "subtitle": "Aquestes són les adreces enllaçades al vostre compte",
+      "empty": "La vostra llibreta d'adreces està buida actualment.",
+      "default": "Adreça per defecte",
+      "add_new": "Nova adreça",
+      "edit_address": "Edita l'adreça",
+      "recipient": "Destinatari",
+      "first_name": "Nom",
+      "last_name": "Cognom/s",
+      "company": "Empresa",
+      "address": "adreça",
+      "address1": "Adreça 1",
+      "address2": "Adreça 2",
+      "city": "Ciutat",
+      "country": "País",
+      "province": "Província",
+      "zip": "Codi postal",
+      "phone": "Telèfon",
+      "phone_label": "Tel.",
+      "set_default_label": "Definiu com a adreça predeterminada?",
+      "set_default_action": "Si, si us plau.",
+      "add_address": "Afegeix una adreça nova",
+      "update": "Actualitzar l'adreça",
+      "cancel": "Cancel·lar",
+      "edit": "Edita",
+      "save": "Desa l'adreça",
+      "delete": "Suprimeix",
+      "delete_question": "Esteu segur que voleu suprimir aquesta adreça?",
+      "return": "Torna al teu compte"
+    }
+  },
+  "sections": {
+    "onboarding": {
+      "featured_product_title": "Exemple de producte destacat",
+      "add_products_html": "Afegeix els teus<br>productes",
+      "add_collection": "Nom de la col·lecció",
+      "vendor": "Venedor",
+      "product_title": "Títol del producte",
+      "product_description": "Descripció del producte. Combina un text amb un producte per destacar les característiques. Aquest suport de pell està fet per fer de la teva manta bessona un gran company de càmping. Les mantes de campament es van dissenyar per primera vegada per satisfer les demandes rigoroses del nord-oest del Pacífic salvatge i salvatge i eren les preferides dels primers pastors del nord-oest. Avui, aquestes mantes càlides i resistents ofereixen un servei excepcional i un estil resistent que proporcionaran anys de calidesa i comoditat.",
+      "blog_title": "El títol del teu bloc",
+      "post_title": "El títol de la teva publicació",
+      "post_excerpt": "La teva botiga encara no ha publicat cap entrada al blog. Un bloc es pot utilitzar per parlar de nous llançaments de productes, consells o altres notícies que vulgueu compartir amb els vostres clients. Podeu consultar el bloc de comerç electrònic de Shopify per obtenir inspiració i consells per a la vostra pròpia botiga i bloc.",
+      "page_title": "El títol de la teva pàgina",
+      "page_excerpt_html": "Aquest paràgraf actualment no inclou cap contingut de la pàgina.<br>Trieu una de les vostres pàgines mitjançant la barra lateral.",
+      "no_content_html": "Actualment, aquesta secció no inclou cap contingut.<br>Afegiu contingut a aquesta secció mitjançant la barra lateral."
+    }
+  },
+  "cart": {
+    "general": {
+      "section_title": "El teu carretó",
+      "total_items": {
+        "zero": "El teu carretó està buit actualment",
+        "one": "{{ count }} element",
+        "other": "{{ count }} elements"
+      },
+      "note": "Instruccions especials per al venedor:",
+      "subtotal": "Subtotal",
+      "taxes_and_shipping_policy_at_checkout_html": "Impostos i <a href=\"{{ link }}\">enviament</a> calculats a la compra.",
+      "taxes_included_but_shipping_at_checkout": "Impostos inclosos i enviament calculat a la compra.",
+      "taxes_included_and_shipping_policy_html": "Impostos inclosos. <a href=\"{{ link }}\">Enviament</a> calculat en pagar.",
+      "taxes_and_shipping_at_checkout": "Enviament i impostos calculats a la compra.",
+      "update_html": "Actualització de la compra",
+      "checkout_html": "Continuar compra",
+      "empty": "El teu carretó està buit actualment.",
+      "continue_browsing": "Continua navegant"
+    }
+  },
+  "map": {
+    "errors": {
+      "address_error": "S'ha produït un error cercant aquesta adreça",
+      "address_no_results": "No hi ha resultats per a aquesta adreça",
+      "address_query_limit_html": "Heu superat el límit d'ús de l'API de Google. Penseu en l'actualització a un <a href=\"https://developers.google.com/maps/premium/usage-limits\">Pla Premium</a>.",
+      "auth_error_html": "S'ha produït un problema en autenticar la vostra clau de l'API de Google Maps."
+    }
+  },
+  "store_availability": {
+    "general": {
+      "view_store_info": "Consulta la informació de la botiga",
+      "check_other_stores": "Consulta la disponibilitat a altres botigues",
+      "pick_up_available": "Recollida disponible",
+      "pick_up_currently_unavailable": "La recollida no està disponible actualment",
+      "pick_up_available_at_html": "Recollida disponible a <b>{{ location_name }}</b>",
+      "pick_up_unavailable_at_html": "La recollida no està disponible actualment a <b>{{ location_name }}</b>"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "page_title": "Aquí teniu la vostra {{ value }} targeta de regal per a {{ shop }}!",
+      "section_title": "Targeta regal",
+      "title": "Aquí tens la teva targeta regal!",
+      "amount_left_html": "{{ amount }} <small>esquerra</small>",
+      "redeem": "Utilitzeu aquest codi a l'hora de pagar per bescanviar-lo.",
+      "shop_link": "Comença a comprar",
+      "print": "Imprimeix la targeta regal",
+      "disabled": "Aquesta targeta regal s'ha desactivat",
+      "expired": "Va caducar el {{ expiry }}",
+      "active": "Caduca el {{ expiry }}",
+      "add_apple_wallet": "Afegeix a Apple Wallet"
+    }
+  },
+  "layout": {
+    "side_nav": {
+      "account": "El teu compte",
+      "logout": "Tancar sessió",
+      "signin": "Inicia sessió",
+      "back": "Tornar"
+    },
+    "footer": {
+      "newsletter": "Registra't a la nostra llista de correu",
+      "newsletter_placeholder": "El teu email",
+      "newsletter_submit": "Uneix-te",
+      "newsletter_success": "Gràcies per subscriure't.",
+      "social": "Connecta't amb nosaltres",
+      "platform": "{{ name }} el {{ platform }}",
+      "copyright_html": "&copy; Copyright {{ year }}, {{ shop_name }}."
+    }
+  },
+  "date_formats": {
+    "day_month_and_year": "%B %e, %Y",
+    "month_and_year": "%B %Y",
+    "date_and_time": "%B %e, %Y a %I:%M %P"
+  }
+}

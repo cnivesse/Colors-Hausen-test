@@ -1,0 +1,27 @@
+{%- liquid
+  assign image = 'image-' | append: index
+  assign url = 'url-' | append: index
+  assign text = 'text-' | append: index
+  assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: ","
+  assign image = block.settings[image]
+-%}
+<div class="image column">
+  {% if block.settings[url] != blank %}<a href="{{ block.settings[url] }}">{% endif %}
+    <picture>
+      <source srcset=
+        "{% for dimension in dimensions %}
+          {% assign img_url = dimension | append: 'x' %}
+          {% if squared %}
+            {% assign img_url = img_url | append: dimension %}
+          {% endif %}
+          {{ image | img_url: img_url }} {{ dimension }}w,
+        {% endfor %}"
+        sizes="100vw"
+      >
+      <img src="{{ image | img_url: '2048x' }}" width="{{ image.width }}" height="{{ image.height }}" style="width: 100%; height: auto;">
+    </picture>
+    {% if block.settings[text] != blank %}
+      <p>{{ block.settings[text] }}</p>
+    {% endif %}
+  {% if block.settings[url] != blank %}</a>{% endif %}
+</div>

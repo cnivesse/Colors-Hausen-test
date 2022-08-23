@@ -1,0 +1,62 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'customer.account.section_title' | t }}</h2>
+    <h1>{{ 'customer.account.title' | t: customer_name: customer.name }}</h1>
+
+    <h3>Account details</h3>
+    <div class="account-details">
+      <div class="name">{{ customer.name }}</div>
+      <p>{{ customer.email }}</p>
+      {% if customer.default_address %}
+        <p class="address">
+          {% capture address %}
+            {{ customer.default_address.address1 }}{% if customer.default_address.address2 != "" %}, {{ customer.default_address.address2 }}{% endif %} 
+            {% if customer.default_address.city != "" %}<br>{{ customer.default_address.city }},{% endif %}
+            {% if customer.default_address.province_code != "" %} {{ customer.default_address.province_code | upcase }}{% endif %}
+            {% if customer.default_address.zip != "" %} {{ customer.default_address.zip | upcase }}{% endif %}
+            {% if customer.default_address.country != "" %}<br>{{ customer.default_address.country }}{% endif %}
+          {% endcapture %}  
+          {{ address }}
+        </p>
+      {% endif %}
+    </div>
+    <div class="menu">
+      {% if customer.addresses_count == 0 %}
+        <a href="{{ routes.account_addresses_url }}" class="btn solid">{{ 'customer.account.add_address_html' | t }}</a>
+      {% else %}
+        <a href="{{ routes.account_addresses_url }}" class="btn solid">{{ 'customer.account.edit_addresses_html' | t: count: customer.addresses_count }}</a>
+      {% endif %}
+      <a href="{{ routes.account_logout_url }}" class="btn border">{{ 'layout.side_nav.logout' | t }}</a>
+    </div>
+
+    <h3>Order history</h3>
+    <div class="orders">
+      {% paginate customer.orders by 12 %}
+        {% for order in customer.orders %}
+          <div class="order">
+            {% capture date %}{{ order.created_at | date: format: 'day_month_and_year' }}{% endcapture %}
+            {% capture order_link %}<a href="{{ order.customer_url }}">{{ 'customer.orders.order' | t: id: order.name }}</a>{% endcapture %}
+            {% capture financial_status %}<span class="highlight {{ order.financial_status_label | handleize }}">{{ order.financial_status_label }}</span>{% endcapture %}
+            {% capture fulfillment_status %}<span class="highlight {{ order.fulfillment_status_label | handleize }}">{{ order.fulfillment_status_label }}</span>{% endcapture %}
+            {{ 'customer.orders.order_description_html' | t: date: date, order: order_link, financial_status: financial_status, fulfillment_status: fulfillment_status }}
+          </div>
+        {% else %}
+          <div class="order">
+            <p class="expanded">No orders</p>
+          </div>
+        {% endfor %}
+        {% render 'pagination' with paginate as paginate %}
+      {% endpaginate %}
+    </div>
+    <div class="menu">
+      <a href="{{ routes.all_products_collection_url }}" class="btn solid">Create new order</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.account-account.name",
+  "class": "section-standalone section-account"
+}
+{% endschema %}

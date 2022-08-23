@@ -1,0 +1,86 @@
+<div class="content blog article {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }}">
+    <div class="article">
+      {% if section.settings.featured_article != blank %}
+        {% assign article = articles[section.settings.featured_article] %}
+        {% assign blog = blogs[article.blog] %}
+        {%- liquid
+          if section.settings.show_excerpt
+            assign format = 'excerpt'
+          else
+            assign format = 'article'
+          endif
+        -%}
+        {% render 'post', article: article, template: format %}
+      {% else %}
+        {% render 'dummie-post' %}
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-article.name",
+  "class": "section-featured-article",
+  "settings": [
+    {
+      "type": "article",
+      "id": "featured_article",
+      "label": "t:sections.featured-article.settings.featured_article.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "label": "t:sections.featured-article.settings.show_excerpt.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "facebook_sharing_articles",
+      "label": "t:sections.featured-article.settings.facebook_sharing_articles.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "twitter_sharing_articles",
+      "label": "t:sections.featured-article.settings.twitter_sharing_articles.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pinterest_sharing_articles",
+      "label": "t:sections.featured-article.settings.pinterest_sharing_articles.label",
+      "info": "t:sections.featured-article.settings.pinterest_sharing_articles.info",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-article.presets.name"
+    }
+  ]
+}
+{% endschema %}

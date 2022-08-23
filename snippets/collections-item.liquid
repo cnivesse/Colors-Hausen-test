@@ -1,0 +1,42 @@
+{%- capture collection_item_width -%}
+  {%- render 'get-collection-item-width', collection_count: collection_count, collection_index: collection_index -%}
+{%- endcapture -%}
+<a href="{{ collection.url }}" class="collections-item {{ collection_item_width }} {{ section.settings.collection_height }} {{ section.settings.collection_alignment }} {{ section.settings.collection_image_size }} {% if section.settings.collection_underline %}with-underline{% endif %}" {{ block_attributes }}>
+  {% unless section.settings.collection_titles == 'hidden' %}
+    <h1>{{ collection.title }}{% if section.settings.collection_show_arrow %} {{ 'collections.general.arrow' | t }}{% endif %}</h1>
+  {% endunless %}
+  {% if collection_item_width != blank %}
+    {% if collection_item_width == 'one-whole' %}
+      {% assign image_size = "2048x" %}
+    {% elsif collection_item_width == 'one-half' %}
+      {% assign image_size = "1024x" %}
+    {% else %}
+      {% assign image_size = "600x" %}
+    {% endif %}
+  {% else %}
+    {% assign image_size = "1024x" %}
+  {% endif %}
+
+  {% if collection.image %}
+    {% assign image = collection.image %}
+  {% else %}
+    {% assign image = collection.products.first.featured_media.preview_image %}
+  {% endif %}
+
+  <style type="text/css">
+    #image-{{ section.id }}-{{ collection.id }} {
+      {% render 'resp-bg-img', image: image, size: image_size %}
+    }
+    {% assign sizes = "960,600,375" | split: "," %}
+    {% for size in sizes %}
+      {% assign size_x = size | append: 'x' %}
+      @media screen and (max-width: {{ size }}px) {
+        #image-{{ section.id }}-{{ collection.id }} {
+          {% render 'resp-bg-img', image: image, size: size_x %}
+        }
+      }
+    {% endfor %}
+
+  </style>
+  <div id="image-{{ section.id }}-{{ collection.id }}" class="image opacity-{{ section.settings.collection_image_opacity }}"></div>
+</a>

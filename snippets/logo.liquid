@@ -1,0 +1,44 @@
+<div itemscope itemtype="http://schema.org/Organization">
+  {% unless settings.logo %}
+    <style type="text/css">
+      {{ settings.logo_font | font_face: font_display: 'swap' }}
+      h1.logo {
+        font-family: {{ settings.logo_font.family }}, {{ settings.logo_font.fallback_families }};
+        font-weight: {{ settings.logo_font.weight | default: 400 }};
+        text-transform: {{ settings.type_logo_text_transform }};
+      }
+    </style>
+  {% endunless %}
+  <a class="logo" href="{{ routes.root_url }}" itemprop="url" tabindex="-1">
+    <h1 class="logo">
+      {%- if settings.logo or section.settings.transparent_header_logo -%}
+        {% capture image_size %}{{ settings.logo_max_width }}x{% endcapture %}
+        {%- if settings.logo %}
+          <img src="{{ settings.logo | img_url: image_size }}"
+               srcset=
+                "{{ settings.logo | img_url: image_size, scale: 1 }} 1x,
+                 {{ settings.logo | img_url: image_size, scale: 2 }} 2x,
+                 {{ settings.logo | img_url: image_size, scale: 3 }} 3x
+                "
+               alt="{{ settings.logo.alt | default: shop.name }}"
+               itemprop="logo">
+        {%- endif -%}
+        {%- if section.settings.transparent_header_logo -%}
+          <img src="{{ section.settings.transparent_header_logo | img_url: image_size }}"
+               srcset=
+                "{{ section.settings.transparent_header_logo | img_url: image_size, scale: 1 }} 1x,
+                 {{ section.settings.transparent_header_logo | img_url: image_size, scale: 2 }} 2x,
+                 {{ section.settings.transparent_header_logo | img_url: image_size, scale: 3 }} 3x
+                "
+               alt="{{ section.settings.transparent_header_logo.alt | default: shop.name }}"
+               class="transparent"
+          >
+        {%- endif -%}
+      {%- elsif settings.logo_text != blank -%}
+        {{ settings.logo_text }}
+      {%- else -%}
+        {{ shop.name }}
+      {%- endif -%}
+    </h1>
+  </a>
+</div>

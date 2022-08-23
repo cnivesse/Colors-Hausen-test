@@ -1,0 +1,43 @@
+<a class="collection-product {{ layout_class }} {% if item.image == blank %}text-only{% endif %}" href="{{ item.url }}">
+  <div class="inner">
+    {%- if item.image != blank -%}
+      {%- liquid
+        assign aspect_ratio = item.image.aspect_ratio
+        if item.image.aspect_ratio == nil
+          assign aspect_ratio = 1
+        endif
+      -%}
+      <div class="image {{ settings.image_ratio }}"
+        {% if settings.image_ratio == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: aspect_ratio | times: 100 }}%;"{% endif %}
+      >
+        {% render 'resp-img',
+         image: item.image,
+         alt: item.image.alt,
+         class: "image",
+         default_size: "1080x",
+         sizes: "(max-width: 960px) 100vw, 860px",
+         itemprop: "image"
+        %}
+      </div>
+    {%- endif -%}
+    <div class="info">
+      <div class="metas">
+        <div class="line">
+          <div class="title">{{ item.title | truncate: 50 | escape }}</div>
+          {% if item.published_at != blank %}
+            <div class="subtitle">{{ item.published_at | time_tag: format: 'month_and_year' }}</div>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+    <div class="tag">
+      {%- case item.object_type -%}
+      {%- when 'article' -%}
+        {%- assign tag = 'general.search.article' | t -%}
+      {%- when 'page' -%}
+        {%- assign tag = 'general.search.page' | t -%}
+      {%- endcase -%}
+      <div class="shape solid {{ settings.product_tag_shape }} sold-out small">{{ tag }}</div>
+    </div>
+  </div>
+</a>

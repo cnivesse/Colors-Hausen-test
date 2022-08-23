@@ -1,0 +1,28 @@
+{%- for variant in product.variants -%}
+  {% if variant.price == product.price_min %}
+    {% assign variant_price_min = variant %}
+    {% break %}
+  {% endif %}
+{%- endfor -%}
+
+<div class="collection-product-price">
+  <div class="price">
+    {% if variant_price_min.compare_at_price > variant_price_min.price %}
+      <div class="price striped">{{ variant_price_min.compare_at_price | money }}</div>
+    {% endif %}
+    {% if product.price_varies %}
+      {% capture price_min %}{{ variant_price_min.price | money }}{% endcapture %}
+      {{ 'products.product.from_lowest_price_html' | t: lowest_price: price_min }}
+    {% else %}
+      {{ variant_price_min.price | money }}
+    {% endif %}
+  </div>
+  {% if variant_price_min.unit_price %}
+    {%- capture unit_price -%}
+      {%- render 'unit-price', from: variant_price_min -%}
+    {%- endcapture -%}
+    <div class="unit">
+      {{- unit_price -}}
+    </div>
+  {% endif %}
+</div>

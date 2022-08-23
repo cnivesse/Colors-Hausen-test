@@ -1,0 +1,272 @@
+<div class="content map show-background {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="map" data-api-key="{{ section.settings.api_key }}" data-map-style-id="{{ section.settings.map_style_id }}">
+  {%- liquid
+    assign display_map = false
+    if section.settings.api_key != blank and section.settings.map_address
+      assign display_map = true
+    endif
+  -%}
+  <div class="background">
+    {% if display_map %}
+      <div class="map-container" id="Map-{{ section.id }}" data-address-setting="{{ section.settings.map_address | escape }}">
+        <div class="warning"></div>
+      </div>
+    {% else %}
+      {% if section.settings.image %}
+        <div class="image"></div>
+        <style type="text/css">
+          #shopify-section-{{ section.id }} .image {
+            background-position: {{ section.settings.position }};
+            {% render 'resp-bg-img', image: section.settings.image, size: '4096x' %}
+          }
+          {% assign sizes = "2048,1944,1728,1512,1024,768,512,375" | split: "," %}
+          {% for size in sizes %}
+            {% assign size_x = size | append: 'x' %}
+            @media screen and (max-width: {{ size }}px) {
+              #shopify-section-{{ section.id }} .image {
+                {% render 'resp-bg-img', image: section.settings.image, size: size_x %}
+              }
+            }
+          {% endfor %}
+        </style>
+      {% else %}
+        {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+      {% endif %}
+    {% endif %}
+  </div>
+  <div class="info" style="max-width: {{ section.settings.content_max_width }}px;">
+    {% if section.settings.heading != blank %}
+      <h1>{{ section.settings.heading | escape }}</h1>
+    {% endif %}
+    {% if section.settings.address != blank %}
+      <div>
+        {{ section.settings.address }}
+      </div>
+    {% endif %}
+    {% if section.settings.button != blank and section.settings.map_address != blank %}
+      <a href="https://maps.google.com?daddr={{ section.settings.map_address | escape }}" target="_blank" class="btn border more">
+        {{ section.settings.button | escape }}
+      </a>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.map.name",
+    "class": "map-section",
+    "settings": [
+     {
+        "type": "text",
+        "id": "heading",
+
+        "label": "t:sections.map.settings.heading.label",
+        "default": {
+          "ar": "متجرنا",
+          "bg": "Нашият магазин",
+          "ca": "La nostra botiga",
+          "cs": "Náš obchod",
+          "da": "Vores butik",
+          "de": "Unser Geschäft",
+          "el": "Το κατάστημά μας",
+          "en": "Our store",
+          "es": "Nuestra tienda",
+          "fi": "Meidän myymälämme",
+          "fr": "Notre magasin",
+          "he": "החנות שלנו",
+          "hr": "Naša trgovina",
+          "hu": "A mi üzletünk",
+          "id": "Toko kami",
+          "it": "Il nostro negozio",
+          "ja": "当店",
+          "ko": "저희 가게",
+          "lt": "Mūsų parduotuvė",
+          "nb": "Vår butikk",
+          "nl": "Onze winkel",
+          "pl": "Nasz sklep",
+          "pt-BR": "Nossa loja",
+          "pt-PT": "Nossa loja",
+          "ro": "Magazinul nostru",
+          "ru": "Наш магазин",
+          "sk": "Naša predajňa",
+          "sl": "Naša trgovina",
+          "sv": "Vår butik",
+          "th": "ร้านของเรา",
+          "tr": "bizim mağaza",
+          "vi": "Cửa hàng của chúng tôi",
+          "zh-CN": "我们的商店",
+          "zh-TW": "我們的商店"
+        }
+      },
+      {
+        "type": "richtext",
+        "id": "address",
+        "label": "t:sections.map.settings.address.label",
+        "default": {
+          "en": "<p>123 Fake St.<br>Toronto, Canada</p><p>Mon - Fri, 10am - 9pm<br>Saturday, 11am - 9pm<br>Sunday, 11am - 5pm</p>",
+          "es": "<p>123 Fake St. <br> Toronto, Canadá</p><p>Lun - Vie, 10 a.m. - 9 p.m. <br> Sábados, de 11 am a 09 pm <br> Domingos, de 11 am a 05 pm</p>",
+          "it": "<p>123 Fake St.<br>Toronto, Canada</p><p>Lun - Ven, 10:00 - 21:00<br>Sabato, 11:00 - 21:00<br>Domenica, 11:00 - 17:00</p>",
+          "fr": "<p>123 Fake St.<br>Toronto, Canada</p><p>Lun - Ven, 10h - 21h<br>Samedi, 11h - 21h<br>Dimanche, 11h - 17h</p>",
+          "de": "<p>123 Fake St.<br>Toronto, Kanada</p><p>Mo–Fr, 10–21 Uhr<br>Samstag, 11–21 Uhr<br>Sonntag, 11–17 Uhr</p>"
+        }
+      },
+      {
+        "id": "map_address",
+        "type": "text",
+        "label": "t:sections.map.settings.map_address.label",
+        "info": "t:sections.map.settings.map_address.info",
+        "default": "301 Front St W, Toronto"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "label": "t:sections.map.settings.button.label",
+        "default": {
+          "ar": "الاتجاهات",
+          "bg": "Упътвания",
+          "ca": "Indicacions",
+          "cs": "Pokyny",
+          "da": "Vejbeskrivelse",
+          "de": "Richtungen",
+          "el": "Κατευθύνσεις",
+          "en": "Directions",
+          "es": "Direcciones",
+          "fi": "Ohjeet",
+          "fr": "les directions",
+          "he": "כיוונים",
+          "hr": "Upute",
+          "hu": "Útvonalak",
+          "id": "Petunjuk arah",
+          "it": "Indicazioni",
+          "ja": "方向",
+          "ko": "지도",
+          "lt": "Kryptys",
+          "nb": "Veibeskrivelse",
+          "nl": "Routebeschrijving",
+          "pl": "Wskazówki",
+          "pt-BR": "instruções",
+          "pt-PT": "instruções",
+          "ro": "Directii",
+          "ru": "Направления",
+          "sk": "Pokyny",
+          "sl": "Navodila",
+          "sv": "Vägbeskrivning",
+          "th": "ทิศทาง",
+          "tr": "Talimatlar",
+          "vi": "Hướng",
+          "zh-CN": "方向",
+          "zh-TW": "方向"
+        }
+      },
+      {
+        "type": "header",
+        "content": "t:sections.map.settings.header.content"
+      },
+      {
+        "id": "api_key",
+        "type": "text",
+        "label": "t:sections.map.settings.api_key.label",
+        "info": "t:sections.map.settings.api_key.info"
+      },
+      {
+        "id": "map_style_id",
+        "type": "text",
+        "label": "t:sections.map.settings.map_style_id.label",
+        "info": "t:sections.map.settings.map_style_id.info",
+        "default": "1c00f2405aec9e6d"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.map.settings.image.label",
+        "info": "t:sections.map.settings.image.info"
+      },
+      {
+        "type": "select",
+        "id": "position",
+        "label": "t:sections.map.settings.position.label",
+        "default": "center center",
+        "options": [
+          {
+            "label": "t:sections.map.settings.position.options__1",
+            "value": "top left"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__2",
+            "value": "top center"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__3",
+            "value": "top right"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__4",
+            "value": "center left"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__5",
+            "value": "center center"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__6",
+            "value": "center right"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__7",
+            "value": "bottom left"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__8",
+            "value": "bottom center"
+          },
+          {
+            "label": "t:sections.map.settings.position.options__9",
+            "value": "bottom right"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:sections.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded",
+        "label": "t:sections.settings.expanded.label",
+        "default": false
+      },
+      {
+        "type": "range",
+        "id": "content_max_width",
+        "label": "t:sections.settings.content_max_width.label",
+        "default": 400,
+        "min": 300,
+        "max": 1000,
+        "step": 50,
+        "unit": "px"
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "t:sections.settings.collapsed.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_desktop",
+        "label": "t:sections.settings.show_on_desktop.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_mobile",
+        "label": "t:sections.settings.show_on_mobile.label",
+        "default": true
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.map.presets.name"
+      }
+    ]
+  }
+{% endschema %}

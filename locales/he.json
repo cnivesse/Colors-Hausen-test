@@ -1,0 +1,356 @@
+{
+  "general": {
+    "404": {
+      "section_title": "עמוד 404 לא נמצא",
+      "title": "מצטערים, הדף שביקשת לא קיים.",
+      "continue_shopping": "המשך בקניות",
+      "open_menu": "פתח את התפריט"
+    },
+    "accessibility": {
+      "skip_to_content": "דלג לתוכן",
+      "close_modal": "סגור",
+      "video_player": "נגן וידאו",
+      "star_reviews_info": "{{ rating_value }} מתוך {{ rating_max }} כוכבים"
+    },
+    "meta": {
+      "tags": "מתויג \"{{ tags }}\"",
+      "page": "עמוד {{ page }}"
+    },
+    "search": {
+      "title": "לחפש",
+      "placeholder": "לחפש...",
+      "no_results_for": "החיפוש שלך עבור \"{{ terms }}\" לא הניב תוצאות.",
+      "heading": {
+        "one": "תוצאות חיפוש",
+        "other": "תוצאות חיפוש"
+      },
+      "results_count": {
+        "zero": "אין תוצאות",
+        "one": "תוצאה {{ count }}",
+        "other": "{{ count }} תוצאות"
+      },
+      "results_with_count": {
+        "one": "{{ count }} תוצאה עבור \"{{ terms }}\":",
+        "other": "{{ count }} תוצאות עבור \"{{ terms }}\":"
+      },
+      "page": "עמוד",
+      "article": "בלוג"
+    },
+    "navigation": {
+      "header_label": "תַפרִיט",
+      "cancel_html": "או {{ link }}",
+      "return_to_store": "חזור לחנות"
+    },
+    "newsletter_form": {
+      "newsletter_email": "האימייל שלך",
+      "submit": "הירשם",
+      "confirmation": "תודה שנרשמת."
+    },
+    "page_title": {
+      "tagged": "מתויג \"{{ tags }}\"",
+      "pagination": "עמוד {{ current_page }}"
+    },
+    "password_page": {
+      "opening_soon": "נפתח בקרוב",
+      "login_form_heading": "כניסה לחנות באמצעות סיסמה:",
+      "login_form_password_placeholder": "הסיסמה שלך",
+      "login_form_submit": "להיכנס",
+      "signup_form_heading": "גלה מתי נפתח:",
+      "signup_form_email_placeholder": "האימייל שלך",
+      "signup_form_submit": "שלח",
+      "signup_form_success": "נשלח לך מייל ממש לפני הפתיחה!",
+      "social_heading": "מצאו אותנו גם ב:",
+      "admin_link_html": "האם אתה בעל החנות? <a href=\"/admin\" class=\"text-link\">היכנס כאן</a>",
+      "password_link_html": "היכנס עם סיסמה",
+      "back_link_html": "חזור",
+      "powered_by_shopify_html": "חנות זו תופעל על ידי {{ shopify }}"
+    },
+    "country": {
+      "dropdown_label": "מדינה/אזור"
+    },
+    "language": {
+      "dropdown_label": "שפה"
+    }
+  },
+  "blogs": {
+    "general": {
+      "no_articles": "מצטערים, כרגע אין מאמרים."
+    },
+    "article": {
+      "meta_html": "פורסם ב-{{ date }}",
+      "read_entire_article_html": "קרא את כל המאמר",
+      "next_article_html": "פוסט חדש יותר &rarr;",
+      "previous_article_html": "&larr; פוסט ישן יותר"
+    },
+    "comment_form": {
+      "title": "השאר תגובה",
+      "name": "שֵׁם",
+      "email": "אימייל",
+      "message": "הוֹדָעָה",
+      "post": "לִשְׁלוֹחַ",
+      "moderated": "שימו לב, יש לאשר הערות לפני פרסומן",
+      "success_moderated_html": "התגובה שלך פורסמה בהצלחה.<br>אנחנו נפרסם אותה בעוד זמן מה, מכיוון שהבלוג שלנו מנוהל.",
+      "success": "התגובה שלך פורסמה בהצלחה! תודה!"
+    }
+  },
+  "collections": {
+    "general": {
+      "catalog": "קָטָלוֹג",
+      "collections": "אוספים",
+      "no_collections": "מצטערים, כרגע אין אוספים.",
+      "no_products": "לא נמצאו מוצרים",
+      "arrow": "→",
+      "filter_and_sort": "מסננים ומיון",
+      "sort_button": "סוג",
+      "filter_button": "לְסַנֵן",
+      "sort_by": "מיין לפי:",
+      "filter_by": "סינון לפי:",
+      "filters_selected": "{{ count }} נבחר",
+      "max_price": "המחיר הגבוה ביותר הוא {{ price }}",
+      "product_count": "מציג {{ count }} מתוך {{ total }} מוצרים",
+      "from": "מ",
+      "to": "ל",
+      "reset": "אִתחוּל",
+      "apply": "להגיש מועמדות",
+      "clear": "ברור",
+      "clear_all": "נקה הכל"
+    },
+    "tags": {
+      "all": "את כל"
+    }
+  },
+  "products": {
+    "product": {
+      "buy_html": "קנה<br>עכשיו",
+      "on_sale_html": "מְכִירָה",
+      "from_lowest_price_html": "מ-{{ lowest_price }}",
+      "sold_out_html": "סולד<br>אאוט",
+      "new_html": "חָדָשׁ",
+      "unavailable": "אינו זמין",
+      "quantity": "כַּמוּת",
+      "available_units_html": "<span class='units'>{{ units }}</span> יחידות זמינות",
+      "add_to_cart": "הוסף לעגלה",
+      "pre_order": "הזמנה מראש",
+      "share_on": "שתף ב-{{ platform}}",
+      "view_in_space": "הצג בחלל שלך",
+      "view_in_space_label": "הצג בחלל שלך, טוען פריט בחלון מציאות רבודה",
+      "total_reviews": {
+        "zero": "אין ביקורות",
+        "one": "{{ count }} ביקורת",
+        "other": "{{ count }} ביקורות"
+      }
+    },
+    "zoom": {
+      "next": "הבא (מקש חץ ימינה)",
+      "prev": "הקודם (מקש חץ שמאלה)",
+      "close": "סגור (Esc)"
+    }
+  },
+  "contact": {
+    "form": {
+      "section_title": "איש קשר",
+      "title": "נהיה בקשר",
+      "name": "שֵׁם",
+      "email": "אימייל",
+      "phone": "מספר טלפון (אופציונלי)",
+      "message": "הוֹדָעָה",
+      "send": "לִשְׁלוֹחַ",
+      "post_success": "תודה שפנית אלינו. אנו נחזור אליך בהקדם האפשרי."
+    }
+  },
+  "customer": {
+    "login": {
+      "section_title": "להתחבר",
+      "title": "התחל הפעלה חדשה",
+      "email": "אימייל",
+      "password": "סיסמה",
+      "sign_in_button": "להתחבר",
+      "forgot_password": "שכחת ססמה?",
+      "register": "ליצור חשבון חדש",
+      "password_section_title": "לאפס את הסיסמה שלך",
+      "password_title": "תקבל מייל עם הנחיות",
+      "password_action": "שלח אימייל",
+      "password_cancel": "לְבַטֵל",
+      "guest_section_title": "לא רוצים להירשם?",
+      "guest_title": "המשך כאורח",
+      "guest_action": "דלג על רישום"
+    },
+    "reset_password": {
+      "section_title": "אפס את סיסמת החשבון",
+      "title": "הזן סיסמה חדשה עבור {{ email }}",
+      "password": "סיסמה",
+      "password_confirm": "אשר סיסמה",
+      "submit": "לאפס את הסיסמה"
+    },
+    "register": {
+      "section_title": "ליצור חשבון חדש",
+      "title": "ספק מידע ליצירת קשר",
+      "first_name": "שם פרטי",
+      "last_name": "שם משפחה",
+      "email": "אימייל",
+      "password": "סיסמה",
+      "submit": "צור חשבון",
+      "login": "כבר יש לך חשבון?"
+    },
+    "account": {
+      "section_title": "החשבון שלי",
+      "title": "ברוך שובך {{ customer_name }}",
+      "add_address_html": "הוסף את הכתובת שלך",
+      "edit_addresses_html": "ערוך כתובות ({{ count }})"
+    },
+    "orders": {
+      "order": "הזמנה {{ id }}",
+      "order_description_html": "<b>{{ date }}</b> — {{ order }} הוצב והסטטוס הנוכחי הוא {{ financial_status }} ו-{{ fulfillment_status }}",
+      "empty": "אין פקודות."
+    },
+    "order": {
+      "section_title": "היסטוריית הזמנות",
+      "date": "ממוקם ב-{{ date }}",
+      "canceled": "ההזמנה בוטלה בתאריך {{ date }}",
+      "canceled_reason": "הסיבה הייתה: {{ reason }}",
+      "billing_address": "כתובת לחיוב",
+      "payment_status": "מצב תשלום",
+      "shipping_address": "כתובת למשלוח",
+      "fulfillment_status": "מצב הגשמה",
+      "discount": "הנחה",
+      "price": "מחיר",
+      "unit_price": "מחיר ליחידה",
+      "quantity": "כַּמוּת",
+      "subtotal": "סכום משנה",
+      "tax": "מַס",
+      "total": "סך הכל",
+      "return_to_account": "חזור לחשבון שלך"
+    },
+    "activate_account": {
+      "section_title": "הפעל חשבון",
+      "title": "הגדר את הסיסמה שלך כדי להפעיל את החשבון שלך",
+      "password": "סיסמה",
+      "password_confirm": "אשר סיסמה",
+      "submit": "הפעל חשבון",
+      "cancel": "דחה הזמנה"
+    },
+    "addresses": {
+      "section_title": "פרטי חשבון",
+      "title": "פנקס הכתובות",
+      "subtitle": "אלו הכתובות המקושרות לחשבון שלך",
+      "empty": "פנקס הכתובות שלך ריק כרגע.",
+      "default": "כתובת ברירת מחדל",
+      "add_new": "כתובת חדשה",
+      "edit_address": "ערוך כתובת",
+      "recipient": "מקבל",
+      "first_name": "שם פרטי",
+      "last_name": "שם משפחה",
+      "company": "חֶברָה",
+      "address": "כתובת",
+      "address1": "כתובת 1",
+      "address2": "כתובת 2",
+      "city": "עִיר",
+      "country": "מדינה",
+      "province": "מָחוֹז",
+      "zip": "מיקוד/מיקוד",
+      "phone": "טלפון",
+      "phone_label": "טל.",
+      "set_default_label": "להגדיר ככתובת ברירת מחדל?",
+      "set_default_action": "כן בבקשה.",
+      "add_address": "הוסף כתובת חדשה",
+      "update": "עדכן כתובת",
+      "cancel": "לְבַטֵל",
+      "edit": "לַעֲרוֹך",
+      "save": "שמור כתובת",
+      "delete": "לִמְחוֹק",
+      "delete_question": "האם אתה בטוח שברצונך למחוק כתובת זו?",
+      "return": "חזור לחשבון שלך"
+    }
+  },
+  "sections": {
+    "onboarding": {
+      "featured_product_title": "דוגמה למוצר מומלץ",
+      "add_products_html": "הוסף את<br>המוצרים שלך",
+      "add_collection": "שם האוסף",
+      "vendor": "מוֹכֵר",
+      "product_title": "כותרת המוצר",
+      "product_description": "תיאור מוצר. חבר טקסט כלשהו למוצר כדי להדגיש תכונות. מנשא עור זה עשוי להפוך את השמיכה התאומה שלך לשותף נהדר לקמפינג. שמיכות מחנה עוצבו לראשונה כדי לענות על הדרישות הקפדניות של צפון מערב האוקיינוס השקט הפראי והלא מאולף והיו אהובות על רועי הצאן המוקדמים בצפון מערב. כיום, השמיכות החמות והעמידות הללו מציעות שירות יוצא מן הכלל ועיצוב מחוספס שיספקו שנים של חום ונוחות.",
+      "blog_title": "הכותרת של הבלוג שלך",
+      "post_title": "הכותרת של הפוסט שלך",
+      "post_excerpt": "החנות שלך לא פרסמה עדיין פוסטים בבלוג. ניתן להשתמש בבלוג כדי לדבר על השקות מוצרים חדשים, טיפים או חדשות אחרות שאתה רוצה לחלוק עם הלקוחות שלך. אתה יכול לעיין בבלוג המסחר האלקטרוני של Shopify לקבלת השראה ועצות עבור החנות והבלוג שלך.",
+      "page_title": "כותרת העמוד שלך",
+      "page_excerpt_html": "פסקה זו אינה כוללת כרגע תוכן דף כלשהו.<br>בחר אחד מהדפים שלך באמצעות סרגל הצד.",
+      "no_content_html": "קטע זה אינו כולל כרגע תוכן.<br>הוסף תוכן לקטע זה באמצעות סרגל הצד."
+    }
+  },
+  "cart": {
+    "general": {
+      "section_title": "העגלה שלך",
+      "total_items": {
+        "zero": "העגלה שלך ריקה כרגע",
+        "one": "{{ count }} פריט",
+        "other": "{{ count }} פריטים"
+      },
+      "note": "הנחיות מיוחדות למוכר:",
+      "subtotal": "סכום משנה",
+      "taxes_and_shipping_policy_at_checkout_html": "מיסים ו<a href=\"{{ link }}\">משלוח</a> מחושבים בקופה.",
+      "taxes_included_but_shipping_at_checkout": "מס כלול ומשלוח מחושב בקופה.",
+      "taxes_included_and_shipping_policy_html": "מס כלול. <a href=\"{{ link }}\">משלוח</a> מחושב בקופה.",
+      "taxes_and_shipping_at_checkout": "משלוח ומיסים מחושבים בקופה.",
+      "update_html": "עדכן עגלת קניות",
+      "checkout_html": "לבדוק",
+      "empty": "העגלה שלך ריקה כרגע.",
+      "continue_browsing": "המשך לגלוש"
+    }
+  },
+  "map": {
+    "errors": {
+      "address_error": "שגיאה בחיפוש הכתובת הזו",
+      "address_no_results": "אין תוצאות עבור כתובת זו",
+      "address_query_limit_html": "חרגת ממגבלת השימוש ב-Google API. שקול לשדרג ל<a href=\"https://developers.google.com/maps/premium/usage-limits\">תוכנית פרימיום</a>.",
+      "auth_error_html": "הייתה בעיה באימות מפתח ה-API של מפות Google."
+    }
+  },
+  "store_availability": {
+    "general": {
+      "view_store_info": "הצג מידע על החנות",
+      "check_other_stores": "בדוק זמינות בחנויות אחרות",
+      "pick_up_available": "איסוף זמין",
+      "pick_up_currently_unavailable": "איסוף לא זמין כרגע",
+      "pick_up_available_at_html": "איסוף זמין ב-<b>{{ location_name }}</b>",
+      "pick_up_unavailable_at_html": "איסוף לא זמין כעת ב-<b>{{ location_name }}</b>"
+    }
+  },
+  "gift_cards": {
+    "issued": {
+      "page_title": "הנה כרטיס המתנה {{ value }} שלך עבור {{ shop }}!",
+      "section_title": "כרטיס מתנה",
+      "title": "הנה כרטיס המתנה שלך!",
+      "amount_left_html": "{{ amount }} <small>שמאל</small>",
+      "redeem": "השתמש בקוד זה בקופה כדי לממש אותו.",
+      "shop_link": "התחל לקנות",
+      "print": "הדפס כרטיס מתנה",
+      "disabled": "כרטיס מתנה זה הושבת",
+      "expired": "התוקף פג ב-{{ expiry }}",
+      "active": "יפוג ב-{{ expiry }}",
+      "add_apple_wallet": "הוסף לארנק אפל"
+    }
+  },
+  "layout": {
+    "side_nav": {
+      "account": "החשבון שלך",
+      "logout": "להתנתק",
+      "signin": "להתחבר",
+      "back": "חזור"
+    },
+    "footer": {
+      "newsletter": "הירשמו לרשימת התפוצה שלנו",
+      "newsletter_placeholder": "האימייל שלך",
+      "newsletter_submit": "לְהִצְטַרֵף",
+      "newsletter_success": "תודה שנרשמת.",
+      "social": "התחבר אלינו",
+      "platform": "{{ name }} ב-{{ platform }}",
+      "copyright_html": "&copy; זכויות יוצרים {{ year }}, {{ shop_name }}."
+    }
+  },
+  "date_formats": {
+    "day_month_and_year": "%B %e, %Y",
+    "month_and_year": "%B %Y",
+    "date_and_time": "%B %e, %Y ב-%I:%M %P"
+  }
+}

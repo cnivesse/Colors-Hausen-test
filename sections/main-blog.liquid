@@ -1,0 +1,111 @@
+<div class="content blog {{ section.settings.layout }} {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }} ">
+    {% if section.settings.show_heading %}
+      <div class="section-header">
+        <a href="{{ blog.url }}">
+          <h2 class="shopify-section-title">{{ blog.title }}</h2>
+        </a>
+        <a href="{{ shop.url }}{{ blog.url }}.atom" target="_blank" aria-label="RSS">
+          <h2 class="shopify-section-title rss">
+            <i class="fc fc-rss"></i>
+          </h2>
+        </a>
+        {% if current_tags %}
+          <h2 class="shopify-section-title divider">/</h2>
+          <h2 class="shopify-section-title">{{ current_tags.first }}</h2>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if blog.articles_count > 0 %}
+      {% paginate blog.articles by 10 %}
+        <div class="excerpts">
+          {% for article in blog.articles %}
+            {% capture class %}{% cycle blog.handle: 'col-0', 'col-1' %}{% endcapture %}
+            {% render 'post', article: article, class: class %}
+          {% endfor %}
+        </div>
+        {% render 'pagination' with paginate as paginate %}
+      {% endpaginate %}
+    {% else %}
+      <h3 class="empty">{{ 'blogs.general.no_articles' | t }}</h3>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-blog.name",
+  "settings": [
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.main-blog.settings.layout.label",
+      "default": "list",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.main-blog.settings.layout.options__1"
+        },
+        {
+          "value": "list",
+          "label": "t:sections.main-blog.settings.layout.options__2"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "featured_images_fixed_height_enabled",
+      "label": "t:sections.main-blog.settings.featured_images_fixed_height_enabled.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "featured_images_fixed_height",
+      "label": "t:sections.main-blog.settings.featured_images_fixed_height.label",
+      "default": 360,
+      "min": 50,
+      "max": 600,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "t:sections.settings.show_heading.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

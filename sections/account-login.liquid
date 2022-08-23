@@ -1,0 +1,71 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div id="login" class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'customer.login.section_title' | t }}</h2>
+    <h1>{{ 'customer.login.title' | t }}</h1>
+    {% form 'customer_login' %}
+      <div class="row with-top-border with-bottom-border">
+        <input class="text long{% if form.errors contains 'email' %} error{% endif %}" name="customer[email]" id="customer_email" placeholder="{{ 'customer.login.email' | t }}" type="email" autocorrect="off" autocapitalize="off" autofocus="autofocus" aria-label="{{ 'customer.login.email' | t }}">
+        {% render 'form-field-error', form: form, field: 'email' %}
+      </div>
+      {% if form.password_needed %}
+        <div class="row with-bottom-border">
+          <input class="text long{% if form.errors contains 'password' %} error{% endif %}" name="customer[password]" id="customer_password" placeholder="{{ 'customer.login.password' | t }}" type="password"  aria-label="{{ 'customer.login.password' | t }}">
+          {% render 'form-field-error', form: form, field: 'password' %}
+          <div class="recover-password">
+            <a class="underscore" href="#" data-action="toggle-recover-password">{{ 'customer.login.forgot_password' | t }}</a><br>
+          </div>
+        </div>
+      {% endif %}
+      {% render 'form-errors', form : form %}
+      <div class="row actions expanded-top">
+        <button class="btn solid" name="commit" type="submit" formnovalidate="formnovalidate">
+          {{ 'customer.login.sign_in_button' | t }}
+        </button>
+      </div>
+      <div class="row">
+        <a class="underline" href="{{ routes.account_register_url }}">{{ 'customer.login.register' | t }}</a>
+      </div>
+    {% endform %}
+  </div>
+  <div id="recover_password" class="inner with-layout-options centered hide">
+    <h2 class="shopify-section-title">{{ 'customer.login.password_section_title' | t }}</h2>
+    <h1>{{ 'customer.login.password_title' | t }}</h1>
+    {% form 'recover_customer_password' %}
+      <div class="row with-top-border with-bottom-border">
+        <input type="email" class="text long" name="email" id="recover-email" placeholder="{{ 'customer.login.email' | t }}" autocorrect="off" autocapitalize="off"  aria-label="{{ 'customer.login.email' | t }}">
+        {% render 'form-field-error', form: form, field: 'email' %}
+      </div>
+      {% render 'form-errors', form: form %}
+      <div class="row actions expanded-top">
+        <button type="submit" class="btn solid" formnovalidate="formnovalidate">
+          {{ 'customer.login.password_action' | t }}
+        </button>
+      </div>
+      <div class="row back">
+        {% capture link %}<a class="underline" data-action="toggle-recover-password">{{ 'customer.login.password_cancel' | t }}</a>{% endcapture %}
+        {{ 'general.navigation.cancel_html' | t: link: link }}
+      </div>
+    {% endform %}
+  </div>
+  {% if shop.checkout.guest_login %}
+    <div id="guest" class="inner with-layout-options centered">
+      <h2>{{ 'customer.login.guest_section_title' | t }}</h2>
+      <h1>{{ 'customer.login.guest_title' | t }}</h1>
+      {% form 'guest_login' %}
+        <div class="row actions">
+          <button type="submit" class="btn solid">
+            {{ 'customer.login.guest_action' | t }}
+          </button>
+        </div>
+      {% endform %}
+    </div>
+  {% endif %}
+</div>
+
+
+{% schema %}
+{
+  "name": "t:sections.account-login.name",
+  "class": "section-standalone section-account"
+}
+{% endschema %}

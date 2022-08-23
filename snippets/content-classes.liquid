@@ -1,0 +1,39 @@
+{%- liquid
+  assign content_classes = ''
+  if scope
+    if scope.settings.show_background
+      assign content_classes = content_classes | append: ' show-background'
+    endif
+    if scope.settings.expanded
+      assign content_classes = content_classes | append: ' expanded'
+    endif
+    if scope.settings.expanded_content
+      assign content_classes = content_classes | append: ' no-padding'
+    endif
+    if scope.settings.collapsed
+      assign content_classes = content_classes | append: ' collapsed'
+    endif
+    if scope.settings.show_on_desktop == false
+      assign content_classes = content_classes | append: ' hide-on-desktop'
+    endif
+    if scope.settings.show_on_mobile == false
+      assign content_classes = content_classes | append: ' hide-on-mobile'
+    endif
+  else
+    assign content_classes = content_classes | append: ' no-padding collapsed'
+    if settings.header_show_background == 'all-pages'
+      assign content_classes = content_classes | append: ' show-background'
+    elsif settings.header_show_background == 'only-homepage' and template == 'index'
+      assign content_classes = content_classes | append: ' show-background'
+    elsif settings.header_show_background == 'except-homepage' and template != 'index'
+      assign content_classes = content_classes | append: ' show-background'
+    endif
+    if settings.header_expanded
+      assign content_classes = content_classes | append: ' expanded'
+    endif
+    if settings.header_show_background == 'only-homepage' and template != 'index'
+      assign content_classes = content_classes | append: ' expanded'
+    endif
+  endif
+-%}
+{{ content_classes }}

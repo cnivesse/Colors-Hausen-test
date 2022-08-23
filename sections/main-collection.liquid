@@ -1,0 +1,105 @@
+<div class="content collection featured-collection {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="collection">
+  {% render 'collection', collection: collection %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection.name",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection.settings.paragraph__1.content"
+    },
+    {
+      "id": "show_collection_title",
+      "type": "checkbox",
+      "label": "t:sections.main-collection.settings.show_collection_title.label",
+      "default": true
+    },
+    {
+      "id": "show_collection_description",
+      "type": "checkbox",
+      "default": true,
+      "label": "t:sections.main-collection.settings.show_collection_description.label"
+    },
+    {
+      "id": "show_collection_image",
+      "type": "checkbox",
+      "default": true,
+      "label": "t:sections.main-collection.settings.show_collection_image.label",
+      "info": "t:sections.main-collection.settings.show_collection_image.info"
+    },
+    {
+      "id": "enable_filtering",
+      "type": "checkbox",
+      "label": "t:sections.main-collection.settings.enable_filtering.label",
+      "default": false,
+      "info": "t:sections.main-collection.settings.enable_filtering.info"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "label": "t:sections.main-collection.settings.filter_type.label",
+      "default": "regular",
+      "options": [
+        {
+          "value": "regular",
+          "label": "t:sections.main-collection.settings.filter_type.options__1"
+        },
+        {
+          "value": "tags",
+          "label": "t:sections.main-collection.settings.filter_type.options__2"
+        }
+      ]
+    },
+    {
+      "id": "enable_sorting",
+      "type": "checkbox",
+      "label": "t:sections.main-collection.settings.enable_sorting.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_labels",
+      "label": "t:sections.main-collection.settings.show_labels.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-collection.settings.header.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-collection.settings.paragraph__2.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

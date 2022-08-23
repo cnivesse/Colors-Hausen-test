@@ -1,0 +1,33 @@
+<div class="post {{ section.settings.layout }} {{ class }}">
+  <h1 itemprop="headline">{{ 'sections.onboarding.post_title' | t }}</h1>
+  {% capture date %}
+    <time pubdate datetime="{{ 'now' | date: format: 'day_month_and_year' }}" itemprop="datePublished">{{ 'now' | date: format: 'day_month_and_year' }}</time>
+  {% endcapture %}
+  <h2>{{ 'blogs.article.meta_html' | t: author: 'John Doe', date: date }}</h2>
+  <hr/>
+  <div itemprop="articleBody" class="rte">
+    {{ 'sections.onboarding.post_excerpt' | t }}
+  </div>
+  {% if section.settings.facebook_sharing_articles or
+        section.settings.twitter_sharing_articles or
+        section.settings.pinterest_sharing_articles %}
+    {% assign current_url = shop.url %}
+     <div class="share">
+      {% if section.settings.facebook_sharing_articles %}
+        <a target="_blank" href="//www.facebook.com/sharer.php?u={{ current_url }}" class="icon circle facebook" title="{{ 'products.product.share_on' | t: platform: 'Facebook' }}">
+          <i class="fc fc-facebook"></i>
+        </a>
+      {% endif %}
+      {% if section.settings.twitter_sharing_articles %}
+        <a target="_blank" href="//twitter.com/share?text={{ article.title | url_param_escape }}&amp;url={{ current_url }}" class="icon twitter" title="{{ 'products.product.share_on' | t: platform: 'Twitter' }}">
+          <i class="fc fc-twitter"></i>
+        </a>
+      {% endif %}
+      {% if section.settings.pinterest_sharing_articles %}
+        <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ current_url }}&amp;media={{ article.image.src | img_url: '1024x1024' | split: '?' | first }}&amp;description={{ article.title | url_param_escape }}" class="icon pinterest" title="{{ 'products.product.share_on' | t: platform: 'Pinterest' }}">
+          <i class="fc fc-pinterest"></i>
+        </a>
+      {% endif %}
+    </div>
+  {% endif %}
+</div>

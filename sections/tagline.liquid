@@ -1,0 +1,80 @@
+<div class="content rich-text tagline {% render 'content-classes', scope: section %}">
+  <div class="inner extended">
+    {% unless section.settings.tagline == blank %}
+      <div class="info center">
+        <div class="rte" style="max-width: {{ section.settings.content_max_width }}px;">
+          <blockquote>{{ section.settings.tagline | escape }}</blockquote>
+        </div>
+      </div>
+    {% else %}
+      {% render 'no-blocks' %}
+    {% endunless %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.tagline.name",
+  "class": "section-rich-text",
+  "settings": [
+    {
+      "type": "textarea",
+      "id": "tagline",
+      "label": "t:sections.tagline.settings.tagline.label",
+      "default": {
+        "en": "Your Brand's Tagline.",
+        "es": "El eslogan de tu marca."
+      }
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.settings.content_max_width.label",
+      "default": 850,
+      "min": 400,
+      "max": 2000,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.tagline.presets.name"
+    }
+  ]
+}
+{% endschema %}

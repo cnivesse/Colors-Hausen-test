@@ -1,0 +1,263 @@
+<div class="content categories-list extra-padding {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="categories-list">
+  <div class="inner with-layout-options centered"  style="max-width: {{ section.settings.content_max_width }}px;">
+    {% if section.settings.heading != blank %}
+      <h2 class="shopify-section-title">{{ section.settings.heading }}</h2>
+    {% endif %}
+    <div class="categories">
+      {% assign index = 1 %}
+      {% for block in section.blocks %}
+        <div class="category" {{ block.shopify_attributes }}>
+          <a {% if block.settings.link != blank %}href="{{ block.settings.link }}"{% endif %}>
+            <span class="text">{{ block.settings.text }}</span>
+            {% if block.settings.image != blank %}
+              <div class="image">
+                <img 
+                  srcset="
+                    {{ block.settings.image | image_url: width: 300, height: 300, crop: 'center' }} 1x,
+                    {{ block.settings.image | image_url: width: 600, height: 600, crop: 'center' }} 2x,
+                    {{ block.settings.image | image_url: width: 900, height: 900, crop: 'center' }} 3x,
+                  " src="{{ block.settings.image | image_url: width: 600, height: 600, crop: 'center' }}"
+                >
+              </div>
+            {% endif %}
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="background"></div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.categories-list.name",
+  "class": "section-categories-list",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.settings.heading.label",
+      "info": "t:sections.settings.heading.info",
+      "default": {
+        "ar": "بالتصنيف",
+        "bg": "По категория",
+        "ca": "Per categoria",
+        "cs": "Podle kategorie",
+        "da": "Efter kategori",
+        "de": "Nach Kategorie",
+        "el": "Ανά κατηγορία",
+        "en": "By category",
+        "es": "Por categoria",
+        "fi": "Luokan mukaan",
+        "fr": "Par catégorie",
+        "he": "לפי קטגוריה",
+        "hr": "Po kategoriji",
+        "hu": "Kategória szerint",
+        "id": "Oleh kategori",
+        "it": "Per categoria",
+        "ja": "カテゴリ別",
+        "ko": "카테고리별",
+        "lt": "Pagal kategoriją",
+        "nb": "Etter kategori",
+        "nl": "Per categorie",
+        "pl": "Według kategorii",
+        "pt-BR": "Por categoria",
+        "pt-PT": "Por categoria",
+        "ro": "Pe categorii",
+        "ru": "По категории",
+        "sk": "Podľa kategórie",
+        "sl": "Po kategoriji",
+        "sv": "Efter kategori",
+        "th": "ตามหมวดหมู่",
+        "tr": "Kategoriye göre",
+        "vi": "Theo danh mục",
+        "zh-CN": "按类别",
+        "zh-TW": "按類別"
+      }
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.settings.content_max_width.label",
+      "default": 850,
+      "min": 400,
+      "max": 2000,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "category",
+      "name": "t:sections.categories-list.blocks.category.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.categories-list.blocks.category.settings.text.label",
+          "default": {
+            "ar": "نص",
+            "bg": "Текст",
+            "ca": "Text",
+            "cs": "Text",
+            "da": "Tekst",
+            "de": "Text",
+            "el": "Κείμενο",
+            "en": "Text",
+            "es": "Texto",
+            "fi": "Teksti",
+            "fr": "Texte",
+            "he": "טֶקסט",
+            "hr": "Tekst",
+            "hu": "Szöveg",
+            "id": "Teks",
+            "it": "Testo",
+            "ja": "文章",
+            "ko": "텍스트",
+            "lt": "Tekstas",
+            "nb": "Tekst",
+            "nl": "Tekst",
+            "pl": "Tekst",
+            "pt-BR": "Texto",
+            "pt-PT": "Texto",
+            "ro": "Text",
+            "ru": "Текст",
+            "sk": "Text",
+            "sl": "Besedilo",
+            "sv": "Text",
+            "th": "ข้อความ",
+            "tr": "Metin",
+            "vi": "Bản văn",
+            "zh-CN": "文本",
+            "zh-TW": "文本"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.categories-list.blocks.category.settings.link.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.categories-list.blocks.category.settings.image.label",
+          "info": "t:sections.categories-list.blocks.category.settings.image.info"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.categories-list.presets.name",
+      "blocks": [
+        {
+          "type": "category",
+          "settings": {
+            "text": "Denim"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Sweaters"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "T-Shirts"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Pants"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Shirts & Tops"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Outerwear"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Underwear"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Dresses"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Shorts & Skirts"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Bodysuits"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Activewear"
+          }
+        },
+        {
+          "type": "category",
+          "settings": {
+            "text": "Swimwear"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

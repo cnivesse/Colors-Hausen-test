@@ -1,0 +1,63 @@
+{% liquid
+  assign language_selector = false
+  assign country_selector = false
+  if section.settings.show_country_selector and localization.available_countries.size > 1
+    assign country_selector = true
+  endif
+  if section.settings.show_language_selector and localization.available_languages.size > 1
+    assign language_selector = true
+  endif
+%}
+
+{%- if country_selector or language_selector -%}
+  {%- form 'localization', class: 'selectors-form' -%}
+    <div class="disclosures">
+      {%- if language_selector -%}
+        <h2 class="visually-hidden" id="lang-heading">
+         {{ 'general.language.dropdown_label' | t }}
+       </h2>
+        <div class="disclosure" data-disclosure-language>
+          <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="lang-list" aria-describedby="lang-heading" data-disclosure-toggle>
+            {{ localization.language.endonym_name }}{% render 'svg-arrow' %}
+          </button>
+          <ul id="lang-list" class="disclosure__list" data-disclosure-list>
+            {% for language in localization.available_languages %}
+              <li class="disclosure-list__item {% if language.iso_code == localization.language.iso_code %}disclosure-list__item--current{% endif %}">
+                <a class="disclosure-list__option" href="#" lang="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}aria-current="true"{% endif %} data-value="{{ language.iso_code }}" data-disclosure-option>
+                  {{ language.endonym_name | capitalize }}
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+          <input type="hidden" name="language_code" id="LanguageSelector" value="{{ localization.language.iso_code }}" data-disclosure-input/>
+        </div>
+      {%- endif -%}
+
+      {%- if country_selector -%}
+        <h2 class="visually-hidden" id="country-heading">
+          {{ 'general.country.dropdown_label' | t }}
+        </h2>
+        <div class="disclosure" data-disclosure-country>
+          <button type="button" class="disclosure__toggle" aria-expanded="false" aria-controls="country-list" aria-describedby="country-heading" data-disclosure-toggle>
+            {% if extended %}
+              <span>{{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})</span>
+            {% else %}
+              <span>{{ localization.country.currency.symbol }}</span>
+            {% endif %}
+            {% render 'svg-arrow' %}
+          </button>
+          <ul id="country-list" class="disclosure__list" data-disclosure-list>
+            {% for country in localization.available_countries %}
+              <li class="disclosure-list__item {% if country.iso_code == localization.country.iso_code %}disclosure-list__item--current{% endif %}">
+                <a class="disclosure-list__option" href="#" {% if country.iso_code == localization.country.iso_code %}aria-current="true"{% endif %} data-value="{{ country.iso_code }}" data-disclosure-option>
+                  {{ country.name }} ({{ country.currency.iso_code }} {{ country.currency.symbol }})
+                </a>
+              </li>
+            {%- endfor -%}
+          </ul>
+          <input type="hidden" name="country_code" id="CountrySelector" value="{{ form.country.iso_code }}" data-disclosure-input/>
+        </div>
+      {%- endif -%}
+    </div>
+  {%- endform -%}
+{%- endif -%}

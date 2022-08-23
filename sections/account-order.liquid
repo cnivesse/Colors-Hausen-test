@@ -1,0 +1,159 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'customer.order.section_title' | t }}</h2>
+    <h1>{{ 'customer.orders.order' | t: id: order.name }}</h1>
+    {% capture created_at %}{{ order.created_at | date: format: 'date_and_time' }}{% endcapture %}
+    <p>{{ 'customer.order.date' | t: date: created_at }}</p>
+    {% if order.cancelled %}
+      {% capture cancelled_at %}
+        {{ order.cancelled_at | date: format: 'date_and_time' }}
+      {% endcapture %}
+      <p>{{ 'customer.order.canceled' | t: date: cancelled_at }}.</p>
+      <p>{{ 'customer.order.canceled_reason' | t: reason: order.cancel_reason }}.</p>
+    {% endif %}
+    <div class="order-items">
+      {% for item in order.line_items %}
+        <div class="item">
+          <div class="image">
+            <a href="{{ item.product.url }}">
+              <img
+                src="{{ item | img_url: '120x120' }}"
+                srcset=
+                  "{{ item | img_url: '120x120', scale: 1 }} 1x,
+                   {{ item | img_url: '120x120', scale: 2 }} 2x,
+                   {{ item | img_url: '120x120', scale: 3 }} 3x
+                  "
+              >
+            </a>
+          </div>
+          <div class="info">
+            {% if item.product.title != blank %}
+              <a href="{{ item.url }}" class="name">{{ item.product.title }}</a>
+            {% endif %}
+            {% unless item.variant.title contains 'Default' %}
+              <p>
+                {{ item.variant.title }}
+              </p>
+            {% endunless %}
+            {% if item.selling_plan_allocation %}
+              <p>
+                {{ item.selling_plan_allocation.selling_plan.name }}
+              </p>
+            {% endif %}
+            <p>
+              {{ 'customer.order.quantity' | t }}: {{ item.quantity }}
+            </p>
+            {%- if item.original_price != item.final_price -%}
+              <div class="description">
+                {{ 'customer.order.price' | t }}: <del>{{ item.original_price | money }}</del> {{ item.final_price | money }}
+              </div>
+              {%- for discount_allocation in item.line_level_discount_allocations -%}
+                <p>
+                  <span class="allocation"><i class="icon fc fc-tag"></i>{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})</span>
+                </p>
+              {%- endfor -%}
+            {%- else -%}
+              <p>
+                {{ 'customer.order.price' | t }}: {{ item.original_price | money }}
+              </p>
+            {%- endif -%}
+            {% if item.unit_price %}
+              <p>
+                {{ 'customer.order.unit_price' | t }}: {% render 'unit-price', from: item %}
+              </p>
+            {% endif %}
+          </div>
+          <div class="price">
+            {%- if item.original_line_price != item.final_line_price -%}
+              <del>{{ item.original_line_price | money }}</del><br>
+              {{ item.final_line_price | money }}
+            {%- else -%}
+              {{ item.original_line_price | money }}
+            {%- endif -%}
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="order-total">
+      <div>
+        {{ 'customer.order.subtotal' | t }}
+        <span class="value">{{ order.line_items_subtotal_price | money }}</span>
+      </div>
+      {%- if order.cart_level_discount_applications != blank -%}
+        {%- for discount_application in order.cart_level_discount_applications -%}
+          <div class="with-line discount">
+            <i class="icon fc fc-tag"></i> {{- discount_application.title -}}
+            <span class="value">-{{ discount_application.total_allocated_amount | money }}</span>
+          </div>
+        {%- endfor -%}
+      {%- endif -%}
+      {% for shipping_method in order.shipping_methods %}
+        <div class="with-line">
+          {{ shipping_method.title }}
+          <span class="value">{{ shipping_method.price | money }}</span>
+        </div>
+      {% endfor %}
+      {% for tax_line in order.tax_lines %}
+        <div class="with-line">
+          {{ 'customer.order.tax' | t }} ({{ tax_line.title }} {{ tax_line.rate | times: 100 }}%)
+          <span class="value">{{ tax_line.price | money }}</span>
+        </div>
+      {% endfor %}
+      <div class="total with-line">
+        {{ 'customer.order.total' | t }}
+        <span class="value">{{ order.total_price | money }}</span>
+      </div>
+
+      <div class="with-line">
+        {{ 'customer.order.payment_status' | t }}
+        <span class="value highlight {{ order.financial_status_label | handleize }}">{{ order.financial_status_label }}</span>
+      </div>
+      <div>
+        {{ 'customer.order.fulfillment_status' | t }}
+        <span class="value highlight {{ order.fulfillment_status_label | handleize }}">{{ order.fulfillment_status_label }}</span>
+      </div>
+    </div>
+    <div class="order-addresses">
+      {% if order.billing_address %}
+        <div>
+          <h3>{{ 'customer.order.billing_address' | t }}</h3>
+          <p class="expanded">
+            <span class="highlight">{{ order.billing_address.name }}</span><br>
+            {% if order.billing_address.company != blank %}({{ order.billing_address.company }})<br>{% endif %}
+            {{ order.billing_address.street }}<br>
+            {% if order.billing_address.city != blank %}{{ order.billing_address.city }},{% endif %}
+            {% if order.billing_address.province != blank %} {{ order.billing_address.province }}{% endif %}
+            {% if order.billing_address.zip != blank %} {{ order.billing_address.zip | upcase }}{% endif %}<br>
+            {% if order.billing_address.country != blank %} {{ order.billing_address.country }}{% endif %}<br>
+            {% if order.billing_address.phone != blank %} {{ 'customer.addresses.phone_label' | t }}  {{ order.billing_address.phone }}{% endif %}
+          </p>
+        </div>
+      {% endif %}
+      {% if order.shipping_address %}
+        <div>
+          <h3>{{ 'customer.order.shipping_address' | t }}</h3>
+          <p class="expanded">
+            <span class="highlight">{{ order.shipping_address.name }}</span><br>
+            {% if order.shipping_address.company != blank %}({{ order.shipping_address.company }})<br>{% endif %}
+            {{ order.shipping_address.street }}<br>
+            {% if order.shipping_address.city != blank %}{{ order.shipping_address.city }},{% endif %}
+            {% if order.shipping_address.province != blank %} {{ order.shipping_address.province }}{% endif %}
+            {% if order.shipping_address.zip != blank %} {{ order.shipping_address.zip | upcase }}{% endif %}<br>
+            {% if order.shipping_address.country != blank %} {{ order.shipping_address.country }}{% endif %}<br>
+            {% if order.shipping_address.phone != blank %} {{ 'customer.addresses.phone_label' | t }} {{ order.shipping_address.phone }}{% endif %}
+          </p>
+        </div>
+      {% endif %}
+    </div>
+    <div class="menu">
+      <a class="btn border" href="{{ routes.account_url }}">{{ 'customer.order.return_to_account' | t }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.account-order.name",
+  "class": "section-standalone section-account"
+}
+{% endschema %}

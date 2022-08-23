@@ -1,0 +1,19 @@
+<img
+  src="{{ image | img_url: default_size }}"
+  {% assign dimensions = "180,360,540,720,900,1080,1296,1512,1728,2048" | split: "," %}
+  srcset=
+    "{% for dimension in dimensions %}
+      {% assign img_url = dimension | append: 'x' %}
+      {% if squared %}
+        {% assign img_url = img_url | append: dimension %}
+      {% endif %}
+      {{ image | img_url: img_url }} {{ dimension }}w,
+    {% endfor %}"
+  sizes="{{ sizes }}"
+  {% if class %}class="{{ class }}"{% endif %}
+  {% if id %}id="{{ id }}"{% endif %}
+  {% if alt %}alt="{{ alt }}"{% endif %}
+  {% if itemprop %}itemprop="{{ itemprop }}"{% endif %}
+  {% if data_mfp_src %}data-mfp-src="{{ data_mfp_src }}"{% endif %}
+  loading="lazy" width="{{ image.width }}" height="{{ image.height }}" style="width: 100%; height: auto;"
+>

@@ -1,0 +1,349 @@
+{% assign menu = linklists[section.settings.footer_linklist] %}
+<div class="footer {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="footer" role="contentinfo">
+  {% if section.blocks.size > 0 %}
+    <div class="top blocks-{{ section.blocks.size }}">
+      {% for block in section.blocks %}
+        {% case block.type %}
+
+          {% when 'menu' %}
+            {% assign menu = linklists[block.settings.menu] %}
+            <div class="col menu" {{ block.shopify_attributes }}>
+              <h1>{{ block.settings.menu_title }}</h1>
+              <ul>
+                {% for link in menu.links %}
+                  <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+              </ul>
+            </div>
+
+          {% when 'text' %}
+            <div class="col contact" {{ block.shopify_attributes }}>
+              <h1>{{ block.settings.title }}</h1>
+              <div class="rte">{{ block.settings.richtext }}</div>
+            </div>
+
+         {% when 'newsletter' %}
+            <div class="col" {{ block.shopify_attributes }}>
+              <h1>{{ 'layout.footer.newsletter' | t }}</h1>
+              {% form 'customer', id: "newsletterFooter" %}
+                {% if form.posted_successfully? %}
+                  <p class="success">{{ 'layout.footer.newsletter_success' | t }}</p>
+                {% else %}
+                  <div class="table">
+                    <input type="hidden" name="contact[tags]" value="newsletter">
+                    <input class="text {% if form.errors contains 'email' %} error{% endif %}" type="email" name="contact[email]" placeholder="{{ 'layout.footer.newsletter_placeholder' | t }}" autocorrect="off" autocapitalize="off"  aria-label="{{ 'layout.footer.newsletter_placeholder' | t }}">
+                    <span class="input-group-btn">
+                      <input type="submit" class="btn" value="{{ 'layout.footer.newsletter_submit' | t }}">
+                    </span>
+                  </div>
+                  {% if form.errors %}
+                    {% for field in form.errors %}
+                      <div class="field-error">{{ form.errors.messages[field] }}</div>
+                    {% endfor %}
+                  {% endif %}
+                {% endif %}
+              {% endform %}
+            </div>
+
+          {% when 'social' %}
+            <div class="col {{ block.settings.align }}" {{ block.shopify_attributes }}>
+              {% render 'connect', title: 'layout.footer.social' %}
+            </div>
+
+        {% endcase %}
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% liquid
+    assign language_selector = false
+    assign country_selector = false
+    if section.settings.show_country_selector and localization.available_countries.size > 1
+      assign country_selector = true
+    endif
+    if section.settings.show_language_selector and localization.available_languages.size > 1
+      assign language_selector = true
+    endif
+    if country_selector or language_selector
+      assign show_selectors = true
+    endif
+  %}
+  <div class="bottom {% if show_selectors %}with-selectors{% endif %}">
+    <div class="left">
+      {% if section.settings.footer_show_payments %}
+        <div class="cards">
+          {% for type in shop.enabled_payment_types %}
+            {{ type | payment_type_svg_tag: class:'payment-icon' }}
+          {% endfor %}
+        </div>
+      {% endif %}
+      <div class="text">
+        {% assign year = 'now' | date: '%Y' %}
+        {% capture shop_name %}{{ shop.name | link_to: '/' }}{% endcapture %}
+        {{ 'layout.footer.copyright_html' | t: year: year, shop_name: shop_name }}
+        {%- if show_selectors -%}
+          <span class="powered">
+            {{ powered_by_link }}
+          </span>
+        {%- endif %}
+      </div>
+    </div>
+    <div class="right">
+      {% render 'language-and-country-selectors', extended: true %}
+      {%- unless show_selectors -%}
+        <div class="text">
+          {{ powered_by_link }}
+        </div>
+      {%- endunless -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.footer.name",
+  "class": "section-footer",
+  "max_blocks": 4,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "footer_show_payments",
+      "label": "t:sections.footer.settings.footer_show_payments.label",
+      "info": "t:sections.footer.settings.footer_show_payments.info",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__1.content",
+      "info": "t:sections.footer.settings.header__1.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_language_selector",
+      "label": "t:sections.footer.settings.show_language_selector.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.footer.settings.header__2.content",
+      "info": "t:sections.footer.settings.header__2.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_country_selector",
+      "label": "t:sections.footer.settings.show_country_selector.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "menu",
+      "name": "t:sections.footer.blocks.menu.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "menu_title",
+          "label": "t:sections.footer.blocks.menu.settings.menu_title.label",
+          "default": {
+            "ar": "روابط سريعة",
+            "bg": "Бързи връзки",
+            "ca": "Links ràpids",
+            "cs": "Rychlé odkazy",
+            "da": "Hurtige links",
+            "de": "Schnelle Links",
+            "el": "Γρήγοροι σύνδεσμοι",
+            "en": "Quick links",
+            "es": "Enlaces rápidos",
+            "fi": "Pikalinkit",
+            "fr": "Liens rapides",
+            "he": "קישורים מהירים",
+            "hr": "Brze veze",
+            "hu": "Gyors linkek",
+            "id": "Tautan langsung",
+            "it": "Link veloci",
+            "ja": "クイックリンク",
+            "ko": "빠른 링크",
+            "lt": "Greitos nuorodos",
+            "nb": "Hurtigkoblinger",
+            "nl": "Snelle links",
+            "pl": "Szybkie linki",
+            "pt-BR": "Links Rápidos",
+            "pt-PT": "Links Rápidos",
+            "ro": "Legături rapide",
+            "ru": "Быстрые ссылки",
+            "sk": "Rýchle odkazy",
+            "sl": "Hitre povezave",
+            "sv": "Snabblänkar",
+            "th": "ลิงค์ด่วน",
+            "tr": "Hızlı Linkler",
+            "vi": "Đường dẫn nhanh",
+            "zh-CN": "快速链接",
+            "zh-TW": "快速鏈接"
+          }
+        },
+        {
+          "type": "link_list",
+          "id": "menu",
+          "label": "t:sections.footer.blocks.menu.settings.menu.label",
+          "info": "t:sections.footer.blocks.menu.settings.menu.info"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "t:sections.footer.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.footer.blocks.text.settings.title.label",
+          "default": {
+            "ar": "معلومات عنا",
+            "bg": "За нас",
+            "ca": "Sobre nosaltres",
+            "cs": "O nás",
+            "da": "Om os",
+            "de": "Über uns",
+            "el": "Σχετικά με εμάς",
+            "en": "About us",
+            "es": "Sobre nosotros",
+            "fi": "Meistä",
+            "fr": "À propos de nous",
+            "he": "עלינו",
+            "hr": "O nama",
+            "hu": "Rólunk",
+            "id": "Tentang kami",
+            "it": "Chi siamo",
+            "ja": "私たちに関しては",
+            "ko": "회사 소개",
+            "lt": "Apie mus",
+            "nb": "Om oss",
+            "nl": "Over ons",
+            "pl": "O nas",
+            "pt-BR": "Sobre nós",
+            "pt-PT": "Sobre nós",
+            "ro": "Despre noi",
+            "ru": "О нас",
+            "sk": "O nás",
+            "sl": "O nas",
+            "sv": "Om oss",
+            "th": "เกี่ยวกับเรา",
+            "tr": "Hakkımızda",
+            "vi": "Về chúng tôi",
+            "zh-CN": "关于我们",
+            "zh-TW": "關於我們"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "richtext",
+          "label": "t:sections.footer.blocks.text.settings.richtext.label",
+          "default": {
+            "ar": "<p> شارك تفاصيل المتجر أو العروض الترويجية أو محتوى العلامة التجارية مع عملائك. </p>",
+            "bg": "<p>Споделяйте подробности за магазина, промоции или съдържание на марката с клиентите си.</p>",
+            "ca": "<p>Comparteix els detalls de la botiga, les promocions o el contingut de la marca amb els teus clients.</p>",
+            "cs": "<p>Sdílejte podrobnosti o obchodě, propagačních akcích nebo obsah značky se svými zákazníky.</p>",
+            "da": "<p>Del butiksoplysninger, kampagner eller brandindhold med dine kunder.</p>",
+            "de": "<p>Teilen Sie Geschäftsdetails, Werbeaktionen oder Markeninhalte mit Ihren Kunden.</p>",
+            "el": "<p>Μοιραστείτε λεπτομέρειες καταστήματος, προωθήσεις ή περιεχόμενο επωνυμίας με τους πελάτες σας.</p>",
+            "en": "<p>Share store details, promotions, or brand content with your customers.</p>",
+            "es": "<p>Comparta detalles de la tienda, promociones o contenido de la marca con sus clientes.</p>",
+            "fi": "<p>Jaa kaupan tietoja, tarjouksia tai brändisisältöä asiakkaidesi kanssa.</p>",
+            "fr": "<p>Partagez les détails du magasin, les promotions ou le contenu de la marque avec vos clients.</p>",
+            "he": "<p>שתף פרטי חנות, מבצעים או תוכן מותג עם הלקוחות שלך.</p>",
+            "hr": "<p>Podijelite pojedinosti o trgovini, promocije ili sadržaj robne marke sa svojim klijentima.</p>",
+            "hu": "<p>Ossza meg az üzlet részleteit, promócióit vagy márkatartalmát ügyfeleivel.</p>",
+            "id": "<p>Bagikan detail toko, promosi, atau konten merek dengan pelanggan Anda.</p>",
+            "it": "<p>Condividi i dettagli del negozio, le promozioni o i contenuti del brand con i tuoi clienti.</p>",
+            "ja": "<p>ストアの詳細、プロモーション、またはブランドコンテンツを顧客と共有します。</p>",
+            "ko": "<p>매장 세부정보, 프로모션 또는 브랜드 콘텐츠를 고객과 공유하세요.</p>",
+            "lt": "<p>Bendrinkite išsamią parduotuvės informaciją, reklamas ar prekės ženklo turinį su savo klientais.</p>",
+            "nb": "<p>Del butikkdetaljer, kampanjer eller merkevareinnhold med kundene dine.</p>",
+            "nl": "<p>Deel winkeldetails, promoties of merkinhoud met uw klanten.</p>",
+            "pl": "<p>Udostępnij klientom szczegóły sklepu, promocje lub treści związane z marką.</p>",
+            "pt-BR": "<p>Compartilhe detalhes da loja, promoções ou conteúdo da marca com seus clientes.</p>",
+            "pt-PT": "<p>Compartilhe detalhes da loja, promoções ou conteúdo da marca com seus clientes.</p>",
+            "ro": "<p>Distribuiți clienților dvs. detaliile magazinului, promoțiile sau conținutul mărcii.</p>",
+            "ru": "<p>Поделитесь информацией о магазине, рекламными акциями или контентом бренда со своими покупателями.</p>",
+            "sk": "<p>Zdieľajte podrobnosti o obchode, propagačné akcie alebo obsah značky so svojimi zákazníkmi.</p>",
+            "sl": "<p>Dajte podrobnosti o trgovini, promocije ali vsebino blagovne znamke s svojimi strankami.</p>",
+            "sv": "<p>Dela butiksinformation, kampanjer eller varumärkesinnehåll med dina kunder.</p>",
+            "th": "<p>แชร์รายละเอียดร้านค้า โปรโมชัน หรือเนื้อหาแบรนด์กับลูกค้าของคุณ</p>",
+            "tr": "<p>Mağaza ayrıntılarını, promosyonları veya marka içeriğini müşterilerinizle paylaşın.</p>",
+            "vi": "<p> Chia sẻ thông tin chi tiết về cửa hàng, chương trình khuyến mãi hoặc nội dung thương hiệu với khách hàng của bạn. </p>",
+            "zh-CN": "<p>与您的客户分享商店详情、促销或品牌内容。</p>",
+            "zh-TW": "<p>與您的客戶分享商店詳情、促銷或品牌內容。</p>"
+          }
+        }
+      ]
+    },
+    {
+      "type": "social",
+      "name": "t:sections.footer.blocks.social.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.footer.blocks.social.settings.paragraph.content"
+        },
+        {
+          "type": "radio",
+          "id": "align",
+          "label": "t:sections.footer.blocks.social.settings.align.label",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.footer.blocks.social.settings.align.options__1"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.footer.blocks.social.settings.align.options__2"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.footer.blocks.social.settings.align.options__3"
+            }
+          ],
+          "default": "left"
+        }
+      ]
+    },
+    {
+      "type": "newsletter",
+      "name": "t:sections.footer.blocks.newsletter.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.footer.blocks.newsletter.settings.paragraph.content"
+        }
+      ]
+    }
+  ],
+  "default": {
+    "blocks": [
+      {
+        "type": "menu",
+        "settings": {
+          "menu": "footer"
+        }
+      },
+      {
+        "type": "text",
+        "settings": {
+          "title": "Contact",
+          "richtext": "<p>1360 Lombard Street<br>San Francisco, CA 94109<br>support@company.com</p>"
+        }
+      },
+      {
+        "type": "text"
+      },
+      {
+        "type": "social",
+        "settings": {
+          "align": "right"
+        }
+      }
+    ]
+  }
+}
+{% endschema %}

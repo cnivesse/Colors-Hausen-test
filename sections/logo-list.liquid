@@ -1,0 +1,160 @@
+<div class="content logo-list {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }}">
+    {% if section.settings.title != blank %}
+      <h2 class="shopify-section-title">{{ section.settings.title }}</h2>
+    {% endif %}
+    <div class="rte">
+      <div class="flex-row">
+        {% for block in section.blocks %}
+          <div class="logo">
+            {% if block.settings.link != blank %}
+              <a href="{{ block.settings.link }}">
+            {% endif %}
+            {% if block.settings.image %}
+              {% render 'resp-img',
+               image: block.settings.image,
+               alt: block.settings.image.alt,
+               default_size: "100x",
+               sizes: "100px",
+               itemprop: "image"
+              %}
+            {% else %}
+              {{ 'image' | placeholder_svg_tag: 'placeholder-svg with-border' }}
+            {% endif %}
+            {% if block.settings.link != blank %}
+              </a>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.logo-list.name",
+    "class": "logo-list",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "t:sections.logo-list.settings.title.label",
+        "default": {
+          "ar": "كما هو وارد في",
+          "bg": "Както е представено в",
+          "ca": "Tal com es mostra a",
+          "cs": "Jak je uvedeno v",
+          "da": "Som omtalt i",
+          "de": "Wie in vorgestellt",
+          "el": "Όπως παρουσιάζεται στο",
+          "en": "As featured in",
+          "es": "Como aparece en",
+          "fi": "Kuten on esitetty",
+          "fr": "Comme présenté dans",
+          "he": "כפי שמופיע ב",
+          "hr": "Kao što je prikazano u",
+          "hu": "Ahogy az szerepel",
+          "id": "Seperti yang ditampilkan dalam",
+          "it": "Come descritto in",
+          "ja": "で紹介されているように",
+          "ko": "에 소개된 것처럼",
+          "lt": "Kaip nurodyta",
+          "nb": "Som omtalt i",
+          "nl": "Zoals te zien in",
+          "pl": "Jak opisano w",
+          "pt-BR": "Como apresentado em",
+          "pt-PT": "Como apresentado em",
+          "ro": "După cum este prezentat în",
+          "ru": "Как показано в",
+          "sk": "Ako je uvedené v",
+          "sl": "Kot je predstavljeno v",
+          "sv": "Som visas i",
+          "th": "เป็นจุดเด่นใน",
+          "tr": "olarak gösterildiği gibi",
+          "vi": "Như được giới thiệu trong",
+          "zh-CN": "正如在",
+          "zh-TW": "正如在"
+        }
+      },
+      {
+        "type": "header",
+        "content": "t:sections.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_background",
+        "label": "t:sections.settings.show_background.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded",
+        "label": "t:sections.settings.expanded.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded_content",
+        "label": "t:sections.settings.expanded_content.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "t:sections.settings.collapsed.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_desktop",
+        "label": "t:sections.settings.show_on_desktop.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_mobile",
+        "label": "t:sections.settings.show_on_mobile.label",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "logo",
+        "name": "t:sections.logo-list.blocks.logo.name",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "t:sections.logo-list.blocks.logo.settings.image.label"
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.logo-list.blocks.logo.settings.link.label",
+            "info": "t:sections.logo-list.blocks.logo.settings.link.info"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.logo-list.presets.name",
+        "blocks": [
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          },
+          {
+            "type": "logo"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

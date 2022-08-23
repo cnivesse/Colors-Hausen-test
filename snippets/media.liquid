@@ -1,0 +1,40 @@
+<div id="{{ media.id }}"
+    class="media {% unless featured_media == media %} hide{% endunless %}"
+    {% if media.media_type == 'video' or media.media_type == 'external_video' %} data-product-media-type-video data-enable-video-looping="{{ section.settings.enable_video_looping }}"{% endif %}
+    {% if media.media_type == 'model' %} data-product-media-type-model{% endif %}
+    {% if media.media_type == 'external_video' %} data-video-id="{{ media.external_id }}"{% endif %}
+    data-product-single-media-wrapper
+    data-media-id="{{ section.id }}-{{ media.id }}"
+    tabindex="-1">
+  {% case media.media_type %}
+    {% when 'image' %}
+      {% assign alt = media.alt | escape %}
+      {% if section.settings.zoom_enable %}
+        {% assign data_mfp_src =  media | img_url: '2048x2048' %}
+      {% endif %}
+      {% render 'resp-img',
+        image: media,
+        sizes: "(max-width: 620px) 100vw, 50vw",
+        default_size: "1024x1024",
+        squared: true,
+        alt: alt,
+        data_mfp_src: data_mfp_src
+      %}
+    {% when 'external_video' %}
+      <div class="inner" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+        {{ media | external_video_tag }}
+      </div>
+    {% when 'video' %}
+      <div class="inner video inner-media-{{ media.id }}" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+        {{ media | video_tag: class: 'media-video', image_size: '900x900' }}
+      </div>
+    {% when 'model' %}
+      <div class="inner" style="padding-top: 100%">
+        {{ media | model_viewer_tag: image_size: '900x900', reveal: 'interaction', toggleable: true, data-model-id: media.id }}
+      </div>
+    {% else %}
+      <div class="inner" style="padding-top: {{ 1 | divided_by: media.aspect_ratio | times: 100 }}%;">
+        {{ media | media_tag: class: 'media-item', image_size: '900x900' }}
+      </div>
+  {% endcase %}
+</div>

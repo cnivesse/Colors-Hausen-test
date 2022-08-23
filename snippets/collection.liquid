@@ -1,0 +1,53 @@
+{% liquid
+  if collection.handle == 'all'
+    assign collection_url = routes.all_products_collection_url
+  else
+    assign collection_url = collection.url
+  endif
+  assign sort_by = collection.sort_by | default: collection.default_sort_by
+%}
+
+<div data-collection-url="{{ collection_url }}" data-collection-id="{{ collection.id }}">
+  <div class="inner">
+    {%- if section.settings.show_collection_title -%}
+      {% if collection == blank %}
+        <h2 class="shopify-section-title">{{ 'sections.onboarding.add_collection' | t }}</h2>
+      {% elsif collection.handle == 'all' %}
+        <a href="{{ routes.all_products_collection_url }}">
+          <h2 class="shopify-section-title">{{ 'collections.general.catalog' | t }}</h2>
+        </a>
+      {% elsif template == 'index' %}
+        <a href="{{ collection.url }}">
+          <h2 class="shopify-section-title">{{ collection.title }}</h2>
+        </a>
+      {% else %}
+        <a class="root" href="{{ routes.collections_url }}">
+          <h2 class="shopify-section-title inline">{{ 'collections.general.collections' | t }}</h2>
+        </a>
+        <h2 class="shopify-section-title divider inline">/</h2>
+        <h2 class="shopify-section-title inline">{{ collection.title }}</h2>
+      {% endif %}
+    {%- endif -%}
+    {%- if section.settings.show_collection_description and collection.description != blank -%}
+      <div class="rte">
+        {{ collection.description }}
+      </div>
+    {%- endif -%}
+    {%- if section.settings.show_collection_image and collection.image -%}
+      <div class="image">
+        <img srcset=
+          "{% for dimension in dimensions %}
+            {% assign img_url = dimension | append: 'x' %}
+            {{ collection.image | img_url: img_url }} {{ dimension }}w,
+          {% endfor %}"
+          sizes="100vw"
+          src="{{ collection.image | img_url: '2048x' }}"
+          alt="{{ collection.title | escape }}"
+          style="max-width: 100%;"
+          loading="lazy">
+      </div>
+    {%- endif -%}
+    {% render 'sorting-and-filtering', collection: collection %}
+    {% render 'collection-products', collection: collection %}
+  </div>
+</div>

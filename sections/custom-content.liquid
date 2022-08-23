@@ -1,0 +1,508 @@
+<div class="content custom-content {% render 'content-classes', scope: section %}">
+  {% if section.blocks.size > 0 %}
+    <div class="inner">
+      <div class="blocks">
+        {% for block in section.blocks %}
+          {% liquid
+            case block.settings.width
+              when '25%'
+                assign max_height = 250
+                assign block_width = 'small--one-whole medium-up--one-quarter'
+              when '33%'
+                assign max_height = 345
+                assign block_width = 'small--one-whole medium-up--one-third'
+              when '50%'
+                assign max_height = 530
+                assign block_width = 'small--one-whole medium-up--one-half'
+              when '66%'
+                assign max_height = 720
+                assign block_width = 'small--one-whole medium-up--two-thirds'
+              when '75%'
+                assign max_height = 810
+                assign block_width = 'small--one-whole medium-up--three-quarters'
+              when '100%'
+                assign max_height = 1090
+                assign block_width = 'one-whole'
+            endcase
+          %}
+          <div class="custom__item custom__item--{{block.id}} {{ block_width }} {% if block.settings.alignment %}align--{{ block.settings.alignment }}{% endif %}" {{ block.shopify_attributes }}>
+            <div class="custom__item-inner custom__item-inner--{{ block.type }}">
+              {% case block.type %}
+                {% when 'image' %}
+                  {% if block.settings.image != blank %}
+                    <div style="padding-top:{{ 1 | divided_by: block.settings.image.aspect_ratio | times: 100}}%;">
+                      <picture>
+                        {% assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: ","%}
+                        <source srcset=
+                          "{% for dimension in dimensions %}
+                            {% assign img_url = dimension | append: 'x' %}
+                            {% if squared %}
+                              {% assign img_url = img_url | append: dimension %}
+                            {% endif %}
+                            {{ block.settings.image | img_url: img_url }} {{ dimension }}w,
+                          {% endfor %}"
+                          sizes="100vw"
+                        >
+                        <img src="{{ block.settings.image | img_url: '2048x' }}" class="custom__image" loading="lazy" >
+                      </picture>
+                    </div>
+                  {% else %}
+                    {{ 'image' | placeholder_svg_tag: 'placeholder-svg with-white-background' }}
+                  {% endif %}
+                {% when 'text' %}
+                  <div class="small--text-center medium-up--text-{{ block.settings.align_text }}">
+                    {% if block.settings.title != blank %}
+                      <h1>{{ block.settings.title | escape }}</h1>
+                    {% endif %}
+                    {% if block.settings.text != blank %}
+                      <div class="rte-setting rte">{{ block.settings.text }}</div>
+                    {% endif %}
+                  </div>
+                {% when 'video' %}
+                  <div class="video-wrapper">
+                    {% if block.settings.video_url == blank %}
+                      <iframe src="//www.youtube.com/embed/_9VUPq3SxOc?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                    {% else %}
+                      {% if block.settings.video_url.type == "youtube" %}
+                        <iframe src="//www.youtube.com/embed/{{ block.settings.video_url.id }}?rel=0&showinfo=0&vq=720" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                      {% endif %}
+                      {% if block.settings.video_url.type == "vimeo" %}
+                        <iframe src="//player.vimeo.com/video/{{ block.settings.video_url.id }}?byline=0&portrait=0&badge=0" width="850" height="480" frameborder="0" allowfullscreen></iframe>
+                      {% endif %}
+                    {% endif %}
+                  </div>
+                {% when 'html' %}
+                  {% if block.settings.code != blank %}
+                    {{ block.settings.code }}
+                  {% endif %}
+              {% endcase %}
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% else %}
+    {% render 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.custom-content.name",
+  "class": "section-custom-content",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "t:sections.custom-content.blocks.text.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.custom-content.blocks.text.settings.heading.label",
+          "default": {
+            "ar": "تحدث عن علامتك التجارية",
+            "bg": "Говорете за вашата марка",
+            "ca": "Parla de la teva marca",
+            "cs": "Mluvte o své značce",
+            "da": "Tal om dit brand",
+            "de": "Sprechen Sie über Ihre Marke",
+            "el": "Μιλήστε για την επωνυμία σας",
+            "en": "Talk about your brand",
+            "es": "Habla de tu marca",
+            "fi": "Puhu brändistäsi",
+            "fr": "Parlez de votre marque",
+            "he": "דבר על המותג שלך",
+            "hr": "Razgovarajte o svom brendu",
+            "hu": "Beszélj a márkádról",
+            "id": "Bicara tentang merek Anda",
+            "it": "Parla del tuo marchio",
+            "ja": "あなたのブランドについて話す",
+            "ko": "브랜드에 대해 이야기하기",
+            "lt": "Kalbėkite apie savo prekės ženklą",
+            "nb": "Snakk om merkevaren din",
+            "nl": "Praat over je merk",
+            "pl": "Porozmawiaj o swojej marce",
+            "pt-BR": "Fale sobre sua marca",
+            "pt-PT": "Fale sobre sua marca",
+            "ro": "Vorbește despre marca ta",
+            "ru": "Расскажите о своем бренде",
+            "sk": "Hovorte o svojej značke",
+            "sl": "Govorite o svoji blagovni znamki",
+            "sv": "Prata om ditt varumärke",
+            "th": "พูดคุยเกี่ยวกับแบรนด์ของคุณ",
+            "tr": "Markanız hakkında konuşun",
+            "vi": "Nói về thương hiệu của bạn",
+            "zh-CN": "谈论你的品牌",
+            "zh-TW": "談論你的品牌"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.custom-content.blocks.text.settings.text.label",
+          "default": {
+            "ar": "<p> استخدم هذا النص لمشاركة معلومات حول علامتك التجارية مع عملائك. صِف منتجًا أو شارك الإعلانات أو رحب بالعملاء في متجرك. </p>",
+            "bg": "<p>Използвайте този текст, за да споделите информация за вашата марка с клиентите си. Опишете продукт, споделете съобщения или приветствайте клиенти във вашия магазин.</p>",
+            "ca": "<p>Utilitzeu aquest text per compartir informació sobre la vostra marca amb els vostres clients. Descriu un producte, comparteix anuncis o dóna la benvinguda als clients a la teva botiga.</p>",
+            "cs": "<p>Tento text použijte ke sdílení informací o své značce se svými zákazníky. Popište produkt, sdílejte oznámení nebo přivítejte zákazníky ve svém obchodě.</p>",
+            "da": "<p>Brug denne tekst til at dele oplysninger om dit brand med dine kunder. Beskriv et produkt, del meddelelser, eller byd kunder velkommen til din butik.</p>",
+            "de": "<p>Verwenden Sie diesen Text, um Informationen über Ihre Marke mit Ihren Kunden zu teilen. Beschreiben Sie ein Produkt, teilen Sie Ankündigungen oder heißen Sie Kunden in Ihrem Shop willkommen.</p>",
+            "el": "<p>Χρησιμοποιήστε αυτό το κείμενο για να μοιραστείτε πληροφορίες σχετικά με την επωνυμία σας με τους πελάτες σας. Περιγράψτε ένα προϊόν, μοιραστείτε ανακοινώσεις ή καλωσορίστε πελάτες στο κατάστημά σας.</p>",
+            "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "es": "<p>Utilice este texto para compartir información sobre su marca con sus clientes. Describe un producto, comparte anuncios o da la bienvenida a los clientes a tu tienda.</p>",
+            "fi": "<p>Tämän tekstin avulla voit jakaa tietoa brändistäsi asiakkaillesi. Kuvaile tuotetta, jaa ilmoituksia tai toivota asiakkaat tervetulleiksi kauppaasi.</p>",
+            "fr": "<p>Utilisez ce texte pour partager des informations sur votre marque avec vos clients. Décrivez un produit, partagez des annonces ou accueillez des clients dans votre boutique.</p>",
+            "he": "<p>השתמש בטקסט זה כדי לשתף מידע על המותג שלך עם הלקוחות שלך. תאר מוצר, שתף הודעות או ברוך הבא לקוחות לחנות שלך.</p>",
+            "hr": "<p>Upotrijebite ovaj tekst za dijeljenje informacija o svojoj robnoj marki sa svojim klijentima. Opišite proizvod, podijelite najave ili poželite dobrodošlicu kupcima u svoju trgovinu.</p>",
+            "hu": "<p>Használja ezt a szöveget, hogy megosszon információkat a márkájáról ügyfeleivel. Írjon le egy terméket, ossza meg bejelentéseit, vagy üdvözölje az ügyfeleket az üzletében.</p>",
+            "id": "<p>Gunakan teks ini untuk berbagi informasi tentang merek Anda dengan pelanggan Anda. Jelaskan produk, bagikan pengumuman, atau sambut pelanggan di toko Anda.</p>",
+            "it": "<p>Utilizza questo testo per condividere informazioni sul tuo marchio con i tuoi clienti. Descrivi un prodotto, condividi annunci o accogli i clienti nel tuo negozio.</p>",
+            "ja": "<p>このテキストを使用して、ブランドに関する情報を顧客と共有します。商品について説明したり、お知らせを共有したり、顧客をストアに歓迎したりします。</p>",
+            "ko": "<p>이 텍스트를 사용하여 브랜드에 대한 정보를 고객과 공유하십시오. 제품을 설명하거나, 공지 사항을 공유하거나, 매장에 오신 고객을 환영합니다.</p>",
+            "lt": "<p>Naudokite šį tekstą, jei norite dalytis informacija apie savo prekės ženklą su klientais. Aprašykite produktą, pasidalykite pranešimais arba pasveikinkite klientus į jūsų parduotuvę.</p>",
+            "nb": "<p>Bruk denne teksten til å dele informasjon om merkevaren din med kundene dine. Beskriv et produkt, del kunngjøringer eller velkommen kunder til butikken din.</p>",
+            "nl": "<p>Gebruik deze tekst om informatie over uw merk met uw klanten te delen. Beschrijf een product, deel aankondigingen of verwelkom klanten in uw winkel.</p>",
+            "pl": "<p>Użyj tego tekstu, aby udostępnić klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub powitaj klientów w swoim sklepie.</p>",
+            "pt-BR": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "pt-PT": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "ro": "<p>Folosiți acest text pentru a împărtăși clienților informații despre marca dvs. Descrieți un produs, distribuiți anunțuri sau bun venit clienților în magazinul dvs.</p>",
+            "ru": "<p>Используйте этот текст, чтобы поделиться информацией о своем бренде со своими клиентами. Опишите продукт, поделитесь объявлениями или поприветствуйте покупателей в вашем магазине.</p>",
+            "sk": "<p>Tento text použite na zdieľanie informácií o vašej značke so svojimi zákazníkmi. Popíšte produkt, zdieľajte oznámenia alebo privítajte zákazníkov vo svojom obchode.</p>",
+            "sl": "<p>S tem besedilom delite informacije o svoji blagovni znamki s strankami. Opišite izdelek, delite objave ali pozdravite stranke v svoji trgovini.</p>",
+            "sv": "<p>Använd den här texten för att dela information om ditt varumärke med dina kunder. Beskriv en produkt, dela meddelanden eller välkomna kunder till din butik.</p>",
+            "th": "<p>ใช้ข้อความนี้เพื่อแบ่งปันข้อมูลเกี่ยวกับแบรนด์ของคุณกับลูกค้าของคุณ อธิบายผลิตภัณฑ์ แชร์ประกาศ หรือต้อนรับลูกค้าสู่ร้านค้าของคุณ</p>",
+            "tr": "<p>Markanızla ilgili bilgileri müşterilerinizle paylaşmak için bu metni kullanın. Bir ürünü tanımlayın, duyuruları paylaşın veya mağazanıza gelen müşterileri karşılayın.</p>",
+            "vi": "<p> Sử dụng văn bản này để chia sẻ thông tin về thương hiệu của bạn với khách hàng. Mô tả sản phẩm, chia sẻ thông báo hoặc chào mừng khách hàng đến với cửa hàng của bạn. </p>",
+            "zh-CN": "<p>使用此文本与您的客户分享您的品牌信息。描述产品、分享公告或欢迎客户光临您的商店。</p>",
+            "zh-TW": "<p>使用此文本與您的客戶分享您的品牌信息。描述產品、分享公告或歡迎客戶光臨您的商店。</p>"
+          }
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.custom-content.blocks.block.settings.width.label",
+          "default": "50%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:sections.custom-content.blocks.text.settings.alignment.label",
+          "default": "center",
+          "options": [
+            {
+              "value": "top-middle",
+              "label": "t:sections.custom-content.blocks.text.settings.alignment.options__1"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.custom-content.blocks.text.settings.alignment.options__2"
+            },
+            {
+              "value": "bottom-middle",
+              "label": "t:sections.custom-content.blocks.text.settings.alignment.options__3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "align_text",
+          "label": "t:sections.custom-content.blocks.text.settings.align_text.label",
+          "default": "left",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.custom-content.blocks.text.settings.align_text.options__1"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.custom-content.blocks.text.settings.align_text.options__2"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.custom-content.blocks.text.settings.align_text.options__3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.custom-content.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.custom-content.blocks.image.settings.image.label"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.custom-content.blocks.block.settings.width.label",
+          "default": "50%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:sections.custom-content.blocks.image.settings.alignment.label",
+          "default": "center",
+          "options": [
+            {
+              "value": "top-left",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__1"
+            },
+            {
+              "value": "top-middle",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__2"
+            },
+            {
+              "value": "top-right",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__3"
+            },
+            {
+              "value": "middle-left",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__4"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__5"
+            },
+            {
+              "value": "middle-right",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__6"
+            },
+            {
+              "value": "bottom-left",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__7"
+            },
+            {
+              "value": "bottom-middle",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__8"
+            },
+            {
+              "value": "bottom-right",
+              "label": "t:sections.custom-content.blocks.image.settings.alignment.options__9"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "t:sections.custom-content.blocks.video.name",
+      "settings": [
+        {
+          "type": "video_url",
+          "id": "video_url",
+          "label": "t:sections.custom-content.blocks.video.settings.video_url.label",
+          "accept": [
+            "youtube",
+            "vimeo"
+          ]
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.custom-content.blocks.block.settings.width.label",
+          "default": "100%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "alignment",
+          "label": "t:sections.custom-content.blocks.video.settings.alignment.label",
+          "default": "center",
+          "options": [
+            {
+              "value": "top-middle",
+              "label": "t:sections.custom-content.blocks.video.settings.alignment.options__1"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.custom-content.blocks.video.settings.alignment.options__2"
+            },
+            {
+              "value": "bottom-middle",
+              "label": "t:sections.custom-content.blocks.video.settings.alignment.options__3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "t:sections.custom-content.blocks.html.name",
+      "settings": [
+        {
+          "type": "html",
+          "id": "code",
+          "label": "HTML"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "t:sections.custom-content.blocks.block.settings.width.label",
+          "default": "50%",
+          "options": [
+            {
+              "value": "25%",
+              "label": "25%"
+            },
+            {
+              "value": "33%",
+              "label": "33%"
+            },
+            {
+              "value": "50%",
+              "label": "50%"
+            },
+            {
+              "value": "66%",
+              "label": "66%"
+            },
+            {
+              "value": "75%",
+              "label": "75%"
+            },
+            {
+              "value": "100%",
+              "label": "100%"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.custom-content.presets.name",
+      "blocks": [
+        {
+          "type": "text"
+        },
+        {
+          "type": "image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

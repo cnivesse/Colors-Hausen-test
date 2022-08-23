@@ -1,0 +1,8 @@
+background-image: url({{ image | img_url: size }});
+background-image:
+  -webkit-image-set(
+    url('{{ image | img_url: size, scale: 1 }}') 1x,
+    url('{{ image | img_url: size, scale: 2 }}') 2x,
+    url('{{ image | img_url: size, scale: 3 }}') 3x,
+    url('{{ image | img_url: size, scale: 4 }}') 4x
+  );

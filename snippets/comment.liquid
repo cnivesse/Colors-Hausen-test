@@ -1,0 +1,19 @@
+<div class="comment" id="{{ comment.id }}">
+  {% capture date %}
+    {{ comment.created_at | date: format: 'day_month_and_year' }}
+  {% endcapture %}
+    {% if just_created %}
+      <h6>
+        {% if blog.moderated? %}
+          {{ 'blogs.comment_form.success_moderated_html' | t }}
+        {% else %}
+          {{ 'blogs.comment_form.success' | t }}
+        {% endif %}
+      </h6>
+    {% endif %}
+  <h4><span class="highlight">{{ comment.author }}</span></h4>
+  <h5>{{ date }}</h5>
+  <div class="rte">
+    {{ comment.content }}
+  </div>
+</div>

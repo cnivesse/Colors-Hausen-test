@@ -1,0 +1,45 @@
+<script>
+  document.documentElement.className = document.documentElement.className.replace('no-js', '');
+  window.Colors = {};
+  Colors.strings = {
+    add_to_cart: {{ 'products.product.add_to_cart' | t | json }},
+    unavailable: {{ 'products.product.unavailable' | t | json }},
+    zoom_close: {{ "products.zoom.close" | t | json }},
+    zoom_previous: {{ "products.zoom.prev" | t | json }},
+    zoom_next: {{ "products.zoom.next" | t | json }},
+    from_price: {{ "products.product.from_lowest_price_html" | t | json}},
+    money_format: {{ shop.money_format | strip_html | json }},
+    addressError: {{ 'map.errors.address_error' | t | json }},
+    addressNoResults: {{ 'map.errors.address_no_results' | t | json }},
+    addressQueryLimit: {{ 'map.errors.address_query_limit_html' | t | json }},
+    authError: {{ 'map.errors.auth_error_html' | t | json }},
+    customer_delete_question: {{ 'customer.addresses.delete_question' | t | json }},
+    cart_empty: {{ 'cart.general.empty' | t | json }}
+  };
+  Colors.routes = {
+    cart_url: '{{ routes.cart_url }}'
+  };
+</script>
+
+<!-- Old IE -->
+<script type="text/javascript">
+  if (window.MSInputMethodContext && document.documentMode) {
+    var scripts = document.getElementsByTagName('script')[0];
+    var polyfill = document.createElement("script");
+    polyfill.defer = true;
+    polyfill.src = "{{ 'ie11CustomProperties.min.js' | asset_url }}";
+    scripts.parentNode.insertBefore(polyfill, scripts);
+  }
+</script>
+
+{%- liquid
+ assign url = 'colors.js' | asset_url
+ unless  request.design_mode
+   assign url = url  | append: '&enable_js_minification=1'
+ endunless
+-%}
+<script src="{{ url }}" defer="defer"></script>
+
+{%- if request.page_type contains 'customers/' -%}
+  <script src="{{ 'shopify_common.js' | shopify_asset_url }}" defer="defer"></script>
+{%- endif -%}

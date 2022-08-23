@@ -1,0 +1,37 @@
+{% form 'new_comment', article %}
+  <div class="row with-top-border with-bottom-border">
+    <input class="text full{% if form.errors contains 'author' %} error{% endif %}" type="text" name="comment[author]" placeholder="{{ 'blogs.comment_form.name' | t }}" id="comment-author" value="{{ form.author }}" autocapitalize="words" aria-label="{{ 'blogs.comment_form.name' | t }}">
+    {% render 'form-field-error', form: form, field: 'author' %}
+  </div>
+  <div class="row with-bottom-border">
+    <input class="text full{% if form.errors contains 'email' %} error{% endif %}" type="email" name="comment[email]" placeholder="{{ 'blogs.comment_form.email' | t }}" id="comment-email" value="{{ form.email }}" autocorrect="off" autocapitalize="off" aria-label="{{ 'blogs.comment_form.email' | t }}">
+    {% render 'form-field-error', form: form, field: 'email' %}
+  </div>
+  <div class="row with-bottom-border">
+    <textarea class="text full{% if form.errors contains 'body' %} error{% endif %}" name="comment[body]" id="comment-body" placeholder="{{ 'blogs.comment_form.message' | t }}" aria-label="{{ 'blogs.comment_form.message' | t }}">{{ form.body }}</textarea>
+    {% render 'form-field-error', form: form, field: 'body' %}
+  </div>
+
+  {% if blog.moderated? %}
+    <div class="row expanded">
+      <h4>{{ 'blogs.comment_form.moderated' | t }}</h4>
+    </div>
+  {% endif %}
+
+  {% render 'form-errors', form: form %}
+
+  <div class="row actions">
+    <button type="submit" class="btn solid" formnovalidate="formnovalidate">
+      {{ 'blogs.comment_form.post' | t }}
+    </button>
+  </div>
+
+{% endform %}
+
+{% if settings.color_body_bg == settings.color_section_bg %}
+  <style type="text/css">
+    form input.text, form textarea.text {
+      border: 1px solid {{ settings.color_body_text }};
+    }
+  </style>
+{% endif %}

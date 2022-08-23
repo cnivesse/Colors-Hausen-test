@@ -1,0 +1,390 @@
+{%- if section.settings.enable_filtering or section.settings.enable_sorting-%}
+  {% liquid
+    assign section_name = section.id | split: '__' | last
+    assign total_active_values = 0
+    assign filters_count = collection.filters | size
+    if collection.all_tags.size > 0
+      assign tags_count = collection.all_tags.size
+      assign tags = collection.all_tags
+    elsif collection.tags.size > 0
+      assign tags_count = collection.tags.size
+      assign tags = collection.tags
+    else
+      assign tags_count = 0
+    endif
+    if section.settings.filter_type == "regular" and section.settings.enable_filtering and filters_count > 0
+      assign has_filters = true
+    else
+      assign has_filters = false
+    endif
+    if section.settings.filter_type == "tags" and section.settings.enable_filtering and tags_count > 1
+      assign has_tags = true
+    elsif section_name == 'featured-collection' and section.settings.enable_filtering and tags_count > 1
+      assign has_tags = true
+    else
+      assign has_tags = false
+    endif
+    assign has_sorting = section.settings.enable_sorting
+    if search.terms != blank
+      assign clear_url = routes.search_url | append: "?type=product,page,article&options[prefix]=last&q=" | append: search.terms
+    else
+      assign clear_url = collection.url | append: '?sort_by=' | append: collection.sort_by
+    endif
+  %}
+  {% capture hidden_vars %}
+    {%- if collection.current_vendor or collection.current_type -%}
+      <input type="hidden" name="q" value="{{ collection.current_vendor }}{{ collection.current_type }}">
+    {%- endif -%}
+    {%- if search.terms != blank -%}
+      <input type="hidden" name="options[prefix]" value="last" />
+      <input type="hidden" name="type" value="product,page,article">
+      <input type="hidden" name="q" value="{{ search.terms }}">
+    {% endif %}
+  {% endcapture %}
+
+  {% if has_filters or has_tags or has_sorting %}
+    <div class="sorting-and-filtering">
+      <form class="desktop {% if has_filters %}hide-on-mobile{% endif %}">
+        {{ hidden_vars }}
+        {%- if has_filters or has_tags -%}
+          <div class="filtering">
+            <div class="filters">
+              {%- if section.settings.filter_type == "regular" -%}
+                {%- if section.settings.show_labels -%}
+                  <div class="label">{{ 'collections.general.filter_by' | t }}</div>
+                {%- endif -%}
+                {%- for filter in collection.filters -%}
+                  <details class="filter-group">
+                    <summary class="filter-group-summary">
+                      <div>
+                        <span>{{ filter.label }}</span>
+                        {%- if filter.active_values.size > 0 -%}
+                          <span class="count">({{ filter.active_values.size }})</span>
+                        {%- endif -%}
+                      </div>
+                      {% render 'svg-arrow' %}
+                    </summary>
+                    <div class="filter-group-display">
+                      {%- case filter.type -%}
+                      {%- when 'list' -%}
+                        {%- if filter.active_values.size > 0 -%}
+                          {%- assign total_active_values = total_active_values | plus: filter.active_values.size -%}
+                          <div class="filter-group-header">
+                            <span class="no-scale">{{ filter.active_values.size }} selected</span>
+                            <a href="{{ filter.url_to_remove }}" class="reset">{{ 'collections.general.reset' | t }}</a>
+                          </div>
+                        {%- endif -%}
+                      {%- when 'price_range' -%}
+                        {%- if filter.min_value.value -%}
+                          {%- assign total_active_values = total_active_values | plus: 1 -%}
+                        {%- endif -%}
+                        {%- if filter.max_value.value -%}
+                          {%- assign total_active_values = total_active_values | plus: 1 -%}
+                        {%- endif -%}
+                        <div class="filter-group-header">
+                          {%- assign max_price_amount = filter.range_max | money | escape -%}
+                          <span class="no-scale">{{ "collections.general.max_price" | t: price: max_price_amount }}</span>
+                          {%- if filter.min_value.value or filter.max_value.value -%}
+                            <a href="{{ filter.url_to_remove }}" class="reset">{{ 'collections.general.reset' | t }}</a>
+                          {%- endif -%}
+                        </div>
+                      {%- endcase -%}
+                      <div class="filter-group-content">
+                        {%- case filter.type -%}
+                        {%- when 'list' -%}
+                          <ul>
+                            {%- for filter_value in filter.values -%}
+                              <li>
+                                <input type="checkbox"
+                                  name="{{ filter_value.param_name }}"
+                                  value="{{ filter_value.value }}"
+                                  id="Filter-{{ filter.label }}-{{ forloop.index }}"
+                                  {% if filter_value.active -%}checked{%- endif %}
+                                  {% if filter_value.count == 0 and filter_value.active == false -%}disabled{%- endif %}
+                                >
+                                <label for="Filter-{{ filter.label }}-{{ forloop.index }}">
+                                  {{ filter_value.label | escape }} ({{ filter_value.count }})
+                                </label>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+
+                          <div>
+                            <input type="submit" class="btn solid small full no-scale" value="{{ 'collections.general.apply' | t }}">
+                          </div>
+                        {%- when 'price_range' -%}
+                          <div class="price-range">
+                            <div class="price">
+                              <label for="Filter-min-{{ filter.label }}-{{ forloop.index }}">{{ 'collections.general.from' | t }}</label>
+                              <span class="no-scale">{{ cart.currency.symbol }}</span>
+                              <input name="{{ filter.min_value.param_name }}" class="no-scale"
+                                id="Filter-min-{{ filter.label | escape }}-{{ forloop.index }}"
+                                {%- if filter.min_value != empty -%}
+                                  {%- if uses_comma_decimals -%}
+                                    value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                  {%- else -%}
+                                    value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                  {% endif %}
+                                {%- else -%}
+                                  value="0"
+                                {%- endif -%}
+                                type="number"
+                                placeholder="0"
+                                min="0"
+                                max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                              >
+                            </div>
+                            <div class="price">
+                              <label for="Filter-max-{{ filter.label }}-{{ forloop.index }}">{{ 'collections.general.to' | t }}</label>
+                              <span class="no-scale">{{ cart.currency.symbol }}</span>
+                              <input name="{{ filter.max_value.param_name }}" class="no-scale"
+                                id="Filter-max-{{ filter.label | escape }}-{{ forloop.index }}"
+                                {%- if filter.max_value != empty -%}
+                                  {%- if uses_comma_decimals -%}
+                                    value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                  {%- else -%}
+                                    value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                  {% endif %}
+                                {%- else -%}
+                                  value="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                {%- endif -%}
+                                type="number"
+                                placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                min="0"
+                                max="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                              >
+                            </div>
+                          </div>
+                          <div>
+                            <input type="submit" class="btn solid small full no-scale" value="{{ 'collections.general.apply' | t }}">
+                          </div>
+                        {%- endcase -%}
+                      </div>
+                    </div>
+                  </details>
+                {%- endfor -%}
+              {%- else -%}
+                {% if has_tags %}
+                  <ul class="categories inline">
+                    {%- if section.settings.show_labels -%}
+                      <li class="label" style="margin-right: 20px;">{{ 'collections.general.filter_by' | t }}</li>
+                    {%- endif -%}
+                    <li class="all"><a id="all" href="{{ routes.collections_url }}/{{ collection.handle }}" {% unless current_tags %} class="active"{% endunless %}><span>{{ 'collections.tags.all' | t }}</span><sup>{{ collection.all_products_count }}</sup></a></li>
+                    {% for tag in tags %}
+                      <li><a id="{{ tag | handle }}" href="{{ routes.collections_url }}/{{ collection.handle }}/{{ tag | handle }}" {% if current_tags contains tag %}class="active"{% endif %}><span>{{ tag }}</span><sup>1</sup></a></li>
+                    {% endfor %}
+                  </ul>
+                {% endif %}
+              {%- endif -%}
+            </div>
+          </div>
+        {%- endif -%}
+        {%- if has_sorting -%}
+          <div class="sorting">
+            <div class="sort {% if section.settings.show_labels %}with-label{% endif %}">
+              {%- if section.settings.show_labels -%}
+                <div class="label">{{ 'collections.general.sort_by' | t }}</div>
+              {%- endif -%}
+              <div class="select shopify-select auto">
+                <select name="sort_by" id="sortBy" aria-label="{{ 'collections.general.sort_by' | t }}" aria-describedby="a11y-refresh-page-message">
+                  {% for option in collection.sort_options %}
+                    <option value="{{ option.value }}" {% if option.value == collection.sort_by %} selected="selected"{% endif %}>{{ option.name }}</option>
+                  {% endfor %}
+                </select>
+                {% render 'svg-arrow' %}
+              </div>
+              <noscript>
+                <button type="submit" class="btn accent small rounded no-scale">{{ 'collections.general.sort_button' | t }}</button>
+              </noscript>
+            </div>
+          </div>
+        {%- endif -%}
+      </form>
+      {%- if has_filters -%}
+        <menu-drawer class="hide-on-desktop">
+          <details>
+            <summary >
+              <span class="btn border full small no-scale">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="icon icon-filter" fill="none" viewBox="0 0 20 41">
+                  <line x1="16.5" y1="17.5" x2="3.5" y2="17.5"  stroke-linecap="round"/>
+                  <line x1="16.5" y1="24.5" x2="3.5" y2="24.5"  stroke-linecap="round"/>
+                  <circle cx="13" cy="24.5" r="2" fill="white" />
+                  <circle cx="7" cy="17.5" r="2" fill="white" />
+                </svg>
+                {%- if has_filters and has_sorting -%}
+                  <span>{{ 'collections.general.filter_and_sort' | t }}</span>
+                {%- else -%}
+                  <span>{{ 'collections.general.filter_button' | t }}</span>
+                {% endif %}
+                {%- if total_active_values > 0 -%}
+                  <span class="count">({{ total_active_values }})</span>
+                {%- endif -%}
+              </span>
+              <span tabindex="0" class="close">
+                <i class="fc fc-close"></i>
+              </span>
+            </summary>
+            <collection-filters-form>
+              <form id="CollectionFiltersFormMobile">
+                {{ hidden_vars }}
+                <div class="inner-form">
+                  <div class="header">
+                    <h2 class="mobile-facets__heading">{{ 'collections.general.filter_and_sort' | t }}</h2>
+                    {% if search.terms == blank %}
+                      <p class="mobile-facets__count">{{ 'collections.general.product_count' | t: count: collection.products_count, total: collection.all_products_count }}</p>
+                    {% endif %}
+                  </div>
+                  <div class="menu">
+                    {%- for filter in collection.filters -%}
+                      {% case filter.type %}
+                      {% when 'list' %}
+                        <details class="details">
+                          <summary class="summary">
+                            <div>
+                              <span>{{ filter.label | escape }}</span>
+                              {%- if filter.active_values.size > 0 -%}
+                                <span class="count">({{ filter.active_values.size }})</span>
+                              {%- endif -%}
+                              <span class="arrow">
+                                {% render 'svg-arrow' %}
+                              </span>
+                            </div>
+                          </summary>
+                          <div class="submenu">
+                            <ul role="list">
+                              {%- for value in filter.values -%}
+                                <li>
+                                  <input
+                                    type="checkbox"
+                                    name="{{ value.param_name }}"
+                                    value="{{ value.value }}"
+                                    id="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}"
+                                    {% if value.active %}checked{% endif %}
+                                    {% if value.count == 0 and value.active == false %}disabled{% endif %}
+                                  >
+                                  <label for="Filter-{{ filter.label | escape }}-mobile-{{ forloop.index }}">
+                                    {{ value.label | escape }} ({{ value.count }})
+                                  </label>
+                                </li>
+                              {%- endfor -%}
+                            </ul>
+                          </div>
+                        </details>
+                      {% when 'price_range' %}
+                        <details class="details">
+                          <summary class="summary">
+                            <div>
+                              <span>{{ filter.label | escape }}</span>
+                              {%- if filter.min_value.value and filter.max_value.value -%}
+                                <span class="count">(2)</span>
+                              {%- elsif filter.min_value.value -%}
+                                <span class="count">(1)</span>
+                              {%- elsif filter.max_value.value -%}
+                                <span class="count">(1)</span>
+                              {%- endif -%}
+                              <span class="arrow">
+                                {% render 'svg-arrow' %}
+                              </span>
+                            </div>
+                          </summary>
+                          <div class="submenu">
+                            <span>{{ "collections.general.max_price" | t: price: max_price_amount }}</span>
+                            <div class="price-range">
+                              <div class="price">
+                                <label for="Filter-min-mobile-{{ filter.label }}-{{ forloop.index }}">{{ 'collections.general.from' | t }}</label>
+                                <span>{{ cart.currency.symbol }}</span>
+                                <input
+                                  name="{{ filter.min_value.param_name }}"
+                                  id="Filter-min-mobile-{{ filter.label | escape }}-{{ forloop.index }}"
+                                  {%- if filter.min_value != empty -%}
+                                    {%- if uses_comma_decimals -%}
+                                      value="{{ filter.min_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                    {%- else -%}
+                                      value="{{ filter.min_value.value | money_without_currency | replace: ',', '' }}"
+                                    {% endif %}
+                                  {%- endif -%}
+                                  type="number"
+                                  placeholder="0"
+                                  min="0"
+                                  max="{{ filter.range_max | divided_by: 100 | ceil }}">
+                                </input>
+                              </div>
+                              <div class="price">
+                                <label for="Filter-max-mobile-{{ filter.label | escape }}-{{ forloop.index }}">{{ 'collections.general.to' | t }}</label>
+                                <span>{{ cart.currency.symbol }}</span>
+                                <input
+                                  name="{{ filter.max_value.param_name }}"
+                                  id="Filter-max-mobile-{{ filter.label | escape }}-{{ forloop.index }}"
+                                  {%- if filter.max_value.value != empty -%}
+                                    {%- if uses_comma_decimals -%}
+                                      value="{{ filter.max_value.value | money_without_currency | replace: '.', '' | replace: ',', '.' }}"
+                                    {%- else -%}
+                                      value="{{ filter.max_value.value | money_without_currency | replace: ',', '' }}"
+                                    {% endif %}
+                                  {%- endif -%}
+                                  type="number"
+                                  placeholder="{{ filter.range_max | money_without_currency | replace: ',', '' }}"
+                                  min="0"
+                                  max="{{ filter.range_max | divided_by: 100 | ceil }}">
+                                </input>
+                              </div>
+                            </div>
+                          </div>
+                        </details>
+                      {% endcase %}
+                    {%- endfor -%}
+
+                    {%- if has_sorting -%}
+                      <div class="details last">
+                        <div class="summary">
+                          <div>
+                            <label for="SortBy-mobile">{{ 'collections.general.sort_by' | t }}</label>
+                            <div class="select shopify-select">
+                              <select name="sort_by" aria-describedby="a11y-refresh-page-message">
+                                {%- for option in collection.sort_options -%}
+                                  <option value="{{ option.value | escape }}"{% if option.value == collection.sort_by %} selected="selected"{% endif %}>{{ option.name | escape }}</option>
+                                {%- endfor -%}
+                              </select>
+                              {% render 'svg-arrow' %}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    {%- endif -%}
+
+                    <div class="footer">
+                      <a href="{{ clear_url }}" class="btn border full no-scale">{{ 'collections.general.clear' | t }}</a>
+                      <button type="submit" class="btn solid full no-scale">{{ 'collections.general.apply' | t }}</button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </collection-filters-form>
+          </details>
+        </menu-drawer>
+        <div class="active-facets">
+          <a href="{{ clear_url }}" class="btn accent small rounded no-scale">{{ 'collections.general.clear_all' | t }}</a>
+          {%- for filter in collection.filters -%}
+            {% if filter.type == "price_range"  %}
+              {%- if filter.min_value.value != nil or filter.max_value.value != nil -%}
+                <a class="btn accent small rounded faded no-scale" href="{{ filter.url_to_remove }}">
+                  {%- assign min_value = filter.min_value.value | default: 0 -%}
+                  {%- assign max_value = filter.max_value.value | default: filter.range_max -%}
+                  {{ min_value | money }} - {{ max_value | money }}
+                  <i class="fc fc-close"></i>
+                </a>
+              {%- endif -%}
+            {%- else -%}
+              {%- for filter_value in filter.active_values -%}
+                <a class="btn accent small rounded faded no-scale" href="{{ filter_value.url_to_remove }}">
+                  {{ filter_value.label }}
+                  <i class="fc fc-close"></i>
+                </a>
+              {%- endfor -%}
+            {% endif %}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  {% endif %}
+{%- endif -%}

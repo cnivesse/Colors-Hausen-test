@@ -1,0 +1,11 @@
+{%- if from.unit_price -%}
+  {%- capture unit_price_base_unit -%}
+    {%- if from.unit_price_measurement -%}
+      {%- if from.unit_price_measurement.reference_value != 1 -%}
+        {{- from.unit_price_measurement.reference_value -}}
+      {%- endif -%}
+      {{ from.unit_price_measurement.reference_unit }}
+    {%- endif -%}
+  {%- endcapture -%}
+  <span class="unit-price">{{ from.unit_price | money }}/{{- unit_price_base_unit -}}</span>
+{%- endif -%}

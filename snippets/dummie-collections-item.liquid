@@ -1,0 +1,10 @@
+{%- capture collection_item_width -%}
+  {%- render 'get-collection-item-width', collection_count: collection_count, collection_index: collection_index -%}
+{%- endcapture -%}
+<a class="collections-item dummie {% if section.settings.collection_underline %}with-underline{% endif %} {{ collection_item_width }} {{ section.settings.collection_height }} {{ section.settings.collection_alignment }}" target="_blank" {{ block_attributes }}>
+  {% unless section.settings.collection_titles == 'hidden' %}
+    <h1>{{ 'sections.onboarding.add_collection' | t }}{% if section.settings.collection_show_arrow %} {{ 'collections.general.arrow' | t }}{% endif %}</h1>
+  {% endunless %}
+  {% capture placeholder_class %}placeholder-svg opacity-{{ section.settings.collection_image_opacity }}{% endcapture %}
+  {{ 'collection-' | append: collection_id | placeholder_svg_tag: placeholder_class }}
+</a>

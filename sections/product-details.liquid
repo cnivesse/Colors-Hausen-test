@@ -1,0 +1,513 @@
+<div class="content product {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="product">
+  <div class="item">
+    <div class="right" style="float: none; width: 100%;">
+      <div class="inner with-layout-options centered">
+        {% render 'product-blocks' %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.product-details.name",
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "text",
+      "name": "t:sections.main-product.blocks.text.name",
+      "settings": [
+        {
+          "id": "text",
+          "type": "richtext",
+          "default": {
+            "ar": "<p>قالب نص</p>",
+            "bg": "<p>Текстов блок</p>",
+            "ca": "<p>Bloc de text</p>",
+            "cs": "<p>Textový blok</p>",
+            "da": "<p>Tekstblok</p>",
+            "de": "<p>Textblock</p>",
+            "el": "<p>Μπλοκ κειμένου</p>",
+            "en": "<p>Text block</p>",
+            "es": "<p>Bloque de texto</p>",
+            "fi": "<p>Tekstilohko</p>",
+            "fr": "<p>Bloc de texte</p>",
+            "he": "<p>חוסם טקסט</p>",
+            "hr": "<p>Blok teksta</p>",
+            "hu": "<p>Szövegblokk</p>",
+            "id": "<p>Blok teks</p>",
+            "it": "<p>Blocco di testo</p>",
+            "ja": "<p>テキストブロック</p>",
+            "ko": "<p>텍스트 블록</p>",
+            "lt": "<p>Teksto blokas</p>",
+            "nb": "<p>Tekstblokk</p>",
+            "nl": "<p>Tekstblok</p>",
+            "pl": "<p>Blok tekstowy</p>",
+            "pt-BR": "<p>Bloco de texto</p>",
+            "pt-PT": "<p>Bloco de texto</p>",
+            "ro": "<p>Bloc de text</p>",
+            "ru": "<p>Текстовый блок</p>",
+            "sk": "<p>Blok textu</p>",
+            "sl": "<p>Besedilni blok</p>",
+            "sv": "<p>Textblock</p>",
+            "th": "<p>บล็อคข้อความ</p>",
+            "tr": "<p>Metin bloğu</p>",
+            "vi": "<p> Khối văn bản </p>",
+            "zh-CN": "<p>文本块</p>",
+            "zh-TW": "<p>文本塊</p>"
+          },
+          "label": "t:sections.main-product.blocks.text.settings.text.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "subtitle",
+      "name": "t:sections.main-product.blocks.subtitle.name",
+      "settings": [
+        {
+          "id": "text",
+          "type": "text",
+          "default": {
+            "ar": "العنوان الفرعي",
+            "bg": "субтитри",
+            "ca": "Subtítol",
+            "cs": "Titulky",
+            "da": "Undertekst",
+            "de": "Untertitel",
+            "el": "Υπότιτλος",
+            "en": "Subtitle",
+            "es": "Subtitular",
+            "fi": "Tekstitys",
+            "fr": "Sous-titre",
+            "he": "כתוביות",
+            "hr": "Titl",
+            "hu": "Felirat",
+            "id": "Subjudul",
+            "it": "Sottotitolo",
+            "ja": "字幕",
+            "ko": "부제",
+            "lt": "Subtitrai",
+            "nb": "Undertekst",
+            "nl": "Ondertitel",
+            "pl": "Podtytuł",
+            "pt-BR": "Legenda",
+            "pt-PT": "Legenda",
+            "ro": "Subtitlu",
+            "ru": "Подзаголовок",
+            "sk": "Podnadpis",
+            "sl": "Podnaslov",
+            "sv": "Texta",
+            "th": "คำบรรยาย",
+            "tr": "Alt yazı",
+            "vi": "Phụ đề",
+            "zh-CN": "字幕",
+            "zh-TW": "字幕"
+
+          },
+          "label": "t:sections.main-product.blocks.subtitle.settings.text.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "description",
+      "name": "t:sections.main-product.blocks.description.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "t:sections.main-product.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.main-product.blocks.image.settings.image.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "share",
+      "name": "t:sections.main-product.blocks.share.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.share.settings.featured_image_info.content"
+        },
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.share.settings.title_info.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "facebook_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.facebook_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "twitter_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.twitter_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "pinterest_sharing_products",
+          "label": "t:sections.main-product.blocks.share.settings.pinterest_sharing_products.label",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "custom_liquid",
+      "name": "t:sections.main-product.blocks.custom_liquid.name",
+      "settings": [
+        {
+          "type": "liquid",
+          "id": "custom_liquid",
+          "label": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.label",
+          "info": "t:sections.main-product.blocks.custom_liquid.settings.custom_liquid.info"
+        }
+      ]
+    },
+    {
+      "type": "collapsible_tab",
+      "name": "t:sections.main-product.blocks.collapsible_tab.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "heading",
+          "info": "t:sections.main-product.blocks.collapsible_tab.settings.heading.info",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.heading.label",
+          "default": {
+            "ar": "عنوان علامة التبويب",
+            "bg": "Заглавие на раздела",
+            "ca": "Títol de la pestanya",
+            "cs": "Název karty",
+            "da": "Fanetitel",
+            "de": "Tab-Titel",
+            "el": "Τίτλος καρτέλας",
+            "en": "Tab title",
+            "es": "Título de la pestaña",
+            "fi": "Välilehden otsikko",
+            "fr": "Titre de l'onglet",
+            "he": "כותרת הכרטיסייה",
+            "hr": "Naslov kartice",
+            "hu": "Lap címe",
+            "id": "Judul tab",
+            "it": "Titolo della scheda",
+            "ja": "タブタイトル",
+            "ko": "탭 제목",
+            "lt": "Skirtuko pavadinimas",
+            "nb": "Fanetittel",
+            "nl": "Tabtitel",
+            "pl": "Tytuł karty",
+            "pt-BR": "Título da guia",
+            "pt-PT": "Título da guia",
+            "ro": "Titlul filei",
+            "ru": "Название вкладки",
+            "sk": "Názov karty",
+            "sl": "Naslov zavihka",
+            "sv": "Flikens titel",
+            "th": "ชื่อแท็บ",
+            "tr": "Sekme başlığı",
+            "vi": "Tiêu đề tab",
+            "zh-CN": "标签标题",
+            "zh-TW": "標籤標題"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.content.label",
+          "default": {
+            "ar": "<p> محتوى علامة التبويب </p>",
+            "bg": "<p>Съдържание на раздел</p>",
+            "ca": "<p>Contingut de la pestanya</p>",
+            "cs": "<p>Obsah karty</p>",
+            "da": "<p>Faneindhold</p>",
+            "de": "<p>Tab-Inhalt</p>",
+            "el": "<p>Περιεχόμενο καρτέλας</p>",
+            "en": "<p>Tab content</p>",
+            "es": "<p>Contenido de la pestaña</p>",
+            "fi": "<p>Välilehden sisältö</p>",
+            "fr": "<p>Contenu de l'onglet</p>",
+            "he": "<p>תוכן כרטיסייה</p>",
+            "hr": "<p>Sadržaj kartice</p>",
+            "hu": "<p>Tartalom lap</p>",
+            "id": "<p>Konten tab</p>",
+            "it": "<p>Contenuto della scheda</p>",
+            "ja": "<p>タブコンテンツ</p>",
+            "ko": "<p>탭 콘텐츠</p>",
+            "lt": "<p>Skirtuko turinys</p>",
+            "nb": "<p>Faneinnhold</p>",
+            "nl": "<p>Tabbladinhoud</p>",
+            "pl": "<p>Zawartość karty</p>",
+            "pt-BR": "<p>Conteúdo da guia</p>",
+            "pt-PT": "<p>Conteúdo da guia</p>",
+            "ro": "<p>Conținutul filei</p>",
+            "ru": "<p>Содержимое вкладки</p>",
+            "sk": "<p>Obsah karty</p>",
+            "sl": "<p>Vsebina zavihka</p>",
+            "sv": "<p>Flikinnehåll</p>",
+            "th": "<p>เนื้อหาแท็บ</p>",
+            "tr": "<p>Sekme içeriği</p>",
+            "vi": "<p> Nội dung tab </p>",
+            "zh-CN": "<p>标签内容</p>",
+            "zh-TW": "<p>標籤內容</p>"
+          }
+        },
+        {
+          "type": "page",
+          "id": "page",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.page.label"
+        },
+        {
+          "type": "select",
+          "id": "icon",
+          "options": [
+            {
+              "value": "none",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__1.label"
+            },
+            {
+              "value": "box",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__2.label"
+            },
+            {
+              "value": "chat_bubble",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__3.label"
+            },
+            {
+              "value": "check_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__4.label"
+            },
+            {
+              "value": "dryer",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__5.label"
+            },
+            {
+              "value": "eye",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__6.label"
+            },
+            {
+              "value": "heart",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__7.label"
+            },
+            {
+              "value": "iron",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__8.label"
+            },
+            {
+              "value": "leaf",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__9.label"
+            },
+            {
+              "value": "leather",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__10.label"
+            },
+            {
+              "value": "lock",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__11.label"
+            },
+            {
+              "value": "map_pin",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__12.label"
+            },
+            {
+              "value": "pants",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__13.label"
+            },
+            {
+              "value": "plane",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__14.label"
+            },
+            {
+              "value": "price_tag",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__15.label"
+            },
+            {
+              "value": "question_mark",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__16.label"
+            },
+            {
+              "value": "return",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__17.label"
+            },
+            {
+              "value": "ruler",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__18.label"
+            },
+            {
+              "value": "shirt",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__19.label"
+            },
+            {
+              "value": "shoe",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__20.label"
+            },
+            {
+              "value": "silhouette",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__21.label"
+            },
+            {
+              "value": "star",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__22.label"
+            },
+            {
+              "value": "truck",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__23.label"
+            },
+            {
+              "value": "washing",
+              "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.options__24.label"
+            }
+          ],
+          "default": "check_mark",
+          "label": "t:sections.main-product.blocks.collapsible_tab.settings.icon.label"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "t:sections.main-product.blocks.rating.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "t:sections.main-product.blocks.rating.settings.paragraph.content"
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.main-product.settings.header.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.main-product.settings.header.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "zoom_enable",
+      "label": "t:sections.main-product.settings.zoom_enable.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_video_looping",
+      "label": "t:sections.main-product.settings.enable_video_looping.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "first_variant_media_enabled",
+      "label": "t:sections.main-product.settings.first_variant_media_enabled.label",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

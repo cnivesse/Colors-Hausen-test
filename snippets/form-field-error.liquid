@@ -1,0 +1,5 @@
+{% if form.errors contains field %}
+  <div class="field-error">
+    {{ form.errors.translated_fields[field] | capitalize }} {{ form.errors.messages[field] }}
+  </div>
+{% endif %}

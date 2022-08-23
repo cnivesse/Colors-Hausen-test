@@ -1,0 +1,4 @@
+<div class="row expanded-top back">
+  {% capture link %}<a class="underline" href="{{ routes.root_url }}">{{ 'general.navigation.return_to_store' | t }}</a>{% endcapture %}
+  {{ 'general.navigation.cancel_html' | t: link: link }}
+</div> 

@@ -1,0 +1,118 @@
+<div class="content blog article {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }}">
+    {% if section.settings.show_heading %}
+      <div class="section-header">
+        <a href="{{ blog.url }}">
+          <h2 class="shopify-section-title">{{ blog.title }}</h2>
+        </a>
+        <a href="{{ shop.url }}{{ blog.url }}.atom" target="_blank" aria-label="RSS">
+          <h2 class="shopify-section-title rss">
+            <i class="fc fc-rss"></i>
+          </h2>
+        </a>
+      </div>
+    {% endif %}
+    <div class="article">
+      {% render 'post' %}
+      {% if blog.comments_enabled? %}
+        <div class="comments">
+          {% if article.comments_count > 0 %}
+            {% if comment.status == 'pending' or comment.status == 'unapproved' %}
+              {% render 'comment', comment: comment, just_created: true %}
+            {% endif %}
+            {% paginate article.comments by 24 %}
+              <div>
+                {% render 'comment' for article.comments as comment %}
+              </div>
+              {% render 'pagination' with paginate as paginate %}
+            {% endpaginate %}
+          {% endif %}
+
+          <h3>{{ 'blogs.comment_form.title' | t }}:</h3>
+          {% render 'form-comment' %}
+        </div>
+      {% endif %}
+    </div>
+    {% if blog.previous_article or blog.next_article %}
+      <div class="pagination">
+        {% if blog.previous_article %}
+          <a href="{{ blog.previous_article }}">
+            <h2>{{ 'blogs.article.previous_article_html' | t }}</h2>
+          </a>
+        {% endif %}
+        {% if blog.previous_article and blog.next_article %}
+          <h2 class="divider">/</h2>
+        {% endif %}
+        {% if blog.next_article %}
+          <a href="{{ blog.next_article }}">
+            <h2>{{ 'blogs.article.next_article_html' | t }}</h2>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-article.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "facebook_sharing_articles",
+      "label": "t:sections.featured-article.settings.facebook_sharing_articles.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "twitter_sharing_articles",
+      "label": "t:sections.featured-article.settings.twitter_sharing_articles.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "pinterest_sharing_articles",
+      "label": "t:sections.featured-article.settings.pinterest_sharing_articles.label",
+      "info": "t:sections.featured-article.settings.pinterest_sharing_articles.info",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": {
+        "en": "Show heading",
+        "es": "Mostrar título"
+      },
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

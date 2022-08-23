@@ -1,0 +1,252 @@
+<div class="content collage desktop-{{ section.settings.desktop_layout }} mobile-{{ section.settings.mobile_layout }} {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="collage">
+  {% if section.settings.heading != blank %}
+    <div class="rte">
+      <p class="category">{{ section.settings.heading }}</p>
+    </div>
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <div class="cards" style="max-width: {{ section.settings.content_max_width }}px;">
+      {%- for block in section.blocks -%}
+        {% liquid
+          assign focus_card_left = false
+          if section.settings.desktop_layout == 'left' and forloop.first
+            assign focus_card_left = true
+          elsif section.settings.desktop_layout == 'right' and forloop.last
+            assign focus_card_right = true
+          endif
+        %}
+        <div class="card {% if block.settings.show_border %} show-border{% endif %}{% if focus_card_left %} card-left{% elsif focus_card_right %} card-right{% endif %}" {{ block.shopify_attributes }}>
+          {%- case block.type -%}
+            {%- when 'image' -%}
+              {%- if block.settings.link != blank -%}<a href="{{ block.settings.link }}">{%- endif -%}
+              {%- if block.settings.image != blank -%}
+                <picture>
+                  {% assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: ","%}
+                  <source srcset=
+                    "{% for dimension in dimensions %}
+                      {% assign img_url = dimension | append: 'x' %}
+                      {% if squared %}
+                        {% assign img_url = img_url | append: dimension %}
+                      {% endif %}
+                      {{ block.settings.image | img_url: img_url }} {{ dimension }}w,
+                    {% endfor %}"
+                    sizes="100vw"
+                  >
+                  <img src="{{ block.settings.image | img_url: '2048x' }}" loading="lazy" >
+                </picture>
+              {%- else -%}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+              {%- endif -%}
+              {%- if block.settings.text != blank -%}
+                <div class="card-info {{ block.settings.text_align }}">{{ block.settings.text }}</div>
+              {%- endif -%}
+              {%- if block.settings.link != blank -%}</a>{%- endif -%}
+
+            {%- when 'product'-%}
+              {%- capture collection_products_classes -%}
+                {%- render 'get-collection-products-classes', with_previews: false -%}
+              {%- endcapture -%}
+              <div class="collection-products {{ collection_products_classes }}">
+                {%- if block.settings.product != blank -%}
+                  {% render 'collection-product', product: block.settings.product %}
+                {%- else -%}
+                  {% render 'dummie-collection-product', col_index: forloop.index %}
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        </div>
+      {%- endfor -%}
+    </div>
+  {% else %}
+    {% render 'no-blocks' %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.collage.name",
+  "class": "section-collage",
+  "settings": [
+    {
+      "type": "select",
+      "id": "desktop_layout",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.collage.settings.desktop_layout.options__1.label"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.collage.settings.desktop_layout.options__2.label"
+        }
+      ],
+      "default": "left",
+      "label": "t:sections.collage.settings.desktop_layout.label"
+    },
+    {
+      "type": "select",
+      "id": "mobile_layout",
+      "options": [
+        {
+          "value": "collage",
+          "label": "t:sections.collage.settings.mobile_layout.options__1.label"
+        },
+        {
+          "value": "column",
+          "label": "t:sections.collage.settings.mobile_layout.options__2.label"
+        }
+      ],
+      "default": "collage",
+      "label": "t:sections.collage.settings.mobile_layout.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.settings.heading.label",
+      "info": "t:sections.settings.heading.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.settings.content_max_width.label",
+      "default": 1200,
+      "min": 400,
+      "max": 2000,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "t:sections.collage.blocks.image.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.collage.blocks.image.settings.image.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border",
+          "label": "t:sections.collage.blocks.block.settings.show_border.label",
+          "default": false
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.collage.blocks.image.settings.link.label",
+          "info": "t:sections.collage.blocks.image.settings.link.info"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.collage.blocks.image.settings.text.label",
+          "info": "t:sections.collage.blocks.image.settings.text.info"
+        },
+        {
+          "type": "select",
+          "id": "text_align",
+          "label": "t:sections.collage.blocks.image.settings.text_align.label",
+          "default": "center",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.collage.blocks.image.settings.text_align.left.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.collage.blocks.image.settings.text_align.center.label"
+            },
+            {
+              "value": "right",
+              "label": "t:sections.collage.blocks.image.settings.text_align.right.label"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "product",
+      "name": "t:sections.collage.blocks.product.name",
+      "settings": [
+        {
+          "type": "product",
+          "id": "product",
+          "label": "t:sections.collage.blocks.product.settings.product.label"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_border",
+          "label": "t:sections.collage.blocks.block.settings.show_border.label",
+          "default": false
+        },
+        {
+          "type": "paragraph",
+          "content": {
+            "en": "Edit your product card settings in the Theme settings section.",
+            "es": "Modifica las propiedades de la targeta de producto en Ajustes de tema."
+          }
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "t:sections.collage.presets.name",
+      "blocks": [
+        {
+          "type": "image"
+        },
+        {
+          "type": "product"
+        },
+        {
+          "type": "product"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

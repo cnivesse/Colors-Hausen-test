@@ -1,0 +1,123 @@
+<div class="search-overlay">
+  <div class="search-bar-wrapper">
+    <form action="{{ routes.search_url }}" method="get" class="search-bar" role="search">
+      <input type="hidden" name="type" value="product,page,article">
+      <input type="hidden" name="options[prefix]" value="last" />
+      <input type="search" name="q" class="text" placeholder="{{ 'general.search.placeholder' | t }}" value="{{ search.terms }}" tabindex="-1" autocorrect="off" autocomplete="off" autocapitalize="none"  aria-label="{{ 'general.search.placeholder' | t }}">
+      <input type="hidden" class="btn" value="Search">
+    </form>
+    {% if settings.predictive_search_enabled %}
+      <div class="predictive-search-results collection">
+      </div>
+      <script id="CollectionSuggestionsTemplate" type="text/template">
+        <div class="collection-products align-{{ settings.product_grid_text_alignment }} hover-opacity-90 no-padding">
+          {% raw %}
+            {{#products}}
+              <a class="collection-product four col-{{ pos }} single-image" href="{{ url }}" data-action='show-product'>
+                  <div class="inner">
+                    <div class="image {% endraw %}{{ settings.image_ratio }}{% raw %}"
+                      {% endraw %}{% if settings.image_ratio == 'adapt' %}{% raw %} style="padding-bottom: {{ aspect_ratio }}%;"{% endraw %}{% endif %}{% raw %}
+                    >
+                      <img src="{{ img }}"
+                           class="opacity-80"
+                           srcset=
+                            "{{ img }} 1x,
+                             {{ img_2x }} 2x,
+                             {{ img_3x }} 3x
+                            "
+                            width="{{ img_width }}"
+                            height="{{ img_height }}"
+                            style="width: 100%; height: auto;"
+                      />
+                    </div>
+                    <div class="info">
+                      <div class="metas">
+                        <div class="line">
+                          {% endraw %}
+                          {% if settings.predictive_search_show_price %}
+                            {% raw %}
+                            <div class="collection-product-price">
+                              <div class="price">
+                                {{#if price_varies}}
+                                  {{from_price}}
+                                {{else}}
+                                  {{price}}
+                                {{/if}}
+                                {{#if on_sale}}
+                                  <div class="price striped">{{compare_at_price}}</div>
+                                {{/if}}
+                              </div>
+                            </div>
+                            {% endraw %}
+                          {% endif %}
+                          <div class="collection-product-title">
+                            {% if settings.predictive_search_show_title %}
+                              {% raw %}
+                              <div class="title">{{ title }}</div>
+                              {% endraw %}
+                            {% endif %}
+                            {% if settings.predictive_search_show_vendor %}
+                              {% raw %}
+                              <div class="vendor"><span>{{ vendor }}</span></div>
+                              {% endraw %}
+                            {% endif %}
+                            {% raw %}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </a>
+            {{/products}}
+            {{#pages}}
+              <a class="collection-product text-only four col-{{ pos }}" href="{{ url }}">
+                  <div class="inner">
+                    <div class="info">
+                      <div class="metas">
+                        <div class="line">
+                          <div class="title">{{ title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </a>
+            {{/pages}}
+            {{#articles}}
+              <a class="collection-product {{#if hasImage}}{{else}}text-only{{/if}} four col-{{ pos }}" href="{{ url }}">
+                  <div class="inner">
+                    {{#if hasImage}}
+                      <div class="image {% endraw %}{{ settings.image_ratio }}{% raw %}"
+                        {% endraw %}{% if settings.image_ratio == 'adapt' %}{% raw %} style="padding-bottom: {{ aspect_ratio }}%;"{% endraw %}{% endif %}{% raw %}
+                      >
+                        <img src="{{ img }}"
+                            class="opacity-80"
+                            srcset=
+                              "{{ img }} 1x,
+                               {{ img_2x }} 2x,
+                               {{ img_3x }} 3x
+                              "
+                            width="{{ img_width }}"
+                            height="{{ img_height }}"
+                            style="width: 100%; height: auto;"
+                        />
+                      </div>
+                    {{/if}}
+                    <div class="info">
+                      <div class="metas">
+                        <div class="line">
+                          <div class="title">{{ title }}</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+              </a>
+            {{/articles}}
+          {% endraw %}
+        </div>
+      </script>
+    {% endif %}
+  </div>
+  <a href="{{ routes.root_url }}" data-action="toggle-search" class="close">
+    <i class="fc fc-close"></i>
+  </a>
+</div>

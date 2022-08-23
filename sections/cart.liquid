@@ -1,0 +1,171 @@
+<div class="content no-padding {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'cart.general.section_title' | t }}</h2>
+    <h1>{{ "cart.general.total_items" | t: count: cart.item_count }}</h1>
+    {% if cart.item_count > 0 %}
+      <p>{% render 'shipping-and-taxes-text' %}</p>
+      <form action="{{ routes.cart_url }}" method="post" novalidate class="cart">
+        <div class="items">
+          {% for item in cart.items %}
+            <div class="row with-top-border item" data-line="{{ forloop.index }}">
+              <div class="left">
+                <a href="{{ item.product.url }}" tabIndex="-1">
+                  <img
+                    src="{{ item | img_url: '160x160' }}"
+                    srcset=
+                     "{{ item | img_url: '160x160', scale: 1 }} 1x,
+                      {{ item | img_url: '160x160', scale: 2 }} 2x,
+                      {{ item | img_url: '160x160', scale: 3 }} 3x
+                     "
+                  >
+                </a>
+              </div>
+              <div class="right">
+                <div>
+                  <a href="{{ item.url }}" class="name">{{ item.product.title }}</a>
+                  <div class="description">
+                    {%- if item.original_line_price != item.final_line_price -%}
+                      <del>{{ item.original_price | money }}</del>
+                      {{ item.final_line_price | money }}
+                    {%- else -%}
+                      {{ item.original_price | money }}
+                    {%- endif -%}
+                    {%- render 'unit-price', from: item -%}
+                  </div>
+                  {% unless item.variant.title contains 'Default' %}
+                    <div class="description">
+                      {{ item.variant.title }}
+                    </div>
+                  {% endunless %}
+                  {% if item.selling_plan_allocation %}
+                    <div class="description">
+                      {{ item.selling_plan_allocation.selling_plan.name }}
+                    </div>
+                  {% endif %}
+                  {% assign property_size = item.properties | size %}
+                  {% if property_size > 0 %}
+                    <div class="description">
+                      {% for p in item.properties %}
+                        {% unless p.last == blank %}
+                          {{ p.first }}:
+                          {% if p.last contains '/uploads/' %}
+                            <a href="{{ p.last }}">{{ p.last | split: '/' | last }}</a>
+                          {% else %}
+                            {{ p.last }}
+                          {% endif %}
+                          {% if forloop.last == false %}
+                            <br>
+                          {% endif %}
+                        {% endunless %}
+                      {% endfor %}
+                    </div>
+                  {% endif %}
+                </div>
+                <div class="quantity">
+                  <input type="number" name="updates[]" value="{{ item.quantity }}" min="0" pattern="[0-9]*" class="quantity">
+                </div>
+              </div>
+
+              {%- if item.original_line_price != item.final_line_price -%}
+                <div class="price with-discount">
+                  <span class="striped">{{ item.original_line_price | money }}</span><br>
+                  <span class="accent">{{ item.final_line_price | money }}</span>
+                  {%- if item.line_level_discount_allocations != blank -%}
+                    {%- for discount_allocation in item.line_level_discount_allocations -%}
+                      <span class="allocation"><i class="icon fc fc-tag"></i>{{ discount_allocation.discount_application.title }} (-{{ discount_allocation.amount | money }})</span>
+                    {%- endfor -%}
+                  {%- endif -%}
+                </div>
+              {%- else -%}
+                <div class="price">
+                  {{ item.original_line_price | money }}
+                </div>
+              {%- endif -%}
+
+              <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="remove">
+                <i class="fc fc-close"></i>
+              </a>
+            </div>
+          {% endfor %}
+        </div>
+        {%- if cart.cart_level_discount_applications != blank -%}
+          {%- for discount_application in cart.cart_level_discount_applications -%}
+            <div class="row with-top-border discount">
+              <h5><i class="icon fc fc-tag"></i> {{- discount_application.title -}}</h5>
+              <h5>–{{ discount_application.total_allocated_amount | money }}</h5>
+            </div>
+          {%- endfor -%}
+        {%- endif -%}
+        <div class="row with-top-border with-bottom-border subtotal">
+          <h3>{{ 'cart.general.subtotal' | t }}</h3>
+          <h3 class="value">{{ cart.total_price | money }}</h3>
+        </div>
+        {% render 'form-errors', form: form %}
+        {% if settings.cart_notes_enable %}
+          <div class="row instructions">
+            <label for="CartSpecialInstructions">{{ 'cart.general.note' | t }}</label>
+            <textarea class="text" name="note" id="CartSpecialInstructions">{{ cart.note }}</textarea>
+          </div>
+        {% endif %}
+        <div class="row right checkout">
+          <button type="submit" name="update" class="btn solid update">{{ 'cart.general.update_html' | t }}</button>
+          <button type="submit" name="checkout" class="btn solid">{{ 'cart.general.checkout_html' | t }}</button>
+          {% if additional_checkout_buttons and settings.additional_checkout_buttons_enable %}
+            <div class="additional-checkout-buttons">{{ content_for_additional_checkout_buttons }}</div>
+          {% endif %}
+        </div>
+      </form>
+    {% else %}
+      <div class="row expanded-top">
+        <a href="{{ routes.root_url }}" class="btn solid">{{ 'cart.general.continue_browsing' | t }}</a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<script id="JsQty" type="text/template">
+{% raw %}
+  <div class="js-qty">
+    <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
+      <span class="icon icon-minus" aria-hidden="true"></span>
+      <span class="fallback-text">&minus;</span>
+    </button>
+    <input type="text" class="js-qty__num" value="{{itemQty}}" min="1" {{#if max}}max="{{max}}"{{/if}} data-id="{{id}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}" {{#if disabled}}disabled{{/if}}>
+    <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{id}}" data-qty="{{itemAdd}}">
+      <span class="icon icon-plus" aria-hidden="true"></span>
+      <span class="fallback-text">+</span>
+    </button>
+  </div>
+{% endraw %}
+</script>
+
+{% schema %}
+{
+  "name": "t:sections.cart.name",
+  "class": "section-standalone section-cart",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

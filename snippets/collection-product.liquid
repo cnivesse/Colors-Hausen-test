@@ -1,0 +1,106 @@
+{% liquid
+  if template == 'collection'
+    assign product_url = product.url | within: collection
+  else
+    assign product_url = product.url
+  endif
+  if layout_class == blank
+    if collection.products_count == 2
+      assign layout_class = "two"
+    elsif collection.products_count == 3
+      assign layout_class = "three"
+    else
+      assign layout_class = "four"
+    endif
+  endif
+%}
+<a class="collection-product {{ layout_class }}" href="{{ product_url }}" data-action='show-product'>
+  <div class="inner">
+    {%- liquid
+      assign aspect_ratio = product.featured_media.aspect_ratio
+      if product.featured_media.aspect_ratio == nil
+        assign aspect_ratio = 1
+      endif
+    -%}
+    <div class="image {{ settings.image_ratio }}"
+      {% if settings.image_ratio == 'adapt' %} style="padding-bottom: {{ 1 | divided_by: aspect_ratio | times: 100 }}%;"{% endif %}
+    >
+      {% assign class = "opacity-" | append: settings.product_grid_mouseover_opacity %}
+      {% assign alt = product.featured_media.alt | escape %}
+      {% render 'resp-img',
+       image: product.featured_media.preview_image,
+       class: class,
+       default_size: "590x590",
+       sizes: "(max-width: 620px) 50vw, (max-width: 960) 33vw, 100vw",
+       alt: alt
+      %}
+      {% liquid
+        if settings.product_grid_secondary_enable and product.media.size > 1
+          assign alt = product.media[1].alt | escape
+          render 'resp-img', image: product.media[1].preview_image, class: class, default_size: "590x590", sizes: "(max-width: 620px) 50vw, (max-width: 960) 33vw, 25vw", alt: alt
+        endif
+      %}
+      <div class="gradient"></div>
+    </div>
+    <div class="info">
+      <div class="metas">
+        <div class="line">
+          {%- render 'collection-product-price', product: product %}
+          <div class="collection-product-title">
+            <div class="title">{{ product.title }}</div>
+            <div class="vendor"><span>{{ product.vendor }}</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if product.available %}
+      {% assign show_new_tag = false %}
+      {% if settings.product_new_tag_enabled %}
+        {% if settings.product_new_tag_limit == 'year' %}
+          {% assign year_published = product.published_at | date:'%Y' %}
+          {% assign year_now = 'now' | date:'%Y' %}
+          {% if year_published == year_now %}
+            {% assign show_new_tag = true %}
+          {% endif %}
+        {% else %}
+          {% assign date_published = product.published_at | date:'%Y%m%d' %}
+          {% assign date_now = 'now' | date:'%Y%m%d' %}
+          {% assign date_difference = date_now | minus: date_published %}
+          {% assign limit = settings.product_new_tag_limit | times: 1 %}
+          {% if date_difference <= limit %}
+            {% assign show_new_tag = true %}
+          {% endif %}
+        {% endif %}
+      {% endif %}
+
+      {% if product.compare_at_price and settings.product_sale_tag_enable %}
+        {% if settings.product_sale_tag_option == 'text' %}
+          {% capture on_sale_text %}{{ 'products.product.on_sale_html' | t }}{% endcapture %}
+        {% else %}
+          {% if product.compare_at_price > 0 %}
+            {% capture on_sale_text %}-{{ product.compare_at_price | minus: product.price | times: 100.0 | divided_by: product.compare_at_price | round }}%{% endcapture %}
+          {% endif %}
+        {% endif %}
+        {% unless on_sale_text == blank %}
+          <div class="tag">
+            <div class="shape solid {{ settings.product_tag_shape }} sale small">{{ on_sale_text }}</div>
+          </div>
+        {% endunless %}
+      {% elsif show_new_tag %}
+        {% capture new_text %}{{ 'products.product.new_html' | t }}{% endcapture %}
+        {% unless new_text == blank %}
+          <div class="tag">
+            <div class="shape solid {{ settings.product_tag_shape }} new small">{{ new_text }}</div>
+          </div>
+        {% endunless %}
+      {% endif %}
+    {% elsif settings.product_sold_out_tag_enabled %}
+      {% capture sold_out_text %}{{ 'products.product.sold_out_html' | t }}{% endcapture %}
+      {% unless sold_out_text == blank %}
+        <div class="tag">
+          <div class="shape solid {{ settings.product_tag_shape }} sold-out small">{{ sold_out_text }}</div>
+        </div>
+      {% endunless %}
+    {% endif %}
+  </div>
+</a>

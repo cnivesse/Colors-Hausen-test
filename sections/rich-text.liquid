@@ -1,0 +1,416 @@
+<div class="content rich-text {% render 'content-classes', scope: section %}">
+  <div class="inner extended">
+    {%- if section.blocks.size > 0 -%}
+      <div class="info {{ section.settings.text_align }}">
+        <div class="blocks">
+          {%- for block in section.blocks -%}
+            <div class="block {{ block.type }} {% if block.settings.increase_space_before_block %}expanded-top{% endif %}" {{ block.shopify_attributes }}>
+              {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'heading' -%}
+                <h1 style="max-width: {{ block.settings.max_width }}px;">{{ block.settings.text | newline_to_br }}</h1>
+              {%- when 'subheading' -%}
+                <h2 style="max-width: {{ block.settings.max_width }}px;">{{ block.settings.text | escape }}</h2>
+              {%- when 'paragraph' -%}
+                <div class="rte" style="max-width: {{ block.settings.max_width }}px;">
+                  {{ block.settings.text }}
+                </div>
+              {%- when 'button' -%}
+                <a class="btn {{ block.settings.style }} {{ block.settings.size }}" href="{{ block.settings.link }}">
+                  {{ block.settings.text | escape }}
+                </a>
+              {%- endcase -%}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    {%- else -%}
+      {% render 'no-blocks' %}
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.rich-text.name",
+  "class": "section-rich-text",
+  "settings": [
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "t:sections.rich-text.settings.text_align.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.rich-text.settings.text_align.options__1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.rich-text.settings.text_align.options__2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.rich-text.settings.text_align.options__3"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "heading",
+      "name": "t:sections.blocks.heading.name",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:sections.blocks.heading.settings.text.label",
+          "default": {
+            "ar": "تحدث عن علامتك التجارية",
+            "bg": "Говорете за вашата марка",
+            "ca": "Parla de la teva marca",
+            "cs": "Mluvte o své značce",
+            "da": "Tal om dit brand",
+            "de": "Sprechen Sie über Ihre Marke",
+            "el": "Μιλήστε για την επωνυμία σας",
+            "en": "Talk about your brand",
+            "es": "Habla de tu marca",
+            "fi": "Puhu brändistäsi",
+            "fr": "Parlez de votre marque",
+            "he": "דבר על המותג שלך",
+            "hr": "Razgovarajte o svom brendu",
+            "hu": "Beszélj a márkádról",
+            "id": "Bicara tentang merek Anda",
+            "it": "Parla del tuo marchio",
+            "ja": "あなたのブランドについて話す",
+            "ko": "브랜드에 대해 이야기하기",
+            "lt": "Kalbėkite apie savo prekės ženklą",
+            "nb": "Snakk om merkevaren din",
+            "nl": "Praat over je merk",
+            "pl": "Porozmawiaj o swojej marce",
+            "pt-BR": "Fale sobre sua marca",
+            "pt-PT": "Fale sobre sua marca",
+            "ro": "Vorbește despre marca ta",
+            "ru": "Расскажите о своем бренде",
+            "sk": "Hovorte o svojej značke",
+            "sl": "Govorite o svoji blagovni znamki",
+            "sv": "Prata om ditt varumärke",
+            "th": "พูดคุยเกี่ยวกับแบรนด์ของคุณ",
+            "tr": "Markanız hakkında konuşun",
+            "vi": "Nói về thương hiệu của bạn",
+            "zh-CN": "谈论你的品牌",
+            "zh-TW": "談論你的品牌"
+          }
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 2000,
+          "step": 50,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 700
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "t:sections.blocks.subheading.name",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:sections.blocks.subheading.settings.text.label",
+          "default": {
+            "ar": " استخدم هذا النص لمشاركة معلومات حول علامتك التجارية مع عملائك. صِف منتجًا أو شارك الإعلانات أو رحب بالعملاء في متجرك. ",
+            "bg": "Използвайте този текст, за да споделите информация за вашата марка с клиентите си. Опишете продукт, споделете съобщения или приветствайте клиенти във вашия магазин.",
+            "ca": "Utilitzeu aquest text per compartir informació sobre la vostra marca amb els vostres clients. Descriu un producte, comparteix anuncis o dóna la benvinguda als clients a la teva botiga.",
+            "cs": "Tento text použijte ke sdílení informací o své značce se svými zákazníky. Popište produkt, sdílejte oznámení nebo přivítejte zákazníky ve svém obchodě.",
+            "da": "Brug denne tekst til at dele oplysninger om dit brand med dine kunder. Beskriv et produkt, del meddelelser, eller byd kunder velkommen til din butik.",
+            "de": "Verwenden Sie diesen Text, um Informationen über Ihre Marke mit Ihren Kunden zu teilen. Beschreiben Sie ein Produkt, teilen Sie Ankündigungen oder heißen Sie Kunden in Ihrem Shop willkommen.",
+            "el": "Χρησιμοποιήστε αυτό το κείμενο για να μοιραστείτε πληροφορίες σχετικά με την επωνυμία σας με τους πελάτες σας. Περιγράψτε ένα προϊόν, μοιραστείτε ανακοινώσεις ή καλωσορίστε πελάτες στο κατάστημά σας.",
+            "en": "Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.",
+            "es": "Utilice este texto para compartir información sobre su marca con sus clientes. Describe un producto, comparte anuncios o da la bienvenida a los clientes a tu tienda.",
+            "fi": "Tämän tekstin avulla voit jakaa tietoa brändistäsi asiakkaillesi. Kuvaile tuotetta, jaa ilmoituksia tai toivota asiakkaat tervetulleiksi kauppaasi.",
+            "fr": "Utilisez ce texte pour partager des informations sur votre marque avec vos clients. Décrivez un produit, partagez des annonces ou accueillez des clients dans votre boutique.",
+            "he": "השתמש בטקסט זה כדי לשתף מידע על המותג שלך עם הלקוחות שלך. תאר מוצר, שתף הודעות או ברוך הבא לקוחות לחנות שלך.",
+            "hr": "Upotrijebite ovaj tekst za dijeljenje informacija o svojoj robnoj marki sa svojim klijentima. Opišite proizvod, podijelite najave ili poželite dobrodošlicu kupcima u svoju trgovinu.",
+            "hu": "Használja ezt a szöveget, hogy megosszon információkat a márkájáról ügyfeleivel. Írjon le egy terméket, ossza meg bejelentéseit, vagy üdvözölje az ügyfeleket az üzletében.",
+            "id": "Gunakan teks ini untuk berbagi informasi tentang merek Anda dengan pelanggan Anda. Jelaskan produk, bagikan pengumuman, atau sambut pelanggan di toko Anda.",
+            "it": "Utilizza questo testo per condividere informazioni sul tuo marchio con i tuoi clienti. Descrivi un prodotto, condividi annunci o accogli i clienti nel tuo negozio.",
+            "ja": "このテキストを使用して、ブランドに関する情報を顧客と共有します。商品について説明したり、お知らせを共有したり、顧客をストアに歓迎したりします。",
+            "ko": "이 텍스트를 사용하여 브랜드에 대한 정보를 고객과 공유하십시오. 제품을 설명하거나, 공지 사항을 공유하거나, 매장에 오신 고객을 환영합니다.",
+            "lt": "Naudokite šį tekstą, jei norite dalytis informacija apie savo prekės ženklą su klientais. Aprašykite produktą, pasidalykite pranešimais arba pasveikinkite klientus į jūsų parduotuvę.",
+            "nb": "Bruk denne teksten til å dele informasjon om merkevaren din med kundene dine. Beskriv et produkt, del kunngjøringer eller velkommen kunder til butikken din.",
+            "nl": "Gebruik deze tekst om informatie over uw merk met uw klanten te delen. Beschrijf een product, deel aankondigingen of verwelkom klanten in uw winkel.",
+            "pl": "Użyj tego tekstu, aby udostępnić klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub powitaj klientów w swoim sklepie.",
+            "pt-BR": "Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.",
+            "pt-PT": "Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.",
+            "ro": "Folosiți acest text pentru a împărtăși clienților informații despre marca dvs. Descrieți un produs, distribuiți anunțuri sau bun venit clienților în magazinul dvs.",
+            "ru": "Используйте этот текст, чтобы поделиться информацией о своем бренде со своими клиентами. Опишите продукт, поделитесь объявлениями или поприветствуйте покупателей в вашем магазине.",
+            "sk": "Tento text použite na zdieľanie informácií o vašej značke so svojimi zákazníkmi. Popíšte produkt, zdieľajte oznámenia alebo privítajte zákazníkov vo svojom obchode.",
+            "sl": "S tem besedilom delite informacije o svoji blagovni znamki s strankami. Opišite izdelek, delite objave ali pozdravite stranke v svoji trgovini.",
+            "sv": "Använd den här texten för att dela information om ditt varumärke med dina kunder. Beskriv en produkt, dela meddelanden eller välkomna kunder till din butik.",
+            "th": "ใช้ข้อความนี้เพื่อแบ่งปันข้อมูลเกี่ยวกับแบรนด์ของคุณกับลูกค้าของคุณ อธิบายผลิตภัณฑ์ แชร์ประกาศ หรือต้อนรับลูกค้าสู่ร้านค้าของคุณ",
+            "tr": "Markanızla ilgili bilgileri müşterilerinizle paylaşmak için bu metni kullanın. Bir ürünü tanımlayın, duyuruları paylaşın veya mağazanıza gelen müşterileri karşılayın.",
+            "vi": " Sử dụng văn bản này để chia sẻ thông tin về thương hiệu của bạn với khách hàng. Mô tả sản phẩm, chia sẻ thông báo hoặc chào mừng khách hàng đến với cửa hàng của bạn. ",
+            "zh-CN": "使用此文本与您的客户分享您的品牌信息。描述产品、分享公告或欢迎客户光临您的商店。",
+            "zh-TW": "使用此文本與您的客戶分享您的品牌信息。描述產品、分享公告或歡迎客戶光臨您的商店。>"
+          }
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 2000,
+          "step": 50,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 700
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.blocks.paragraph.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.blocks.paragraph.settings.text.label",
+          "default": {
+            "ar": "<p> استخدم هذا النص لمشاركة معلومات حول علامتك التجارية مع عملائك. صِف منتجًا أو شارك الإعلانات أو رحب بالعملاء في متجرك. </p>",
+            "bg": "<p>Използвайте този текст, за да споделите информация за вашата марка с клиентите си. Опишете продукт, споделете съобщения или приветствайте клиенти във вашия магазин.</p>",
+            "ca": "<p>Utilitzeu aquest text per compartir informació sobre la vostra marca amb els vostres clients. Descriu un producte, comparteix anuncis o dóna la benvinguda als clients a la teva botiga.</p>",
+            "cs": "<p>Tento text použijte ke sdílení informací o své značce se svými zákazníky. Popište produkt, sdílejte oznámení nebo přivítejte zákazníky ve svém obchodě.</p>",
+            "da": "<p>Brug denne tekst til at dele oplysninger om dit brand med dine kunder. Beskriv et produkt, del meddelelser, eller byd kunder velkommen til din butik.</p>",
+            "de": "<p>Verwenden Sie diesen Text, um Informationen über Ihre Marke mit Ihren Kunden zu teilen. Beschreiben Sie ein Produkt, teilen Sie Ankündigungen oder heißen Sie Kunden in Ihrem Shop willkommen.</p>",
+            "el": "<p>Χρησιμοποιήστε αυτό το κείμενο για να μοιραστείτε πληροφορίες σχετικά με την επωνυμία σας με τους πελάτες σας. Περιγράψτε ένα προϊόν, μοιραστείτε ανακοινώσεις ή καλωσορίστε πελάτες στο κατάστημά σας.</p>",
+            "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "es": "<p>Utilice este texto para compartir información sobre su marca con sus clientes. Describe un producto, comparte anuncios o da la bienvenida a los clientes a tu tienda.</p>",
+            "fi": "<p>Tämän tekstin avulla voit jakaa tietoa brändistäsi asiakkaillesi. Kuvaile tuotetta, jaa ilmoituksia tai toivota asiakkaat tervetulleiksi kauppaasi.</p>",
+            "fr": "<p>Utilisez ce texte pour partager des informations sur votre marque avec vos clients. Décrivez un produit, partagez des annonces ou accueillez des clients dans votre boutique.</p>",
+            "he": "<p>השתמש בטקסט זה כדי לשתף מידע על המותג שלך עם הלקוחות שלך. תאר מוצר, שתף הודעות או ברוך הבא לקוחות לחנות שלך.</p>",
+            "hr": "<p>Upotrijebite ovaj tekst za dijeljenje informacija o svojoj robnoj marki sa svojim klijentima. Opišite proizvod, podijelite najave ili poželite dobrodošlicu kupcima u svoju trgovinu.</p>",
+            "hu": "<p>Használja ezt a szöveget, hogy megosszon információkat a márkájáról ügyfeleivel. Írjon le egy terméket, ossza meg bejelentéseit, vagy üdvözölje az ügyfeleket az üzletében.</p>",
+            "id": "<p>Gunakan teks ini untuk berbagi informasi tentang merek Anda dengan pelanggan Anda. Jelaskan produk, bagikan pengumuman, atau sambut pelanggan di toko Anda.</p>",
+            "it": "<p>Utilizza questo testo per condividere informazioni sul tuo marchio con i tuoi clienti. Descrivi un prodotto, condividi annunci o accogli i clienti nel tuo negozio.</p>",
+            "ja": "<p>このテキストを使用して、ブランドに関する情報を顧客と共有します。商品について説明したり、お知らせを共有したり、顧客をストアに歓迎したりします。</p>",
+            "ko": "<p>이 텍스트를 사용하여 브랜드에 대한 정보를 고객과 공유하십시오. 제품을 설명하거나, 공지 사항을 공유하거나, 매장에 오신 고객을 환영합니다.</p>",
+            "lt": "<p>Naudokite šį tekstą, jei norite dalytis informacija apie savo prekės ženklą su klientais. Aprašykite produktą, pasidalykite pranešimais arba pasveikinkite klientus į jūsų parduotuvę.</p>",
+            "nb": "<p>Bruk denne teksten til å dele informasjon om merkevaren din med kundene dine. Beskriv et produkt, del kunngjøringer eller velkommen kunder til butikken din.</p>",
+            "nl": "<p>Gebruik deze tekst om informatie over uw merk met uw klanten te delen. Beschrijf een product, deel aankondigingen of verwelkom klanten in uw winkel.</p>",
+            "pl": "<p>Użyj tego tekstu, aby udostępnić klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub powitaj klientów w swoim sklepie.</p>",
+            "pt-BR": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "pt-PT": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "ro": "<p>Folosiți acest text pentru a împărtăși clienților informații despre marca dvs. Descrieți un produs, distribuiți anunțuri sau bun venit clienților în magazinul dvs.</p>",
+            "ru": "<p>Используйте этот текст, чтобы поделиться информацией о своем бренде со своими клиентами. Опишите продукт, поделитесь объявлениями или поприветствуйте покупателей в вашем магазине.</p>",
+            "sk": "<p>Tento text použite na zdieľanie informácií o vašej značke so svojimi zákazníkmi. Popíšte produkt, zdieľajte oznámenia alebo privítajte zákazníkov vo svojom obchode.</p>",
+            "sl": "<p>S tem besedilom delite informacije o svoji blagovni znamki s strankami. Opišite izdelek, delite objave ali pozdravite stranke v svoji trgovini.</p>",
+            "sv": "<p>Använd den här texten för att dela information om ditt varumärke med dina kunder. Beskriv en produkt, dela meddelanden eller välkomna kunder till din butik.</p>",
+            "th": "<p>ใช้ข้อความนี้เพื่อแบ่งปันข้อมูลเกี่ยวกับแบรนด์ของคุณกับลูกค้าของคุณ อธิบายผลิตภัณฑ์ แชร์ประกาศ หรือต้อนรับลูกค้าสู่ร้านค้าของคุณ</p>",
+            "tr": "<p>Markanızla ilgili bilgileri müşterilerinizle paylaşmak için bu metni kullanın. Bir ürünü tanımlayın, duyuruları paylaşın veya mağazanıza gelen müşterileri karşılayın.</p>",
+            "vi": "<p> Sử dụng văn bản này để chia sẻ thông tin về thương hiệu của bạn với khách hàng. Mô tả sản phẩm, chia sẻ thông báo hoặc chào mừng khách hàng đến với cửa hàng của bạn. </p>",
+            "zh-CN": "<p>使用此文本与您的客户分享您的品牌信息。描述产品、分享公告或欢迎客户光临您的商店。</p>",
+            "zh-TW": "<p>使用此文本與您的客戶分享您的品牌信息。描述產品、分享公告或歡迎客戶光臨您的商店。</p>"
+          }
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 2000,
+          "step": 50,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 650
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.blocks.button.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.blocks.button.settings.text.label",
+          "default": {
+            "ar": "تسوق الآن",
+            "bg": "Пазарувай сега",
+            "ca": "Compra ara",
+            "cs": "Nakupuj teď",
+            "da": "Køb nu",
+            "de": "Jetzt einkaufen",
+            "el": "Ψώνισε τώρα",
+            "en": "Shop now",
+            "es": "Compra ahora",
+            "fi": "Osta nyt",
+            "fr": "Achetez maintenant",
+            "he": "קנה עכשיו",
+            "hr": "Kupite sada",
+            "hu": "Vásárolj most",
+            "id": "Berbelanja sekarang",
+            "it": "Acquistare ora",
+            "ja": "今すぐ購入",
+            "ko": "지금 쇼핑하기",
+            "lt": "Apsipirk dabar",
+            "nb": "Handle nå",
+            "nl": "Winkel nu",
+            "pl": "Kupuj teraz",
+            "pt-BR": "Compre agora",
+            "pt-PT": "Compre agora",
+            "ro": "Cumpără acum",
+            "ru": "Купить сейчас",
+            "sk": "Nakupuj teraz",
+            "sl": "Nakupujte zdaj",
+            "sv": "Shoppa nu",
+            "th": "ช้อปเลย",
+            "tr": "Şimdi satın al",
+            "vi": "Mua sắm ngay bây giờ",
+            "zh-CN": "现在去购物",
+            "zh-TW": "現在去購物"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.blocks.button.settings.link.label",
+          "default": "/collections/all"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "t:sections.blocks.button.settings.style.label",
+          "default": "border",
+          "options": [
+            {
+              "value": "accent",
+              "label": "t:sections.blocks.button.settings.style.options__1"
+            },
+            {
+              "value": "solid",
+              "label": "t:sections.blocks.button.settings.style.options__2"
+            },
+            {
+              "value": "border",
+              "label": "t:sections.blocks.button.settings.style.options__3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "t:sections.blocks.button.settings.size.label",
+          "default": "normal",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.blocks.button.settings.size.options__1"
+            },
+            {
+              "value": "normal",
+              "label": "t:sections.blocks.button.settings.size.options__2"
+            }
+          ]
+        },
+        {
+          "type": "header",
+          "content": "t:sections.settings.header_block.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "increase_space_before_block",
+          "label": "t:sections.settings.increase_space.label",
+          "default": true
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.rich-text.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "subheading"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

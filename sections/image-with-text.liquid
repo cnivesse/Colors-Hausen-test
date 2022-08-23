@@ -1,0 +1,408 @@
+<div class="content image-with-text {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options {{ settings.content_layout }}">
+    <div class="rte">
+      <div class="flex-row {% if section.settings.text_position == "left" %}odd{% endif %}">
+        <div class="left image">
+          {% if section.settings.image %}
+            {% render 'resp-img',
+             image: section.settings.image,
+             alt: section.settings.image.alt,
+             default_size: "1080x",
+             sizes: "(max-width: 960px) 100vw, 50vw",
+             itemprop: "image"
+            %}
+          {% else %}
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg with-white-background' }}
+          {% endif %}
+        </div>
+        <div class="right info">
+          {% for block in section.blocks %}
+            <div class="block type-{{ block.type }} {% if block.settings.increase_space_before_block %}expanded-top{% endif %}" {{ block.shopify_attributes }}> 
+              {%- case block.type -%}
+              {%- when '@app' -%}
+                {% render block %}
+              {%- when 'heading' -%}
+                <h2>{{ block.settings.text }}</h2>
+              {%- when 'subheading' -%}
+                <p class="category">{{ block.settings.text }}</p>
+              {%- when 'paragraph' -%}
+                {{ block.settings.text }}
+              {%- when 'button' -%}
+                <a class="btn {{ block.settings.style }} {{ block.settings.size }}" href="{{ block.settings.link }}">
+                  {{ block.settings.text | escape }}
+                </a>
+              {%- endcase -%}
+            </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+  {
+    "name": "t:sections.image-with-text.name",
+    "class": "image-with-text-section",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.image-with-text.settings.image.label"
+      },
+      {
+        "type": "select",
+        "id": "text_position",
+        "label": "t:sections.image-with-text.settings.text_position.label",
+        "default": "left",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:sections.image-with-text.settings.text_position.options__1"
+          },
+          {
+            "value": "right",
+            "label": "t:sections.image-with-text.settings.text_position.options__2"
+          }
+        ]
+      },
+      {
+        "type": "header",
+        "content": "t:sections.settings.header.content"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_background",
+        "label": "t:sections.settings.show_background.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded",
+        "label": "t:sections.settings.expanded.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "expanded_content",
+        "label": "t:sections.settings.expanded_content.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "collapsed",
+        "label": "t:sections.settings.collapsed.label",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_desktop",
+        "label": "t:sections.settings.show_on_desktop.label",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "show_on_mobile",
+        "label": "t:sections.settings.show_on_mobile.label",
+        "default": true
+      }
+    ],
+    "blocks": [
+      {
+        "type": "@app"
+      },
+      {
+        "type": "subheading",
+        "name": "t:sections.blocks.subheading.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "t:sections.blocks.subheading.settings.text.label",
+            "default": {
+              "ar": "العنوان الفرعي",
+              "bg": "субтитри",
+              "ca": "Subtítol",
+              "cs": "Titulky",
+              "da": "Undertekst",
+              "de": "Untertitel",
+              "el": "Υπότιτλος",
+              "en": "Subtitle",
+              "es": "Subtítulo",
+              "fi": "Tekstitys",
+              "fr": "Sous-titre",
+              "he": "כתוביות",
+              "hr": "Titl",
+              "hu": "Felirat",
+              "id": "Subjudul",
+              "it": "Sottotitolo",
+              "ja": "字幕",
+              "ko": "부제",
+              "lt": "Subtitrai",
+              "nb": "Undertekst",
+              "nl": "Ondertitel",
+              "pl": "Podtytuł",
+              "pt-BR": "Legenda",
+              "pt-PT": "Legenda",
+              "ro": "Subtitlu",
+              "ru": "Подзаголовок",
+              "sk": "Podnadpis",
+              "sl": "Podnaslov",
+              "sv": "Texta",
+              "th": "คำบรรยาย",
+              "tr": "Alt yazı",
+              "vi": "Phụ đề",
+              "zh-CN": "字幕",
+              "zh-TW": "字幕"
+            }
+          },
+          {
+            "type": "header",
+            "content": "t:sections.settings.header_block.content"
+          },
+          {
+            "type": "checkbox",
+            "id": "increase_space_before_block",
+            "label": "t:sections.settings.increase_space.label",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "heading",
+        "name": "t:sections.blocks.heading.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "t:sections.blocks.heading.settings.text.label",
+            "default": {
+              "ar": "صورة مع نص",
+              "bg": "Изображение с текст",
+              "ca": "Imatge amb text",
+              "cs": "Obrázek s textem",
+              "da": "Billede med tekst",
+              "de": "Bild mit Text",
+              "el": "Εικόνα με κείμενο",
+              "en": "Image with text",
+              "es": "Imagen con texto",
+              "fi": "Kuva tekstillä",
+              "fr": "Image avec texte",
+              "he": "תמונה עם טקסט",
+              "hr": "Slika s tekstom",
+              "hu": "Kép szöveggel",
+              "id": "Gambar dengan teks",
+              "it": "Immagine con testo",
+              "ja": "テキスト付きの画像",
+              "ko": "텍스트가 있는 이미지",
+              "lt": "Vaizdas su tekstu",
+              "nb": "Bilde med tekst",
+              "nl": "Afbeelding met tekst",
+              "pl": "Obraz z tekstem",
+              "pt-BR": "Imagem com texto",
+              "pt-PT": "Imagem com texto",
+              "ro": "Imagine cu text",
+              "ru": "Изображение с текстом",
+              "sk": "Obrázok s textom",
+              "sl": "Slika z besedilom",
+              "sv": "Bild med text",
+              "th": "รูปภาพพร้อมข้อความ",
+              "tr": "Metin içeren resim",
+              "vi": "Hình ảnh với văn bản",
+              "zh-CN": "带文字的图片",
+              "zh-TW": "帶文字的圖片"
+            }
+          },
+          {
+            "type": "header",
+            "content": "t:sections.settings.header_block.content"
+          },
+          {
+            "type": "checkbox",
+            "id": "increase_space_before_block",
+            "label": "t:sections.settings.increase_space.label",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "name": "t:sections.blocks.paragraph.name",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "t:sections.blocks.paragraph.settings.text.label",
+            "default": {
+              "ar": "<p> قم بإقران نص كبير بصورة للتركيز على المنتج أو المجموعة أو مشاركة المدونة التي اخترتها. أضف تفاصيل عن مدى التوفر أو الأسلوب أو حتى قدم مراجعة. </p>",
+              "bg": "<p>Сдвоете голям текст с изображение, за да акцентирате върху избрания от вас продукт, колекция или публикация в блога. Добавете подробности за наличността, стила или дори дайте отзив.</p>",
+              "ca": "<p>Combina el text gran amb una imatge per centrar-se en el producte, la col·lecció o la publicació del bloc que escolliu. Afegeix detalls sobre la disponibilitat, l'estil o fins i tot proporciona una ressenya.</p>",
+              "cs": "<p>Spárujte velký text s obrázkem, abyste se zaměřili na vybraný produkt, kolekci nebo blogový příspěvek. Přidejte podrobnosti o dostupnosti, stylu nebo dokonce poskytněte recenzi.</p>",
+              "da": "<p>Par stor tekst med et billede for at sætte fokus på dit valgte produkt, din samling eller dit blogindlæg. Tilføj detaljer om tilgængelighed, stil, eller giv endda en anmeldelse.</p>",
+              "de": "<p>Kombinieren Sie großen Text mit einem Bild, um Ihr ausgewähltes Produkt, Ihre Sammlung oder Ihren Blogbeitrag hervorzuheben. Fügen Sie Details zu Verfügbarkeit und Stil hinzu oder geben Sie sogar eine Bewertung ab.</p>",
+              "el": "<p>Συνδυάστε μεγάλο κείμενο με μια εικόνα για να εστιάσετε στο επιλεγμένο προϊόν, συλλογή ή ανάρτηση ιστολογίου. Προσθέστε λεπτομέρειες σχετικά με τη διαθεσιμότητα, το στυλ ή ακόμα και να δώσετε μια κριτική.</p>",
+              "en": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+              "es": "<p>Combina un texto grande con una imagen para resaltar el producto, la colección o la publicación de blog que hayas elegido. Agregue detalles sobre la disponibilidad, el estilo o incluso proporcione una reseña.</p>",
+              "fi": "<p>Yhdistä suuri teksti kuvan kanssa keskittyäksesi valitsemaasi tuotteeseen, kokoelmaan tai blogikirjoitukseen. Lisää tietoja saatavuudesta, tyylistä tai jopa anna arvostelu.</p>",
+              "fr": "<p>Associez un texte de grande taille à une image pour mettre l'accent sur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité, le style ou même fournissez un avis.</p>",
+              "he": "<p>הצמד טקסט גדול לתמונה כדי לתת מיקוד למוצר, לאוסף או לפוסט בבלוג שבחרת. הוסף פרטים על זמינות, סגנון, או אפילו ספק ביקורת.</p>",
+              "hr": "<p>Uparite veliki tekst sa slikom kako biste dali fokus na odabrani proizvod, kolekciju ili post na blogu. Dodajte pojedinosti o dostupnosti, stilu ili čak navedite recenziju.</p>",
+              "hu": "<p>Párosítsa a nagy szöveget egy képpel, hogy a kiválasztott termékre, gyűjteményre vagy blogbejegyzésre összpontosítson. Adjon meg részleteket a rendelkezésre állásról, stílusról, vagy akár írjon véleményt.</p>",
+              "id": "<p>Pasangkan teks besar dengan gambar untuk memberikan fokus pada produk, koleksi, atau entri blog pilihan Anda. Tambahkan detail tentang ketersediaan, gaya, atau bahkan berikan ulasan.</p>",
+              "it": "<p>Abbina un testo grande a un'immagine per mettere a fuoco il prodotto, la raccolta o il post del blog che hai scelto. Aggiungi dettagli su disponibilità, stile o persino fornisci una recensione.</p>",
+              "ja": "<p>大きなテキストと画像を組み合わせて、選択した製品、コレクション、またはブログ投稿に焦点を合わせます。在庫状況やスタイルの詳細を追加したり、レビューを提供したりすることもできます。</p>",
+              "ko": "<p>큰 텍스트를 이미지와 함께 사용하여 선택한 제품, 컬렉션 또는 블로그 게시물에 초점을 맞춥니다. 가용성, 스타일에 대한 세부정보를 추가하거나 리뷰를 제공할 수도 있습니다.</p>",
+              "lt": "<p>Sujunkite didelį tekstą su vaizdu, kad sutelktumėte dėmesį į pasirinktą produktą, kolekciją ar tinklaraščio įrašą. Pridėkite išsamios informacijos apie prieinamumą, stilių arba net pateikite apžvalgą.</p>",
+              "nb": "<p>Koble sammen stor tekst med et bilde for å gi fokus til det valgte produktet, samlingen eller blogginnlegget ditt. Legg til detaljer om tilgjengelighet, stil, eller gi en anmeldelse.</p>",
+              "nl": "<p>Koppel grote tekst met een afbeelding om de focus te leggen op uw gekozen product, collectie of blogpost. Voeg details toe over beschikbaarheid, stijl of geef zelfs een recensie.</p>",
+              "pl": "<p>Połącz duży tekst z obrazem, aby skupić się na wybranym produkcie, kolekcji lub poście na blogu. Dodaj szczegóły dotyczące dostępności, stylu, a nawet dodaj opinię.</p>",
+              "pt-BR": "<p>Emparelhe um texto grande com uma imagem para dar foco ao seu produto, coleção ou postagem de blog escolhido. Adicione detalhes sobre disponibilidade, estilo ou até mesmo forneça uma avaliação.</p>",
+              "pt-PT": "<p>Emparelhe um texto grande com uma imagem para dar foco ao seu produto, coleção ou postagem de blog escolhido. Adicione detalhes sobre disponibilidade, estilo ou até mesmo forneça uma avaliação.</p>",
+              "ro": "<p>Asociați textul mare cu o imagine pentru a concentra produsul, colecția sau postarea de blog aleasă. Adăugați detalii despre disponibilitate, stil sau chiar oferiți o recenzie.</p>",
+              "ru": "<p>Сочетайте крупный текст с изображением, чтобы привлечь внимание к выбранному продукту, коллекции или записи в блоге. Добавьте информацию о наличии, стиле или даже оставьте отзыв.</p>",
+              "sk": "<p>Spárujte veľký text s obrázkom, aby ste sa mohli zamerať na vybratý produkt, kolekciu alebo blogový príspevok. Pridajte podrobnosti o dostupnosti, štýle alebo dokonca poskytnite recenziu.</p>",
+              "sl": "<p>Veliko besedilo povežite s sliko, da se osredotočite na izbrani izdelek, zbirko ali objavo v spletnem dnevniku. Dodajte podrobnosti o razpoložljivosti, slogu ali celo navedite oceno.</p>",
+              "sv": "<p>Koppla ihop stor text med en bild för att fokusera på din valda produkt, samling eller blogginlägg. Lägg till information om tillgänglighet, stil eller till och med ge en recension.</p>",
+              "th": "<p>จับคู่ข้อความขนาดใหญ่กับรูปภาพเพื่อเน้นไปที่ผลิตภัณฑ์ คอลเลคชัน หรือโพสต์บล็อกที่คุณเลือก เพิ่มรายละเอียดเกี่ยวกับความพร้อมให้บริการ สไตล์ หรือแม้แต่รีวิว</p>",
+              "tr": "<p>Seçtiğiniz ürüne, koleksiyona veya blog gönderisine odaklanmak için büyük metni bir resimle eşleştirin. Kullanılabilirlik, stil hakkında ayrıntılar ekleyin ve hatta bir inceleme sağlayın.</p>",
+              "vi": "<p> Ghép nối văn bản lớn với một hình ảnh để tập trung vào sản phẩm, bộ sưu tập hoặc bài đăng blog đã chọn của bạn. Thêm thông tin chi tiết về tình trạng còn hàng, kiểu dáng hoặc thậm chí cung cấp đánh giá. </p>",
+              "zh-CN": "<p>将大文本与图像配对，以突出您选择的产品、收藏或博客文章。添加有关可用性、样式的详细信息，甚至提供评论。</p>",
+              "zh-TW": "<p>將大文本與圖片配對，以突出您選擇的產品、收藏或博客文章。添加有關可用性、樣式的詳細信息，甚至提供評論。</p>"
+            }
+          },
+          {
+            "type": "header",
+            "content": "t:sections.settings.header_block.content"
+          },
+          {
+            "type": "checkbox",
+            "id": "increase_space_before_block",
+            "label": "t:sections.settings.increase_space.label",
+            "default": true
+          }
+        ]
+      },
+      {
+        "type": "button",
+        "name": "t:sections.blocks.button.name",
+        "settings": [
+          {
+            "type": "text",
+            "id": "text",
+            "label": "t:sections.blocks.button.settings.text.label",
+            "default": {
+              "ar": "يستكشف",
+              "bg": "Разгледайте",
+              "ca": "Explora",
+              "cs": "Prozkoumat",
+              "da": "Udforske",
+              "de": "Entdecken",
+              "el": "Εξερευνώ",
+              "en": "Explore",
+              "es": "Explorar",
+              "fi": "Tutkia",
+              "fr": "Explorer",
+              "he": "לַחקוֹר",
+              "hr": "Istražiti",
+              "hu": "Fedezd fel",
+              "id": "Mengeksplorasi",
+              "it": "Esplorare",
+              "ja": "探検",
+              "ko": "탐구하다",
+              "lt": "Naršyti",
+              "nb": "Utforske",
+              "nl": "Ontdekken",
+              "pl": "Badać",
+              "pt-BR": "Explorar",
+              "pt-PT": "Explorar",
+              "ro": "Explora",
+              "ru": "Проводить исследования",
+              "sk": "Preskúmať",
+              "sl": "Raziščite",
+              "sv": "Utforska",
+              "th": "สำรวจ",
+              "tr": "Keşfetmek",
+              "vi": "Khám phá",
+              "zh-CN": "探索",
+              "zh-TW": "探索"
+            }
+          },
+          {
+            "type": "url",
+            "id": "link",
+            "label": "t:sections.blocks.button.settings.link.label",
+            "default": "/collections/all"
+          },
+          {
+            "type": "select",
+            "id": "style",
+            "label": "t:sections.blocks.button.settings.style.label",
+            "default": "border",
+            "options": [
+              {
+                "value": "accent",
+                "label": "t:sections.blocks.button.settings.style.options__1"
+              },
+              {
+                "value": "solid",
+                "label": "t:sections.blocks.button.settings.style.options__2"
+              },
+              {
+                "value": "border",
+                "label": "t:sections.blocks.button.settings.style.options__3"
+              }
+            ]
+          },
+          {
+            "type": "select",
+            "id": "size",
+            "label": "t:sections.blocks.button.settings.size.label",
+            "default": "normal",
+            "options": [
+              {
+                "value": "small",
+                "label": "t:sections.blocks.button.settings.size.options__1"
+              },
+              {
+                "value": "normal",
+                "label": "t:sections.blocks.button.settings.size.options__2"
+              }
+            ]
+          },
+          {
+            "type": "header",
+            "content": "t:sections.settings.header_block.content"
+          },
+          {
+            "type": "checkbox",
+            "id": "increase_space_before_block",
+            "label": "t:sections.settings.increase_space.label",
+            "default": true
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "t:sections.image-with-text.presets.name",
+        "blocks": [
+          {
+            "type": "subheading"
+          },
+          {
+            "type": "heading",
+            "settings": {
+              "increase_space_before_block": false
+            }
+          },
+          {
+            "type": "paragraph"
+          },
+          {
+            "type": "button"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}

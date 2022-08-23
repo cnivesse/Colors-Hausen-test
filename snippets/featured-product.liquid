@@ -1,0 +1,111 @@
+<div class="featured-product {% if section.settings.with_overlap %}with-overlap{% endif %}" {{ shopify_attributes }}>
+  {% if block_settings.url %}
+    {% assign url = block_settings.url %}
+  {% elsif featured_product %}
+    {% assign url = featured_product.url %}
+  {% elsif block_type == "custom" %}
+    {% assign url = routes.root_url %}
+  {% else %}
+    {% assign url = false %}
+  {% endif %}
+  {% if block_settings.image %}
+    {% assign image = block_settings.image %}
+  {% else %}
+    {% assign image = featured_product.featured_media.preview_image %}
+  {% endif %}
+  {% capture selector %}image-{{ section.id }}-{{ id }}{% endcapture %}
+  {%- capture title -%}
+    {%- unless block_settings.title == blank -%}
+      {{- block_settings.title -}}
+    {%- elsif featured_product != blank -%}
+      {{- featured_product.title | truncate: 50 -}}
+    {%- else -%}
+      {{- 'sections.onboarding.featured_product_title' | t | append: ' ' | append: product_index -}}
+    {%- endunless -%}
+  {%- endcapture -%}  
+
+  <div class="image" id="{{ selector }}">
+    <div class="container">
+      <div class="right">
+        <a {% if url %}href="{{ url }}"{% endif %} tabindex="-1" aria-label="{{ title }}">
+          {% if image != blank %}
+            <style type="text/css">
+              #{{ selector }} .picture{
+                {% render 'resp-bg-img', image: image, size: '660x660' %}
+              }
+              {% assign sizes = "1024,768" | split: "," %}
+              {% for size in sizes %}
+                {% assign size_x = size | divided_by: 2 | append: 'x' %}
+                @media screen and (max-width: {{ size }}px) {
+                  #{{ selector }} .picture{
+                    {% render 'resp-bg-img', image: image, size: size_x %}
+                  }
+                }
+              {% endfor %}
+              {% assign sizes = "620,512,375" | split: "," %}
+              {% for size in sizes %}
+                {% assign size_x = size | append: 'x' %}
+                @media screen and (max-width: {{ size }}px) {
+                  #{{ selector }} .picture{
+                    {% render 'resp-bg-img', image: image, size: size_x %}
+                  }
+                }
+              {% endfor %}
+              @media (max-width: 620px){
+                #{{ selector }}{
+                  height: calc((100vw - 30px) * {{ 1 | divided_by: image.aspect_ratio }});
+                }
+              }
+            </style>
+            <div class="picture"></div>
+          {% elsif product_id != blank %}
+            {{ product_id | placeholder_svg_tag: 'placeholder-svg' }}
+          {% else %}
+            <style type="text/css">
+              #{{ selector }} .picture{
+                background-image: url('https://cdn.shopify.com/shopifycloud/shopify/assets/no-image-2048-5e88c1b20e087fb7bbe9a3771824e743c244f437e4f8ba93bbf7b11b53f7824c_740x740.gif');
+              }
+            </style>
+            <div class="picture"></div>
+          {% endif %}
+        </a>
+      </div>
+    </div>
+  </div>
+  <a class="info" {% if url %}href="{{ url }}"{% endif %} aria-label="{{ title }}">
+    <div class="container">
+      <div class="left">
+        <div class="table">
+          <div class="cell">
+            <div>
+              <div class="title">
+                {{ title }}
+              </div>
+              <div class="title mobile">
+                {{ title }}
+              </div>
+              {% unless block_settings.subtitle == blank %}
+                <div class="price">
+                  {{ block_settings.subtitle }}
+                </div>
+              {% elsif featured_product != blank %}
+                {%- render 'collection-product-price', product: featured_product -%}
+              {% else %}
+                <div class="price">
+                  {{ product_price | money }}
+                </div>
+              {% endunless %}
+            </div>
+            {% unless block_settings.hide_cta %}
+              <div class="button">
+                <span class="btn border {{ settings.button_shape }}">
+                  {{ 'products.product.buy_html' | t }}
+                </span>
+              </div>
+            {% endunless %}
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>

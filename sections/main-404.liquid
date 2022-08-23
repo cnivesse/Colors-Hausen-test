@@ -1,0 +1,41 @@
+<div class="content extra-padding {% render 'content-classes', scope: section %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'general.404.section_title' | t }}</h2>
+    <h1>{{ "general.404.title" | t }}</h1>
+    <div class="row expanded-top">
+      <a href="{{ routes.root_url }}" class="btn solid">{{ 'general.404.continue_shopping' | t }}</a>
+      <a class="btn border" href="/" data-action="toggle-browse">{{ 'general.404.open_menu' | t }}</a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-404.name",
+  "class": "section-standalone section-404",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": true
+    }
+  ]
+}
+{% endschema %}

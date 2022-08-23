@@ -1,0 +1,127 @@
+<div class="content search {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="search">
+  <div class="section-header">
+    <h2 class="shopify-section-title">{{ 'general.search.title' | t }}</h2>
+    <h2 class="shopify-section-title divider">:</h2>
+    <div class="search-bar-wrapper">
+      <form action="{{ routes.search_url }}" method="get" class="search-bar" role="search">
+        <input type="hidden" name="options[prefix]" value="last" />
+        <input type="hidden" name="type" value="product,page,article">
+        <input type="search" name="q" class="text" value="{{ search.terms }}" autocorrect="off" autocomplete="off" autocapitalize="none">
+        <input type="hidden" class="btn" value="Search">
+      </form>
+    </div>
+  </div>
+  {% if search.performed %}
+    {% if search.results_count > 0 %}
+      <div class="search-products">
+        <h2>{{ 'general.search.results_with_count' | t: count: search.results_count, terms: search.terms }}</h2>
+        {% render 'sorting-and-filtering', collection: search %}
+        {% paginate search.results by 12 %}
+          {%- capture collection_products_classes -%}
+            {%- render 'get-collection-products-classes', with_previews: false -%}
+          {%- endcapture -%}
+          {% if search.results_count == 2 %}
+            {% assign layout_class = "two" %}
+          {% elsif search.results_count == 3 %}
+            {% assign layout_class = "three" %}
+          {% else %}
+            {% assign layout_class = "four" %}
+          {% endif %}
+          <div class="collection-products {{ collection_products_classes }}">
+            {% for item in search.results %}
+              {%- case item.object_type -%}
+              {%- when 'product' -%}
+                {% render 'collection-product', product: item, layout_class: layout_class %}
+              {%- when 'article' -%}
+                {% render 'collection-non-product', item: item, layout_class: layout_class %}
+              {%- when 'page' -%}
+                {% render 'collection-non-product', item: item, layout_class: layout_class %}
+              {%- endcase -%}
+            {% endfor %}
+            {% render 'pagination' with paginate as paginate %}
+          </div>
+        {% endpaginate %}      
+      </div>
+    {% else %}
+      <div class="search-empty">
+        <h3 class="empty">{{ 'general.search.no_results_for' | t: terms: search.terms }}</h3>
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.search.name",
+  "class": "section-search",
+  "settings": [
+    {
+      "id": "enable_filtering",
+      "type": "checkbox",
+      "label": "t:sections.main-collection.settings.enable_filtering.label",
+      "default": false,
+      "info": "t:sections.main-collection.settings.enable_filtering.info"
+    },
+    {
+      "type": "select",
+      "id": "filter_type",
+      "label": "t:sections.main-collection.settings.filter_type.label",
+      "default": "regular",
+      "options": [
+        {
+          "value": "regular",
+          "label": "t:sections.main-collection.settings.filter_type.options__1"
+        }
+      ]
+    },
+    {
+      "id": "enable_sorting",
+      "type": "checkbox",
+      "label": "t:sections.main-collection.settings.enable_sorting.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_labels",
+      "label": "t:sections.main-collection.settings.show_labels.label",
+      "default": true
+    },
+    {
+      "type": "header",
+      "content": "t:sections.search.settings.header.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.search.settings.paragraph.content"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    }
+  ]
+}
+{% endschema %}

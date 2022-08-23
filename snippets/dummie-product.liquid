@@ -1,0 +1,170 @@
+<div class="content product {% if section.settings.enable_sticky_info %}sticky{% endif %} {% render 'content-classes', scope: section %}" data-section-id="{{ section.id }}" data-section-type="product">
+  <div class="item">
+    <div class="left">
+      <div class="product-media {{ section.settings.thumbnails_position }}">
+        <div class="frame">
+          <div class="table">
+            <div class="cell">
+              <div>
+                <div class="media" id="media-0" tabindex="-1">
+                  {{ "product-5" | placeholder_svg_tag: 'placeholder-svg with-border' }}
+                </div>
+                <div class="media hide" id="media-1" tabindex="-1">
+                  {{ "product-3" | placeholder_svg_tag: 'placeholder-svg with-border' }}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="gallery">
+          <div class="thumb col-0">
+            <a data-action="show-product-media" data-id="media-0">
+              <div>
+                {{ "product-5" | placeholder_svg_tag: 'placeholder-svg with-border' }}
+              </div>
+            </a>
+          </div>
+          <div class="thumb col-1">
+            <a data-action="show-product-media" data-id="media-1">
+              <div>
+                {{ "product-3" | placeholder_svg_tag: 'placeholder-svg with-border' }}
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right">
+      <form>
+        {%- for block in section.blocks -%}
+          <div class="row type_{{ block.type }} {% if block.settings.increase_space_before_block %}expanded-top{% endif %}" {{ block.shopify_attributes }}>
+            {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'available_stock_units' -%}
+              {% capture units %}
+                <span class="units">10</span>
+              {% endcapture %}
+              <div class="stock">
+                {{ 'products.product.available_units_html' | t: units: units }}
+              </div>
+            {%- when 'text' -%}
+              <div class="rte description">
+                {{ block.settings.text }}
+              </div>
+            {%- when 'subtitle' -%}
+              <h3 class="subtitle">{{ block.settings.text }}</h3>
+            {%- when 'title' -%}
+              <h1 class="without-link">{{ 'sections.onboarding.product_title' | t }}</h1>
+            {%- when 'price' -%}
+              <div class="offers">
+                <h2 class="price" id="productPrice-{{ section.id }}"><span class="money">{{ 2000 | money }}</span></h2>
+              </div>
+            {%- when 'share' -%}
+              {% assign current_url = shop.url %}
+               <div class="share">
+                {% if block.settings.facebook_sharing_products %}
+                  <a target="_blank" href="//www.facebook.com/sharer.php?u={{ current_url }}" class="icon circle facebook" title="{{ 'products.product.share_on' | t: platform: 'Facebook' }}">
+                    <i class="fc fc-facebook"></i>
+                  </a>
+                {% endif %}
+                {% if block.settings.twitter_sharing_products %}
+                  <a target="_blank" href="//twitter.com/share?text={{ shop.name | url_param_escape }}&amp;url={{ current_url }}" class="icon twitter" title="{{ 'products.product.share_on' | t: platform: 'Twitter' }}">
+                    <i class="fc fc-twitter"></i>
+                  </a>
+                {% endif %}
+                {% if block.settings.pinterest_sharing_products %}
+                  <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ current_url }}&amp;description={{ shop.name | url_param_escape }}&amp;media={{ product.featured_media.preview_image | img_url: '1024x1024' | prepend: 'http:' | split: '?' | first }}" class="icon pinterest" title="{{ 'products.product.share_on' | t: platform: 'Pinterest' }}">
+                    <i class="fc fc-pinterest"></i>
+                  </a>
+                {% endif %}
+              </div>
+            {%- when 'description' -%}
+              <div class="rte description">
+                {{ 'sections.onboarding.product_description' | t }}
+              </div>
+            {%- when 'quantity_selector' -%}
+              <div class="selector-wrapper">
+                <label for="productQuantity-{{ section.id }}">
+                  <span class="name">{{ 'products.product.quantity' | t }}</span>
+                </label>
+                <input type="number" name="quantity" id="productQuantity-{{ section.id }}" pattern="[0-9]*" class="quantity" value="1" min="1">
+              </div>
+              <script id="JsQty" type="text/template">
+              {% raw %}
+                <div class="js-qty">
+                  <button type="button" class="js-qty__adjust js-qty__adjust--minus icon-fallback-text" data-id="{{id}}" data-qty="{{itemMinus}}">
+                    <span class="icon icon-minus" aria-hidden="true"></span>
+                    <span class="fallback-text">&minus;</span>
+                  </button>
+                  <input type="text" class="js-qty__num" value="{{itemQty}}" min="1" {{#if max}}max="{{max}}"{{/if}} data-id="{{id}}" aria-label="quantity" pattern="[0-9]*" name="{{inputName}}" id="{{inputId}}" {{#if disabled}}disabled{{/if}}>
+                  <button type="button" class="js-qty__adjust js-qty__adjust--plus icon-fallback-text" data-id="{{id}}" data-qty="{{itemAdd}}">
+                    <span class="icon icon-plus" aria-hidden="true"></span>
+                    <span class="fallback-text">+</span>
+                  </button>
+                </div>
+              {% endraw %}
+              </script>
+            {%- when 'buy_buttons' -%}
+              <div class="buttons">
+                <button id="addToCart-{{ section.id }}" type="submit" class="add-to-cart {% if block.settings.show_dynamic_checkout %}with-payment-button{% endif %}" onClick="event.preventDefault()">
+                  {{ 'products.product.add_to_cart' | t }}
+                </button>
+                {% if block.settings.show_dynamic_checkout %}
+                  <div class="shopify-payment-button">
+                    <button type="button" class="shopify-payment-button__button shopify-payment-button__button--unbranded">Buy it now</button>
+                  </div>
+                {% endif %}
+              </div>
+            {%- when 'rating' -%}
+              {% liquid
+                assign rating = 0
+                assign scale_max = 5
+                assign rating_count = 0
+                assign rating_decimal = 0
+                assign decimal = rating | modulo: 1
+                if decimal >= 0.3 and decimal <= 0.7
+                  assign rating_decimal = 0.5
+                elsif decimal > 0.7
+                  assign rating_decimal = 1
+                endif
+              %}
+              <div class="rating-container">
+                <div class="rating" role="img" aria-label="{{ 'general.accessibility.star_reviews_info' | t: rating_value: value, rating_max: scale_max }}">
+                  <span aria-hidden="true" class="rating-star" style="--rating: {{ rating | floor }}; --rating-max: {{ scale_max }}; --rating-decimal: {{ rating_decimal }};"></span>
+                </div>
+                <p class="rating-text">
+                  <span aria-hidden="true">{{ rating }} / {{ scale_max }}</span>
+                </p>
+                <p class="rating-count">
+                  <span aria-hidden="true">({{ "products.product.total_reviews" | t: count: rating_count }})</span>
+                  <span class="visually-hidden">{{ "products.product.total_reviews" | t: count: rating_count }}</span>
+                </p>
+              </div>
+            {%- when 'custom_liquid' -%}
+              {{ block.settings.custom_liquid }}
+            {%- when 'collapsible_tab' -%}
+              <div class="accordion" {{ block.shopify_attributes }}>
+                <details>
+                  <summary>
+                    <div class="accordion-header">
+                      {% render 'icon-accordion', icon: block.settings.icon %}
+                      <h4 class="title">
+                        {{ block.settings.heading | default: block.settings.page.title }}
+                      </h4>
+                      <h4 class="plus">+</h4>
+                    </div>
+                  </summary>
+                  <div class="rte">
+                    {{ block.settings.content }}
+                    {{ block.settings.page.content }}
+                  </div>
+                </details>
+              </div>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,162 @@
+<div class="content blog {{ section.settings.layout }} {% render 'content-classes', scope: section %}">
+  {% assign blog = blogs[section.settings.blog] %}
+  <div class="inner" style="max-width: {{ section.settings.content_max_width }}px;">
+    {% if section.settings.show_heading %}
+      {% if blog.title != blank %}
+        <a href="{{ blog.url }}">
+          <h2 class="shopify-section-title">{{ blog.title }}</h2>
+        </a>
+        <a href="{{ shop.url }}{{ blog.url }}.atom" target="_blank" aria-label="RSS">
+          <h2 class="shopify-section-title rss">
+            <i class="fc fc-rss"></i>
+          </h2>
+        </a>
+      {% else %}
+        <h2 class="shopify-section-title">{{ 'sections.onboarding.blog_title' | t }}</h2>
+        <h2 class="shopify-section-title rss">
+          <i class="fc fc-rss"></i>
+        </h2>
+      {% endif %}
+    {% endif %}
+    <div class="excerpts">
+      {% unless blog.empty? %}
+        {% for article in blog.articles limit: section.settings.post_limit %}
+          {% capture class %}{% cycle blog.handle: 'col-0', 'col-1' %}{% endcapture %}
+          {% render 'post', blog: blog, article: article, class: class %}
+        {% endfor %}
+      {% else %}
+        {% for i in (1..section.settings.post_limit) %}
+          {% capture class %}{% cycle blog.handle: 'col-0', 'col-1' %}{% endcapture %}
+          {% render 'dummie-post', class: class %}
+        {% endfor %}
+      {% endunless %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured-blog.name",
+  "class": "section-featured-blog",
+  "settings": [
+    {
+      "id": "blog",
+      "type": "blog",
+      "label": "t:sections.featured-blog.settings.blog.label"
+    },
+    {
+      "type": "select",
+      "id": "layout",
+      "label": "t:sections.featured-blog.settings.layout.label",
+      "default": "grid",
+      "options": [
+        {
+          "value": "grid",
+          "label": "t:sections.featured-blog.settings.layout.option__1"
+        },
+        {
+          "value": "list",
+          "label": "t:sections.featured-blog.settings.layout.option__2"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "id": "post_limit",
+      "label": "t:sections.featured-blog.settings.post_limit.label",
+      "default": 4,
+      "min": 2,
+      "max": 8,
+      "step": 2
+    },
+    {
+      "type": "header",
+      "content": "t:sections.featured-blog.settings.header.content"
+    },
+    {
+      "type": "paragraph",
+      "content": "t:sections.featured-blog.settings.paragraph.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "featured_images_fixed_height_enabled",
+      "label": "t:sections.featured-blog.settings.featured_images_fixed_height_enabled.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "featured_images_fixed_height",
+      "label": "t:sections.featured-blog.settings.featured_images_fixed_height.label",
+      "default": 360,
+      "min": 50,
+      "max": 600,
+      "step": 10,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "t:sections.settings.show_heading.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded_content",
+      "label": "t:sections.settings.expanded_content.label",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.settings.content_max_width.label",
+      "default": 1200,
+      "min": 400,
+      "max": 2000,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "blog": "News"
+      }
+    }
+  ]
+}
+{% endschema %}

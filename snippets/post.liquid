@@ -1,0 +1,163 @@
+<div class="post {{ class }}">
+
+  {% if article.image %}
+    {% if template.name == 'article' %}
+      {% render 'resp-img',
+       image: article.image,
+       alt: article.image.alt,
+       class: "image",
+       default_size: "1080x",
+       sizes: "(max-width: 960px) 100vw, 860px"
+      %}
+    {% else %}
+      <a href="{{ article.url }}" tabindex="-1">
+        {% if section.settings.featured_images_fixed_height_enabled %}
+          <style type="text/css">
+            #image-{{ section.id }}-{{ article.id }} {
+              height: {{ section.settings.featured_images_fixed_height }}px;
+            }
+            @media screen and (max-width: 375px) {
+              #image-{{ section.id }}-{{ article.id }} {
+                {% render 'resp-bg-img', image: article.image, size: '375x' %}
+              }
+            }
+            @media screen and (min-width: 376px) and (max-width: 960px) {
+              #image-{{ section.id }}-{{ article.id }} {
+                {% render 'resp-bg-img', image: article.image, size: '960x' %}
+              }
+            }
+            @media screen and (min-width: 961px) {
+              #image-{{ section.id }}-{{ article.id }} {
+                {% render 'resp-bg-img', image: article.image, size: '960x' %}
+              }
+            }
+          </style>
+          <div id="image-{{ section.id }}-{{ article.id }}" class="image-preview"></div>
+        {% else %}
+          {% render 'resp-img',
+           image: article.image,
+           alt: article.image.alt,
+           class: "image",
+           default_size: "1080x",
+           sizes: "(max-width: 960px) 100vw, 50vw"
+          %}
+        {% endif %}
+      </a>
+    {% endif %}
+  {% endif %}
+
+  <h1><a href="{{ article.url }}">{{ article.title }}</a></h1>
+  {% capture date %}
+    <time pubdate datetime="{{ article.published_at | date: format: 'day_month_and_year' }}">{{ article.published_at | date: format: 'day_month_and_year' }}</time>
+  {% endcapture %}
+  <h2>{{ 'blogs.article.meta_html' | t: author: article.author, date: date }}</h2>
+  <hr/>
+  {% if template.name == 'article' %}
+    <div class="rte">
+      {{ article.content }}
+    </div>
+  {% else %}
+    <div class="rte">
+      {% if article.excerpt != blank %}
+        <p>{{ article.excerpt }}</p>
+      {% else %}
+        <p>{{ article.content | strip_html | truncatewords: 120 }}</p>
+      {% endif %}
+    </div>
+    <a class="btn border more" href="{{ article.url }}" title="{{ article.title }}">{{ 'blogs.article.read_entire_article_html' | t }}</a>
+  {% endif %}
+
+  {% assign number_of_comments = article.comments_count %}
+  {% if comment.status == 'pending' or comment.status == 'unapproved' %}
+    {% assign number_of_comments = article.comments_count | plus: 1 %}
+  {% endif %}
+
+  {% if number_of_comments > 0 or article.tags.size > 0 %}
+    <div class="extra" id="comments" >
+      {% if blog.comments_enabled? %}
+        {% if number_of_comments > 0 %}
+          <div class="comments">
+            <a href="{{ article.url }}#comments">
+              <i class="icon fc fc-comment"></i>
+              <span class="number">{{ number_of_comments }}</span>
+            </a>
+          </div>
+        {% endif %}
+      {% endif %}
+
+      {% if article.tags.size > 0 %}
+        <div class="tags">
+          <i class="icon fc fc-tag"></i>
+          {% for tag in article.tags %}
+            <a href="{{ blog.url }}/tagged/{{ tag | handle }}">{{ tag }}</a>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  {% endif %}
+  {% if template.name == 'article' %}
+    {% if section.settings.facebook_sharing_articles or
+          section.settings.twitter_sharing_articles or
+          section.settings.pinterest_sharing_articles %}
+      {% assign current_url = shop.url | append: article.url %}
+       <div class="share">
+        {% if section.settings.facebook_sharing_articles %}
+          <a target="_blank" href="//www.facebook.com/sharer.php?u={{ current_url }}" class="icon circle facebook" title="{{ 'products.product.share_on' | t: platform: 'Facebook' }}">
+            <i class="fc fc-facebook"></i>
+          </a>
+        {% endif %}
+        {% if section.settings.twitter_sharing_articles %}
+          <a target="_blank" href="//twitter.com/share?text={{ article.title | url_param_escape }}&amp;url={{ current_url }}" class="icon twitter" title="{{ 'products.product.share_on' | t: platform: 'Twitter' }}">
+            <i class="fc fc-twitter"></i>
+          </a>
+        {% endif %}
+        {% if section.settings.pinterest_sharing_articles and article.image %}
+          <a target="_blank" href="//pinterest.com/pin/create/button/?url={{ current_url }}&amp;media={{ article.image.src | img_url: '1024x1024' | split: '?' | first }}&amp;description={{ article.title | url_param_escape }}" class="icon pinterest" title="{{ 'products.product.share_on' | t: platform: 'Pinterest' }}">
+            <i class="fc fc-pinterest"></i>
+          </a>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endif %}
+</div>
+
+<script type="application/ld+json">
+{
+  "@context": "http://schema.org",
+  "@type": "Article",
+  "articleBody": {{ article.content | strip_html | json }},
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": {{ shop.url | append: page.url | json }}
+  },
+  "headline": {{ article.title | json }},
+  {% if article.excerpt != blank %}
+    "description": {{ article.excerpt | strip_html | json }},
+  {% endif %}
+  {% if article.image %}
+    {% assign image_size = article.image.width | append: 'x' %}
+    "image": [
+      {{ article | img_url: image_size | prepend: "https:" | json }}
+    ],
+  {% endif %}
+  "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "dateCreated": {{ article.created_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+  "author": {
+    "@type": "Person",
+    "name": {{ article.author | json }}
+  },
+  "publisher": {
+    "@type": "Organization",
+    {% if page_image %}
+      {% assign image_size = page_image.width | append: 'x' %}
+      "logo": {
+        "@type": "ImageObject",
+        "height": {{ page_image.height | json }},
+        "url": {{ page_image | img_url: image_size | prepend: "https:" | json }},
+        "width": {{ page_image.width | json }}
+      },
+    {% endif %}
+    "name": {{ shop.name | json }}
+  }
+}
+</script>

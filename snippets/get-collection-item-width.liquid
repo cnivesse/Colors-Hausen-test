@@ -1,0 +1,53 @@
+{%- comment -%}
+  The pattern applied to collections is:
+
+  1 = full width
+  2 = 2 row
+  3 = 3 row
+  4 = 2 row, 2 row
+  5 = 2 row, 3 row
+  6 = 3 row, 3 row
+  7 = 2 row, 2 row, 3 row
+  8 = 2 row, 3 row, 3 row
+  9 = 3 row, 3 row, 3 row
+  10 = 2 row, 2 row, 3 row, 3 row
+  11 = 2 row, 3 row, 3 row, 3 row
+  (...)
+
+{%- endcomment -%}
+
+{%- assign divisible_by_three = collection_count | modulo: 3 -%}
+
+{%- if collection_count == 1 -%}
+  {%- assign collection_item_width = "one-whole" -%}
+{%- elsif collection_count == 2 or collection_count == 4 -%}
+  {%- assign collection_item_width = "one-half" -%}
+{%- elsif collection_count == 5 -%}
+  {%- if collection_index < 2 -%}
+    {%- assign collection_item_width = "one-half" -%}
+  {%- else -%}
+    {%- assign collection_item_width = "one-third" -%}
+  {%- endif -%}
+{%- elsif collection_count == 7 -%}
+  {%- if collection_index < 2 or collection_index > 4 -%}
+    {%- assign collection_item_width = "one-half" -%}
+  {%- else -%}
+    {%- assign collection_item_width = "one-third" -%}
+  {%- endif -%}
+{%- elsif divisible_by_three == 1 -%}
+  {%- if collection_index < 4 -%}
+    {%- assign collection_item_width = "one-half" -%}
+  {%- else -%}
+    {%- assign collection_item_width = "one-third" -%}
+  {%- endif -%}
+{%- elsif divisible_by_three == 2 -%}
+  {%- if collection_index < 2 -%}
+    {%- assign collection_item_width = "one-half" -%}
+  {%- else -%}
+    {%- assign collection_item_width = "one-third" -%}
+  {%- endif -%}
+{%- else -%}
+  {%- assign collection_item_width = "one-third" -%}
+{%- endif -%}
+
+{{- collection_item_width -}}

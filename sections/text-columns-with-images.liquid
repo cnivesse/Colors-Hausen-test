@@ -1,0 +1,407 @@
+<div class="content text-columns-with-images {{ section.settings.align }} {% render 'content-classes', scope: section %}">
+  <div class="inner" style="max-width: {{ section.settings.content_max_width }}px;">
+    {% if section.settings.heading != blank or section.settings.subheading != blank %}
+      <div class="inner with-layout-options centered" style="max-width: 900px;">
+        <div class="rte">
+          {% unless section.settings.heading == blank %}
+            <h1>{{ section.settings.heading | escape }}</h1>
+          {% endunless %}
+          {% unless section.settings.subheading == blank %}
+            {{ section.settings.subheading }}
+          {% endunless %}
+        </div>
+      </div>
+    {% endif %}
+    {% if section.blocks.size > 0 %}
+      <div class="row cols layout-{{ section.settings.columns }}">
+        {% assign index = 1 %}
+        {% for block in section.blocks limit: section.blocks.size %}
+          <div class="col col-{{ index }}" {{ block.shopify_attributes }}>
+            {% if block.settings.link %}<a href="{{ block.settings.link }}">{% endif %}
+            {% if block.settings.show_image %}
+              {% if block.settings.image_type == 'custom' %}
+                {% if block.settings.image != blank %}
+                    <picture>
+                      {% assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: ","%}
+                      <source srcset=
+                        "{% for dimension in dimensions %}
+                          {% assign img_url = dimension | append: 'x' %}
+                          {% if squared %}
+                            {% assign img_url = img_url | append: dimension %}
+                          {% endif %}
+                          {{ block.settings.image | img_url: img_url }} {{ dimension }}w,
+                        {% endfor %}"
+                        sizes="100vw"
+                      >
+                      <img src="{{ block.settings.image | img_url: '2048x' }}">
+                    </picture>
+                {% else %}
+                  <div class="number">{{ index }}</div>
+                {% endif %}
+              {% else %}
+                {% if block.settings.image_type == 'icon_number' %}
+                  <div class="number">{{ index }}</div>
+                {% else %}
+                  <div class="icon"><i class="fc fc-{{ block.settings.image_type | replace: "_", "-" }}"></i></div>
+                {% endif %}
+              {% endif %}
+            {% endif %}
+            {% if block.settings.title != blank %}
+              <h2>{{ block.settings.title }}</h2>
+            {% endif %}
+            {% if block.settings.text != blank %}
+              <div class="rte">
+                {{ block.settings.text }}
+              </div>
+            {% endif %}
+          {% if block.settings.link %}</a>{% endif %}
+          </div>
+          {% assign index = index | plus: 1 %}
+        {% endfor %}
+      </div>
+    {% else %}
+      {% render 'no-blocks' %}
+    {% endif %}
+    {% unless section.settings.button_label == blank or section.settings.button_link == blank %}
+      <a href="{{ section.settings.button_link }}" class="btn action small">{{ section.settings.button_label | escape }}</a>
+    {% endunless %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.text-columns-with-images.name",
+  "max_blocks": 20,
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "t:sections.text-columns-with-images.settings.heading.label",
+      "default": {
+        "ar": "أعمدة النص مع الصور",
+        "bg": "Текстови колони с изображения",
+        "ca": "Columnes de text amb imatges",
+        "cs": "Textové sloupce s obrázky",
+        "da": "Tekstkolonner med billeder",
+        "de": "Textspalten mit Bildern",
+        "el": "Στήλες κειμένου με εικόνες",
+        "en": "Text columns with images",
+        "es": "Columnas de texto con imágenes",
+        "fi": "Tekstisarakkeet kuvilla",
+        "fr": "Colonnes de texte avec images",
+        "he": "עמודות טקסט עם תמונות",
+        "hr": "Tekstualni stupci sa slikama",
+        "hu": "Szövegoszlopok képekkel",
+        "id": "Kolom teks dengan gambar",
+        "it": "Colonne di testo con immagini",
+        "ja": "画像付きのテキスト列",
+        "ko": "이미지가 있는 텍스트 열",
+        "lt": "Teksto stulpeliai su vaizdais",
+        "nb": "Tekstkolonner med bilder",
+        "nl": "Tekstkolommen met afbeeldingen",
+        "pl": "Kolumny tekstowe z obrazami",
+        "pt-BR": "Colunas de texto com imagens",
+        "pt-PT": "Colunas de texto com imagens",
+        "ro": "Coloane de text cu imagini",
+        "ru": "Текстовые столбцы с изображениями",
+        "sk": "Textové stĺpce s obrázkami",
+        "sl": "Besedilni stolpci s slikami",
+        "sv": "Textkolumner med bilder",
+        "th": "คอลัมน์ข้อความพร้อมรูปภาพ",
+        "tr": "Görüntülü metin sütunları",
+        "vi": "Cột văn bản có hình ảnh",
+        "zh-CN": "带有图像的文本列",
+        "zh-TW": "帶有圖像的文本列"
+      }
+    },
+    {
+      "type": "richtext",
+      "id": "subheading",
+      "label": "t:sections.text-columns-with-images.settings.subheading.label",
+      "default": {
+        "ar": "<p> استخدم هذا القسم لمشاركة ميزات المتجر ، والشهادات ، والتأييدات ، والأسئلة الشائعة ، وما إلى ذلك. </p>",
+        "bg": "<p>Използвайте този раздел, за да споделяте функции на магазина, препоръки, препоръки, често задавани въпроси и др.</p>",
+        "ca": "<p>Utilitzeu aquesta secció per compartir funcions de la botiga, testimonis, recomanacions, preguntes freqüents, etc.</p>",
+        "cs": "<p>Tuto sekci použijte ke sdílení funkcí obchodu, doporučení, doporučení, častých dotazů atd.</p>",
+        "da": "<p>Brug denne sektion til at dele butiksfunktioner, udtalelser, anbefalinger, ofte stillede spørgsmål osv.</p>",
+        "de": "<p>Verwenden Sie diesen Abschnitt, um Funktionen des Shops, Erfahrungsberichte, Empfehlungen, häufig gestellte Fragen usw. zu teilen.</p>",
+        "el": "<p>Χρησιμοποιήστε αυτήν την ενότητα για να μοιραστείτε χαρακτηριστικά καταστήματος, μαρτυρίες, εγκρίσεις, συχνές ερωτήσεις κ.λπ.</p>",
+        "en": "<p>Use this section to share store features, testimonials, endorsements, FAQs, etc.</p>",
+        "es": "<p>Utilice esta sección para compartir características de la tienda, testimonios, recomendaciones, preguntas frecuentes, etc.</p>",
+        "fi": "<p>Tämän osion avulla voit jakaa myymälän ominaisuuksia, suosituksia, suosituksia, usein kysyttyjä kysymyksiä jne.</p>",
+        "fr": "<p>Utilisez cette section pour partager les fonctionnalités de la boutique, les témoignages, les recommandations, les FAQ, etc.</p>",
+        "he": "<p>השתמש בקטע זה כדי לשתף תכונות של חנות, המלצות, המלצות, שאלות נפוצות וכו'.</p>",
+        "hr": "<p>Upotrijebite ovaj odjeljak za dijeljenje značajki trgovine, svjedočanstava, preporuka, često postavljanih pitanja itd.</p>",
+        "hu": "<p>Ebből a szakaszból megoszthatja a bolt jellemzőit, ajánlásait, ajánlásait, GYIK-jeit stb.</p>",
+        "id": "<p>Gunakan bagian ini untuk membagikan fitur toko, testimonial, dukungan, FAQ, dll.</p>",
+        "it": "<p>Utilizza questa sezione per condividere caratteristiche del negozio, testimonianze, approvazioni, domande frequenti e così via</p>",
+        "ja": "<p>このセクションを使用して、ストアの機能、紹介文、おすすめ、よくある質問などを共有します。</p>",
+        "ko": "<p>이 섹션을 사용하여 매장 기능, 추천, 추천, FAQ 등을 공유하십시오.</p>",
+        "lt": "<p>Naudokite šią skiltį, jei norite bendrinti parduotuvės funkcijas, atsiliepimus, rekomendacijas, DUK ir kt.</p>",
+        "nb": "<p>Bruk denne delen til å dele butikkfunksjoner, attester, anbefalinger, vanlige spørsmål osv.</p>",
+        "nl": "<p>Gebruik dit gedeelte om winkelfuncties, getuigenissen, aanbevelingen, veelgestelde vragen, enz. te delen.</p>",
+        "pl": "<p>Użyj tej sekcji, aby udostępnić funkcje sklepu, referencje, rekomendacje, często zadawane pytania itp.</p>",
+        "pt-BR": "<p>Use esta seção para compartilhar recursos da loja, depoimentos, recomendações, perguntas frequentes etc.</p>",
+        "pt-PT": "<p>Use esta seção para compartilhar recursos da loja, depoimentos, recomendações, perguntas frequentes etc.</p>",
+        "ro": "<p>Utilizați această secțiune pentru a partaja funcțiile magazinului, mărturii, aprobări, întrebări frecvente etc.</p>",
+        "ru": "<p>Используйте этот раздел, чтобы поделиться функциями магазина, отзывами, одобрениями, часто задаваемыми вопросами и т. д.</p>",
+        "sk": "<p>Túto sekciu použite na zdieľanie funkcií obchodu, referencií, odporúčaní, častých otázok atď.</p>",
+        "sl": "<p>S tem razdelkom delite funkcije trgovine, pričevanja, priporočila, pogosta vprašanja itd.</p>",
+        "sv": "<p>Använd det här avsnittet för att dela butiksfunktioner, vittnesmål, rekommendationer, vanliga frågor osv.</p>",
+        "th": "<p>ใช้ส่วนนี้เพื่อแชร์คุณลักษณะของร้าน คำนิยม การรับรอง คำถามที่พบบ่อย ฯลฯ</p>",
+        "tr": "<p>Mağaza özelliklerini, referansları, önerileri, SSS'leri vb. paylaşmak için bu bölümü kullanın.</p>",
+        "vi": "<p> Sử dụng phần này để chia sẻ các tính năng của cửa hàng, lời chứng thực, xác nhận, Câu hỏi thường gặp, v.v. </p>",
+        "zh-CN": "<p>使用此部分分享商店功能、推荐、认可、常见问题解答等。</p>",
+        "zh-TW": "<p>使用此部分分享商店功能、推薦、認可、常見問題解答等。</p>"
+      }
+    },
+    {
+      "type": "range",
+      "id": "columns",
+      "min": 1,
+      "max": 5,
+      "step": 1,
+      "label": "t:sections.text-columns-with-images.settings.columns.label",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "align",
+      "label": "t:sections.text-columns-with-images.settings.align.label",
+      "default": "center",
+      "options": [
+        {
+          "value": "left",
+          "label": "t:sections.text-columns-with-images.settings.align.options__1"
+        },
+        {
+          "value": "center",
+          "label": "t:sections.text-columns-with-images.settings.align.options__2"
+        },
+        {
+          "value": "right",
+          "label": "t:sections.text-columns-with-images.settings.align.options__3"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_background",
+      "label": "t:sections.settings.show_background.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "content_max_width",
+      "label": "t:sections.settings.content_max_width.label",
+      "default": 850,
+      "min": 400,
+      "max": 2000,
+      "step": 50,
+      "unit": "px"
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_column",
+      "name": "t:sections.text-columns-with-images.blocks.text_column.name",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_image",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.show_image.label",
+          "default": true
+        },
+        {
+          "type": "select",
+          "id": "image_type",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.label",
+          "default": "custom",
+          "options": [
+            {
+              "value": "custom",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__1"
+            },
+            {
+              "value": "icon_eco",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__2"
+            },
+            {
+              "value": "icon_international",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__3"
+            },
+            {
+              "value": "icon_local",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__4"
+            },
+            {
+              "value": "icon_recycled",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__5"
+            },
+            {
+              "value": "icon_returns",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__6"
+            },
+            {
+              "value": "icon_sale",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__7"
+            },
+            {
+              "value": "icon_security",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__8"
+            },
+            {
+              "value": "icon_shipping",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__9"
+            },
+            {
+              "value": "icon_number",
+              "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image_type.options__10"
+            }
+          ]
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.image.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.title.label",
+          "default": {
+            "ar": "ميزة متجرك",
+            "bg": "Функция на вашия магазин",
+            "ca": "La teva característica de botiga",
+            "cs": "Funkce vašeho obchodu",
+            "da": "Din butiksfunktion",
+            "de": "Ihre Shop-Funktion",
+            "el": "Η λειτουργία του καταστήματός σας",
+            "en": "Your store feature",
+            "es": "Característica de tu tienda",
+            "fi": "Kauppasi ominaisuus",
+            "fr": "Fonctionnalité de votre boutique",
+            "he": "תכונת החנות שלך",
+            "hr": "Značajka vaše trgovine",
+            "hu": "Az Ön bolti funkciója",
+            "id": "Fitur toko Anda",
+            "it": "La tua caratteristica del negozio",
+            "ja": "あなたの店の特徴",
+            "ko": "내 스토어 기능",
+            "lt": "Jūsų parduotuvės funkcija",
+            "nb": "Butikkfunksjonen din",
+            "nl": "Uw winkelfunctie",
+            "pl": "Twoja funkcja sklepu!",
+            "pt-BR": "Recurso da sua loja",
+            "pt-PT": "Recurso da sua loja",
+            "ro": "Funcția magazinului dvs",
+            "ru": "Особенность вашего магазина",
+            "sk": "Funkcia vášho obchodu",
+            "sl": "Funkcija vaše trgovine",
+            "sv": "Din butiksfunktion",
+            "th": "คุณลักษณะร้านค้าของคุณ",
+            "tr": "Mağaza özelliğiniz",
+            "vi": "Tính năng cửa hàng của bạn",
+            "zh-CN": "您的商店功能",
+            "zh-TW": "您的商店功能"
+          }
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.text.label",
+          "default": {
+            "ar": "<p> استخدم هذا النص لمشاركة ميزات المتجر أو المراجعات الحديثة أو الأسئلة الشائعة. </p>",
+            "bg": "<p>Използвайте този текст, за да споделяте функции на магазина, скорошни отзиви или често задавани въпроси.</p>",
+            "ca": "<p>Feu servir aquest text per compartir funcions de la botiga, ressenyes recents o preguntes freqüents.</p>",
+            "cs": "<p>Tento text použijte ke sdílení funkcí obchodu, nedávných recenzí nebo častých dotazů.</p>",
+            "da": "<p>Brug denne tekst til at dele butiksfunktioner, seneste anmeldelser eller ofte stillede spørgsmål.</p>",
+            "de": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.</p>",
+            "el": "<p>Χρησιμοποιήστε αυτό το κείμενο για να μοιραστείτε λειτουργίες καταστήματος, πρόσφατες κριτικές ή συχνές ερωτήσεις.</p>",
+            "en": "<p>Use this text to share store features, recent reviews or FAQs.</p>",
+            "es": "<p>Utilice este texto para compartir funciones de la tienda, reseñas recientes o preguntas frecuentes.</p>",
+            "fi": "<p>Käytä tätä tekstiä myymälän ominaisuuksien, viimeaikaisten arvostelujen tai usein kysyttyjen kysymysten jakamiseen.</p>",
+            "fr": "<p>Utilisez ce texte pour partager les fonctionnalités de la boutique, les avis récents ou les FAQ.</p>",
+            "he": "<p>השתמש בטקסט זה כדי לשתף תכונות של חנות, ביקורות אחרונות או שאלות נפוצות.</p>",
+            "hr": "<p>Upotrijebite ovaj tekst za dijeljenje značajki trgovine, nedavnih recenzija ili često postavljanih pitanja.</p>",
+            "hu": "<p>Használja ezt a szöveget az áruház jellemzőinek, a legutóbbi vélemények vagy a GYIK megosztásához.</p>",
+            "id": "<p>Gunakan teks ini untuk berbagi fitur toko, ulasan terbaru, atau FAQ.</p>",
+            "it": "<p>Utilizza questo testo per condividere funzionalità del negozio, recensioni recenti o domande frequenti.</p>",
+            "ja": "<p>このテキストを使用して、ストアの機能、最近のレビュー、またはFAQを共有します。</p>",
+            "ko": "<p>이 텍스트를 사용하여 매장 기능, 최근 리뷰 또는 FAQ를 공유하세요.</p>",
+            "lt": "<p>Naudokite šį tekstą norėdami bendrinti parduotuvės funkcijas, naujausias apžvalgas ar DUK.</p>",
+            "nb": "<p>Bruk denne teksten til å dele butikkfunksjoner, nylige anmeldelser eller vanlige spørsmål.</p>",
+            "nl": "<p>Gebruik deze tekst om winkelfuncties, recente recensies of veelgestelde vragen te delen.</p>",
+            "pl": "<p>Użyj tego tekstu, aby udostępnić funkcje sklepu, najnowsze recenzje lub często zadawane pytania.</p>",
+            "pt-BR": "<p>Use este texto para compartilhar recursos da loja, avaliações recentes ou perguntas frequentes.</p>",
+            "pt-PT": "<p>Use este texto para compartilhar recursos da loja, avaliações recentes ou perguntas frequentes.</p>",
+            "ro": "<p>Folosiți acest text pentru a partaja funcțiile magazinului, recenzii recente sau întrebări frecvente.</p>",
+            "ru": "<p>Используйте этот текст, чтобы поделиться функциями магазина, последними отзывами или часто задаваемыми вопросами.</p>",
+            "sk": "<p>Tento text použite na zdieľanie funkcií obchodu, najnovších recenzií alebo častých otázok.</p>",
+            "sl": "<p>S tem besedilom delite funkcije trgovine, nedavne ocene ali pogosta vprašanja.</p>",
+            "sv": "<p>Använd den här texten för att dela butiksfunktioner, senaste recensioner eller vanliga frågor.</p>",
+            "th": "<p>ใช้ข้อความนี้เพื่อแชร์คุณลักษณะของร้าน บทวิจารณ์ล่าสุด หรือคำถามที่พบบ่อย</p>",
+            "tr": "<p>Mağaza özelliklerini, son incelemeleri veya SSS'leri paylaşmak için bu metni kullanın.</p>",
+            "vi": "<p> Sử dụng văn bản này để chia sẻ các tính năng của cửa hàng, các bài đánh giá gần đây hoặc Câu hỏi thường gặp. </p>",
+            "zh-CN": "<p>使用此文本分享商店功能、最近的评论或常见问题解答。</p>",
+            "zh-TW": "<p>使用此文本分享商店功能、最近的評論或常見問題解答。</p>"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.text-columns-with-images.blocks.text_column.settings.link.label",
+          "info": {
+            "en": "Optional",
+            "es": "Opcional"
+          }
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.text-columns-with-images.presets.name",
+      "blocks": [
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        },
+        {
+          "type": "text_column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

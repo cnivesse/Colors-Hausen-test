@@ -1,0 +1,37 @@
+<div class="content show-background {% render 'content-classes' %}">
+  <div class="inner with-layout-options centered">
+    <h2 class="shopify-section-title">{{ 'customer.activate_account.section_title' | t }}</h2>
+    <h1>{{ 'customer.activate_account.title' | t }}</h1>
+    {% form 'activate_customer_password' %}
+      <div class="row with-top-border with-bottom-border">
+        <input class="text long{% if form.errors contains 'password' %} error{% endif %}" name="customer[password]" id="customer_password" placeholder="{{ 'customer.activate_account.password' | t }}" type="password" aria-label="{{ 'customer.activate_account.password' | t }}">
+        {% render 'form-field-error', form: form, field: 'password' %}
+      </div>
+      <div class="row with-bottom-border">
+        <input class="text long{% if form.errors contains 'password_confirmation' %} error{% endif %}" name="customer[password_confirmation]" id="customer_password_confirmation" placeholder="{{ 'customer.activate_account.password_confirm' | t }}" type="password" aria-label="{{ 'customer.activate_account.password_confirm' | t }}">
+        {% render 'form-field-error', form: form, field: 'password_confirmation' %}
+      </div>
+      {% render 'form-errors', form: form %}
+      <div class="row actions expanded-top">
+        <button class="btn solid" name="commit" type="submit" value="">
+          {{ 'customer.activate_account.submit' | t }}
+        </button>
+      </div>
+      <div class="row expanded-top back">
+        {% capture link %}
+          <button class="underline" type="submit" class="text-link" name="decline" id="customer_decline">
+            {{ 'customer.activate_account.cancel' | t }}
+          </button>
+        {% endcapture %}
+        {{ 'general.navigation.cancel_html' | t: link: link }}
+      </div>
+    {% endform %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.account-activate-account.name",
+  "class": "section-standalone section-account"
+}
+{% endschema %}

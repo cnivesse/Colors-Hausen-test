@@ -1,0 +1,533 @@
+<div class="content hero show-background no-padding {% render 'content-classes', scope: section %}"  data-section-id="{{ section.id }}" data-section-type="hero">
+  <style type="text/css">
+    @media(max-width: 720px) {
+      #shopify-section-{{ section.id }} .hero { min-height:  {{ section.settings.mobile_min_height}}px; }
+      #shopify-section-{{ section.id }} .hero video { min-height:  {{ section.settings.mobile_min_height}}px; }
+      #shopify-section-{{ section.id }} .hero img { min-height:  {{ section.settings.mobile_min_height}}px; }
+    }
+  </style>
+  {%- if section.settings.video != blank -%}
+    <video autoplay playsinline muted loop class="hide-on-mobile">
+      <source src="{{ section.settings.video }}" type="video/mp4">
+    </video>
+    {%- if section.settings.video_mobile != blank -%}
+      <video autoplay playsinline muted loop class="mobile hide-on-desktop">
+        <source src="{{ section.settings.video_mobile }}" type="video/mp4">
+      </video>
+    {%- elsif section.settings.image_mobile != blank -%}
+      {% render 'resp-img',
+        image: section.settings.image_mobile,
+        sizes: "100vw",
+        default_size: "1024x",
+        alt: section.settings.image_mobile.alt
+        class: "hide-on-desktop"
+      %}
+    {%- else -%}
+      <video autoplay playsinline muted loop class="hide-on-desktop">
+        <source src="{{ section.settings.video }}" type="video/mp4">
+      </video>
+    {%- endif -%}
+  {%- elsif section.settings.image != blank -%}
+    <picture>
+      {% assign dimensions = "180,370,590,740,900,1080,1296,1512,1728,2048,4472" | split: "," %}
+      {% if section.settings.image_mobile != blank %}
+        <source media="(max-width: 620px)" srcset=
+          "{% for dimension in dimensions %}
+            {% assign img_url = dimension | append: 'x' %}
+            {{ section.settings.image_mobile | img_url: img_url }} {{ dimension }}w,
+          {% endfor %}"
+          sizes="100vw"
+        >
+      {% endif %}
+      <source {% if section.settings.image_mobile != blank %}media="(min-width: 621px)"{% endif %} srcset=
+        "{% for dimension in dimensions %}
+          {% assign img_url = dimension | append: 'x' %}
+          {{ section.settings.image | img_url: img_url }} {{ dimension }}w,
+        {% endfor %}"
+        sizes="100vw"
+      >
+      <img 
+        src="{{ section.settings.image | img_url: '2048x' }}"
+        loading="lazy" 
+        width="{{ section.settings.image.width }}"
+        alt="{{ section.settings.image.alt }}"
+        height="{{ section.settings.image.height }}"
+        style="width: 100%; height: auto;"
+      >
+    </picture>
+  {%- else -%}
+    {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }}
+  {%- endif -%}
+  {%- if section.settings.overlay_opacity > 0 -%}
+    <div class="overlay" style="background: {{ section.settings.overlay_color }}; opacity: {{ section.settings.overlay_opacity | divided_by: 100.0 }};"></div>
+  {%- endif -%}
+  {%- if section.blocks.size > 0 -%}
+    <div class="info {{ section.settings.alignment }}">
+      <div class="blocks">
+        {%- for block in section.blocks -%}
+          <div class="block {{ block.type }}" {{ block.shopify_attributes }}>
+            {%- case block.type -%}
+            {%- when '@app' -%}
+              {% render block %}
+            {%- when 'heading' -%}
+              <h1 style="color:  {{ block.settings.color }}; max-width: {{ block.settings.max_width }}px;">{{ block.settings.text | newline_to_br }}</h1>
+            {%- when 'subheading' -%}
+              <h2 style="color:  {{ block.settings.color }}; max-width: {{ block.settings.max_width }}px;">{{ block.settings.text | escape }}</h2>
+            {%- when 'paragraph' -%}
+              <div class="rte" style="color:  {{ block.settings.color }}; max-width: {{ block.settings.max_width }}px;">
+                {{ block.settings.text }}
+              </div>
+            {%- when 'button' -%}
+              <a class="btn {{ block.settings.style }} {{ block.settings.size }}" href="{{ block.settings.link }}" {% if block.settings.style == 'border' %}style="color: {{ block.settings.color }}; border-color: {{ block.settings.color }};"{% endif %}>
+                {{ block.settings.text | escape }}
+              </a>
+            {%- endcase -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.hero.name",
+  "class": "section-hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "t:sections.hero.settings.image.label"
+    },
+    {
+      "type": "text",
+      "id": "video",
+      "label": "t:sections.hero.settings.video.label",
+      "info": "t:sections.hero.settings.video.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__1.content"
+    },
+    {
+      "type": "select",
+      "id": "alignment",
+      "label": "t:sections.hero.settings.alignment.label",
+      "default": "h-center v-center",
+      "options": [
+        {
+          "value": "h-center v-center",
+          "label": "t:sections.hero.settings.alignment.options__1"
+        },
+        {
+          "value": "h-left v-center",
+          "label": "t:sections.hero.settings.alignment.options__2"
+        },
+        {
+          "value": "h-right v-center",
+          "label": "t:sections.hero.settings.alignment.options__3"
+        },
+        {
+          "value": "h-center v-top",
+          "label": "t:sections.hero.settings.alignment.options__4"
+        },
+        {
+          "value": "h-center v-bottom",
+          "label": "t:sections.hero.settings.alignment.options__5"
+        },
+        {
+          "value": "h-left v-top",
+          "label": "t:sections.hero.settings.alignment.options__6"
+        },
+        {
+          "value": "h-left v-bottom",
+          "label": "t:sections.hero.settings.alignment.options__7"
+        },
+        {
+          "value": "h-right v-top",
+          "label": "t:sections.hero.settings.alignment.options__8"
+        },
+        {
+          "value": "h-right v-bottom",
+          "label": "t:sections.hero.settings.alignment.options__9"
+        }
+      ]
+    },
+    {
+      "type": "color",
+      "id": "overlay_color",
+      "label": "t:sections.hero.settings.overlay_color.label",
+      "default": "#000000"
+    },
+    {
+      "type": "range",
+      "id": "overlay_opacity",
+      "min": 0,
+      "max": 100,
+      "step": 5,
+      "unit": "%",
+      "label": "t:sections.hero.settings.overlay_opacity.label",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "t:sections.hero.settings.header__2.content"
+    },
+    {
+     "type": "range",
+     "id": "mobile_min_height",
+     "min": 200,
+     "max": 1000,
+     "step": 50,
+     "unit": "px",
+     "default": 500,
+     "label": "t:sections.hero.settings.mobile_min_height.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "t:sections.hero.settings.image_mobile.label",
+      "info": "t:sections.hero.settings.image_mobile.info"
+    },
+    {
+      "type": "text",
+      "id": "video_mobile",
+      "label": "t:sections.hero.settings.video_mobile.label",
+      "info": "t:sections.hero.settings.video_mobile.info"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.settings.header.content"
+    },
+    {
+      "type": "checkbox",
+      "id": "expanded",
+      "label": "t:sections.settings.expanded.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "collapsed",
+      "label": "t:sections.settings.collapsed.label",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_desktop",
+      "label": "t:sections.settings.show_on_desktop.label",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "show_on_mobile",
+      "label": "t:sections.settings.show_on_mobile.label",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "@app"
+    },
+    {
+      "type": "heading",
+      "name": "t:sections.blocks.heading.name",
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "t:sections.blocks.heading.settings.text.label",
+          "default": {
+            "ar": "عنوان",
+            "bg": "Заглавие",
+            "ca": "Encapçalament",
+            "cs": "Nadpis",
+            "da": "Overskrift",
+            "de": "Üerschrift",
+            "el": "Επικεφαλίδα",
+            "en": "Hero heading",
+            "es": "Título del destacado",
+            "fi": "Otsikko",
+            "fr": "Titre",
+            "he": "כּוֹתֶרֶת",
+            "hr": "Naslov",
+            "hu": "Cím",
+            "id": "Menuju",
+            "it": "Intestazione",
+            "ja": "見出し",
+            "ko": "표제",
+            "lt": "Antraštė",
+            "nb": "Overskrift",
+            "nl": "rubriek",
+            "pl": "Nagłówek",
+            "pt-BR": "Cabeçalho",
+            "pt-PT": "Cabeçalho",
+            "ro": "Titlu",
+            "ru": "Заголовок",
+            "sk": "Smerovanie",
+            "sl": "Naslov",
+            "sv": "Rubrik",
+            "th": "หัวเรื่อง",
+            "tr": "başlık",
+            "vi": "Tiêu đề",
+            "zh-CN": "标题",
+            "zh-TW": "標題"
+          }
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "t:sections.settings.color.label",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 1000,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 500
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "name": "t:sections.blocks.subheading.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.blocks.subheading.settings.text.label",
+          "default": {
+            "ar": "العنوان الفرعي",
+            "bg": "субтитри",
+            "ca": "Subtítol",
+            "cs": "Titulky",
+            "da": "Undertekst",
+            "de": "Untertitel",
+            "el": "Υπότιτλος",
+            "en": "Hero subheading",
+            "es": "Subtítulo de destacado",
+            "fi": "Tekstitys",
+            "fr": "Sous-titre",
+            "he": "כתוביות",
+            "hr": "Titl",
+            "hu": "Felirat",
+            "id": "Subjudul",
+            "it": "Sottotitolo",
+            "ja": "字幕",
+            "ko": "부제",
+            "lt": "Subtitrai",
+            "nb": "Undertekst",
+            "nl": "Ondertitel",
+            "pl": "Podtytuł",
+            "pt-BR": "Legenda",
+            "pt-PT": "Legenda",
+            "ro": "Subtitlu",
+            "ru": "Подзаголовок",
+            "sk": "Podnadpis",
+            "sl": "Podnaslov",
+            "sv": "Texta",
+            "th": "คำบรรยาย",
+            "tr": "Alt yazı",
+            "vi": "Phụ đề",
+            "zh-CN": "字幕",
+            "zh-TW": "字幕"
+          }
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "t:sections.settings.color.label",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 1000,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 500
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "name": "t:sections.blocks.paragraph.name",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.blocks.paragraph.settings.text.label",
+          "default": {
+            "ar": "<p> استخدم هذا النص لمشاركة معلومات حول علامتك التجارية مع عملائك. صِف منتجًا أو شارك الإعلانات أو رحب بالعملاء في متجرك. </p>",
+            "bg": "<p>Използвайте този текст, за да споделите информация за вашата марка с клиентите си. Опишете продукт, споделете съобщения или приветствайте клиенти във вашия магазин.</p>",
+            "ca": "<p>Utilitzeu aquest text per compartir informació sobre la vostra marca amb els vostres clients. Descriu un producte, comparteix anuncis o dóna la benvinguda als clients a la teva botiga.</p>",
+            "cs": "<p>Tento text použijte ke sdílení informací o své značce se svými zákazníky. Popište produkt, sdílejte oznámení nebo přivítejte zákazníky ve svém obchodě.</p>",
+            "da": "<p>Brug denne tekst til at dele oplysninger om dit brand med dine kunder. Beskriv et produkt, del meddelelser, eller byd kunder velkommen til din butik.</p>",
+            "de": "<p>Verwenden Sie diesen Text, um Informationen über Ihre Marke mit Ihren Kunden zu teilen. Beschreiben Sie ein Produkt, teilen Sie Ankündigungen oder heißen Sie Kunden in Ihrem Shop willkommen.</p>",
+            "el": "<p>Χρησιμοποιήστε αυτό το κείμενο για να μοιραστείτε πληροφορίες σχετικά με την επωνυμία σας με τους πελάτες σας. Περιγράψτε ένα προϊόν, μοιραστείτε ανακοινώσεις ή καλωσορίστε πελάτες στο κατάστημά σας.</p>",
+            "en": "<p>Use this text to share information about your brand with your customers. Describe a product, share announcements, or welcome customers to your store.</p>",
+            "es": "<p>Utilice este texto para compartir información sobre su marca con sus clientes. Describe un producto, comparte anuncios o da la bienvenida a los clientes a tu tienda.</p>",
+            "fi": "<p>Tämän tekstin avulla voit jakaa tietoa brändistäsi asiakkaillesi. Kuvaile tuotetta, jaa ilmoituksia tai toivota asiakkaat tervetulleiksi kauppaasi.</p>",
+            "fr": "<p>Utilisez ce texte pour partager des informations sur votre marque avec vos clients. Décrivez un produit, partagez des annonces ou accueillez des clients dans votre boutique.</p>",
+            "he": "<p>השתמש בטקסט זה כדי לשתף מידע על המותג שלך עם הלקוחות שלך. תאר מוצר, שתף הודעות או ברוך הבא לקוחות לחנות שלך.</p>",
+            "hr": "<p>Upotrijebite ovaj tekst za dijeljenje informacija o svojoj robnoj marki sa svojim klijentima. Opišite proizvod, podijelite najave ili poželite dobrodošlicu kupcima u svoju trgovinu.</p>",
+            "hu": "<p>Használja ezt a szöveget, hogy megosszon információkat a márkájáról ügyfeleivel. Írjon le egy terméket, ossza meg bejelentéseit, vagy üdvözölje az ügyfeleket az üzletében.</p>",
+            "id": "<p>Gunakan teks ini untuk berbagi informasi tentang merek Anda dengan pelanggan Anda. Jelaskan produk, bagikan pengumuman, atau sambut pelanggan di toko Anda.</p>",
+            "it": "<p>Utilizza questo testo per condividere informazioni sul tuo marchio con i tuoi clienti. Descrivi un prodotto, condividi annunci o accogli i clienti nel tuo negozio.</p>",
+            "ja": "<p>このテキストを使用して、ブランドに関する情報を顧客と共有します。商品について説明したり、お知らせを共有したり、顧客をストアに歓迎したりします。</p>",
+            "ko": "<p>이 텍스트를 사용하여 브랜드에 대한 정보를 고객과 공유하십시오. 제품을 설명하거나, 공지 사항을 공유하거나, 매장에 오신 고객을 환영합니다.</p>",
+            "lt": "<p>Naudokite šį tekstą, jei norite dalytis informacija apie savo prekės ženklą su klientais. Aprašykite produktą, pasidalykite pranešimais arba pasveikinkite klientus į jūsų parduotuvę.</p>",
+            "nb": "<p>Bruk denne teksten til å dele informasjon om merkevaren din med kundene dine. Beskriv et produkt, del kunngjøringer eller velkommen kunder til butikken din.</p>",
+            "nl": "<p>Gebruik deze tekst om informatie over uw merk met uw klanten te delen. Beschrijf een product, deel aankondigingen of verwelkom klanten in uw winkel.</p>",
+            "pl": "<p>Użyj tego tekstu, aby udostępnić klientom informacje o swojej marce. Opisz produkt, udostępnij ogłoszenia lub powitaj klientów w swoim sklepie.</p>",
+            "pt-BR": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "pt-PT": "<p>Use este texto para compartilhar informações sobre sua marca com seus clientes. Descreva um produto, compartilhe anúncios ou receba clientes em sua loja.</p>",
+            "ro": "<p>Folosiți acest text pentru a împărtăși clienților informații despre marca dvs. Descrieți un produs, distribuiți anunțuri sau bun venit clienților în magazinul dvs.</p>",
+            "ru": "<p>Используйте этот текст, чтобы поделиться информацией о своем бренде со своими клиентами. Опишите продукт, поделитесь объявлениями или поприветствуйте покупателей в вашем магазине.</p>",
+            "sk": "<p>Tento text použite na zdieľanie informácií o vašej značke so svojimi zákazníkmi. Popíšte produkt, zdieľajte oznámenia alebo privítajte zákazníkov vo svojom obchode.</p>",
+            "sl": "<p>S tem besedilom delite informacije o svoji blagovni znamki s strankami. Opišite izdelek, delite objave ali pozdravite stranke v svoji trgovini.</p>",
+            "sv": "<p>Använd den här texten för att dela information om ditt varumärke med dina kunder. Beskriv en produkt, dela meddelanden eller välkomna kunder till din butik.</p>",
+            "th": "<p>ใช้ข้อความนี้เพื่อแบ่งปันข้อมูลเกี่ยวกับแบรนด์ของคุณกับลูกค้าของคุณ อธิบายผลิตภัณฑ์ แชร์ประกาศ หรือต้อนรับลูกค้าสู่ร้านค้าของคุณ</p>",
+            "tr": "<p>Markanızla ilgili bilgileri müşterilerinizle paylaşmak için bu metni kullanın. Bir ürünü tanımlayın, duyuruları paylaşın veya mağazanıza gelen müşterileri karşılayın.</p>",
+            "vi": "<p> Sử dụng văn bản này để chia sẻ thông tin về thương hiệu của bạn với khách hàng. Mô tả sản phẩm, chia sẻ thông báo hoặc chào mừng khách hàng đến với cửa hàng của bạn. </p>",
+            "zh-CN": "<p>使用此文本与您的客户分享您的品牌信息。描述产品、分享公告或欢迎客户光临您的商店。</p>",
+            "zh-TW": "<p>使用此文本與您的客戶分享您的品牌信息。描述產品、分享公告或歡迎客戶光臨您的商店。</p>"
+          }
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "t:sections.settings.color.label",
+          "default": "#121212"
+        },
+        {
+          "type": "range",
+          "id": "max_width",
+          "min": 100,
+          "max": 1000,
+          "step": 10,
+          "unit": "px",
+          "label": "t:sections.settings.max_width.label",
+          "default": 500
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "t:sections.blocks.button.name",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "t:sections.blocks.button.settings.text.label",
+          "default": {
+            "ar": "تسوق الآن",
+            "bg": "Пазарувай сега",
+            "ca": "Compra ara",
+            "cs": "Nakupuj teď",
+            "da": "Køb nu",
+            "de": "Jetzt einkaufen",
+            "el": "Ψώνισε τώρα",
+            "en": "Shop now",
+            "es": "Compra ahora",
+            "fi": "Osta nyt",
+            "fr": "Achetez maintenant",
+            "he": "קנה עכשיו",
+            "hr": "Kupite sada",
+            "hu": "Vásárolj most",
+            "id": "Berbelanja sekarang",
+            "it": "Acquistare ora",
+            "ja": "今すぐ購入",
+            "ko": "지금 쇼핑하기",
+            "lt": "Apsipirk dabar",
+            "nb": "Handle nå",
+            "nl": "Winkel nu",
+            "pl": "Kupuj teraz",
+            "pt-BR": "Compre agora",
+            "pt-PT": "Compre agora",
+            "ro": "Cumpără acum",
+            "ru": "Купить сейчас",
+            "sk": "Nakupuj teraz",
+            "sl": "Nakupujte zdaj",
+            "sv": "Shoppa nu",
+            "th": "ช้อปเลย",
+            "tr": "Şimdi satın al",
+            "vi": "Mua sắm ngay bây giờ",
+            "zh-CN": "现在去购物",
+            "zh-TW": "現在去購物"
+          }
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "t:sections.blocks.button.settings.link.label",
+          "default": "/collections/all"
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "t:sections.blocks.button.settings.style.label",
+          "default": "border",
+          "options": [
+            {
+              "value": "accent",
+              "label": "t:sections.blocks.button.settings.style.options__1"
+            },
+            {
+              "value": "solid",
+              "label": "t:sections.blocks.button.settings.style.options__2"
+            },
+            {
+              "value": "border",
+              "label": "t:sections.blocks.button.settings.style.options__3"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "id": "size",
+          "label": "t:sections.blocks.button.settings.size.label",
+          "default": "normal",
+          "options": [
+            {
+              "value": "small",
+              "label": "t:sections.blocks.button.settings.size.options__1"
+            },
+            {
+              "value": "normal",
+              "label": "t:sections.blocks.button.settings.size.options__2"
+            }
+          ]
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "t:sections.hero.settings.color_line_button.label",
+          "default": "#121212"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero.presets.name",
+      "blocks": [
+        {
+          "type": "heading"
+        },
+        {
+          "type": "subheading"
+        },
+        {
+          "type": "button"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

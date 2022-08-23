@@ -1,0 +1,42 @@
+{%- assign collection_products_classes = '' -%}
+
+{%- if settings.product_grid_interactive_enable and template.name != "search" -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' with-interactions' }}{%- endcapture -%}
+{%- endif -%}
+
+{%- if settings.product_grid_mouseover_gradient_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' with-gradients' }}{%- endcapture -%}
+{%- endif -%}
+
+{%- if settings.product_grid_preview_enable and with_previews and template.name != "search" -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' with-previews' }}{%- endcapture -%}
+{%- endif -%}
+
+{%- unless settings.product_grid_titles_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' without-title' }}{%- endcapture -%}
+{%- endunless -%}
+
+{%- unless settings.product_grid_prices_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' without-price' }}{%- endcapture -%}
+{%- endunless -%}
+
+{%- unless settings.product_grid_vendor_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' without-vendor' }}{%- endcapture -%}
+{%- endunless -%}
+
+{%- if settings.product_grid_titles_underline_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' with-title-underline' }}{%- endcapture -%}
+{%- endif -%}
+
+{%- if settings.product_grid_secondary_enable -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' with-secondary' }}{%- endcapture -%}
+{%- endif -%}
+
+{%- capture collection_products_classes -%}{{ collection_products_classes | append: ' align-' | append: settings.product_grid_text_alignment }}{%- endcapture -%}
+{%- capture collection_products_classes -%}{{ collection_products_classes | append: ' hover-opacity-' | append: settings.product_grid_mouseover_opacity }}{%- endcapture -%}
+
+{%- if settings.color_body_bg == settings.color_section_bg -%}
+  {%- capture collection_products_classes -%}{{ collection_products_classes | append: ' no-padding' }}{%- endcapture -%}
+{%- endif -%}
+
+{{- collection_products_classes -}}

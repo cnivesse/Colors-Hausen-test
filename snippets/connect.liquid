@@ -1,0 +1,56 @@
+{% assign count = 0 %}
+{% if settings.social_facebook_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_twitter_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_pinterest_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_instagram_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_tiktok_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_slack_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_linkedin_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_flickr_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_yelp_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_vimeo_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_youtube_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_tumblr_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_snapchat_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_twitch_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_reddit_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_github_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_spotify_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_tripadvisor_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_slideshare_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_xing_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+{% if settings.social_behance_link != blank %}{% assign count = count | plus: 1 %}{% endif %}
+
+{% if title %}
+  {% if title == 'general.password_page.social_heading' %}
+    <h3>{{ title | t }}</h3>
+  {% else %}
+    <h1>{{ title | t }}</h1>
+  {% endif %}
+{% endif %}
+
+{% if count > 0 %}
+  <p class="connect">
+    {% if settings.social_facebook_link != blank %}<a href="{{ settings.social_facebook_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Facebook' }}"><i class="fc fc-facebook"></i></a>{% endif %}
+    {% if settings.social_twitter_link != blank %}<a href="{{ settings.social_twitter_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Twitter' }}"><i class="fc fc-twitter"></i></a>{% endif %}
+    {% if settings.social_pinterest_link != blank %}<a href="{{ settings.social_pinterest_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Pinterest' }}"><i class="fc fc-pinterest"></i></a>{% endif %}
+    {% if settings.social_instagram_link != blank %}<a href="{{ settings.social_instagram_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Instagram' }}"><i class="fc fc-instagram"></i></a>{% endif %}
+    {% if settings.social_tiktok_link != blank %}<a href="{{ settings.social_tiktok_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Tiktok' }}"><i class="fc fc-tiktok"></i></a>{% endif %}
+    {% if settings.social_slack_link != blank %}<a href="{{ settings.social_slack_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Slack' }}"><i class="fc fc-slack"></i></a>{% endif %}
+    {% if settings.social_youtube_link != blank %}<a href="{{ settings.social_youtube_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Youtube' }}"><i class="fc fc-youtube"></i></a>{% endif %}
+    {% if settings.social_linkedin_link != blank %}<a href="{{ settings.social_linkedin_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Linkedin' }}"><i class="fc fc-linkedin"></i></a>{% endif %}
+    {% if settings.social_flickr_link != blank %}<a href="{{ settings.social_flickr_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Flickr' }}"><i class="fc fc-flickr"></i></a>{% endif %}
+    {% if settings.social_yelp_link != blank %}<a href="{{ settings.social_yelp_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Yelp' }}"><i class="fc fc-yelp"></i></a>{% endif %}
+    {% if settings.social_vimeo_link != blank %}<a href="{{ settings.social_vimeo_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Vimeo' }}"><i class="fc fc-vimeo"></i></a>{% endif %}
+    {% if settings.social_tumblr_link != blank %}<a href="{{ settings.social_tumblr_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Tumblr' }}"><i class="fc fc-tumblr"></i></a>{% endif %}
+    {% if settings.social_snapchat_link != blank %}<a href="{{ settings.social_snapchat_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Snapchat' }}"><i class="fc fc-snapchat"></i></a>{% endif %}
+    {% if settings.social_twitch_link != blank %}<a href="{{ settings.social_twitch_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Twitch' }}"><i class="fc fc-twitch"></i></a>{% endif %}
+    {% if settings.social_reddit_link != blank %}<a href="{{ settings.social_reddit_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Reddit' }}"><i class="fc fc-reddit"></i></a>{% endif %}
+    {% if settings.social_github_link != blank %}<a href="{{ settings.social_github_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Github' }}"><i class="fc fc-github"></i></a>{% endif %}
+    {% if settings.social_spotify_link != blank %}<a href="{{ settings.social_spotify_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Spotify' }}"><i class="fc fc-spotify"></i></a>{% endif %}
+    {% if settings.social_tripadvisor_link != blank %}<a href="{{ settings.social_tripadvisor_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Tripadvisor' }}"><i class="fc fc-tripadvisor"></i></a>{% endif %}
+    {% if settings.social_slideshare_link != blank %}<a href="{{ settings.social_slideshare_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Slideshare' }}"><i class="fc fc-slideshare"></i></a>{% endif %}
+    {% if settings.social_xing_link != blank %}<a href="{{ settings.social_xing_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Xing' }}"><i class="fc fc-xing"></i></a>{% endif %}
+    {% if settings.social_behance_link != blank %}<a href="{{ settings.social_behance_link }}" target="_blank" title="{{ 'layout.footer.platform' | t: name: shop.name, platform: 'Behance' }}"><i class="fc fc-behance"></i></a>{% endif %}
+  </p>
+{% endif %}
