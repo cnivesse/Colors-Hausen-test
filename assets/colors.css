@@ -3923,6 +3923,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   line-height: calc(30px * 1.0);
   color: #302d33;
   text-transform: none;
+  letter-spacing: 2px;
 }
 .rich-text .info.center h1, .rich-text .info.center h2, .rich-text .info.center .rte, .rich-text .info.center a.btn {
   margin: 0 auto;
