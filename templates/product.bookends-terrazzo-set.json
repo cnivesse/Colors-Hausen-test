@@ -150,22 +150,6 @@
         "show_on_mobile": true
       }
     },
-    "16613370413d8ae6e4": {
-      "type": "hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2022-08-24_123020.jpg",
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -183,7 +167,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2022-08-15_155249.jpg",
+        "image": "shopify:\/\/shop_images\/Untitled-1.png",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
@@ -279,7 +263,6 @@
     "main",
     "1660741460d0972f44",
     "1660568962963a549c",
-    "16613370413d8ae6e4",
     "product-recommendations",
     "hero",
     "1661335546e6b75767",
