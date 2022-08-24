@@ -93,14 +93,14 @@
       ],
       "settings": {
         "thumbnails_position": "left",
-        "enable_sticky_info": true,
+        "enable_sticky_info": false,
         "zoom_enable": true,
-        "enable_video_looping": false,
-        "first_variant_media_enabled": true,
+        "enable_video_looping": true,
+        "first_variant_media_enabled": false,
         "show_background": false,
-        "expanded": true,
+        "expanded": false,
         "expanded_content": false,
-        "collapsed": true
+        "collapsed": false
       }
     },
     "1660741460d0972f44": {
