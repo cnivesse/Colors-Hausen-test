@@ -71,7 +71,7 @@
           "menu_font_weight": "bold",
           "side_nav_linklist": "hamburger-desktop",
           "enable_side_nav_text": true,
-          "show_social_icons": false,
+          "show_social_icons": true,
           "enable_transparent_header": true,
           "transparent_header_text_color": "#000000",
           "enable_sticky_header": true,
