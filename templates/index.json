@@ -71,108 +71,42 @@
         "show_on_mobile": true
       }
     },
-    "featured-product": {
-      "type": "featured-product",
+    "16613280698e261e45": {
+      "type": "banner-with-text",
       "blocks": {
-        "title": {
-          "type": "title",
+        "16613280696c7676f8-1": {
+          "type": "paragraph",
           "settings": {
-            "increase_space_before_block": false
-          }
-        },
-        "price": {
-          "type": "price",
-          "settings": {
-            "increase_space_before_block": false
-          }
-        },
-        "variant_picker": {
-          "type": "variant_picker",
-          "settings": {
-            "picker_type": "radios",
-            "swatches_selector": "",
-            "popup_selector": "Taille",
-            "popup_text": "Guide des tailles",
-            "popup_page": "",
+            "text": "<p>Associez un texte de grande taille à une image pour mettre l'accent sur le produit, la collection ou l'article de blog que vous avez choisi. Ajoutez des détails sur la disponibilité, le style ou même fournissez un avis.<\/p>",
             "increase_space_before_block": true
           }
         },
-        "buy_buttons": {
-          "type": "buy_buttons",
+        "16613280696c7676f8-2": {
+          "type": "button",
           "settings": {
-            "show_dynamic_checkout": true,
-            "show_pickup_availability": true,
-            "increase_space_before_block": true
-          }
-        },
-        "description": {
-          "type": "description",
-          "settings": {
-            "increase_space_before_block": true
-          }
-        },
-        "collapsible_tab_1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Qu´est-ce ?",
-            "content": "<p>Produit fait main en Europe par des souffleurs de verre<\/p>",
-            "page": "",
-            "icon": "eye",
-            "increase_space_before_block": true
-          }
-        },
-        "collapsible_tab_2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "CO2",
-            "content": "<p>Contenu de l'onglet<\/p>",
-            "page": "",
-            "icon": "leaf",
-            "increase_space_before_block": true
-          }
-        },
-        "collapsible_tab_3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Transport",
-            "content": "<p>Contenu de l'onglet<\/p>",
-            "page": "",
-            "icon": "truck",
-            "increase_space_before_block": true
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "facebook_sharing_products": true,
-            "twitter_sharing_products": true,
-            "pinterest_sharing_products": true,
+            "text": "Explorer",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
             "increase_space_before_block": true
           }
         }
       },
       "block_order": [
-        "title",
-        "price",
-        "variant_picker",
-        "buy_buttons",
-        "description",
-        "collapsible_tab_1",
-        "collapsible_tab_2",
-        "collapsible_tab_3",
-        "share"
+        "16613280696c7676f8-1",
+        "16613280696c7676f8-2"
       ],
       "settings": {
-        "featured_product": "sphere-bowl-l",
-        "thumbnails_position": "stack",
-        "enable_sticky_info": true,
-        "zoom_enable": true,
-        "enable_video_looping": false,
-        "first_variant_media_enabled": false,
-        "show_background": false,
-        "expanded": true,
+        "image": "shopify:\/\/shop_images\/Sphere_DSCF5390-Bearbeitet_print_b0e16c7b-9c9d-4e5a-9bc2-ba400f2a1529.jpg",
+        "image_position": "center center",
+        "text_position": "right",
+        "text_align": "right",
+        "expanded": false,
         "expanded_content": false,
-        "collapsed": false
+        "content_max_width": 300,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
       }
     },
     "video": {
@@ -255,7 +189,7 @@
     "hero",
     "1660555114671a82a1",
     "featured-collection",
-    "featured-product",
+    "16613280698e261e45",
     "video",
     "faq",
     "newsletter"
