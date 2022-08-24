@@ -74,13 +74,6 @@
     "16613280698e261e45": {
       "type": "banner-with-text",
       "blocks": {
-        "16613280696c7676f8-0": {
-          "type": "heading",
-          "settings": {
-            "text": "Bannière d'image avec texte",
-            "increase_space_before_block": true
-          }
-        },
         "16613280696c7676f8-1": {
           "type": "paragraph",
           "settings": {
@@ -100,7 +93,6 @@
         }
       },
       "block_order": [
-        "16613280696c7676f8-0",
         "16613280696c7676f8-1",
         "16613280696c7676f8-2"
       ],
