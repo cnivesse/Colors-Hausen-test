@@ -207,8 +207,8 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Fonctionnalité de votre boutique",
-            "text": "<p>Utilisez ce texte pour partager les fonctionnalités de la boutique, les avis récents ou les FAQ.<\/p>",
+            "title": "Faites vous kiffer",
+            "text": "<p>cliquez dessus et ensuite sur le logo en hexagone.<\/p>",
             "link": ""
           }
         },
