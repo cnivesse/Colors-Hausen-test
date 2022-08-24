@@ -3394,7 +3394,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   z-index: 2;
   position: relative;
   padding: 30px;
-  background: rgba(255, 255, 255, 0.85);
+  background: transparent;
   float: left;
   width: 100%;
 }
@@ -3416,7 +3416,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   font-weight: 400;
   font-size: calc(15px * 1.0);
   line-height: calc(25px * 1.0);
-  color: #302d33;
+  color: #ffffff;
 }
 .banner-with-text > .info p b, .banner-with-text > .info p strong {
   font-weight: FontDrop;
