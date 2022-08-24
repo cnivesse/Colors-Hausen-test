@@ -216,13 +216,24 @@
             "link": ""
           }
         },
+        "9fe8036b-6852-48e0-a6be-cbecd1cc66f0": {
+          "type": "text_column",
+          "settings": {
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Fonctionnalité de votre boutique",
+            "text": "<p>Utilisez ce texte pour partager les fonctionnalités de la boutique, les avis récents ou les FAQ.<\/p>",
+            "link": ""
+          }
+        },
         "16613355452891c750-2": {
           "type": "text_column",
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Fais toi kiffer",
-            "text": "<p>Cliques et amuses toi.<\/p>",
+            "image": "shopify:\/\/shop_images\/frame.png",
+            "title": "",
+            "text": "",
             "link": ""
           }
         }
@@ -230,6 +241,7 @@
       "block_order": [
         "16613355452891c750-0",
         "16613355452891c750-1",
+        "9fe8036b-6852-48e0-a6be-cbecd1cc66f0",
         "16613355452891c750-2"
       ],
       "settings": {
