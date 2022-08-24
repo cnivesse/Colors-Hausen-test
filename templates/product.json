@@ -126,12 +126,12 @@
         "1660741460397976d0-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Screenshot_2022-08-24_121819.jpg",
+        "image": "shopify:\/\/shop_images\/Artboard_1_7d85cfa3-b4aa-44af-b76c-2f97bd311b8e.png",
         "text_position": "left",
         "show_background": true,
         "expanded": true,
         "expanded_content": true,
-        "collapsed": false,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
