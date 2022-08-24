@@ -5127,7 +5127,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   width: 100%;
   height: 100%;
   padding: 30px;
-  background: #302d33;
+  background: #f3f0ee;
   overflow-y: auto;
 }
 .side-nav .close {
@@ -5150,7 +5150,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   text-transform: none;
   font-size: 34px;
   color: #302d33;
-  color: #ffffff;
+  color: #302d33;
   font-weight: 700;
   text-transform: none;
   text-decoration: none;
