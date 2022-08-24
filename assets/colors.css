@@ -5198,7 +5198,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
 .side-nav .extra > *:first-child {
   margin: 30px 0 0;
   padding-top: 30px;
-  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-top: 1px solid #302d33;
 }
 .side-nav .extra > *:last-child {
   padding-bottom: 30px;
@@ -5209,12 +5209,12 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   gap: 8px;
 }
 .side-nav .selectors-form .disclosures .disclosure .disclosure__toggle {
-  color: #ffffff;
-  border-color: #ffffff;
+  color: #302d33;
+  border-color: #302d33;
   background: transparent;
 }
 .side-nav .selectors-form .disclosures .disclosure .disclosure__toggle .shopify-select-icon {
-  fill:  #ffffff;
+  fill:  #302d33;
 }
 .side-nav .selectors-form .disclosures .disclosure .disclosure__list {
   max-width: 100%;
