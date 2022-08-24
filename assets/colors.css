@@ -101,6 +101,7 @@ details summary::-webkit-details-marker {
   text-transform: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #302d33;
 }
 
 .fc-hamburguer:before {
