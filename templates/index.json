@@ -87,7 +87,7 @@
             "text": "get yours now →",
             "link": "shopify:\/\/collections\/all",
             "style": "border",
-            "size": "normal",
+            "size": "small",
             "increase_space_before_block": true
           }
         }
