@@ -189,7 +189,9 @@
             "image_type": "custom",
             "title": "Appareil photo",
             "text": "<p>Ouvrez votre application photo sur votre iphone ou ipad<\/p>",
-            "link": ""
+            "link": "",
+            "show_on_desktop": true,
+            "show_on_mobile": false
           }
         },
         "16613355452891c750-1": {
