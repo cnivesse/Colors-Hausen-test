@@ -82,7 +82,13 @@
 
     {% render 'social-meta-tags' %}
     {% render 'javascript' %}
-    {{ content_for_header }}
+    <!-- starapps_scripts_start -->
+<!-- This code is automatically managed by StarApps Studio -->
+<!-- Please contact support@starapps.studio for any help -->
+{% render "starapps-product-json", product: product, starapps_app: "VIA", starapps_attribute: "sa-product-json" %}
+<script type="text/javascript" src="https://bcdn.starapps.studio/apps/via/hausen-tes/script-1661416853.js?shop={{shop.permanent_domain}}" async></script>
+<!-- starapps_scripts_end -->
+{{ content_for_header }}
   </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {% if template.suffix %}template-sufix-{{ template.suffix }}{% endif %} {% if settings.header_expanded %}header-expanded{% endif %}">
