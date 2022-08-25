@@ -18,7 +18,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
+            "picker_type": "radios",
             "swatches_selector": "",
             "popup_selector": "Taille",
             "popup_text": "Guide des tailles",
@@ -189,9 +189,7 @@
             "image_type": "custom",
             "title": "Appareil photo",
             "text": "<p>Ouvrez votre application photo sur votre iphone ou ipad<\/p>",
-            "link": "",
-            "show_on_desktop": true,
-            "show_on_mobile": false
+            "link": ""
           }
         },
         "16613355452891c750-1": {
