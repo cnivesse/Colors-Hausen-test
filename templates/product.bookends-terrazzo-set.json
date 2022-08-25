@@ -93,14 +93,14 @@
       ],
       "settings": {
         "thumbnails_position": "left",
-        "enable_sticky_info": false,
+        "enable_sticky_info": true,
         "zoom_enable": true,
         "enable_video_looping": true,
         "first_variant_media_enabled": false,
         "show_background": false,
         "expanded": false,
         "expanded_content": false,
-        "collapsed": false
+        "collapsed": true
       }
     },
     "1660741460d0972f44": {
@@ -127,7 +127,6 @@
         "1660741460397976d0-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Artboard_1_7d85cfa3-b4aa-44af-b76c-2f97bd311b8e.png",
         "text_position": "left",
         "show_background": true,
         "expanded": true,
