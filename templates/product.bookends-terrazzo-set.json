@@ -96,7 +96,7 @@
         "enable_sticky_info": true,
         "zoom_enable": true,
         "enable_video_looping": true,
-        "first_variant_media_enabled": false,
+        "first_variant_media_enabled": true,
         "show_background": false,
         "expanded": false,
         "expanded_content": false,
