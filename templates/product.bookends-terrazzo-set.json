@@ -18,7 +18,7 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "radios",
+            "picker_type": "dropdown",
             "swatches_selector": "",
             "popup_selector": "Taille",
             "popup_text": "Guide des tailles",
