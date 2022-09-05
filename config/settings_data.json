@@ -63,13 +63,13 @@
       "header": {
         "type": "header",
         "settings": {
-          "main_nav_linklist": "",
+          "main_nav_linklist": "main-menu",
           "show_main_menu_on_mobile": true,
           "menu_font_size": 14,
           "menu_letter_spacing": 1,
           "menu_text_transform": "uppercase",
           "menu_font_weight": "bold",
-          "side_nav_linklist": "",
+          "side_nav_linklist": "menu-hamburger",
           "enable_side_nav_text": true,
           "show_social_icons": true,
           "enable_transparent_header": true,
