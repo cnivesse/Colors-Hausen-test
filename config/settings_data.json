@@ -1,6 +1,6 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/201022_hausen_Logo_h_48c19cb1-8ba7-4ea0-b228-8ef124d16936.png",
+    "logo": "shopify:\/\/shop_images\/201022_hausen_Logo_h.png",
     "logo_max_width": 30,
     "logo_text": "hausen",
     "logo_font": "basic_commercial_n7",
@@ -63,13 +63,13 @@
       "header": {
         "type": "header",
         "settings": {
-          "main_nav_linklist": "menu-home",
+          "main_nav_linklist": "",
           "show_main_menu_on_mobile": true,
           "menu_font_size": 14,
           "menu_letter_spacing": 1,
           "menu_text_transform": "uppercase",
           "menu_font_weight": "bold",
-          "side_nav_linklist": "hamburger-desktop",
+          "side_nav_linklist": "",
           "enable_side_nav_text": true,
           "show_social_icons": true,
           "enable_transparent_header": true,
