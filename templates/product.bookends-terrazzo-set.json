@@ -63,8 +63,8 @@
         "collapsible_tab_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "heading": "Livraison",
+            "content": "<p>Le Bookend set ( quelques soit la couleur ) sera livré dans un meme carton protégé l´un de l´autre par un système d´immobilisation vous permettant de garantir une livraison sans aucuns soucis.<\/p><p><\/p><p>Les délais de livraisons sont les meme que pour le reste de nos produits : <strong>environ 2 semaines.<\/strong><\/p><p><\/p><p>Quand aux frais de livraisons, ils seront calculés par rapport au poids au moment du renseignement de votre adresse à la caisse.<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
