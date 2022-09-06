@@ -43,10 +43,10 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "heading": "Caractéristiques",
+            "content": "<p>Hauteur unitaire : 12 cm <\/p><p>Longueur unitaire : 12 cm<\/p><p>Diamètre unitaire : 7,5 cm<\/p><p>Poids unitaire : 1,5 kg<\/p>",
             "page": "",
-            "icon": "washing",
+            "icon": "question_mark",
             "increase_space_before_block": true
           }
         },
@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "<p>Matériaux<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
@@ -166,7 +166,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled-1.png",
+        "image": "shopify:\/\/shop_images\/Untitled-1_85402864-4332-4244-a661-2e54eadc072c.png",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
@@ -217,7 +217,6 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "image": "shopify:\/\/shop_images\/frame.png",
             "title": "",
             "text": "",
             "link": ""
