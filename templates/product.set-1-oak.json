@@ -44,7 +44,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Caractéristiques",
-            "content": "",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
