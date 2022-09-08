@@ -44,7 +44,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Caractéristiques",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
