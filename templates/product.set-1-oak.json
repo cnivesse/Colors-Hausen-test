@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Matériaux",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
