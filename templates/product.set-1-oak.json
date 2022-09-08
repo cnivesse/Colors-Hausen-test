@@ -149,21 +149,6 @@
         "show_on_mobile": true
       }
     },
-    "hero": {
-      "type": "hero",
-      "settings": {
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": true,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
@@ -276,7 +261,6 @@
     "main",
     "1660741460d0972f44",
     "1660568962963a549c",
-    "hero",
     "16613370413d8ae6e4",
     "product-recommendations",
     "1661335546e6b75767",
