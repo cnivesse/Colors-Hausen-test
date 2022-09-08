@@ -43,7 +43,7 @@
     "product_grid_interactive_enable": false,
     "product_grid_secondary_enable": true,
     "product_grid_mouseover_opacity": 80,
-    "product_grid_mouseover_gradient_enable": false,
+    "product_grid_mouseover_gradient_enable": true,
     "cart_type": "drawer",
     "additional_checkout_buttons_enable": true,
     "cart_notes_enable": true,
