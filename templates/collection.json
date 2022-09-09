@@ -1,1 +1,23 @@
-{"sections":{"main-collection":{"type":"main-collection","settings":{"show_collection_image":false,"show_background":false,"expanded":true,"collapsed":true}}},"order":["main-collection"]}
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "enable_filtering": false,
+        "filter_type": "regular",
+        "enable_sorting": true,
+        "show_labels": true,
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true
+      }
+    }
+  },
+  "order": [
+    "main-collection"
+  ]
+}
