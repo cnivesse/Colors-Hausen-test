@@ -29,7 +29,7 @@
     "section_headers_text_decoration": "underline",
     "content_layout": "expanded",
     "content_max_width": 1200,
-    "products_per_page": "4",
+    "products_per_page": "240",
     "image_ratio": "portrait",
     "product_grid_titles_enable": true,
     "product_grid_titles_underline_enable": true,
