@@ -8,7 +8,7 @@
         "show_collection_image": false,
         "enable_filtering": false,
         "filter_type": "regular",
-        "enable_sorting": true,
+        "enable_sorting": false,
         "show_labels": true,
         "show_background": false,
         "expanded": true,
