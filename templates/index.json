@@ -6,7 +6,7 @@
         "button": {
           "type": "button",
           "settings": {
-            "text": "Bring me to this beatuy →",
+            "text": "Amène moi vers cette beauté →",
             "link": "shopify:\/\/collections\/all",
             "style": "border",
             "size": "normal",
