@@ -60,13 +60,13 @@
       "signup_form_submit": "einreichen",
       "signup_form_success": "Wir senden Ihnen kurz vor der Eröffnung eine E-Mail!",
       "social_heading": "Finden Sie uns auch in:",
-      "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"/admin\" class=\"text-link\">Melden Sie sich hier an</a>",
+      "admin_link_html": "Sind Sie der Ladenbesitzer? <a href=\"\/admin\" class=\"text-link\">Melden Sie sich hier an<\/a>",
       "password_link_html": "Mit Passwort eingeben",
       "back_link_html": "Zurück",
       "powered_by_shopify_html": "Dieser Shop wird unterstützt von {{ shopify }}"
     },
     "country": {
-      "dropdown_label": "Land/Region"
+      "dropdown_label": "Land\/Region"
     },
     "language": {
       "dropdown_label": "Sprache"
@@ -128,7 +128,7 @@
       "new_html": "Neu",
       "unavailable": "Nicht verfügbar",
       "quantity": "Menge",
-      "available_units_html": "<span class='units'>{{ units }}</span> verfügbare Einheiten",
+      "available_units_html": "<span class='units'>{{ units }}<\/span> verfügbare Einheiten",
       "add_to_cart": "In den Warenkorb legen",
       "pre_order": "Vorbestellen",
       "share_on": "Teilen Sie auf {{ platform}}",
@@ -200,7 +200,7 @@
     },
     "orders": {
       "order": "Bestellen Sie {{ id }}",
-      "order_description_html": "<b>{{ date }}</b> – {{ order }} wurde platziert und sein aktueller Status ist {{ financial_status }} und {{ fulfillment_status }}",
+      "order_description_html": "<b>{{ date }}<\/b> – {{ order }} wurde platziert und sein aktueller Status ist {{ financial_status }} und {{ fulfillment_status }}",
       "empty": "Es gibt keine Befehle."
     },
     "order": {
@@ -245,8 +245,8 @@
       "address1": "Adresse 1",
       "address2": "Adresse 2",
       "city": "Ort",
-      "country": "Land/Region",
-      "province": "Bundesland/Provinz",
+      "country": "Land\/Region",
+      "province": "Bundesland\/Provinz",
       "zip": "PLZ",
       "phone": "Telefonnummer",
       "phone_label": "Tel.",
@@ -288,9 +288,9 @@
       },
       "note": "Spezielle Bestellanweisungen:",
       "subtotal": "Zwischensumme",
-      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand</a> werden beim Checkout berechnet",
+      "taxes_and_shipping_policy_at_checkout_html": "Steuern und <a href=\"{{ link }}\">Versand<\/a> werden beim Checkout berechnet",
       "taxes_included_but_shipping_at_checkout": "Inklusive Steuern, Versand wird beim Checkout berechnet",
-      "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand </a> wird beim Checkout berechnet",
+      "taxes_included_and_shipping_policy_html": "Inklusive Steuern. <a href=\"{{ link }}\">Versand <\/a> wird beim Checkout berechnet",
       "taxes_and_shipping_at_checkout": "Steuern und Versand werden beim Checkout berechnet",
       "update_html": "Warenkorb aktualisieren",
       "checkout_html": "Auschecken",
@@ -302,7 +302,7 @@
     "errors": {
       "address_error": "Fehler beim Suchen dieser Adresse",
       "address_no_results": "Keine Ergebnisse für diese Adresse",
-      "address_query_limit_html": "Sie haben das Google-API-Nutzungslimit überschritten. Erwägen Sie ein Upgrade auf einen <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium-Plan</a>.",
+      "address_query_limit_html": "Sie haben das Google-API-Nutzungslimit überschritten. Erwägen Sie ein Upgrade auf einen <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium-Plan<\/a>.",
       "auth_error_html": "Bei der Authentifizierung Ihres Google Maps-API-Schlüssels ist ein Problem aufgetreten."
     }
   },
@@ -312,8 +312,8 @@
       "check_other_stores": "Verfügbarkeit in anderen Shops überprüfen",
       "pick_up_available": "Abholung verfügbar",
       "pick_up_currently_unavailable": "Abholung derzeit nicht möglich",
-      "pick_up_available_at_html": "Abholung bei <b>{{ location_name }}</b> verfügbar",
-      "pick_up_unavailable_at_html": "Abholung bei <b>{{ location_name }}</b> derzeit nicht verfügbar"
+      "pick_up_available_at_html": "Abholung bei <b>{{ location_name }}<\/b> verfügbar",
+      "pick_up_unavailable_at_html": "Abholung bei <b>{{ location_name }}<\/b> derzeit nicht verfügbar"
     }
   },
   "gift_cards": {
@@ -321,7 +321,7 @@
       "page_title": "Hier ist Ihr {{ value }} Geschenkgutschein für {{ shop }}!",
       "section_title": "Dein Geschenkgutschein",
       "title": "Hier ist Ihr Geschenkgutschein!",
-      "amount_left_html": "{{ amount }} <small>links</small>",
+      "amount_left_html": "{{ amount }} <small>links<\/small>",
       "redeem": "Verwenden Sie diesen Code an der Kasse, um ihn einzulösen.",
       "shop_link": "Weiter shoppen",
       "print": "Geschenkkarte drucken",
@@ -352,5 +352,159 @@
     "day_month_and_year": "%B %e, %Y",
     "month_and_year": "%B %Y",
     "date_and_time": "%B %e, %Y bei %I:%M %P"
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "estimated_delivery_date": {
+          "many": "%{count} Arbeitstage"
+        },
+        "other_method": {
+          "many": "%{count} andere Methoden verfügbar von"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "many": "für %{count} Lieferungen"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "many": "alle %{count} Tage"
+            },
+            "week": {
+              "many": "alle %{count} Wochen"
+            },
+            "month": {
+              "many": "jeden %{count} Monat"
+            },
+            "year": {
+              "many": "alle %{count} Jahre"
+            }
+          },
+          "first_n_order_free": {
+            "many": "%{count} Erstbestellungen kostenlos"
+          },
+          "free_for_first_n_order": {
+            "many": "Für die ersten %{count} Bestellungen"
+          }
+        }
+      },
+      "payment": {
+        "order_covered_by_gift_cards_notice": {
+          "many": "Ihre Bestellungen sind durch Ihre Geschenkkarten abgedeckt."
+        },
+        "card_fields_unavailable_html": {
+          "many": "Kredit- und Debitkartenzahlungen sind derzeit nicht verfügbar.<br> <a href=\"%%7Bcurrent_url%7D\">Aktualisieren Sie diese Seite<\/a> oder versuchen Sie es mit einer anderen Zahlungsmethode."
+        }
+      },
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "many": "Einige Artikel in Ihrem Einkaufswagen können nicht an die von Ihnen eingegebene Adresse versendet werden. Überprüfen Sie, ob alle Felder Ihrer Adresse korrekt ausgefüllt sind, und versuchen Sie es erneut."
+        },
+        "shipping_method_not_available_updated": {
+          "many": "Es ist nicht möglich, mindestens einen der von Ihnen hinzugefügten Artikel an Ihren Standort zu versenden. Bitte entfernen Sie sie, um bezahlen zu können, oder wenden Sie sich an das Geschäft."
+        }
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "many": "Ihre Bestellung wird bearbeitet. Die Wartezeit wird auf %{count} Minuten geschätzt."
+          }
+        }
+      },
+      "thank_you": {
+        "login_reorder_link_text": {
+          "many": "kaufen Sie diese Produkte auch"
+        }
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "many": "%{count} hinzugefügt"
+          }
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "many": "Kaufen Sie %{product_name} und %{count} andere Artikel"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "many": "Beginnen Sie mit %{count} Zahlungen von jeweils %{total_price}"
+          }
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "many": "%{count} Tage"
+          },
+          "week": {
+            "many": "%{count} Wochen"
+          },
+          "month": {
+            "many": "%{count} Monat"
+          },
+          "year": {
+            "many": "%{count} Jahre"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "many": ", dann %{count} Zahlungen von jeweils %{total_price}"
+          }
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "many": "Nicht verfügbare Produkte"
+        },
+        "products_not_available": {
+          "many": "Diese Produkte werden aus Ihrem Warenkorb entfernt, da sie in Ihrem Land\/Ihrer Region nicht verfügbar sind."
+        },
+        "all_products_in_cart_unavailable": {
+          "many": "Diese Produkte sind in Ihrem Land\/Ihrer Region nicht verfügbar."
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "many": "Sonstiges"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "many": "Suche: %{count} Ergebnisse gefunden für \"%{terms}\""
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_list": {
+        "items": {
+          "many": "{{count}} Artikel"
+        }
+      }
+    },
+    "B2B": {
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "many": "Sie sind {{count}} Tage überfällig"
+            },
+            "banner_due": {
+              "many": "Ihre Zahlung ist in {{count}} Tagen fällig"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "many": "Es gibt {{count}} Fehler"
+      }
+    }
   }
 }
