@@ -77,14 +77,14 @@
         "16613280696c7676f8-1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p><strong>hausen<\/strong> subscribes to the ideal of creating functional furniture that provides its customers freedom in designing and arranging their living quarters. The careful use of only the finest materials ensure both sustainability and quality. Additionally you can find a unique selection of home accessoires.<\/p>",
+            "text": "<p><strong>hausen <\/strong>souscrit à l'idéal de créer des meubles fonctionnels qui offrent à ses clients la liberté de concevoir et d'aménager leur espace de vie. L'utilisation prudente des meilleurs matériaux garantit à la fois durabilité et qualité. De plus, vous pouvez trouver une sélection unique d'accessoires pour la maison.<\/p>",
             "increase_space_before_block": true
           }
         },
         "16613280696c7676f8-2": {
           "type": "button",
           "settings": {
-            "text": "get yours now →",
+            "text": "obtiens le tiens maintenant →",
             "link": "shopify:\/\/collections\/all",
             "style": "border",
             "size": "small",
