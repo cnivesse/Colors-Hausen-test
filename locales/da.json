@@ -60,13 +60,13 @@
       "signup_form_submit": "Indsend",
       "signup_form_success": "Vi sender dig en e-mail lige før vi åbner!",
       "social_heading": "Find os også i:",
-      "admin_link_html": "Er du butiksejer? <a href=\"/admin\" class=\"text-link\">Log ind her</a>",
+      "admin_link_html": "Er du butiksejer? <a href=\"\/admin\" class=\"text-link\">Log ind her<\/a>",
       "password_link_html": "Indtast med adgangskode",
       "back_link_html": "Tilbage",
       "powered_by_shopify_html": "Denne butik vil blive drevet af {{ shopify }}"
     },
     "country": {
-      "dropdown_label": "Land/område"
+      "dropdown_label": "Land\/område"
     },
     "language": {
       "dropdown_label": "Sprog"
@@ -128,7 +128,7 @@
       "new_html": "Ny",
       "unavailable": "Ikke tilgængelig",
       "quantity": "Antal",
-      "available_units_html": "<span class='units'>{{ units }}</span> tilgængelige enheder",
+      "available_units_html": "<span class='units'>{{ units }}<\/span> tilgængelige enheder",
       "add_to_cart": "Tilføj til kurv",
       "pre_order": "Forudbestille",
       "share_on": "Del på {{ platform}}",
@@ -200,7 +200,7 @@
     },
     "orders": {
       "order": "Bestil {{ id }}",
-      "order_description_html": "<b>{{ date }}</b> — {{ order }} blev placeret, og dens nuværende status er {{ financial_status }} og {{ fulfillment_status }}",
+      "order_description_html": "<b>{{ date }}<\/b> — {{ order }} blev placeret, og dens nuværende status er {{ financial_status }} og {{ fulfillment_status }}",
       "empty": "Der er ingen ordrer."
     },
     "order": {
@@ -288,9 +288,9 @@
       },
       "note": "Særlige instruktioner til sælger:",
       "subtotal": "Subtotal",
-      "taxes_and_shipping_policy_at_checkout_html": "Skatter og <a href=\"{{ link }}\">forsendelse</a> beregnes ved kassen.",
+      "taxes_and_shipping_policy_at_checkout_html": "Skatter og <a href=\"{{ link }}\">forsendelse<\/a> beregnes ved kassen.",
       "taxes_included_but_shipping_at_checkout": "Moms inkluderet og fragt beregnes ved kassen.",
-      "taxes_included_and_shipping_policy_html": "Skat inkluderet. <a href=\"{{ link }}\">Forsendelse</a> beregnes ved kassen.",
+      "taxes_included_and_shipping_policy_html": "Skat inkluderet. <a href=\"{{ link }}\">Forsendelse<\/a> beregnes ved kassen.",
       "taxes_and_shipping_at_checkout": "Forsendelse og afgifter beregnes ved kassen.",
       "update_html": "Opdater indkøbsvogn",
       "checkout_html": "Tjek ud",
@@ -302,7 +302,7 @@
     "errors": {
       "address_error": "Fejl ved at finde den adresse",
       "address_no_results": "Ingen resultater for den adresse",
-      "address_query_limit_html": "Du har overskredet grænsen for Google API-brug. Overvej at opgradere til et <a href=\"https://developers.google.com/maps/premium/usage-limits\">Premium-abonnement</a>.",
+      "address_query_limit_html": "Du har overskredet grænsen for Google API-brug. Overvej at opgradere til et <a href=\"https:\/\/developers.google.com\/maps\/premium\/usage-limits\">Premium-abonnement<\/a>.",
       "auth_error_html": "Der opstod et problem med at godkende din Google Maps API-nøgle."
     }
   },
@@ -312,8 +312,8 @@
       "check_other_stores": "Tjek tilgængelighed i andre butikker",
       "pick_up_available": "Mulighed for afhentning",
       "pick_up_currently_unavailable": "Afhentning i øjeblikket ikke tilgængelig",
-      "pick_up_available_at_html": "Kan afhentes på <b>{{ location_name }}</b>",
-      "pick_up_unavailable_at_html": "Afhentning i øjeblikket ikke tilgængelig på <b>{{ location_name }}</b>"
+      "pick_up_available_at_html": "Kan afhentes på <b>{{ location_name }}<\/b>",
+      "pick_up_unavailable_at_html": "Afhentning i øjeblikket ikke tilgængelig på <b>{{ location_name }}<\/b>"
     }
   },
   "gift_cards": {
@@ -321,7 +321,7 @@
       "page_title": "Her er dit {{ value }} gavekort til {{ shop }}!",
       "section_title": "Gavekort",
       "title": "Her er dit gavekort!",
-      "amount_left_html": "{{ amount }} <small>tilbage</small>",
+      "amount_left_html": "{{ amount }} <small>tilbage<\/small>",
       "redeem": "Brug denne kode ved kassen for at indløse den.",
       "shop_link": "Begynd at shoppe",
       "print": "Udskriv gavekort",
@@ -352,5 +352,159 @@
     "day_month_and_year": "%B %e, %Y",
     "month_and_year": "%B %Y",
     "date_and_time": "%B %e, %Y ved %I:%M %P"
+  },
+  "shopify": {
+    "checkout": {
+      "shipping": {
+        "estimated_delivery_date": {
+          "many": "%{count} arbejdsdage"
+        },
+        "other_method": {
+          "many": "%{count} andre metoder tilgængelige fra"
+        },
+        "subscription_delivery_description": {
+          "prepaid_delivery_frequency": {
+            "many": "for %{count} leverancer"
+          },
+          "subscription_delivery_frequency": {
+            "day": {
+              "many": "hver %{count} dag"
+            },
+            "week": {
+              "many": "hver %{count} uge"
+            },
+            "month": {
+              "many": "hver %{count} måned"
+            },
+            "year": {
+              "many": "hvert %{count} år"
+            }
+          },
+          "first_n_order_free": {
+            "many": "%{count} første ordrer gratis"
+          },
+          "free_for_first_n_order": {
+            "many": "For de første %{count} ordrer"
+          }
+        }
+      },
+      "payment": {
+        "order_covered_by_gift_cards_notice": {
+          "many": "Dine ordrer er dækket af dine gavekort."
+        },
+        "card_fields_unavailable_html": {
+          "many": "Kredit- og betalingskortbetalinger er ikke tilgængelige på nuværende tidspunkt.<br> <a href=\"%%7Bcurrent_url%7D\">Opdater denne side,<\/a> eller prøv en anden betalingsmetode."
+        }
+      },
+      "shipping_errors": {
+        "shipping_method_not_available_generic": {
+          "many": "Nogle varer i din indkøbskurv kan ikke sendes til den adresse, du har indtastet. Tjek, at alle felterne i din adresse er udfyldt korrekt, og prøv derefter igen."
+        },
+        "shipping_method_not_available_updated": {
+          "many": "Det er ikke muligt at sende mindst én af de varer, du har tilføjet, til din lokation. Fjern venligst den(e) for at kunne betale, eller kontakt butikken."
+        }
+      },
+      "processing": {
+        "wait": {
+          "medium": {
+            "many": "Din ordre behandles. Ventetiden er estimeret til %{count} minutter."
+          }
+        }
+      },
+      "thank_you": {
+        "login_reorder_link_text": {
+          "many": "køb også disse produkter"
+        }
+      },
+      "order_payment_collection": {
+        "changes_summary": {
+          "added": {
+            "many": "%{count} tilføjet"
+          }
+        }
+      },
+      "open_graph_meta_tag": {
+        "title_with_products": {
+          "many": "Køb %{product_name} og %{count} andre varer"
+        }
+      },
+      "subscriptions": {
+        "recurring_totals_with_policies": {
+          "first_cycles": {
+            "many": "Til at starte med, %{count} betalinger på %{total_price} hver"
+          }
+        },
+        "recurring_total_intervals": {
+          "day": {
+            "many": "%{count} dage"
+          },
+          "week": {
+            "many": "%{count} uger"
+          },
+          "month": {
+            "many": "%{count} måned"
+          },
+          "year": {
+            "many": "%{count} år"
+          }
+        },
+        "recurring_totals_with_initial_order_shipping_discount_with_policies": {
+          "first_cycles": {
+            "many": ", derefter %{count} betalinger på %{total_price} hver"
+          }
+        }
+      },
+      "contextual_availability": {
+        "title": {
+          "many": "Utilgængelige produkter"
+        },
+        "products_not_available": {
+          "many": "Disse produkter vil blive fjernet fra din indkøbskurv, da de ikke er tilgængelige i dit land\/område."
+        },
+        "all_products_in_cart_unavailable": {
+          "many": "Disse produkter er ikke tilgængelige i dit land\/område."
+        }
+      }
+    },
+    "notices": {
+      "order": {
+        "cancel_reason": {
+          "many": "Andet"
+        }
+      }
+    },
+    "page_titles": {
+      "search_results": {
+        "many": "Søgning: %{count} resultater fundet for \"%{terms}\""
+      }
+    }
+  },
+  "customer_accounts": {
+    "orders": {
+      "order_list": {
+        "items": {
+          "many": "{{count}} elementer"
+        }
+      }
+    },
+    "B2B": {
+      "draft_order_details": {
+        "payment_status": {
+          "pending": {
+            "banner_overdue": {
+              "many": "Du er {{count}} dage forsinket"
+            },
+            "banner_due": {
+              "many": "Din betaling forfalder om {{count}} dage"
+            }
+          }
+        }
+      }
+    },
+    "errors": {
+      "banner_title": {
+        "many": "Der er {{count}} fejl"
+      }
+    }
   }
 }
