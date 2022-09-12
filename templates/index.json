@@ -85,7 +85,7 @@
           "type": "button",
           "settings": {
             "text": "obtiens le tiens maintenant →",
-            "link": "shopify:\/\/collections\/all",
+            "link": "shopify:\/\/collections\/bowls",
             "style": "border",
             "size": "small",
             "increase_space_before_block": true
