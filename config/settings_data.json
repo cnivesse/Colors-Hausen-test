@@ -47,6 +47,7 @@
     "cart_type": "drawer",
     "additional_checkout_buttons_enable": true,
     "cart_notes_enable": true,
+    "favicon": "shopify:\/\/shop_images\/201022_hausen_Logo_h.png",
     "color_share_text": "#ffffff",
     "sections": {
       "announcement-bar": {
@@ -54,7 +55,7 @@
         "settings": {
           "show_announcement": false,
           "home_page_only": false,
-          "top_banner_text": "Livraison et retours gratuits au-dessus de 100 $ !",
+          "top_banner_text": "Kostenloser Versand und Rückversand über 100 $!",
           "announcement_link": "",
           "color_announcement_text": "#ffffff",
           "color_announcement_bg": "#d18a51"
@@ -90,11 +91,11 @@
           "delay": 5,
           "frequency": 30,
           "content_max_width": 650,
-          "title": "Sign up and save",
-          "content": "<p>Subscribe today and get 10% off your first purchase.<\/p>",
+          "title": "Registrieren und sparen",
+          "content": "<p> Melden Sie sich noch heute an und erhalten Sie 10 % Rabatt auf Ihren ersten Einkauf.<\/p>",
           "newsletter_enable": true,
           "button_enable": false,
-          "button_label": "Optional button",
+          "button_label": "optionale Schaltfläche",
           "button_link": "",
           "button_style": "solid",
           "button_size": "normal"
@@ -106,22 +107,22 @@
           "footer-0": {
             "type": "menu",
             "settings": {
-              "menu_title": "Liens rapides",
+              "menu_title": "Schnelle Links",
               "menu": "footer"
             }
           },
           "footer-1": {
             "type": "text",
             "settings": {
-              "title": "Contact",
-              "richtext": "<p>1360 Lombard Street<br>San Francisco, CA 94109<br>support@company.com<\/p>"
+              "title": "Kontakt",
+              "richtext": "<p> 1360 Lombardstraße<br> San Francisco, CA 94109<br> support@firma.com<\/p>"
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
-              "title": "À propos de nous",
-              "richtext": "<p>Partagez les détails du magasin, les promotions ou le contenu de la marque avec vos clients.<\/p>"
+              "title": "Über uns",
+              "richtext": "<p>Teilen Sie Geschäftsdetails, Werbeaktionen oder Markeninhalte mit Ihren Kunden.<\/p>"
             }
           },
           "footer-3": {
