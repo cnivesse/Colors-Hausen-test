@@ -966,13 +966,13 @@
       },
       "blocks": {
         "menu": {
-          "name": "Speisekarte",
+          "name": "MENÜ",
           "settings": {
             "menu_title": {
               "label": "Üerschrift"
             },
             "menu": {
-              "label": "Speisekarte",
+              "label": "MENÜ",
               "info": "Dieses Menü zeigt keine Dropdown-Elemente an."
             }
           }
@@ -1033,7 +1033,7 @@
           "content": "Hauptmenü"
         },
         "main_nav_linklist": {
-          "label": "Speisekarte"
+          "label": "MENÜ"
         },
         "show_main_menu_on_mobile": {
           "label": "Auf dem Handy anzeigen"
@@ -1059,7 +1059,7 @@
           "content": "Seitenleistenmenü"
         },
         "side_nav_linklist": {
-          "label": "Speisekarte"
+          "label": "MENÜ"
         },
         "enable_side_nav_text": {
           "label": "Zeige das Menü",

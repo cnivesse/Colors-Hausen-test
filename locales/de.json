@@ -37,7 +37,7 @@
       "article": "Bloggen"
     },
     "navigation": {
-      "header_label": "SPEISEKARTE",
+      "header_label": "MENÜ",
       "cancel_html": "oder {{ link }}",
       "return_to_store": "Zurück zum Shop"
     },
