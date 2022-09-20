@@ -181,6 +181,7 @@
     "hero": {
       "type": "hero",
       "settings": {
+        "image": "shopify:\/\/shop_images\/Artboard_1.png",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
