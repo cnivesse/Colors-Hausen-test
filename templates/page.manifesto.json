@@ -16,31 +16,27 @@
         "1663690444d89170b4-0": {
           "type": "image",
           "settings": {
+            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-5-002_7d00f00f-4f9c-43a7-9d05-ec59750b9ace.jpg",
             "show_border": false,
             "link": "",
             "text": "",
             "text_align": "center"
           }
         },
-        "1663690444d89170b4-1": {
-          "type": "product",
+        "390488ea-45e6-4fb0-b9f8-6ccd084ec587": {
+          "type": "image",
           "settings": {
-            "product": "",
-            "show_border": false
-          }
-        },
-        "1663690444d89170b4-2": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "show_border": false
+            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-1-067.jpg",
+            "show_border": false,
+            "link": "",
+            "text": "",
+            "text_align": "center"
           }
         }
       },
       "block_order": [
         "1663690444d89170b4-0",
-        "1663690444d89170b4-1",
-        "1663690444d89170b4-2"
+        "390488ea-45e6-4fb0-b9f8-6ccd084ec587"
       ],
       "settings": {
         "desktop_layout": "left",
@@ -54,10 +50,44 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1663690623ddec8719": {
+      "type": "rich-text",
+      "blocks": {
+        "16636906229b46ea94-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Jörg Höltje",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "82691694-c633-4215-aa79-47938a9e804a": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p><strong>Fondateur de<\/strong> <strong>hausen<\/strong> Née à Berlin et basée au cœur de Hambourg, la centrale créative Studio Hausen a été fondée en 2014 par le désir d'offrir des produits intemporels et durables pour la maison moderne. Avec la combinaison de bon goût du design allemand minimaliste et l'amour pour la beauté naturelle des matériaux intemporels de haute qualité de la conception de produits classiques, tels que le bois massif, le marbre ou le verre soufflé à la bouche, Studio Hausen est un ajout raffiné à tout espace de vie.<\/p>",
+            "max_width": 650,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "16636906229b46ea94-0",
+        "82691694-c633-4215-aa79-47938a9e804a"
+      ],
+      "settings": {
+        "text_align": "center",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
-    "1663690444e1fb57f2"
+    "1663690444e1fb57f2",
+    "1663690623ddec8719"
   ]
 }
