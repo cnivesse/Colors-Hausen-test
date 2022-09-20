@@ -86,40 +86,8 @@
     },
     "166369086561c4bb69": {
       "type": "hero",
-      "blocks": {
-        "16636908653e246a6e-0": {
-          "type": "heading",
-          "settings": {
-            "text": "Titre",
-            "color": "#121212",
-            "max_width": 500
-          }
-        },
-        "16636908653e246a6e-1": {
-          "type": "subheading",
-          "settings": {
-            "text": "Sous-titre",
-            "color": "#121212",
-            "max_width": 500
-          }
-        },
-        "16636908653e246a6e-2": {
-          "type": "button",
-          "settings": {
-            "text": "Achetez maintenant",
-            "link": "shopify:\/\/collections\/all",
-            "style": "border",
-            "size": "normal",
-            "color": "#121212"
-          }
-        }
-      },
-      "block_order": [
-        "16636908653e246a6e-0",
-        "16636908653e246a6e-1",
-        "16636908653e246a6e-2"
-      ],
       "settings": {
+        "image": "shopify:\/\/shop_images\/Artboard_2_resize.png",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
