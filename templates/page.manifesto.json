@@ -83,11 +83,60 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "166369086561c4bb69": {
+      "type": "hero",
+      "blocks": {
+        "16636908653e246a6e-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Titre",
+            "color": "#121212",
+            "max_width": 500
+          }
+        },
+        "16636908653e246a6e-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "Sous-titre",
+            "color": "#121212",
+            "max_width": 500
+          }
+        },
+        "16636908653e246a6e-2": {
+          "type": "button",
+          "settings": {
+            "text": "Achetez maintenant",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "color": "#121212"
+          }
+        }
+      },
+      "block_order": [
+        "16636908653e246a6e-0",
+        "16636908653e246a6e-1",
+        "16636908653e246a6e-2"
+      ],
+      "settings": {
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
     "1663690444e1fb57f2",
-    "1663690623ddec8719"
+    "1663690623ddec8719",
+    "166369086561c4bb69"
   ]
 }
