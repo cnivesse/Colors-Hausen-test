@@ -12,27 +12,8 @@
     },
     "166056885805b2007f": {
       "type": "featured-products",
+      "disabled": true,
       "blocks": {
-        "1660568858a9a04107-0": {
-          "type": "product",
-          "settings": {
-            "product": "link-set-1-oak",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
-          }
-        },
-        "1660568858a9a04107-1": {
-          "type": "product",
-          "settings": {
-            "product": "link-set-1walnut",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
-          }
-        },
         "1660568858a9a04107-2": {
           "type": "product",
           "settings": {
@@ -45,8 +26,6 @@
         }
       },
       "block_order": [
-        "1660568858a9a04107-0",
-        "1660568858a9a04107-1",
         "1660568858a9a04107-2"
       ],
       "settings": {
@@ -58,10 +37,62 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1663690058aaf9dbd6": {
+      "type": "slideshow",
+      "blocks": {
+        "16636900584feb9e16-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-1-067.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "16636900584feb9e16-1": {
+          "type": "image",
+          "settings": {
+            "slide_text_color": "is-light",
+            "text_alignment": "center",
+            "heading": "Titre",
+            "subheading": "Sous-titre",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "16636900584feb9e16-0",
+        "16636900584feb9e16-1"
+      ],
+      "settings": {
+        "arrows": true,
+        "dots": true,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "use_fade": "false",
+        "slideshow_height": "medium",
+        "color_light_slideshow": "#ffffff",
+        "color_dark_slideshow": "#121212",
+        "heading": "",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
-    "166056885805b2007f"
+    "166056885805b2007f",
+    "1663690058aaf9dbd6"
   ]
 }
