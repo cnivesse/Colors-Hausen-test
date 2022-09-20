@@ -5,9 +5,9 @@
       "settings": {
         "show_heading": true,
         "show_background": false,
-        "expanded": true,
+        "expanded": false,
         "expanded_content": false,
-        "collapsed": true
+        "collapsed": false
       }
     },
     "1663690058aaf9dbd6": {
