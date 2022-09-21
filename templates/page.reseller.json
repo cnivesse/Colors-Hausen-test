@@ -157,6 +157,39 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "166375193915962d07": {
+      "type": "call-to-action",
+      "blocks": {
+        "1663751939926747bc-0": {
+          "type": "banner",
+          "settings": {
+            "title": "Shop Refurbished",
+            "subtitle": "",
+            "link": ""
+          }
+        },
+        "1663751939926747bc-1": {
+          "type": "banner",
+          "settings": {
+            "title": "Titre de l'appel à l'action",
+            "subtitle": "Sous-titre d'appel à l'action",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "1663751939926747bc-0",
+        "1663751939926747bc-1"
+      ],
+      "settings": {
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
@@ -164,6 +197,7 @@
     "16637501236531f560",
     "1663750708ec881949",
     "1663751440cc344a0b",
-    "1663751821c2cefc9a"
+    "1663751821c2cefc9a",
+    "166375193915962d07"
   ]
 }
