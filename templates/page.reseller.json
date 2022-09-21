@@ -172,8 +172,8 @@
         "1663751939926747bc-1": {
           "type": "banner",
           "settings": {
-            "title": "Titre de l'appel à l'action",
-            "subtitle": "Sous-titre d'appel à l'action",
+            "title": "Liste des défauts",
+            "subtitle": "",
             "link": ""
           }
         }
