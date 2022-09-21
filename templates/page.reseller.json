@@ -10,51 +10,35 @@
         "collapsed": true
       }
     },
-    "166056885805b2007f": {
-      "type": "featured-products",
+    "16637501236531f560": {
+      "type": "rich-text",
       "blocks": {
-        "1660568858a9a04107-0": {
-          "type": "product",
+        "166375012317c87fc9-0": {
+          "type": "heading",
           "settings": {
-            "product": "link-set-1-oak",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
+            "text": "hausen pour l'ukraine. \nUne vente solidaire",
+            "max_width": 700,
+            "increase_space_before_block": true
           }
         },
-        "1660568858a9a04107-1": {
-          "type": "product",
+        "a4a19d03-11f8-46b1-9f45-10e2e9a91925": {
+          "type": "paragraph",
           "settings": {
-            "product": "link-set-1walnut",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
-          }
-        },
-        "1660568858a9a04107-2": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
+            "text": "<p>Pièces reconditionnées du système d'étagères LINK : 35 % de réduction jusqu'à épuisement des stocks<\/p>",
+            "max_width": 650,
+            "increase_space_before_block": true
           }
         }
       },
       "block_order": [
-        "1660568858a9a04107-0",
-        "1660568858a9a04107-1",
-        "1660568858a9a04107-2"
+        "166375012317c87fc9-0",
+        "a4a19d03-11f8-46b1-9f45-10e2e9a91925"
       ],
       "settings": {
-        "with_transition": true,
-        "with_separation": true,
-        "with_overlap": true,
+        "text_align": "center",
+        "show_background": false,
         "expanded": true,
-        "collapsed": true,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
@@ -62,6 +46,6 @@
   },
   "order": [
     "main",
-    "166056885805b2007f"
+    "16637501236531f560"
   ]
 }
