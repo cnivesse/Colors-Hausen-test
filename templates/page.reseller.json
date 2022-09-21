@@ -144,47 +144,30 @@
         "show_on_mobile": true
       }
     },
-    "1663751821c2cefc9a": {
-      "type": "featured-image",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/6_7.jpg",
-        "link": "",
-        "heading": "",
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": true,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
-    "166375193915962d07": {
-      "type": "call-to-action",
+    "1663751948c6b96c9f": {
+      "type": "collage",
       "blocks": {
-        "1663751939926747bc-0": {
-          "type": "banner",
+        "1663751948424b5e8c-0": {
+          "type": "image",
           "settings": {
-            "title": "Shop Refurbished",
-            "subtitle": "",
-            "link": ""
-          }
-        },
-        "1663751939926747bc-1": {
-          "type": "banner",
-          "settings": {
-            "title": "Liste des défauts",
-            "subtitle": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/6_7.jpg",
+            "show_border": false,
+            "link": "",
+            "text": "",
+            "text_align": "center"
           }
         }
       },
       "block_order": [
-        "1663751939926747bc-0",
-        "1663751939926747bc-1"
+        "1663751948424b5e8c-0"
       ],
       "settings": {
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "heading": "",
         "show_background": false,
-        "expanded": false,
+        "expanded": true,
+        "content_max_width": 1200,
         "expanded_content": false,
         "collapsed": false,
         "show_on_desktop": true,
@@ -197,7 +180,6 @@
     "16637501236531f560",
     "1663750708ec881949",
     "1663751440cc344a0b",
-    "1663751821c2cefc9a",
-    "166375193915962d07"
+    "1663751948c6b96c9f"
   ]
 }
