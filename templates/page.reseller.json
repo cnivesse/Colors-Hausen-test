@@ -83,11 +83,87 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1663751440cc344a0b": {
+      "type": "rich-text",
+      "blocks": {
+        "103333d1-c59e-4e60-9dc7-fa72ec0672d5": {
+          "type": "subheading",
+          "settings": {
+            "text": "Que signifie exactement remis à neuf ?",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "bc759890-5343-4581-bfe0-dc4dfcfa4fa2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Nos étagères LINK sont en <strong>bois massif 100% naturel<\/strong> . Cela est non seulement beau et <strong>durable<\/strong> , mais peut également être merveilleusement rénové.Au fil des ans, certaines étagères se sont accumulées dans notre entrepôt qui ont eu de <strong>petites bizarreries<\/strong> . Nous vous proposons ces étagères en reconditionné en exclusivité à un prix réduit de 35%. Cependant, nous ne pouvons pas garantir que toutes les bizarreries ont complètement disparu. Mais nous pouvons vous garantir que ces étagères de \"caractère\" égayeront votre intérieur. <\/p>",
+            "max_width": 650,
+            "increase_space_before_block": true
+          }
+        },
+        "339ab934-cff6-44f0-a969-d44112bca759": {
+          "type": "subheading",
+          "settings": {
+            "text": "Les petites erreurs peuvent être :",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "06c4eb2d-cf6b-4992-946e-5c9f7c7fea0b": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>- de fines rayures dans la peinture <\/p><p>- une décoloration naturelle du bois - des nœuds de moins de 2 cm <\/p><p>- des petits trous qui ont    été réparés avec de la cire à bois <\/p><p>- un grain un peu plus sauvage<\/p><p>Heureusement, une étagère a toujours 2 côtés & ces petits défauts n'apparaissent que sur un côté du plateau.<\/p><p>Donnez une seconde vie aux étagères et obtenez-la à un prix imbattable et unique.<\/p><p>Nous ne voulons pas tirer de profit de la vente des étagères rénovées, nous aimerions plutôt faire don des bénéfices à des organisations qui contribuent à rendre notre monde meilleur et à rétablir la paix. <\/p>",
+            "max_width": 650,
+            "increase_space_before_block": true
+          }
+        },
+        "982530ec-97e9-46fc-ac9e-7a38982c9dd8": {
+          "type": "subheading",
+          "settings": {
+            "text": "Où va l'argent ? Vous pouvez voir ça ici !",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "103333d1-c59e-4e60-9dc7-fa72ec0672d5",
+        "bc759890-5343-4581-bfe0-dc4dfcfa4fa2",
+        "339ab934-cff6-44f0-a969-d44112bca759",
+        "06c4eb2d-cf6b-4992-946e-5c9f7c7fea0b",
+        "982530ec-97e9-46fc-ac9e-7a38982c9dd8"
+      ],
+      "settings": {
+        "text_align": "center",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "1663751821c2cefc9a": {
+      "type": "featured-image",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/6_7.jpg",
+        "link": "",
+        "heading": "",
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": true,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
     "16637501236531f560",
-    "1663750708ec881949"
+    "1663750708ec881949",
+    "1663751440cc344a0b",
+    "1663751821c2cefc9a"
   ]
 }
