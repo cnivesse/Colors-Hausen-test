@@ -118,22 +118,13 @@
             "max_width": 650,
             "increase_space_before_block": true
           }
-        },
-        "982530ec-97e9-46fc-ac9e-7a38982c9dd8": {
-          "type": "subheading",
-          "settings": {
-            "text": "Où va l'argent ? Vous pouvez voir ça ici !",
-            "max_width": 700,
-            "increase_space_before_block": true
-          }
         }
       },
       "block_order": [
         "103333d1-c59e-4e60-9dc7-fa72ec0672d5",
         "bc759890-5343-4581-bfe0-dc4dfcfa4fa2",
         "339ab934-cff6-44f0-a969-d44112bca759",
-        "06c4eb2d-cf6b-4992-946e-5c9f7c7fea0b",
-        "982530ec-97e9-46fc-ac9e-7a38982c9dd8"
+        "06c4eb2d-cf6b-4992-946e-5c9f7c7fea0b"
       ],
       "settings": {
         "text_align": "center",
