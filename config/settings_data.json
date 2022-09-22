@@ -47,6 +47,8 @@
     "cart_type": "drawer",
     "additional_checkout_buttons_enable": true,
     "cart_notes_enable": false,
+    "social_facebook_link": "",
+    "social_twitter_link": "",
     "favicon": "shopify:\/\/shop_images\/201022_hausen_Logo_h.png",
     "color_share_text": "#ffffff",
     "sections": {
