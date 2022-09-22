@@ -175,6 +175,55 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1663848755f89bc71e": {
+      "type": "featured-products",
+      "blocks": {
+        "1663848755b17e5a6d-0": {
+          "type": "product",
+          "settings": {
+            "product": "refurbished-oak",
+            "url": "",
+            "title": "",
+            "subtitle": "",
+            "hide_cta": false
+          }
+        },
+        "1663848755b17e5a6d-1": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "",
+            "subtitle": "",
+            "hide_cta": false
+          }
+        },
+        "1663848755b17e5a6d-2": {
+          "type": "product",
+          "settings": {
+            "product": "",
+            "url": "",
+            "title": "",
+            "subtitle": "",
+            "hide_cta": false
+          }
+        }
+      },
+      "block_order": [
+        "1663848755b17e5a6d-0",
+        "1663848755b17e5a6d-1",
+        "1663848755b17e5a6d-2"
+      ],
+      "settings": {
+        "with_transition": false,
+        "with_separation": true,
+        "with_overlap": true,
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
@@ -182,6 +231,7 @@
     "16637501236531f560",
     "1663750708ec881949",
     "1663751440cc344a0b",
-    "1663751948c6b96c9f"
+    "1663751948c6b96c9f",
+    "1663848755f89bc71e"
   ]
 }
