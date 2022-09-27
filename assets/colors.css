@@ -4679,6 +4679,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
   margin: 0px;
   position: relative;
   overflow: hidden;
+  margin: 18px 0;
 }
 .collection-products .collection-product > .inner .image.square {
   padding-bottom: 100%;
