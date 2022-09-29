@@ -26,6 +26,12 @@
             "increase_space_before_block": true
           }
         },
+        "ac315a19-85f7-4e7e-bce0-dc341f7eed00": {
+          "type": "quantity_selector",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -84,6 +90,7 @@
         "title",
         "price",
         "variant_picker",
+        "ac315a19-85f7-4e7e-bce0-dc341f7eed00",
         "buy_buttons",
         "description",
         "collapsible_tab_1",
