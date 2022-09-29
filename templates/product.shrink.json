@@ -43,18 +43,18 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "heading": "Caractéristiques",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
-            "icon": "washing",
+            "icon": "question_mark",
             "increase_space_before_block": true
           }
         },
         "collapsible_tab_2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "heading": "Matériaux",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
@@ -63,8 +63,8 @@
         "collapsible_tab_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "heading": "Livraison",
+            "content": "<p>Contenu de l'onglet{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
