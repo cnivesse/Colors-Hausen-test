@@ -152,7 +152,7 @@
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/220918_hausen_shrink_quer_Seite_18.png",
+        "image": "{{ product.metafields.custom.measurements.value }}",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
@@ -182,7 +182,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Curry_small_4233e456-cc43-430d-b241-afc0e494ee38.png",
+        "image": "{{ product.metafields.custom.artboard.value }}",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
