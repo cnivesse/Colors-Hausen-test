@@ -160,8 +160,8 @@
         "mobile_min_height": 500,
         "image_mobile": "{{ product.metafields.custom.artboard_mobile.value }}",
         "video_mobile": "",
-        "expanded": false,
-        "collapsed": false,
+        "expanded": true,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
