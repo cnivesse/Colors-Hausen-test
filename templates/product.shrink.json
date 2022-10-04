@@ -158,6 +158,7 @@
         "overlay_color": "#000000",
         "overlay_opacity": 0,
         "mobile_min_height": 500,
+        "image_mobile": "{{ product.metafields.custom.artboard_mobile.value }}",
         "video_mobile": "",
         "expanded": false,
         "collapsed": false,
