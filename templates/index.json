@@ -7,10 +7,10 @@
           "type": "button",
           "settings": {
             "text": "Amène moi vers cette beauté →",
-            "link": "shopify:\/\/products\/link-duo-oak",
+            "link": "shopify:\/\/products\/shrink-denim",
             "style": "border",
             "size": "normal",
-            "color": "#121212"
+            "color": "#ffffff"
           }
         }
       },
