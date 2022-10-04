@@ -160,8 +160,8 @@
         "mobile_min_height": 500,
         "image_mobile": "{{ product.metafields.custom.artboard_mobile.value }}",
         "video_mobile": "",
-        "expanded": true,
-        "collapsed": true,
+        "expanded": false,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
@@ -190,8 +190,8 @@
         "overlay_opacity": 0,
         "mobile_min_height": 500,
         "video_mobile": "",
-        "expanded": true,
-        "collapsed": true,
+        "expanded": false,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
