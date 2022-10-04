@@ -191,7 +191,7 @@
         "mobile_min_height": 500,
         "video_mobile": "",
         "expanded": true,
-        "collapsed": false,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
