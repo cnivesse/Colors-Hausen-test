@@ -11,11 +11,11 @@
     "color_body_text": "#302d33",
     "color_accent": "#302d33",
     "color_sold_out": "#302d33",
-    "color_footer_top_bg": "#1f1f1f",
-    "color_footer_top_accent": "#e79859",
-    "color_footer_top_text": "#a6a6a6",
-    "color_footer_btm_bg": "#141414",
-    "color_footer_btm_text": "#c89770",
+    "color_footer_top_bg": "#342fc2",
+    "color_footer_top_accent": "#f3f0ee",
+    "color_footer_top_text": "#f3f0ee",
+    "color_footer_btm_bg": "#342fc2",
+    "color_footer_btm_text": "#f3f0ee",
     "color_facebook_bg": "#bebebe",
     "color_twitter_bg": "#bebebe",
     "color_pinterest_bg": "#bebebe",
@@ -120,6 +120,11 @@
               "richtext": "<p>Teilen Sie Geschäftsdetails, Werbeaktionen oder Markeninhalte mit Ihren Kunden.<\/p>"
             }
           },
+          "7aeda998-c40a-47fb-bf4a-789207eeee85": {
+            "type": "newsletter",
+            "settings": {
+            }
+          },
           "footer-3": {
             "type": "social",
             "settings": {
@@ -130,6 +135,7 @@
         "block_order": [
           "footer-1",
           "footer-2",
+          "7aeda998-c40a-47fb-bf4a-789207eeee85",
           "footer-3"
         ],
         "settings": {
