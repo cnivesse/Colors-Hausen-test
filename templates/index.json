@@ -101,10 +101,10 @@
         "image_position": "center center",
         "text_position": "right",
         "text_align": "right",
-        "expanded": false,
+        "expanded": true,
         "expanded_content": false,
         "content_max_width": 300,
-        "collapsed": false,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
