@@ -71,40 +71,42 @@
         "show_on_mobile": true
       }
     },
-    "16613280698e261e45": {
-      "type": "banner-with-text",
+    "fbbbe6e0-50e7-4b78-ab31-e99780e19c72": {
+      "type": "hero",
       "blocks": {
-        "16613280696c7676f8-1": {
+        "963906e2-2c8a-47dc-bf6e-237b3533a234": {
           "type": "paragraph",
           "settings": {
             "text": "<p><strong>hausen <\/strong>souscrit à l'idéal de créer des meubles fonctionnels qui offrent à ses clients la liberté de concevoir et d'aménager leur espace de vie. L'utilisation prudente des meilleurs matériaux garantit à la fois durabilité et qualité. De plus, vous pouvez trouver une sélection unique d'accessoires pour la maison.<\/p>",
-            "increase_space_before_block": true
+            "color": "#ffffff",
+            "max_width": 220
           }
         },
-        "16613280696c7676f8-2": {
+        "template--15366539903023__fbbbe6e0-50e7-4b78-ab31-e99780e19c72-1665044948d29e2943-2": {
           "type": "button",
           "settings": {
             "text": "obtiens le tiens maintenant →",
-            "link": "shopify:\/\/collections\/bowls",
+            "link": "shopify:\/\/products\/shrink-black",
             "style": "border",
-            "size": "small",
-            "increase_space_before_block": true
+            "size": "normal",
+            "color": "#f3f0ee"
           }
         }
       },
       "block_order": [
-        "16613280696c7676f8-1",
-        "16613280696c7676f8-2"
+        "963906e2-2c8a-47dc-bf6e-237b3533a234",
+        "template--15366539903023__fbbbe6e0-50e7-4b78-ab31-e99780e19c72-1665044948d29e2943-2"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/shrink_black_scene_modified.png",
-        "image_position": "center center",
-        "text_position": "right",
-        "text_align": "right",
-        "expanded": true,
-        "expanded_content": false,
-        "content_max_width": 300,
-        "collapsed": true,
+        "video": "",
+        "alignment": "h-right v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
@@ -183,56 +185,15 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "fbbbe6e0-50e7-4b78-ab31-e99780e19c72": {
-      "type": "hero",
-      "blocks": {
-        "963906e2-2c8a-47dc-bf6e-237b3533a234": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p><strong>hausen <\/strong>souscrit à l'idéal de créer des meubles fonctionnels qui offrent à ses clients la liberté de concevoir et d'aménager leur espace de vie. L'utilisation prudente des meilleurs matériaux garantit à la fois durabilité et qualité. De plus, vous pouvez trouver une sélection unique d'accessoires pour la maison.<\/p>",
-            "color": "#ffffff",
-            "max_width": 220
-          }
-        },
-        "template--15366539903023__fbbbe6e0-50e7-4b78-ab31-e99780e19c72-1665044948d29e2943-2": {
-          "type": "button",
-          "settings": {
-            "text": "obtiens le tiens maintenant →",
-            "link": "shopify:\/\/products\/shrink-black",
-            "style": "border",
-            "size": "normal",
-            "color": "#f3f0ee"
-          }
-        }
-      },
-      "block_order": [
-        "963906e2-2c8a-47dc-bf6e-237b3533a234",
-        "template--15366539903023__fbbbe6e0-50e7-4b78-ab31-e99780e19c72-1665044948d29e2943-2"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/shrink_black_scene_modified.png",
-        "video": "",
-        "alignment": "h-right v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
     "hero",
     "1660555114671a82a1",
     "featured-collection",
-    "16613280698e261e45",
+    "fbbbe6e0-50e7-4b78-ab31-e99780e19c72",
     "video",
     "faq",
-    "newsletter",
-    "fbbbe6e0-50e7-4b78-ab31-e99780e19c72"
+    "newsletter"
   ]
 }
