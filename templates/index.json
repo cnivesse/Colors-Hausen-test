@@ -124,68 +124,6 @@
         "show_on_mobile": true
       }
     },
-    "faq": {
-      "type": "faq",
-      "blocks": {
-        "collapsible_tab_1": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "collapsible_tab_2": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        },
-        "collapsible_tab_3": {
-          "type": "collapsible_tab",
-          "settings": {
-            "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
-            "page": "",
-            "icon": "none"
-          }
-        }
-      },
-      "block_order": [
-        "collapsible_tab_1",
-        "collapsible_tab_2",
-        "collapsible_tab_3"
-      ],
-      "settings": {
-        "title": "Foire aux questions",
-        "subtitle": "",
-        "show_background": false,
-        "expanded": true,
-        "content_max_width": 750,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Abonnez-vous à notre newsletter",
-        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "content_max_width": 700,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "1e0b699c-88fb-4b31-8cf8-0b95f96149ca": {
       "type": "hero",
       "settings": {
@@ -209,8 +147,6 @@
     "featured-collection",
     "fbbbe6e0-50e7-4b78-ab31-e99780e19c72",
     "video",
-    "faq",
-    "newsletter",
     "1e0b699c-88fb-4b31-8cf8-0b95f96149ca"
   ]
 }
