@@ -185,6 +185,22 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1e0b699c-88fb-4b31-8cf8-0b95f96149ca": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/artboard.jpg",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
@@ -194,6 +210,7 @@
     "fbbbe6e0-50e7-4b78-ab31-e99780e19c72",
     "video",
     "faq",
-    "newsletter"
+    "newsletter",
+    "1e0b699c-88fb-4b31-8cf8-0b95f96149ca"
   ]
 }
