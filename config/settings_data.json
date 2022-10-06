@@ -106,18 +106,11 @@
       "footer": {
         "type": "footer",
         "blocks": {
-          "footer-0": {
-            "type": "menu",
-            "settings": {
-              "menu_title": "Schnelle Links",
-              "menu": "footer"
-            }
-          },
           "footer-1": {
             "type": "text",
             "settings": {
-              "title": "Kontakt",
-              "richtext": "<p> 1360 Lombardstraße<br> San Francisco, CA 94109<br> support@firma.com<\/p>"
+              "title": "Contact",
+              "richtext": "<p>Eimsbutteller Str. 92<\/p><p>22769, Hamburg<br\/>info@studiohause.com<\/p>"
             }
           },
           "footer-2": {
@@ -135,13 +128,12 @@
           }
         },
         "block_order": [
-          "footer-0",
           "footer-1",
           "footer-2",
           "footer-3"
         ],
         "settings": {
-          "footer_show_payments": true,
+          "footer_show_payments": false,
           "show_language_selector": true,
           "show_country_selector": true
         }
