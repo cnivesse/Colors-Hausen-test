@@ -113,16 +113,11 @@
               "richtext": "<p>Eimsbutteller Str. 92<\/p><p>22769, Hamburg<br\/>info@studiohause.com<\/p>"
             }
           },
-          "footer-2": {
-            "type": "text",
+          "4556f873-80e7-47a6-931b-fa9f07fee98e": {
+            "type": "menu",
             "settings": {
-              "title": "Über uns",
-              "richtext": "<p>Teilen Sie Geschäftsdetails, Werbeaktionen oder Markeninhalte mit Ihren Kunden.<\/p>"
-            }
-          },
-          "7aeda998-c40a-47fb-bf4a-789207eeee85": {
-            "type": "newsletter",
-            "settings": {
+              "menu_title": "Liens rapides",
+              "menu": "menu-hamburger"
             }
           },
           "footer-3": {
@@ -134,8 +129,7 @@
         },
         "block_order": [
           "footer-1",
-          "footer-2",
-          "7aeda998-c40a-47fb-bf4a-789207eeee85",
+          "4556f873-80e7-47a6-931b-fa9f07fee98e",
           "footer-3"
         ],
         "settings": {
