@@ -120,6 +120,13 @@
               "menu": "menu-hamburger"
             }
           },
+          "d811ee23-2fdb-43dd-aa0a-97b293e0bbe6": {
+            "type": "menu",
+            "settings": {
+              "menu_title": "Conditions et Politiques",
+              "menu": "conditions-et-politiques"
+            }
+          },
           "footer-3": {
             "type": "social",
             "settings": {
@@ -130,6 +137,7 @@
         "block_order": [
           "footer-1",
           "4556f873-80e7-47a6-931b-fa9f07fee98e",
+          "d811ee23-2fdb-43dd-aa0a-97b293e0bbe6",
           "footer-3"
         ],
         "settings": {
