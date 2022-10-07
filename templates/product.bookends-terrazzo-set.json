@@ -44,7 +44,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Caractéristiques",
-            "content": "<p> Gerätehöhe: 12 cm<\/p><p> Einheitslänge: 12 cm<\/p><p> Gerätedurchmesser: 7,5 cm<\/p><p> Gewicht pro Einheit: 1,5 kg<\/p>",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
