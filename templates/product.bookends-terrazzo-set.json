@@ -43,8 +43,8 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Merkmale",
-            "content": "<p> Gerätehöhe: 12 cm<\/p>\n<p> Einheitslänge: 12 cm<\/p>\n<p> Gerätedurchmesser: 7,5 cm<\/p>\n<p> Gewicht pro Einheit: 1,5 kg<\/p>",
+            "heading": "Caractéristiques",
+            "content": "<p> Gerätehöhe: 12 cm<\/p><p> Einheitslänge: 12 cm<\/p><p> Gerätedurchmesser: 7,5 cm<\/p><p> Gewicht pro Einheit: 1,5 kg<\/p>",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
@@ -53,7 +53,7 @@
         "collapsible_tab_2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Matériaux",
+            "heading": "Materialien",
             "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
@@ -63,8 +63,8 @@
         "collapsible_tab_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Lieferung",
-            "content": "<p> Das Buchstützen-Set (unabhängig von der Farbe) wird in derselben Box geliefert, die durch ein Immobilisierungssystem voneinander geschützt ist, sodass Sie eine sorgenfreie Lieferung garantieren können.<\/p>\n<p><\/p>\n<p> Die Lieferzeiten sind die gleichen wie für den Rest unserer Produkte: <strong>ca. 2 Wochen.<\/strong><\/p>\n<p><\/p> <p>Die Versandkosten werden im Verhältnis zum Gewicht zum Zeitpunkt der Eingabe Ihrer Adresse an der Kasse berechnet.<\/p>",
+            "heading": "Livraison",
+            "content": "<p> Das Buchstützen-Set (unabhängig von der Farbe) wird in derselben Box geliefert, die durch ein Immobilisierungssystem voneinander geschützt ist, sodass Sie eine sorgenfreie Lieferung garantieren können.<\/p><p><\/p><p> Die Lieferzeiten sind die gleichen wie für den Rest unserer Produkte: <strong>ca. 2 Wochen.<\/strong><\/p><p><\/p><p>Die Versandkosten werden im Verhältnis zum Gewicht zum Zeitpunkt der Eingabe Ihrer Adresse an der Kasse berechnet.<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
