@@ -20,8 +20,8 @@
           "settings": {
             "picker_type": "radios",
             "swatches_selector": "",
-            "popup_selector": "Taille",
-            "popup_text": "Guide des tailles",
+            "popup_selector": "Schneiden",
+            "popup_text": "Größentabelle",
             "popup_page": "",
             "increase_space_before_block": true
           }
@@ -43,8 +43,8 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Caractéristiques",
-            "content": "<p>Höhe des Geräts: 12 cm <\/p><p>Länge des Geräts: 12 cm<\/p><p>Durchmesser des Geräts: 7,5 cm<\/p>",
+            "heading": "Merkmale",
+            "content": "<p> Gerätehöhe: 12 cm<\/p>\n<p> Einheitslänge: 12 cm<\/p>\n<p> Gerätedurchmesser: 7,5 cm<\/p>\n<p> Gewicht pro Einheit: 1,5 kg<\/p>",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Matériaux",
-            "content": "<p>- Le <strong>bookend Terrazzo<\/strong> est réalisé en reconstituant un bloc de chutes de différents types de marbre et en le scellant avec du ciment.<\/p><p>Il est ensuite découpé dans la masse pour <strong> pour donner vie au bookend terrazzo.<\/strong><\/p><p><\/p><p>- Le <strong>bookend marble<\/strong> est fabriqué à partir d'un véritable bloc de marbre vert, puis coupé dans la masse et poli pour donner vie au <strong>bookend marble<\/strong><\/p><p><\/p><p><\/p><p><\/p>",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
@@ -63,8 +63,8 @@
         "collapsible_tab_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Livraison",
-            "content": "<p>- Der <strong>Buchstützen-Terrazzo<\/strong> wird hergestellt, indem ein Block aus Schnittabfällen verschiedener Marmorarten rekonstituiert und mit Zement versiegelt wird.<\/p><p>Er wird dann in die Masse geschnitten, um <strong> zu bringen Buchstützen-Terrazzo zum Leben erweckt.<\/strong><\/p><p><\/p><p>- Die <strong>Buchstützen-Marmor<\/strong> wird aus echtem Block aus grünem Marmor hergestellt, dann in die Masse geschnitten und poliert um der <strong>Buchstützenmurmel<\/strong><\/p><p><\/p><p><\/p><p> Leben einzuhauchen<\/p>",
+            "heading": "Lieferung",
+            "content": "<p> Das Buchstützen-Set (unabhängig von der Farbe) wird in derselben Box geliefert, die durch ein Immobilisierungssystem voneinander geschützt ist, sodass Sie eine sorgenfreie Lieferung garantieren können.<\/p>\n<p><\/p>\n<p> Die Lieferzeiten sind die gleichen wie für den Rest unserer Produkte: <strong>ca. 2 Wochen.<\/strong><\/p>\n<p><\/p> <p>Die Versandkosten werden im Verhältnis zum Gewicht zum Zeitpunkt der Eingabe Ihrer Adresse an der Kasse berechnet.<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
@@ -110,14 +110,14 @@
         "1660741460397976d0-1": {
           "type": "heading",
           "settings": {
-            "text": "Caractéristiques",
+            "text": "Merkmale",
             "increase_space_before_block": false
           }
         },
         "1660741460397976d0-2": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>taille : 150x45x90 cm<\/p><p>poids : 15kg<\/p><p>materiaux : bois, métal<\/p><p><\/p>",
+            "text": "<p> Größe: 150 x 45 x 90 cm<\/p>\n<p> Gewicht: 15 kg<\/p>\n<p> Materialien: Holz, Metall<\/p>\n<p><\/p>",
             "increase_space_before_block": true
           }
         }
@@ -154,7 +154,7 @@
       "disabled": true,
       "settings": {
         "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
+        "heading": "Das könnte Ihnen auch gefallen",
         "show_background": false,
         "expanded": true,
         "expanded_content": false,
@@ -188,7 +188,7 @@
             "show_image": true,
             "image_type": "custom",
             "title": "Kamera",
-            "text": "<p>Öffnen Sie Ihre Fotoanwendung auf Ihrem iPhone oder iPad<\/p>",
+            "text": "<p> Öffnen Sie Ihre Foto-App auf Ihrem iPhone oder iPad<\/p>",
             "link": ""
           }
         },
@@ -198,7 +198,7 @@
             "show_image": true,
             "image_type": "custom",
             "title": "Gut zielen",
-            "text": "<p>Zielen Sie auf den QR-Code unten, bis ein gelber Link erscheint<\/p>",
+            "text": "<p> Zielen Sie auf den QR-Code unten, bis ein gelber Link erscheint<\/p>",
             "link": ""
           }
         },
@@ -208,7 +208,7 @@
             "show_image": true,
             "image_type": "custom",
             "title": "Geliebt werden",
-            "text": "<p>klicken Sie darauf und dann auf das Hexagon-Logo.<\/p>",
+            "text": "<p> Klicken Sie darauf und dann auf das Hexagon-Logo.<\/p>",
             "link": ""
           }
         },
@@ -245,8 +245,8 @@
     "newsletter": {
       "type": "newsletter",
       "settings": {
-        "heading": "Abonnez-vous à notre newsletter",
-        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
+        "heading": "Abonnieren Sie unseren Newsletter",
+        "subheading": "<p> Aktionen, neue Produkte und Verkäufe. Direkt in Ihren Posteingang.<\/p>",
         "show_background": false,
         "expanded": false,
         "expanded_content": false,
