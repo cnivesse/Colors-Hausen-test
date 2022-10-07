@@ -64,7 +64,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Livraison",
-            "content": "<p> Das Buchstützen-Set (unabhängig von der Farbe) wird in derselben Box geliefert, die durch ein Immobilisierungssystem voneinander geschützt ist, sodass Sie eine sorgenfreie Lieferung garantieren können.<\/p><p><\/p><p> Die Lieferzeiten sind die gleichen wie für den Rest unserer Produkte: <strong>ca. 2 Wochen.<\/strong><\/p><p><\/p><p>Die Versandkosten werden im Verhältnis zum Gewicht zum Zeitpunkt der Eingabe Ihrer Adresse an der Kasse berechnet.<\/p>",
+            "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
