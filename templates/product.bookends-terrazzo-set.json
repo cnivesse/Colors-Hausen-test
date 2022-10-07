@@ -44,7 +44,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Caractéristiques",
-            "content": "<p>Hauteur unitaire : 12 cm <\/p><p>Longueur unitaire : 12 cm<\/p><p>Diamètre unitaire : 7,5 cm<\/p><p>Poids unitaire : 1,5 kg<\/p>",
+            "content": "<p>Höhe des Geräts: 12 cm <\/p><p>Länge des Geräts: 12 cm<\/p><p>Durchmesser des Geräts: 7,5 cm<\/p>",
             "page": "",
             "icon": "question_mark",
             "increase_space_before_block": true
@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Matériaux",
-            "content": "<p>- Le<strong> Bookend Terrazzo<\/strong> est fabriqué en reconstituant un bloc à partir des déchets de coupes de différnts marbre colmaté ensemble par du ciment.<\/p><p>Il est ensuite taillé dans la masse pour donner vie au <strong>Bookend Terrazzo.<\/strong><\/p><p><\/p><p>- Le <strong>Bookend Marble<\/strong>, est lui fabriqué a base d´un vrai bloc de marbre vert ensuite taillé dans la masse et poli pour donner vie au <strong>Bookend Marble.<\/strong><\/p><p><\/p><p><\/p>",
+            "content": "<p>- Der <strong>Buchstützen-Terrazzo<\/strong> wird hergestellt, indem ein Block aus Schnittabfällen verschiedener Marmorarten rekonstituiert und mit Zement versiegelt wird.<\/p><p>Er wird dann in die Masse geschnitten, um <strong> zu bringen Buchstützen-Terrazzo zum Leben erweckt.<\/strong><\/p><p><\/p><p>- Die <strong>Buchstützen-Marmor<\/strong> wird aus einem echten Block aus grünem Marmor hergestellt, dann in die Masse geschnitten und poliert um der <strong>Buchstützenmurmel<\/strong><\/p><p><\/p><p><\/p><p> Leben einzuhauchen<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
@@ -64,7 +64,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Livraison",
-            "content": "<p>Le Bookend set ( quelques soit la couleur ) sera livré dans un meme carton protégé l´un de l´autre par un système d´immobilisation vous permettant de garantir une livraison sans aucuns soucis.<\/p><p><\/p><p>Les délais de livraisons sont les meme que pour le reste de nos produits : <strong>environ 2 semaines.<\/strong><\/p><p><\/p><p>Quand aux frais de livraisons, ils seront calculés par rapport au poids au moment du renseignement de votre adresse à la caisse.<\/p>",
+            "content": "<p>- Der <strong>Buchstützen-Terrazzo<\/strong> wird hergestellt, indem ein Block aus Schnittabfällen verschiedener Marmorarten rekonstituiert und mit Zement versiegelt wird.<\/p><p>Er wird dann in die Masse geschnitten, um <strong> zu bringen Buchstützen-Terrazzo zum Leben erweckt.<\/strong><\/p><p><\/p><p>- Die <strong>Buchstützen-Marmor<\/strong> wird aus echtem Block aus grünem Marmor hergestellt, dann in die Masse geschnitten und poliert um der <strong>Buchstützenmurmel<\/strong><\/p><p><\/p><p><\/p><p> Leben einzuhauchen<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
@@ -187,8 +187,8 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Appareil photo",
-            "text": "<p>Ouvrez votre application photo sur votre iphone ou ipad<\/p>",
+            "title": "Kamera",
+            "text": "<p>Öffnen Sie Ihre Fotoanwendung auf Ihrem iPhone oder iPad<\/p>",
             "link": ""
           }
         },
@@ -197,8 +197,8 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Vises bien",
-            "text": "<p>Vises le QR code ci-dessous jusqu´a ce qu´un lien jaune apparaisse<\/p>",
+            "title": "Gut zielen",
+            "text": "<p>Zielen Sie auf den QR-Code unten, bis ein gelber Link erscheint<\/p>",
             "link": ""
           }
         },
@@ -207,8 +207,8 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Faites vous kiffer",
-            "text": "<p>cliquez dessus et ensuite sur le logo en hexagone.<\/p>",
+            "title": "Geliebt werden",
+            "text": "<p>klicken Sie darauf und dann auf das Hexagon-Logo.<\/p>",
             "link": ""
           }
         },
@@ -230,7 +230,7 @@
         "16613355452891c750-2"
       ],
       "settings": {
-        "heading": "Visualisez votre produit préféré avec l´AR",
+        "heading": "Visualisieren Sie Ihr Lieblingsprodukt mit AR",
         "subheading": "",
         "columns": 3,
         "align": "center",
