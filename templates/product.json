@@ -182,7 +182,7 @@
     "hero": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/Untitled-2.png",
+        "image": "{{ product.metafields.custom.artboard.value }}",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
