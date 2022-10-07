@@ -152,6 +152,7 @@
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
+        "image": "{{ product.metafields.custom.measurements.value }}",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
