@@ -1,0 +1,39 @@
+{%- comment -%}
+	This file has been added by the Yoast SEO for Shopify app.
+	You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
+{%- endcomment -%}
+
+{%- liquid
+	assign content = ""
+
+	case variable
+
+		when "title"
+			if page_title
+				assign content = page_title
+			else
+				assign content = shop.name
+			endif
+
+		when "description"
+			case yoast_seo_page_type
+				when 'page'
+					assign content = page.metafields.global.description_tag
+				when 'article'
+					assign content = article.metafields.global.description_tag
+				when 'product'
+					assign content = product.metafields.global.description_tag
+				when 'collection'
+					assign content = collection.metafields.global.description_tag
+				when 'blog'
+					assign content = blog.metafields.global.description_tag
+				when 'index'
+					assign content = page_description
+			endcase
+
+		when "canonical_url"
+			assign content = canonical_url
+
+	endcase
+-%}
+{{- content -}}
