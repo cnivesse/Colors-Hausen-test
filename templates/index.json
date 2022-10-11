@@ -111,14 +111,45 @@
         "show_on_mobile": true
       }
     },
-    "video": {
-      "type": "featured-video",
+    "510fb3a3-fe77-4861-8e04-68cb1d67e4b7": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-0": {
+          "type": "subheading",
+          "settings": {
+            "text": "Système d'étagères SHRINK  \/modulaire, extensible, individuel.",
+            "increase_space_before_block": true
+          }
+        },
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p><strong>1 MODÉLE <\/strong><\/p><p><strong>6 COULEURS<\/strong><\/p><p>Autant de combinaisons que vous le voulez.<\/p>",
+            "increase_space_before_block": true
+          }
+        },
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-3": {
+          "type": "button",
+          "settings": {
+            "text": "fais briller mon intérieur →",
+            "link": "shopify:\/\/collections\/shrink",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-0",
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-2",
+        "template--15366539903023__510fb3a3-fe77-4861-8e04-68cb1d67e4b7-166550135557a50df3-3"
+      ],
       "settings": {
-        "video_url": "https:\/\/youtu.be\/WzQf5KbMgh8",
-        "heading": "",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": true,
+        "image": "shopify:\/\/shop_images\/UNITED.gif",
+        "text_position": "right",
+        "show_background": true,
+        "expanded": false,
+        "expanded_content": false,
         "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
@@ -146,7 +177,7 @@
     "1660555114671a82a1",
     "featured-collection",
     "fbbbe6e0-50e7-4b78-ab31-e99780e19c72",
-    "video",
+    "510fb3a3-fe77-4861-8e04-68cb1d67e4b7",
     "1e0b699c-88fb-4b31-8cf8-0b95f96149ca"
   ]
 }
