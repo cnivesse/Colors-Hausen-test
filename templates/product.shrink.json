@@ -195,20 +195,6 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Abonnez-vous à notre newsletter",
-        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "content_max_width": 700,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
@@ -217,7 +203,6 @@
     "1660568962963a549c",
     "16613370413d8ae6e4",
     "product-recommendations",
-    "hero",
-    "newsletter"
+    "hero"
   ]
 }
