@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Livraison",
-            "content": "<p>Contenu de l'onglet{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
