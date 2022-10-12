@@ -50,21 +50,21 @@
             "increase_space_before_block": true
           }
         },
-        "collapsible_tab_2": {
+        "0fb2878f-8cfa-40de-9868-f6659a7e59d6": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Materialien",
+            "heading": "Matériaux",
             "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
           }
         },
-        "collapsible_tab_3": {
+        "2b4cc8c0-c940-44d9-9663-b100e7b8ff88": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Lieferung",
-            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
+            "heading": "Livraison",
+            "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
@@ -87,8 +87,8 @@
         "buy_buttons",
         "description",
         "7fd17fdd-1311-4d1a-8297-b55d3bb5ee6f",
-        "collapsible_tab_2",
-        "collapsible_tab_3",
+        "0fb2878f-8cfa-40de-9868-f6659a7e59d6",
+        "2b4cc8c0-c940-44d9-9663-b100e7b8ff88",
         "share"
       ],
       "settings": {
