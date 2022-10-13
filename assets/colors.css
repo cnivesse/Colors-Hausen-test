@@ -5070,7 +5070,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
 
 @media (max-width: 960px) {
   .collection-products .collection-product {
-    width: 33.33%;
+    width: 40%;
   }
 
   .product-related-products .collection-products .collection-product:nth-child(4n) {
@@ -5093,7 +5093,7 @@ body.template-cart .section-header .header .bar .right a.icon-search {
     width: 50%;
   }
   .collection-products .collection-product.three {
-    width: 50%;
+    width: 90%;
   }
   .collection-products .collection-product:nth-child(4n) {
     display: block;
