@@ -181,83 +181,6 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "1661335546e6b75767": {
-      "type": "text-columns-with-images",
-      "blocks": {
-        "16613355452891c750-0": {
-          "type": "text_column",
-          "settings": {
-            "show_image": true,
-            "image_type": "custom",
-            "title": "Appareil photo",
-            "text": "<p>Ouvrez votre application photo sur votre iphone ou ipad<\/p>",
-            "link": ""
-          }
-        },
-        "16613355452891c750-1": {
-          "type": "text_column",
-          "settings": {
-            "show_image": true,
-            "image_type": "custom",
-            "title": "Vises bien",
-            "text": "<p>Vises le QR code ci-dessous jusqu´a ce qu´un lien jaune apparaisse<\/p>",
-            "link": ""
-          }
-        },
-        "9fe8036b-6852-48e0-a6be-cbecd1cc66f0": {
-          "type": "text_column",
-          "settings": {
-            "show_image": true,
-            "image_type": "custom",
-            "title": "Faites vous kiffer",
-            "text": "<p>cliquez dessus et ensuite sur le logo en hexagone.<\/p>",
-            "link": ""
-          }
-        },
-        "16613355452891c750-2": {
-          "type": "text_column",
-          "settings": {
-            "show_image": true,
-            "image_type": "custom",
-            "title": "",
-            "text": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "16613355452891c750-0",
-        "16613355452891c750-1",
-        "9fe8036b-6852-48e0-a6be-cbecd1cc66f0",
-        "16613355452891c750-2"
-      ],
-      "settings": {
-        "heading": "Visualisez votre produit préféré avec l´AR",
-        "subheading": "",
-        "columns": 3,
-        "align": "center",
-        "show_background": false,
-        "expanded": true,
-        "content_max_width": 850,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
-    "newsletter": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Abonnez-vous à notre newsletter",
-        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "content_max_width": 700,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
@@ -265,8 +188,6 @@
     "1660741460d0972f44",
     "66696f90-d8da-4b9e-9862-08bb2e9af20e",
     "16613370413d8ae6e4",
-    "product-recommendations",
-    "1661335546e6b75767",
-    "newsletter"
+    "product-recommendations"
   ]
 }
