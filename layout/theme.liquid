@@ -1,13 +1,3 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
-{%- liquid
-	assign disabled_by_yoast_seo = true
-	if content_for_header contains 'yoast-active-script'
-		assign disabled_by_yoast_seo = false
-	endif
--%}
 <!doctype html>
 <!-- Colors Theme Version 9.2.1 -->
 <html class="no-js" lang="{{ request.locale.iso_code }}">
@@ -15,11 +5,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<link rel="canonical" href="{{ canonical_url | default: shop.url }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+    <link rel="canonical" href="{{ canonical_url | default: shop.url }}">
 
     {%- liquid 
       assign logo_font = settings.logo_font
@@ -63,9 +49,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       <link rel="shortcut icon" href="#">
     {%- endif -%}
 
-    {%- comment -%}Auto-disabled. Yoast plugin is taking care of SEO output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<title>
+    <title>
       {%- capture seo_title -%}
         {%- if template.name == "gift_card" -%}
           {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency -%}
@@ -91,15 +75,9 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       {%- endcapture -%}
       {{- seo_title | strip -}}
     </title>
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
 
     {% if page_description %}
-      {%- comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- if disabled_by_yoast_seo -%}
-<meta name="description" content="{{ page_description | escape }}">
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
+      <meta name="description" content="{{ page_description | escape }}">
     {% endif %}
 
     {% render 'social-meta-tags' %}
@@ -118,20 +96,10 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 </script>    
 
 
-{% comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
-{%- if disabled_by_yoast_seo or yoast_seo_settings.integrations.webmasterVerification.google == blank or yoast_seo_settings.integrations.webmasterVerification.google == null -%}
 <meta name="google-site-verification" content="ccnHERcq6dR6Y1lx6HSCdwHxIwpKNishb6hSbtt6k-4" />
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
 
 {{ content_for_header }}
-{% comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
-{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
-{%- if disabled_by_yoast_seo or yoast_seo_settings.integrations.webmasterVerification.google == blank or yoast_seo_settings.integrations.webmasterVerification.google == null -%}
 <meta name="google-site-verification" content="W6igrCos2fg4UanJ7d6yYO7BrLmCgYZHj7EeRVQ_cSg" />
-{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
-{%- endif -%}
   </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {% if template.suffix %}template-sufix-{{ template.suffix }}{% endif %} {% if settings.header_expanded %}header-expanded{% endif %}">
