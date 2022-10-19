@@ -1,14 +1,4 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
-{%- liquid
-	assign disabled_by_yoast_seo = true
-	if content_for_header contains 'yoast-active-script'
-		assign disabled_by_yoast_seo = false
-	endif
--%}
-<div {% if disabled_by_yoast_seo %}itemscope{% endif %} {% if disabled_by_yoast_seo %}itemtype="http://schema.org/Organization"{% endif %}>
+<div itemscope itemtype="http://schema.org/Organization">
   {% unless settings.logo %}
     <style type="text/css">
       {{ settings.logo_font | font_face: font_display: 'swap' }}
@@ -19,7 +9,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
       }
     </style>
   {% endunless %}
-  <a class="logo" href="{{ routes.root_url }}" {% if disabled_by_yoast_seo %}itemprop="url"{% endif %} tabindex="-1">
+  <a class="logo" href="{{ routes.root_url }}" itemprop="url" tabindex="-1">
     <h1 class="logo">
       {%- if settings.logo or section.settings.transparent_header_logo -%}
         {% capture image_size %}{{ settings.logo_max_width }}x{% endcapture %}
@@ -31,7 +21,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
                  {{ settings.logo | img_url: image_size, scale: 3 }} 3x
                 "
                alt="{{ settings.logo.alt | default: shop.name }}"
-               {% if disabled_by_yoast_seo %}itemprop="logo"{% endif %}>
+               itemprop="logo">
         {%- endif -%}
         {%- if section.settings.transparent_header_logo -%}
           <img src="{{ section.settings.transparent_header_logo | img_url: image_size }}"

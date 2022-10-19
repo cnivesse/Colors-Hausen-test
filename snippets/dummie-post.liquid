@@ -1,21 +1,11 @@
-{%- comment -%}
-This file has been modified by the Yoast SEO for Shopify app.
-You can learn more about this (and learn how to cleanly revert these changes) at https://yoa.st/removing-theme-changes.
-{%- endcomment -%}
-{%- liquid
-	assign disabled_by_yoast_seo = true
-	if content_for_header contains 'yoast-active-script'
-		assign disabled_by_yoast_seo = false
-	endif
--%}
 <div class="post {{ section.settings.layout }} {{ class }}">
-  <h1 {% if disabled_by_yoast_seo %}itemprop="headline"{% endif %}>{{ 'sections.onboarding.post_title' | t }}</h1>
+  <h1 itemprop="headline">{{ 'sections.onboarding.post_title' | t }}</h1>
   {% capture date %}
-    <time pubdate datetime="{{ 'now' | date: format: 'day_month_and_year' }}" {% if disabled_by_yoast_seo %}itemprop="datePublished"{% endif %}>{{ 'now' | date: format: 'day_month_and_year' }}</time>
+    <time pubdate datetime="{{ 'now' | date: format: 'day_month_and_year' }}" itemprop="datePublished">{{ 'now' | date: format: 'day_month_and_year' }}</time>
   {% endcapture %}
   <h2>{{ 'blogs.article.meta_html' | t: author: 'John Doe', date: date }}</h2>
   <hr/>
-  <div {% if disabled_by_yoast_seo %}itemprop="articleBody"{% endif %} class="rte">
+  <div itemprop="articleBody" class="rte">
     {{ 'sections.onboarding.post_excerpt' | t }}
   </div>
   {% if section.settings.facebook_sharing_articles or
