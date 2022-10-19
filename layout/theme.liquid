@@ -11,7 +11,7 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 <!doctype html>
 <!-- Colors Theme Version 9.2.1 -->
 <html class="no-js" lang="{{ request.locale.iso_code }}">
-  <head>
+  <head>{% render 'yoast-seo' %}
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -118,10 +118,20 @@ You can learn more about this (and learn how to cleanly revert these changes) at
 </script>    
 
 
+{% comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.integrations.webmasterVerification.google == blank or yoast_seo_settings.integrations.webmasterVerification.google == null -%}
 <meta name="google-site-verification" content="ccnHERcq6dR6Y1lx6HSCdwHxIwpKNishb6hSbtt6k-4" />
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
 
 {{ content_for_header }}
+{% comment -%}Auto-disabled. Yoast plugin is taking care of Meta Tags output.{%- endcomment -%}
+{%- assign yoast_seo_settings = shop.metafields.yoast_seo.settings.value | default: shop.metafields.yoast_seo.settings -%}
+{%- if disabled_by_yoast_seo or yoast_seo_settings.integrations.webmasterVerification.google == blank or yoast_seo_settings.integrations.webmasterVerification.google == null -%}
 <meta name="google-site-verification" content="W6igrCos2fg4UanJ7d6yYO7BrLmCgYZHj7EeRVQ_cSg" />
+{%- comment -%} End Yoast auto-disable. {%- endcomment -%}
+{%- endif -%}
   </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {% if template.suffix %}template-sufix-{{ template.suffix }}{% endif %} {% if settings.header_expanded %}header-expanded{% endif %}">
