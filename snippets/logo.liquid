@@ -1,4 +1,4 @@
-<div itemscope itemtype="http://schema.org/Organization">
+<div {% comment remove microdata structured data %}itemscope{% endcomment %} itemtype="http://schema.org/Organization">
   {% unless settings.logo %}
     <style type="text/css">
       {{ settings.logo_font | font_face: font_display: 'swap' }}
