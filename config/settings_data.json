@@ -135,10 +135,9 @@
               "menu": "conditions-et-politiques"
             }
           },
-          "footer-3": {
-            "type": "social",
+          "cdae2d25-123c-40f7-aff1-a2a5feb2b48a": {
+            "type": "newsletter",
             "settings": {
-              "align": "right"
             }
           }
         },
@@ -146,12 +145,17 @@
           "footer-1",
           "4556f873-80e7-47a6-931b-fa9f07fee98e",
           "d811ee23-2fdb-43dd-aa0a-97b293e0bbe6",
-          "footer-3"
+          "cdae2d25-123c-40f7-aff1-a2a5feb2b48a"
         ],
         "settings": {
           "footer_show_payments": false,
           "show_language_selector": true,
           "show_country_selector": true
+        }
+      },
+      "account-login": {
+        "type": "account-login",
+        "settings": {
         }
       }
     },
