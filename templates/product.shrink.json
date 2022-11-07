@@ -1,9 +1,9 @@
 {
   "sections": {
-    "1667812531b46a2506": {
-      "type": "apps",
+    "main": {
+      "type": "main-product",
       "blocks": {
-        "87a6f938-4136-4fa5-90c7-5b0537801cfc": {
+        "e0744400-6663-45b9-897a-d0642d83861c": {
           "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
@@ -12,19 +12,7 @@
             "product": "{{product}}",
             "stars_text_empty": ""
           }
-        }
-      },
-      "block_order": [
-        "87a6f938-4136-4fa5-90c7-5b0537801cfc"
-      ],
-      "settings": {
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
-    "main": {
-      "type": "main-product",
-      "blocks": {
+        },
         "title": {
           "type": "title",
           "settings": {
@@ -103,6 +91,7 @@
         }
       },
       "block_order": [
+        "e0744400-6663-45b9-897a-d0642d83861c",
         "title",
         "price",
         "variant_picker",
@@ -123,39 +112,6 @@
         "expanded": false,
         "expanded_content": false,
         "collapsed": false
-      }
-    },
-    "1660741460d0972f44": {
-      "type": "image-with-text",
-      "disabled": true,
-      "blocks": {
-        "1660741460397976d0-1": {
-          "type": "heading",
-          "settings": {
-            "text": "Caractéristiques",
-            "increase_space_before_block": false
-          }
-        },
-        "1660741460397976d0-2": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>taille : 150x45x90 cm<\/p><p>poids : 15kg<\/p><p>materiaux : bois, métal<\/p><p><\/p>",
-            "increase_space_before_block": true
-          }
-        }
-      },
-      "block_order": [
-        "1660741460397976d0-1",
-        "1660741460397976d0-2"
-      ],
-      "settings": {
-        "text_position": "left",
-        "show_background": true,
-        "expanded": true,
-        "expanded_content": true,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
       }
     },
     "16613370413d8ae6e4": {
@@ -224,9 +180,7 @@
     }
   },
   "order": [
-    "1667812531b46a2506",
     "main",
-    "1660741460d0972f44",
     "16613370413d8ae6e4",
     "product-recommendations",
     "hero",
