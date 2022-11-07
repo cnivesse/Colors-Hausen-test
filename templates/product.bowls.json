@@ -211,6 +211,20 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "d48c4b42-a363-44d7-ae6e-cc8fd0d190e4": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Abonnez-vous à notre newsletter",
+        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
+        "show_background": true,
+        "expanded": false,
+        "expanded_content": false,
+        "content_max_width": 700,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
@@ -220,6 +234,7 @@
     "16613370413d8ae6e4",
     "product-recommendations",
     "hero",
-    "166781265331053bbd"
+    "166781265331053bbd",
+    "d48c4b42-a363-44d7-ae6e-cc8fd0d190e4"
   ]
 }
