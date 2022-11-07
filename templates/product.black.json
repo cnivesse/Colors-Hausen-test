@@ -217,7 +217,7 @@
         "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
         "show_background": true,
         "expanded": false,
-        "expanded_content": false,
+        "expanded_content": true,
         "content_max_width": 700,
         "collapsed": false,
         "show_on_desktop": true,
