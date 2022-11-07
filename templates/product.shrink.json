@@ -1,5 +1,27 @@
 {
   "sections": {
+    "1667812531b46a2506": {
+      "type": "apps",
+      "blocks": {
+        "87a6f938-4136-4fa5-90c7-5b0537801cfc": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#000000",
+            "star_size": 15,
+            "text_align": "flex-end",
+            "product": "{{product}}",
+            "stars_text_empty": ""
+          }
+        }
+      },
+      "block_order": [
+        "87a6f938-4136-4fa5-90c7-5b0537801cfc"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -136,19 +158,6 @@
         "show_on_mobile": true
       }
     },
-    "1660568962963a549c": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<style>\n  \/* Frame 1 *\/\n\nposition: absolute;\nwidth: 1512px;\nheight: 2250px;\nleft: 0px;\ntop: 1599px;\n\n\n\n\/* StudioHausen10656 1 *\/\n\nposition: absolute;\nwidth: 691px;\nheight: 1037px;\nleft: 195px;\ntop: 217px;\n\nbackground: url(StudioHausen10656.jpg);\n\n\n\/* StudioHausen10606 2 *\/\n\nposition: absolute;\nwidth: 756px;\nheight: 862px;\nleft: 607px;\ntop: 1329px;\n\nbackground: url(StudioHausen10606.jpg);\n\n\n\/* TIMELESS *\/\n\nposition: absolute;\nwidth: 658px;\nheight: 349px;\nleft: 756px;\ntop: 524px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n\n\/* ECOLOGIC *\/\n\nposition: absolute;\nwidth: 716px;\nheight: 349px;\nleft: 101px;\ntop: 1743px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n  }\n<\/style>",
-        "show_as_section": true,
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
@@ -195,14 +204,32 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "166781251785a4fcef": {
+      "type": "apps",
+      "blocks": {
+        "08ad48ba-7c88-4e0a-94fb-37a986c9c368": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "08ad48ba-7c88-4e0a-94fb-37a986c9c368"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
+    "1667812531b46a2506",
     "main",
     "1660741460d0972f44",
-    "1660568962963a549c",
     "16613370413d8ae6e4",
     "product-recommendations",
-    "hero"
+    "hero",
+    "166781251785a4fcef"
   ]
 }
