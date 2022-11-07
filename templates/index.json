@@ -7,7 +7,7 @@
           "type": "button",
           "settings": {
             "text": "Amène moi vers cette beauté →",
-            "link": "shopify:\/\/products\/shrink-denim",
+            "link": "shopify:\/\/collections\/shrink",
             "style": "border",
             "size": "normal",
             "color": "#ffffff"
