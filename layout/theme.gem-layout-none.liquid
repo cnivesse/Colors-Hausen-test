@@ -1,0 +1,196 @@
+{% comment %}
+	GEMPAGE BUILDER (https://apps.shopify.com/gempage)
+
+	You SHOULD NOT modify source code in this page because
+	It is automatically generated from GEMPAGE BUILDER
+	Try to edit page with the live editor.
+{% endcomment %}
+<!doctype html>
+<!-- Colors Theme Version 9.2.1 -->
+<html class="no-js" lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="canonical" href="{{ canonical_url | default: shop.url }}">
+
+    {%- liquid 
+      assign logo_font = settings.logo_font
+      assign header_font = settings.header_font
+      assign header_font_bolder = header_font | font_modify: 'weight', '+100'
+      assign buttons_font = settings.buttons_font
+      assign base_font = settings.base_font
+    -%}
+
+    <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+    <link rel="preconnect" href="https://monorail-edge.shopifysvc.com">
+    {%- unless header_font.system? and buttons_font.system? and base_font.system? and logo_font.system? or settings.logo -%}
+      <link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+    {%- endunless -%}
+
+    <link rel="preload" href="{{ 'colors.css' | asset_url }}" as="style">
+    <link rel="preload" href="{{ 'colors.js' | asset_url }}" as="script">
+
+    {% unless settings.logo or logo_font.system? %}
+      <link rel="preload" as="font" href="{{ logo_font | font_url }}" type="font/woff2" crossorigin>
+    {% endunless %}
+    {% unless header_font.system? %}
+      <link rel="preload" as="font" href="{{ header_font | font_url }}" type="font/woff2" crossorigin>
+      {% if header_font_bolder %}
+        <link rel="preload" as="font" href="{{ header_font_bolder | font_url }}" type="font/woff2" crossorigin>
+      {% endif %}
+    {% endunless %}
+    {% unless buttons_font.system? %}
+      <link rel="preload" as="font" href="{{ buttons_font | font_url }}" type="font/woff2" crossorigin>
+    {% endunless %}
+    {% unless base_font.system? %}
+      <link rel="preload" as="font" href="{{ base_font | font_url }}" type="font/woff2" crossorigin>
+    {% endunless %}
+    <link rel="preload" as="font" href="{{ 'colors.woff' | asset_url }}" type="font/woff" crossorigin>
+
+    <link rel="stylesheet" href="{{ 'colors.css' | asset_url }}" type="text/css" media="all">
+
+    {%- if settings.favicon != blank -%}
+      <link rel="icon" href="{{ settings.favicon | img_url: '32x32' }}" type="image/png">
+    {%- else -%}
+      <link rel="shortcut icon" href="#">
+    {%- endif -%}
+
+    {%- comment smartseo_integration_begin_meta_data -%}<title>
+      {%- capture seo_title -%}
+        {%- if template.name == "gift_card" -%}
+          {%- assign formatted_initial_value = gift_card.initial_value | money_without_trailing_zeros: gift_card.currency -%}
+          {%- assign formatted_initial_value_stripped = formatted_initial_value | strip_html -%}
+          {{ 'gift_cards.issued.page_title' | t: value: formatted_initial_value_stripped, shop: shop.name }}
+        {% else %}
+          {%- if request.page_type == 'search' and search.performed == true -%}
+            {{ 'general.search.heading' | t: count: search.results_count }}: {{ 'general.search.results_with_count' | t: terms: search.terms, count: search.results_count }}
+          {%- else -%}
+            {{ page_title }}
+          {%- endif -%}
+          {%- if current_tags -%}
+            {%- assign meta_tags = current_tags | join: ', ' -%} &ndash; {{ 'general.meta.tags' | t: tags: meta_tags -}}
+          {%- endif -%}
+          {%- if current_page != 1 -%}
+            &ndash; {{ 'general.meta.page' | t: page: current_page }}
+          {%- endif -%}
+          {%- assign escaped_page_title = page_title | escape -%}
+          {%- unless escaped_page_title contains shop.name -%}
+            &ndash; {{ shop.name }}
+          {%- endunless -%}
+        {% endif %}
+      {%- endcapture -%}
+      {{- seo_title | strip -}}
+    </title>{%- endcomment smartseo_integration_end_meta_data -%}
+
+    {% if page_description %}
+      {%- comment smartseo_integration_begin_meta_data -%}<meta name="description" content="{{ page_description | escape }}">{%- endcomment smartseo_integration_end_meta_data -%}
+    {% endif %}
+
+    {% render 'social-meta-tags' %}
+    {% render 'javascript' %}
+
+<meta name="google-site-verification" content="ccnHERcq6dR6Y1lx6HSCdwHxIwpKNishb6hSbtt6k-4" />
+
+{{ content_for_header }}
+<meta name="google-site-verification" content="W6igrCos2fg4UanJ7d6yYO7BrLmCgYZHj7EeRVQ_cSg" />
+  </head>
+
+  <body>
+<div class="gem-container">
+	{{ content_for_layout }}
+</div><!-- end .gem-container -->
+<!--Gem_Page_Footer_Script-->
+{% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
+<!--End_Gem_Page_Footer_Script-->
+</body>
+</html>
+<script>
+const selectVariantByClickingImage = {
+  // Create variant images from productJson object
+  _createVariantImage: function (product) {
+    const variantImageObject = {};
+    product.variants.forEach((variant) => {
+      if (
+        typeof variant.featured_image !== 'undefined' &&
+        variant.featured_image !== null
+      ) {
+        const variantImage = variant.featured_image.src
+          .split('?')[0]
+          .replace(/http(s)?:/, '');
+        variantImageObject[variantImage] =
+          variantImageObject[variantImage] || {};
+        product.options.forEach((option, index) => {
+          const optionValue = variant.options[index];
+          const optionKey = `option-${index}`;
+          if (
+            typeof variantImageObject[variantImage][optionKey] === 'undefined'
+          ) {
+            variantImageObject[variantImage][optionKey] = optionValue;
+          } else {
+            const oldValue = variantImageObject[variantImage][optionKey];
+            if (oldValue !== null && oldValue !== optionValue) {
+              variantImageObject[variantImage][optionKey] = null;
+            }
+          }
+        });
+      }
+    });
+    return variantImageObject;
+  },
+  _updateVariant: function (event, id, product, variantImages) {
+    const arrImage = event.target.src
+      .split('?')[0]
+      .replace(/http(s)?:/, '')
+      .split('.');
+    const strExtention = arrImage.pop();
+    const strRemaining = arrImage.pop().replace(/_[a-zA-Z0-9@]+$/, '');
+    const strNewImage = `${arrImage.join('.')}.${strRemaining}.${strExtention}`;
+    if (typeof variantImages[strNewImage] !== 'undefined') {
+      product.variants.forEach((option, index) => {
+        const optionValue = variantImages[strNewImage][`option-${index}`];
+        if (optionValue !== null && optionValue !== undefined) {
+          const selects = document.querySelectorAll('#'+ id + ' [class*=single-option-selector]');
+          const options = selects[index].options;
+          for (let option, n = 0; (option = options[n]); n += 1) {
+            if (option.value === optionValue) {
+              selects[index].selectedIndex = n;
+              selects[index].dispatchEvent(new Event('change'));
+              break;
+            }
+          }
+        }
+      });
+    }
+  },
+  _selectVariant: function() {
+    const productJson = document.querySelectorAll('[id^=ProductJson-');
+    if (productJson.length > 0) {
+      productJson.forEach((product) => {
+        const sectionId = product.id.replace("ProductJson-", "shopify-section-");
+        const thumbnails = document.querySelectorAll('#'+ sectionId + ' img[src*="/products/"]');
+        if (thumbnails.length > 1) {
+          const productObject = JSON.parse(product.innerHTML);
+          const variantImages = this._createVariantImage(productObject);
+          // need to check variants > 1
+          if (productObject.variants.length > 1) {
+            thumbnails.forEach((thumbnail) => {
+              thumbnail.addEventListener('click', (e) =>
+                this._updateVariant(e, sectionId, productObject, variantImages),
+              );
+            });
+          }
+        }
+      });
+    }
+  },
+};
+if (document.readyState !== 'loading') {
+  selectVariantByClickingImage._selectVariant();
+} else {
+  document.addEventListener(
+    'DOMContentLoaded',
+    selectVariantByClickingImage._selectVariant(),
+  );
+}
+</script>

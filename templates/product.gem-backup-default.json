@@ -1,0 +1,207 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "radios",
+            "swatches_selector": "",
+            "popup_selector": "Taille",
+            "popup_text": "Guide des tailles",
+            "popup_page": "",
+            "increase_space_before_block": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_pickup_availability": true,
+            "increase_space_before_block": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Titre de l'onglet",
+            "content": "<p>Contenu de l'onglet<\/p>",
+            "page": "",
+            "icon": "washing",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Titre de l'onglet",
+            "content": "<p>Contenu de l'onglet<\/p>",
+            "page": "",
+            "icon": "leaf",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Titre de l'onglet",
+            "content": "<p>Contenu de l'onglet<\/p>",
+            "page": "",
+            "icon": "truck",
+            "increase_space_before_block": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "facebook_sharing_products": true,
+            "twitter_sharing_products": true,
+            "pinterest_sharing_products": true,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_1",
+        "collapsible_tab_2",
+        "collapsible_tab_3",
+        "share"
+      ],
+      "settings": {
+        "thumbnails_position": "left",
+        "enable_sticky_info": true,
+        "zoom_enable": true,
+        "enable_video_looping": false,
+        "first_variant_media_enabled": false,
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false
+      }
+    },
+    "1660741460d0972f44": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "1660741460397976d0-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Caractéristiques",
+            "increase_space_before_block": false
+          }
+        },
+        "1660741460397976d0-2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>taille : 150x45x90 cm<\/p><p>poids : 15kg<\/p><p>materiaux : bois, métal<\/p><p><\/p>",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "1660741460397976d0-1",
+        "1660741460397976d0-2"
+      ],
+      "settings": {
+        "text_position": "left",
+        "show_background": true,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "1660568962963a549c": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<style>\n  \/* Frame 1 *\/\n\nposition: absolute;\nwidth: 1512px;\nheight: 2250px;\nleft: 0px;\ntop: 1599px;\n\n\n\n\/* StudioHausen10656 1 *\/\n\nposition: absolute;\nwidth: 691px;\nheight: 1037px;\nleft: 195px;\ntop: 217px;\n\nbackground: url(StudioHausen10656.jpg);\n\n\n\/* StudioHausen10606 2 *\/\n\nposition: absolute;\nwidth: 756px;\nheight: 862px;\nleft: 607px;\ntop: 1329px;\n\nbackground: url(StudioHausen10606.jpg);\n\n\n\/* TIMELESS *\/\n\nposition: absolute;\nwidth: 658px;\nheight: 349px;\nleft: 756px;\ntop: 524px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n\n\/* ECOLOGIC *\/\n\nposition: absolute;\nwidth: 716px;\nheight: 349px;\nleft: 101px;\ntop: 1743px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n  }\n<\/style>",
+        "show_as_section": true,
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "16613370413d8ae6e4": {
+      "type": "hero",
+      "settings": {
+        "image": "{{ product.metafields.custom.measurements.value }}",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "hero": {
+      "type": "hero",
+      "settings": {
+        "image": "{{ product.metafields.custom.artboard.value }}",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660741460d0972f44",
+    "1660568962963a549c",
+    "16613370413d8ae6e4",
+    "product-recommendations",
+    "hero"
+  ]
+}
