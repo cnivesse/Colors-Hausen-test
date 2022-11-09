@@ -87,7 +87,10 @@
 
 {{ content_for_header }}
 <meta name="google-site-verification" content="W6igrCos2fg4UanJ7d6yYO7BrLmCgYZHj7EeRVQ_cSg" />
-  </head>
+  <!--Gem_Page_Header_Script-->
+{% render 'gem-app-header-scripts' %}
+<!--End_Gem_Page_Header_Script-->
+</head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {% if template.suffix %}template-sufix-{{ template.suffix }}{% endif %} {% if settings.header_expanded %}header-expanded{% endif %}">
     <a class="skip-link" href="#MainContent" tabindex="1">{{ 'general.accessibility.skip_to_content' | t }}</a>
@@ -101,6 +104,9 @@
       {% section 'footer' %}
     </div>
   
+<!--Gem_Page_Footer_Script-->
+{% render 'gem-app-footer-scripts', GEM_FOOTER_SCRIPT: GEM_FOOTER_SCRIPT %}
+<!--End_Gem_Page_Footer_Script-->
 </body>
 </html>
 <script>
