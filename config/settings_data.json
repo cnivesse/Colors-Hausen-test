@@ -63,7 +63,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "home_page_only": false,
           "top_banner_text": "Le SHRINK est en production. Vous pouvez le commander dès maintenant et sera expédié dans 6 semaines.",
           "announcement_link": "",
