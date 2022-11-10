@@ -74,12 +74,12 @@
       "header": {
         "type": "header",
         "blocks": {
-          "7c40647d-2381-4135-b2fb-1919aafbd936": {
+          "1d2dad70-8d28-488e-a5e0-1825aae002b0": {
             "type": "mega",
             "settings": {
-              "name": "SHELVES",
-              "url-1": "",
-              "text-1": "",
+              "name": "SHRINKS",
+              "url-1": "shopify:\/\/collections\/shelves",
+              "text-1": "SHELVES",
               "url-2": "",
               "text-2": "",
               "url-3": "",
@@ -88,7 +88,7 @@
           }
         },
         "block_order": [
-          "7c40647d-2381-4135-b2fb-1919aafbd936"
+          "1d2dad70-8d28-488e-a5e0-1825aae002b0"
         ],
         "settings": {
           "main_nav_linklist": "main-menu",
