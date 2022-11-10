@@ -6,7 +6,7 @@
     "logo_font": "basic_commercial_n7",
     "color_logo_text": "#121212",
     "type_logo_text_transform": "uppercase",
-    "color_body_bg": "#ffffff",
+    "color_body_bg": "#f3f0ee",
     "color_section_bg": "#ffffff",
     "color_body_text": "#302d33",
     "color_accent": "#302d33",
@@ -163,12 +163,6 @@
 
     ],
     "blocks": {
-      "2153490007123654574": {
-        "type": "shopify:\/\/apps\/gdpr-ccpa-cookie-management\/blocks\/gdpr_cookie_consent\/4fbe573f-a377-4fea-9801-3ee0858cae41",
-        "disabled": false,
-        "settings": {
-        }
-      },
       "6406956604159796213": {
         "type": "shopify:\/\/apps\/smartseo\/blocks\/smartseo\/7b0a6064-ca2e-4392-9a1d-8c43c942357b",
         "disabled": false,
