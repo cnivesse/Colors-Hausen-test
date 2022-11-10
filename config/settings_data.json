@@ -73,6 +73,23 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "7c40647d-2381-4135-b2fb-1919aafbd936": {
+            "type": "mega",
+            "settings": {
+              "name": "SHELVES",
+              "url-1": "",
+              "text-1": "",
+              "url-2": "",
+              "text-2": "",
+              "url-3": "",
+              "text-3": ""
+            }
+          }
+        },
+        "block_order": [
+          "7c40647d-2381-4135-b2fb-1919aafbd936"
+        ],
         "settings": {
           "main_nav_linklist": "main-menu",
           "show_main_menu_on_mobile": true,
