@@ -100,7 +100,7 @@
           "side_nav_linklist": "menu-hamburger",
           "enable_side_nav_text": true,
           "show_social_icons": true,
-          "enable_transparent_header": true,
+          "enable_transparent_header": false,
           "transparent_header_text_color": "#000000",
           "enable_sticky_header": true,
           "enable_search": true,
