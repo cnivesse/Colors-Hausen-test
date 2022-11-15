@@ -22,7 +22,7 @@
     "button_shape": "shape circle",
     "product_tag_shape": "shape circle",
     "header_font": "basic_commercial_n4",
-    "buttons_font": "sans-serif",
+    "buttons_font": "work_sans_n4",
     "base_font": "work_sans_n4",
     "header_show_background": "only-homepage",
     "header_expanded": true,
