@@ -102,6 +102,28 @@
             {% endif %}
           </a>
         {% endunless %}
+          {%- liquid
+          if settings.logo_max_width != blank
+            assign logo_max_width = settings.logo_max_width | plus: 0
+            if logo_max_width > 2048
+              assign logo_max_width = 2048
+            endif
+          else
+            assign logo_max_width = 70
+          endif
+        -%}
+        <style type="text/css">
+          .section-header .header a.logo h1 img {
+            width: {{ logo_max_width }}px;
+          }
+          {% assign logo_fixed_width = logo_max_width | divided_by: 2 %}
+          {% if logo_fixed_width >= 80 %}
+            .section-header .header.solid .fixed a.logo h1 img {
+              width: {{ logo_fixed_width | at_least: 100 }}px;
+            }
+          {% endif %}
+        </style>
+        {% render 'logo' %}
       </div>
       <div class="right">
         {% render 'language-and-country-selectors', extended: false %}
@@ -129,28 +151,7 @@
         {% endif %}
       </div>
       <div class="center">
-        {%- liquid
-          if settings.logo_max_width != blank
-            assign logo_max_width = settings.logo_max_width | plus: 0
-            if logo_max_width > 2048
-              assign logo_max_width = 2048
-            endif
-          else
-            assign logo_max_width = 70
-          endif
-        -%}
-        <style type="text/css">
-          .section-header .header a.logo h1 img {
-            width: {{ logo_max_width }}px;
-          }
-          {% assign logo_fixed_width = logo_max_width | divided_by: 2 %}
-          {% if logo_fixed_width >= 80 %}
-            .section-header .header.solid .fixed a.logo h1 img {
-              width: {{ logo_fixed_width | at_least: 100 }}px;
-            }
-          {% endif %}
-        </style>
-        {% render 'logo' %}
+        
       </div>
     </div>
     {% unless main_menu.empty? %}
