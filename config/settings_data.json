@@ -141,7 +141,7 @@
           "4556f873-80e7-47a6-931b-fa9f07fee98e": {
             "type": "menu",
             "settings": {
-              "menu_title": "Liens rapides",
+              "menu_title": "Quicklinks",
               "menu": "menu-hamburger"
             }
           },
