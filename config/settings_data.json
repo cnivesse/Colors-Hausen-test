@@ -134,21 +134,21 @@
           "footer-1": {
             "type": "text",
             "settings": {
-              "title": "Contact",
+              "title": "Kontakt",
               "richtext": "<p>Eimsbutteller Str. 92<\/p><p>22769, Hamburg<br\/>info@studiohausen.com<\/p>"
             }
           },
           "4556f873-80e7-47a6-931b-fa9f07fee98e": {
             "type": "menu",
             "settings": {
-              "menu_title": "Liens rapides",
+              "menu_title": "Quicklinks",
               "menu": "menu-hamburger"
             }
           },
           "d811ee23-2fdb-43dd-aa0a-97b293e0bbe6": {
             "type": "menu",
             "settings": {
-              "menu_title": "Conditions et Politiques",
+              "menu_title": "Bedingungen und Richtlinien",
               "menu": "conditions-et-politiques"
             }
           },
