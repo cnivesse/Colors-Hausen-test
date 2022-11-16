@@ -53,7 +53,7 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Caractéristiques",
+            "heading": "Merkmale",
             "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "question_mark",
@@ -63,7 +63,7 @@
         "collapsible_tab_2": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Matériaux",
+            "heading": "Materialien",
             "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
@@ -73,7 +73,7 @@
         "collapsible_tab_3": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Livraison",
+            "heading": "Lieferung",
             "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
