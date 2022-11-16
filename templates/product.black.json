@@ -53,7 +53,7 @@
         "collapsible_tab_1": {
           "type": "collapsible_tab",
           "settings": {
-            "heading": "Caractéristiques",
+            "heading": "Merkmale",
             "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "question_mark",
