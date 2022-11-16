@@ -1,7 +1,7 @@
 {
   "current": {
-    "logo": "shopify:\/\/shop_images\/201022_hausen_Logo_h.png",
-    "logo_max_width": 30,
+    "logo": "shopify:\/\/shop_images\/201022_hausen_Logo_long.png",
+    "logo_max_width": 200,
     "logo_text": "hausen",
     "logo_font": "basic_commercial_n7",
     "color_logo_text": "#121212",
@@ -73,23 +73,6 @@
       },
       "header": {
         "type": "header",
-        "blocks": {
-          "1d2dad70-8d28-488e-a5e0-1825aae002b0": {
-            "type": "mega",
-            "settings": {
-              "name": "SHRINKS",
-              "url-1": "shopify:\/\/collections\/shelves",
-              "text-1": "SHELVES",
-              "url-2": "",
-              "text-2": "",
-              "url-3": "",
-              "text-3": ""
-            }
-          }
-        },
-        "block_order": [
-          "1d2dad70-8d28-488e-a5e0-1825aae002b0"
-        ],
         "settings": {
           "main_nav_linklist": "main-menu",
           "show_main_menu_on_mobile": true,
@@ -97,12 +80,12 @@
           "menu_letter_spacing": 1,
           "menu_text_transform": "uppercase",
           "menu_font_weight": "bold",
-          "side_nav_linklist": "menu-hamburger",
-          "enable_side_nav_text": true,
+          "side_nav_linklist": "",
+          "enable_side_nav_text": false,
           "show_social_icons": true,
           "enable_transparent_header": false,
           "transparent_header_text_color": "#000000",
-          "enable_sticky_header": true,
+          "enable_sticky_header": false,
           "enable_search": true,
           "enable_account": true,
           "enable_cart": true,
