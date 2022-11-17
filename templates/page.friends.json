@@ -29,8 +29,9 @@
           "settings": {
             "show_image": true,
             "image_type": "custom",
-            "title": "Ihre Shop-Funktion",
-            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "image": "shopify:\/\/shop_images\/MILENA_KLING__PORTRAIT_BY_JENNA_DALLWITZ-01.jpg",
+            "title": "Milena Kling, SPHERE bowls designer",
+            "text": "<p>Milena Kling setzt diese Leidenschaft in einer Reihe von maßgeschneiderten Glaseditionen und Projekten für internationale Kunden wie Lasvit um. Ihre Arbeit basiert auf einer experimentellen Erforschung traditioneller Techniken und der Faszination für Naturphänomene.<br\/>Ihre Arbeiten wurden für verschiedene Preise wie den internationalen \"Modern Craft of the Year\", \"Talents\" und \"German Design Award\" nominiert und werden von renommierten Institutionen wie der \"Neuen Sammlung\" der Pinakothek der Moderne in München und Andreas Murkudis, Berlin, vertreten.<br\/><br\/>Übersetzt mit www.DeepL.com\/Translator (kostenlose Version).<\/p>",
             "link": ""
           }
         },
