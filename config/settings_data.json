@@ -81,7 +81,7 @@
           "menu_text_transform": "uppercase",
           "menu_font_weight": "bold",
           "side_nav_linklist": "menu-hamburger",
-          "enable_side_nav_text": true,
+          "enable_side_nav_text": false,
           "show_social_icons": true,
           "enable_transparent_header": false,
           "transparent_header_text_color": "#000000",
