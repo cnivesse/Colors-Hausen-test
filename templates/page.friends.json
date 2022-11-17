@@ -10,50 +10,87 @@
         "collapsed": true
       }
     },
-    "166056885805b2007f": {
-      "type": "featured-products",
+    "17714660-bb23-4be2-98c4-17401ba28986": {
+      "type": "text-columns-with-images",
       "blocks": {
-        "1660568858a9a04107-0": {
-          "type": "product",
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-0": {
+          "type": "text_column",
           "settings": {
-            "product": "link-set-1-oak",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
+            "show_image": true,
+            "image_type": "custom",
+            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-6-019.jpg",
+            "title": "Jörg Höltje, Gründer vom HAUSEN",
+            "text": "<p>Ein Designer, der die Designwelt im Sturm erobert: Hinter dem Label HAUSEN steckt Jörg Höltje, der noch als Student an der Universität der Künste sein Studio in Berlin gründete. Vor seinem Abschluss im Jahr 2009 konnte er bereits einschlägige Erfahrung bei Interiorgrößen wie Patricia Urquiola in Mailand oder Werner Aisslinger in Berlin sammeln. Daneben unterrichtete er unter anderem an der Universität der Künste in Berlin und war Gastprofessor an der Universität Burg Giebichenstein in Halle. Bereist seit den Anfängen seiner Karriere zeigen Ausstellungen von Mailand, London, Hong Kong bis New York, dass seine Arbeiten großen Anklang finden. So zählen namhafte Labels wie Ligne Roset, Alcantara & Camper zu seinen Kunden, die sein gradliniges und zeitloses Design schätzen. Im Jahr 2014 und damit in einer Zeit, die durch eine Krise der etablierten Möbelfirmen gekennzeichnet war, gründete er sein eigenes Label HAUSEN, mit dem er sich dank zeitloser und innovativer Entwürfe schnell etablieren konnte. Die hochwertigen und nachhaltig produzierten Produkte erfreuen sich wachsender Beliebtheit bei einem internationalen Kundenstamm.<\/p>",
+            "link": ""
           }
         },
-        "1660568858a9a04107-1": {
-          "type": "product",
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-1": {
+          "type": "text_column",
           "settings": {
-            "product": "link-set-1walnut",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Ihre Shop-Funktion",
+            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "link": ""
           }
         },
-        "1660568858a9a04107-2": {
-          "type": "product",
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-2": {
+          "type": "text_column",
           "settings": {
-            "product": "",
-            "url": "",
-            "title": "",
-            "subtitle": "",
-            "hide_cta": false
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Ihre Shop-Funktion",
+            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "link": ""
+          }
+        },
+        "ca6cca9b-a778-4314-b674-96ea604048ac": {
+          "type": "text_column",
+          "settings": {
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Ihre Shop-Funktion",
+            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "link": ""
+          }
+        },
+        "6961c407-b2f8-481a-84e2-11854aeea924": {
+          "type": "text_column",
+          "settings": {
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Ihre Shop-Funktion",
+            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "link": ""
+          }
+        },
+        "9df85424-ad73-45d0-b0f7-f111494c5072": {
+          "type": "text_column",
+          "settings": {
+            "show_image": true,
+            "image_type": "custom",
+            "title": "Ihre Shop-Funktion",
+            "text": "<p>Verwenden Sie diesen Text, um Funktionen des Shops, aktuelle Rezensionen oder häufig gestellte Fragen zu teilen.<\/p>",
+            "link": ""
           }
         }
       },
       "block_order": [
-        "1660568858a9a04107-0",
-        "1660568858a9a04107-1",
-        "1660568858a9a04107-2"
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-0",
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-1",
+        "template--15516077260847__17714660-bb23-4be2-98c4-17401ba28986-1668687712dd2d113d-2",
+        "ca6cca9b-a778-4314-b674-96ea604048ac",
+        "6961c407-b2f8-481a-84e2-11854aeea924",
+        "9df85424-ad73-45d0-b0f7-f111494c5072"
       ],
       "settings": {
-        "with_transition": true,
-        "with_separation": true,
-        "with_overlap": true,
+        "heading": "Hausen and friends",
+        "subheading": "",
+        "columns": 3,
+        "align": "center",
+        "show_background": false,
         "expanded": true,
+        "content_max_width": 2000,
         "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
@@ -62,6 +99,6 @@
   },
   "order": [
     "main",
-    "166056885805b2007f"
+    "17714660-bb23-4be2-98c4-17401ba28986"
   ]
 }
