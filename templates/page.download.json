@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": true,
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": true
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
