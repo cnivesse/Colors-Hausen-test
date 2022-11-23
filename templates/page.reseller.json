@@ -5,8 +5,8 @@
       "settings": {
         "show_heading": true,
         "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
+        "expanded": true,
+        "expanded_content": true,
         "collapsed": true
       }
     }
