@@ -16,7 +16,7 @@
         "template--15517086679087__c014cd91-900e-41d0-ac7c-60029497683d-166919789349b0a800-0": {
           "type": "heading",
           "settings": {
-            "text": "Catalog",
+            "text": "Katalog",
             "max_width": 700,
             "increase_space_before_block": false
           }
@@ -24,7 +24,7 @@
         "29d2cf51-9dc8-4a87-8783-9aba490d9559": {
           "type": "button",
           "settings": {
-            "text": "LINK shelving system catalog",
+            "text": "LINK regale",
             "link": "shopify:\/\/collections\/all",
             "style": "solid",
             "size": "normal",
@@ -34,7 +34,7 @@
         "c51e54ac-7bf1-403f-8fae-381026732357": {
           "type": "button",
           "settings": {
-            "text": "SHRINK shelving system catalog",
+            "text": "SHRINK regale",
             "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/220929_hausen_shrink_quer_RZ.pdf?v=1669199713",
             "style": "solid",
             "size": "normal",
@@ -55,10 +55,90 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "8730b308-8139-473c-aa1c-103c0a515227": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15517086679087__8730b308-8139-473c-aa1c-103c0a515227-16692049176d3f2b83-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Manual",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "template--15517086679087__8730b308-8139-473c-aa1c-103c0a515227-16692049176d3f2b83-2": {
+          "type": "button",
+          "settings": {
+            "text": "LINK Set 1",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        },
+        "69ec0c6e-fbdd-4a98-96ce-803f45832d1e": {
+          "type": "button",
+          "settings": {
+            "text": "LINK set 2",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        },
+        "efe9ece6-6d33-4f0e-84bb-35beb474a0d0": {
+          "type": "button",
+          "settings": {
+            "text": "LINK duo",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        },
+        "b72f466c-f30d-48fd-a0a7-537dad821db8": {
+          "type": "button",
+          "settings": {
+            "text": "LINK trio",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        },
+        "af6def17-e412-4806-ad11-d14f80ecdec1": {
+          "type": "button",
+          "settings": {
+            "text": "SHRINK",
+            "link": "shopify:\/\/collections\/all",
+            "style": "border",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15517086679087__8730b308-8139-473c-aa1c-103c0a515227-16692049176d3f2b83-0",
+        "template--15517086679087__8730b308-8139-473c-aa1c-103c0a515227-16692049176d3f2b83-2",
+        "69ec0c6e-fbdd-4a98-96ce-803f45832d1e",
+        "efe9ece6-6d33-4f0e-84bb-35beb474a0d0",
+        "b72f466c-f30d-48fd-a0a7-537dad821db8",
+        "af6def17-e412-4806-ad11-d14f80ecdec1"
+      ],
+      "settings": {
+        "text_align": "center",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
-    "c014cd91-900e-41d0-ac7c-60029497683d"
+    "c014cd91-900e-41d0-ac7c-60029497683d",
+    "8730b308-8139-473c-aa1c-103c0a515227"
   ]
 }
