@@ -2,7 +2,6 @@
   "sections": {
     "main": {
       "type": "main-page",
-      "disabled": true,
       "settings": {
         "show_heading": true,
         "show_background": false,
@@ -10,27 +9,9 @@
         "expanded_content": false,
         "collapsed": true
       }
-    },
-    "21601aa7-9614-40d4-a53f-1d9b831d4788": {
-      "type": "map",
-      "settings": {
-        "heading": "Unser Geschäft",
-        "address": "<p>123 Fake St.<br\/>Toronto, Kanada<\/p><p>Mo–Fr, 10–21 Uhr<br\/>Samstag, 11–21 Uhr<br\/>Sonntag, 11–17 Uhr<\/p>",
-        "map_address": "301 Front St W, Toronto",
-        "button": "Richtungen",
-        "api_key": "",
-        "map_style_id": "68845b784d907325",
-        "position": "center center",
-        "expanded": false,
-        "content_max_width": 400,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
-    "main",
-    "21601aa7-9614-40d4-a53f-1d9b831d4788"
+    "main"
   ]
 }
