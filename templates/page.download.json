@@ -9,9 +9,56 @@
         "expanded_content": false,
         "collapsed": true
       }
+    },
+    "c014cd91-900e-41d0-ac7c-60029497683d": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15517086679087__c014cd91-900e-41d0-ac7c-60029497683d-166919789349b0a800-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Catalog",
+            "max_width": 700,
+            "increase_space_before_block": false
+          }
+        },
+        "29d2cf51-9dc8-4a87-8783-9aba490d9559": {
+          "type": "button",
+          "settings": {
+            "text": "LINK shelving system catalog",
+            "link": "shopify:\/\/collections\/all",
+            "style": "solid",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        },
+        "c51e54ac-7bf1-403f-8fae-381026732357": {
+          "type": "button",
+          "settings": {
+            "text": "SHRINK shelving system catalog",
+            "link": "",
+            "style": "solid",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15517086679087__c014cd91-900e-41d0-ac7c-60029497683d-166919789349b0a800-0",
+        "29d2cf51-9dc8-4a87-8783-9aba490d9559",
+        "c51e54ac-7bf1-403f-8fae-381026732357"
+      ],
+      "settings": {
+        "text_align": "center",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "c014cd91-900e-41d0-ac7c-60029497683d"
   ]
 }
