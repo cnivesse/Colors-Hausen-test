@@ -80,20 +80,10 @@
         {% assign year = 'now' | date: '%Y' %}
         {% capture shop_name %}{{ shop.name | link_to: '/' }}{% endcapture %}
         {{ 'layout.footer.copyright_html' | t: year: year, shop_name: shop_name }}
-        {%- if show_selectors -%}
-          <span class="powered">
-            {{ powered_by_link }}
-          </span>
-        {%- endif %}
       </div>
     </div>
     <div class="right">
       {% render 'language-and-country-selectors', extended: true %}
-      {%- unless show_selectors -%}
-        <div class="text">
-          {{ powered_by_link }}
-        </div>
-      {%- endunless -%}
     </div>
   </div>
 </div>
