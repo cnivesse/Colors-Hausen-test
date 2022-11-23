@@ -91,7 +91,7 @@
           "type": "button",
           "settings": {
             "text": "LINK duo",
-            "link": "shopify:\/\/collections\/all",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/SH_DUO_Druck.pdf?v=1669218791",
             "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
@@ -101,7 +101,7 @@
           "type": "button",
           "settings": {
             "text": "LINK trio",
-            "link": "shopify:\/\/collections\/all",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/SH_TRIO_Druck.pdf?v=1669218791",
             "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
