@@ -10,70 +10,61 @@
         "collapsed": false
       }
     },
-    "1663690444e1fb57f2": {
-      "type": "collage",
-      "blocks": {
-        "1663690444d89170b4-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-5-002_7d00f00f-4f9c-43a7-9d05-ec59750b9ace.jpg",
-            "show_border": false,
-            "link": "",
-            "text": "",
-            "text_align": "center"
-          }
-        },
-        "390488ea-45e6-4fb0-b9f8-6ccd084ec587": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/BB-Studio-Hausen-Motiv-1-067.jpg",
-            "show_border": false,
-            "link": "",
-            "text": "",
-            "text_align": "center"
-          }
-        }
-      },
-      "block_order": [
-        "1663690444d89170b4-0",
-        "390488ea-45e6-4fb0-b9f8-6ccd084ec587"
-      ],
+    "b71e0a77-9da6-40dd-af01-32b0693dc7f2": {
+      "type": "featured-image",
       "settings": {
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
+        "image": "shopify:\/\/shop_images\/LINK_TrueBlack_detail.jpg",
+        "link": "",
         "heading": "",
         "show_background": false,
-        "expanded": true,
-        "content_max_width": 1200,
-        "expanded_content": false,
-        "collapsed": true,
+        "expanded": false,
+        "expanded_content": true,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
     },
-    "1663690623ddec8719": {
+    "1663691344e23ea01e": {
       "type": "rich-text",
       "blocks": {
-        "16636906229b46ea94-0": {
+        "4a904302-c1bc-4574-80af-ee341d95b4ac": {
           "type": "heading",
           "settings": {
-            "text": "Jörg Höltje",
+            "text": "Sprechen Sie über Ihre Marke",
             "max_width": 700,
             "increase_space_before_block": true
           }
         },
-        "82691694-c633-4215-aa79-47938a9e804a": {
+        "6c8fcb16-f9be-4070-880a-087a0f5567d7": {
           "type": "paragraph",
           "settings": {
-            "text": "<p><strong>Gründer von hausen<\/strong> In Berlin geboren und im Herzen von Hamburg ansässig, wurde die Kreativzentrale Studio Hausen 2014 aus dem Wunsch heraus gegründet, zeitlose und nachhaltige Produkte für das moderne Zuhause anzubieten. Mit der geschmackvollen Kombination aus minimalistischem deutschen Design und der Liebe zur natürlichen Schönheit der zeitlosen, hochwertigen Materialien des klassischen Produktdesigns, wie Massivholz, Marmor oder mundgeblasenem Glas, ist Studio Hausen eine raffinierte Ergänzung für jeden Wohnraum.<\/p>",
-            "max_width": 650,
+            "text": "<p><strong>Das Leben wird schneller, die individuellen Lebenssituationen ändern sich.<\/strong> Mit Veränderungen wie einem Jobwechsel oder einer neuen Familie , ändern sich auch die Ansprüche und Wünsche an das Leben und die Einrichtung.Wir folgen dem Ideal, multifunktionale, lebendige Objekte zu schaffen, die dem Kunden bei der Gestaltung und Einrichtung Spielraum lassen.Die Objekte haben ein zeitloses Design, sind erweiterbar und passen sich den individuellen Raumansprüchen und Gestaltungswünschen an. Nachhaltigkeit und Qualität spiegeln sich in der umsichtigen Verwendung hochwertiger Materialien wider.100% Holz, natürlich & nachhaltigFür unsere Regale verwenden wir ausschließlich Massivholz aus nachhaltiger Forstwirtschaft. Jedes Regal ist einzigartig - so wie auch das Wachstum eines Baumes keinem anderen gleicht.In unseren Regalen befinden sich keine formaldehydhaltigen Klebstoffe oder andere Chemikalien, die sich schädlich auf Ihr Lebensumfeld auswirken.Wir verwenden für die Oberflächen nur Farben auf natürlicher Basis.Um ein Produkt zu schaffen, das neben einem zeitlosen Design auch mit Sorgfalt für die Ewigkeit hält, war die einzige Option für uns Massivholz, das erst mit zunehmendem Alter an Charakter gewinnt.<\/p>",
+            "max_width": 1500,
+            "increase_space_before_block": true
+          }
+        },
+        "561efbf2-b570-4594-9b72-2ffdc0302753": {
+          "type": "heading",
+          "settings": {
+            "text": "100% Holz, natürlich & nachhaltig",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "3e744361-ac50-410a-9028-2d9bc1016ffe": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Für unsere Regale verwenden wir ausschließlich Massivholz aus nachhaltiger Forstwirtschaft. Jedes Regal ist einzigartig - so wie auch das Wachstum eines Baumes keinem anderen gleicht.In unseren Regalen befinden sich keine formaldehydhaltigen Klebstoffe oder andere Chemikalien, die sich schädlich auf Ihr Lebensumfeld auswirken.Wir verwenden für die Oberflächen nur Farben auf natürlicher Basis.Um ein Produkt zu schaffen, das neben einem zeitlosen Design auch mit Sorgfalt für die Ewigkeit hält, war die einzige Option für uns Massivholz, das erst mit zunehmendem Alter an Charakter gewinnt.<\/p>",
+            "max_width": 1200,
             "increase_space_before_block": true
           }
         }
       },
       "block_order": [
-        "16636906229b46ea94-0",
-        "82691694-c633-4215-aa79-47938a9e804a"
+        "4a904302-c1bc-4574-80af-ee341d95b4ac",
+        "6c8fcb16-f9be-4070-880a-087a0f5567d7",
+        "561efbf2-b570-4594-9b72-2ffdc0302753",
+        "3e744361-ac50-410a-9028-2d9bc1016ffe"
       ],
       "settings": {
         "text_align": "center",
@@ -99,37 +90,12 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "1663691344e23ea01e": {
-      "type": "rich-text",
-      "blocks": {
-        "6c8fcb16-f9be-4070-880a-087a0f5567d7": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p><strong>Das Leben wird schneller, die individuellen Lebenssituationen ändern sich.<\/strong> Mit Veränderungen wie einem Jobwechsel oder einer neuen Familie , ändern sich auch die Ansprüche und Wünsche an das Leben und die Einrichtung.Wir folgen dem Ideal, multifunktionale, lebendige Objekte zu schaffen, die dem Kunden bei der Gestaltung und Einrichtung Spielraum lassen.Die Objekte haben ein zeitloses Design, sind erweiterbar und passen sich den individuellen Raumansprüchen und Gestaltungswünschen an. Nachhaltigkeit und Qualität spiegeln sich in der umsichtigen Verwendung hochwertiger Materialien wider.100% Holz, natürlich & nachhaltigFür unsere Regale verwenden wir ausschließlich Massivholz aus nachhaltiger Forstwirtschaft. Jedes Regal ist einzigartig - so wie auch das Wachstum eines Baumes keinem anderen gleicht.In unseren Regalen befinden sich keine formaldehydhaltigen Klebstoffe oder andere Chemikalien, die sich schädlich auf Ihr Lebensumfeld auswirken.Wir verwenden für die Oberflächen nur Farben auf natürlicher Basis.Um ein Produkt zu schaffen, das neben einem zeitlosen Design auch mit Sorgfalt für die Ewigkeit hält, war die einzige Option für uns Massivholz, das erst mit zunehmendem Alter an Charakter gewinnt.<\/p>",
-            "max_width": 1500,
-            "increase_space_before_block": true
-          }
-        }
-      },
-      "block_order": [
-        "6c8fcb16-f9be-4070-880a-087a0f5567d7"
-      ],
-      "settings": {
-        "text_align": "center",
-        "show_background": false,
-        "expanded": true,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
     "main",
-    "1663690444e1fb57f2",
-    "1663690623ddec8719",
-    "166369086561c4bb69",
-    "1663691344e23ea01e"
+    "b71e0a77-9da6-40dd-af01-32b0693dc7f2",
+    "1663691344e23ea01e",
+    "166369086561c4bb69"
   ]
 }
