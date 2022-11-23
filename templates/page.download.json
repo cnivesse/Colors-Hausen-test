@@ -72,7 +72,7 @@
           "settings": {
             "text": "LINK Set 1",
             "link": "shopify:\/\/collections\/all",
-            "style": "border",
+            "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
           }
@@ -82,7 +82,7 @@
           "settings": {
             "text": "LINK set 2",
             "link": "shopify:\/\/collections\/all",
-            "style": "border",
+            "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
           }
@@ -92,7 +92,7 @@
           "settings": {
             "text": "LINK duo",
             "link": "shopify:\/\/collections\/all",
-            "style": "border",
+            "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
           }
@@ -102,7 +102,7 @@
           "settings": {
             "text": "LINK trio",
             "link": "shopify:\/\/collections\/all",
-            "style": "border",
+            "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
           }
@@ -112,7 +112,7 @@
           "settings": {
             "text": "SHRINK",
             "link": "shopify:\/\/collections\/all",
-            "style": "border",
+            "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
           }
