@@ -6,7 +6,7 @@
         "show_heading": true,
         "show_background": false,
         "expanded": false,
-        "expanded_content": false,
+        "expanded_content": true,
         "collapsed": false
       }
     },
