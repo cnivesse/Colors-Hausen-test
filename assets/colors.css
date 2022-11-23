@@ -8113,7 +8113,7 @@ body.template-gift_card .apple-wallet img {
     margin-top: 4px;
   }
   .footer .bottom .text .powered {
-    display: block;
+    display: none;
     margin-top: 4px;
   }
   .footer .bottom.with-selectors {
