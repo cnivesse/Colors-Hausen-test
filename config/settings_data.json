@@ -63,9 +63,9 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": false,
+          "show_announcement": true,
           "home_page_only": false,
-          "top_banner_text": "Le SHRINK est en production. Vous pouvez le commander dès maintenant et sera expédié dans 6 semaines.",
+          "top_banner_text": "Bestellen Sie Ihre Produkte vor dem 18. Dezember und erhalten Sie sie vor Weihnachten",
           "announcement_link": "",
           "color_announcement_text": "#121212",
           "color_announcement_bg": "#f3f0ee"
