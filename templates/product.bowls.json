@@ -215,8 +215,8 @@
     "d48c4b42-a363-44d7-ae6e-cc8fd0d190e4": {
       "type": "newsletter",
       "settings": {
-        "heading": "Abonnez-vous à notre newsletter",
-        "subheading": "<p>Promotions, nouveaux produits et soldes. Directement dans votre boîte de réception.<\/p>",
+        "heading": "Abonnieren Sie unseren Newsletter",
+        "subheading": "<p>Sonderangebote, neue Produkte und Schlussverkäufe. Direkt in Ihren Posteingang.<\/p>",
         "show_background": true,
         "expanded": false,
         "expanded_content": false,
