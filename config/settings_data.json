@@ -63,7 +63,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "settings": {
-          "show_announcement": true,
+          "show_announcement": false,
           "home_page_only": false,
           "top_banner_text": "Bestellen Sie Ihre Produkte vor dem 18. Dezember und erhalten Sie sie vor Weihnachten",
           "announcement_link": "",
