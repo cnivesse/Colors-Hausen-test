@@ -17,7 +17,7 @@
           "type": "heading",
           "settings": {
             "text": "Katalog",
-            "max_width": 700,
+            "max_width": 450,
             "increase_space_before_block": false
           }
         },
@@ -63,7 +63,7 @@
           "type": "heading",
           "settings": {
             "text": "Manual",
-            "max_width": 700,
+            "max_width": 550,
             "increase_space_before_block": true
           }
         },
