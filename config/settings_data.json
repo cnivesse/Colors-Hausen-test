@@ -27,7 +27,7 @@
     "header_show_background": "only-homepage",
     "header_expanded": true,
     "section_headers_text_decoration": "underline",
-    "content_layout": "centered",
+    "content_layout": "left",
     "content_max_width": 1200,
     "products_per_page": "240",
     "image_ratio": "portrait",
