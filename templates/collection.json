@@ -1,23 +1,12 @@
 {
   "sections": {
-    "main-collection": {
-      "type": "main-collection",
+    "1673867444by1caety": {
+      "type": "gem-page-default-collection",
       "settings": {
-        "show_collection_title": true,
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "enable_filtering": false,
-        "filter_type": "regular",
-        "enable_sorting": false,
-        "show_labels": true,
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
-        "collapsed": true
       }
     }
   },
   "order": [
-    "main-collection"
+    "1673867444by1caety"
   ]
 }
