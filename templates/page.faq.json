@@ -1,1 +1,186 @@
-{"sections":{"main":{"type":"main-page","settings":{"show_heading":true,"show_background":true,"expanded":true,"expanded_content":false,"collapsed":true}},"faq":{"type":"faq","blocks":{"collapsible_tab_1":{"type":"collapsible_tab","settings":{"heading":"Question 1","content":"<p>Answer...<\/p>"}},"collapsible_tab_2":{"type":"collapsible_tab","settings":{"heading":"Question 2","content":"<p>Answer...<\/p>"}},"collapsible_tab_3":{"type":"collapsible_tab","settings":{"heading":"Question 3","content":"<p>Answer...<\/p>"}},"collapsible_tab_4":{"type":"collapsible_tab","settings":{"heading":"Question 4","content":"<p>Answer...<\/p>"}},"collapsible_tab_5":{"type":"collapsible_tab","settings":{"heading":"Question 5","content":"<p>Answer...<\/p>"}},"collapsible_tab_6":{"type":"collapsible_tab","settings":{"heading":"Question 6","content":"<p>Answer...<\/p>"}}},"block_order":["collapsible_tab_1","collapsible_tab_2","collapsible_tab_3","collapsible_tab_4","collapsible_tab_5","collapsible_tab_6"],"settings":{"title":"","show_background":true,"expanded":true,"content_max_width":850,"collapsed":true}}},"order":["main","faq"]}
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "show_heading": true,
+        "show_background": true,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false
+      }
+    },
+    "faq": {
+      "type": "faq",
+      "blocks": {
+        "collapsible_tab_1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Welches Gewicht können die Regale tragen?",
+            "content": "<p>Set 1: 60kg<\/p><p> Set 2: 60kg <\/p><p>DUO: 120kg <\/p><p>TRIO: 180kg <\/p><p>SHRINK: 60kg<\/p><p>(Die Tragfähigkeit hängt von der Wandbeschaffenheit ab)<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wo kann man die hausen Produkte in echt sehen?",
+            "content": "<p>Wir haben einen Büro\/Showroom in der Eimsbütteler Str. 92, 22769 Hamburg. Hier sind die meisten unserer Produkte zu sehen. Des weiteren können Sie auf unserer Homepage einen Händler in Ihrer Nähe suchen. Dort können Sie ebenfalls unsere Produkte bewundern. Wenn das Geschäft zu weit entfernt ist, können Sie versuchen, die AR-Funktionalität auf der Produktseite zu nutzen, um die gewünschten Produkte in ihrer Umgebung zu visualisieren.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wo werden die Produkte hergestellt?",
+            "content": "<p>All unsere Produkte werden in Europa gefertigt. Hierbei achten wir auf beste Materialien aus nachhaltigen Quellen. Unsere verwendeten Hölzer sind z.B. FSC zertifiziert.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_4": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Was bedeutet Nachhaltigkeit für hausen?",
+            "content": "<p>Nachhaltigkeit bedeutet für uns in erster Linie ein gutes, zeitloses Design, das viele Jahre lang bestand hat. Zweitens sind die von uns verwendeten Materialien von hoher Qualität, wie z.B. Massivholz, und können leicht getrennt und recycelt werden. Außerdem kann das Produkt leicht repariert werden (siehe Frage 7). Das Holz ist FSC-zertifiziert und stammt aus nachhaltiger Forstwirtschaft in Europa.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_5": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Was ist der Unterschied zwischen den LINK und dem SHRINK Regal?",
+            "content": "<p>Das SHRINK Regal ist eine kleinere Version des LINK Regals. Es verfügt aber über die gleichen Produktqualitäten wie das LINK. Es kann ebenso miteinander kombiniert werden. Das LINK Regal gibt es nur in den natürlichen Holztönen und das SHRINK in sechs verschiedenen Farben. Siehe hierzu das Schema auf https:\/\/www.studiohausen.com\/pages\/downloads<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "collapsible_tab_6": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Warum gibt es so viele ähnliche Regale wie das LINK im Internet?",
+            "content": "<p>Vor dem LINK Regelsystem gab es Leiterregale wie das string.se, die immer auf einem starren Raster von gleichen Regalbödenlängen zwischen zwei Leitern beruhen. Das LINK ist das erste Regal welches dieses Raster durchbricht und somit es den Kunden ermöglicht eine freie Komposition zu bauen. Seit der Markteinführung des LINK Regals im Jahr 2014 kamen Regale auf dem Markt, welche diese Funktionsweise kopieren. Wir haben diese Entwicklung im Blick und wehren uns gegen zu ähnliche Plagiate, wie z.B hier www.palgiarius.de\/LINK??? Nur das LINK Regal von hausen ist das Original. <\/p><p>B. Fragen zur Installation, Pflege, nützliche Hinweise \/ Installation questions, maintenance, useful tips<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "df2148bd-a627-413c-97bf-4d37444f064f": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wie baue ich das LINK bzw. SHRINK Regal auf?",
+            "content": "<p>Eine Aufbauanleitung liegt jedem Paket bei. Falls Sie Ihre Aufbauanleitung verloren haben sollten, können Sie auf der Seite https:\/\/www.studiohausen.com\/pages\/downloads alle Aufbauanleitungen runterladen.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "e66e6354-b3a5-43af-a88c-5baf2ebc3126": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Kann ich die Regale kombinieren?",
+            "content": "<p>Jedes LINK lässt sich mit einem anderen LINK, bzw. jedes SHRINK lässt sich mit einem anderen SHRINK kombinieren. In den Aufbauanleitungen der DUOs und TRIOs findetet eine Auswahl an Aufbauvorschlägen. https:\/\/www.studiohausen.com\/pages\/downloads.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "64d3b700-f265-425d-9b35-437014a7f669": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Woraus bestehen die LINK DUOs und TRIOs?",
+            "content": "<p>Die DUOs bestehen aus 1x LINK set 1 und 1x LINK Set 2. Die TRIOs bestehen aus 1x Set 1 und 2x Set 2. In Kombination als DUO oder TRIO sind die Regale etwas günstiger, weil wir Kosten bei Verpackung und Logistik einsparen können. <\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "d864f66d-2709-406a-95bc-e52560c54a14": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wie bereite ich den Aufbau der Regale an meiner Wand vor?",
+            "content": "<p>Zu aller erst muss die Wandbeschaffenheit geprüft werden. Hieraus ergibt sich die Frage, ob noch spezielle Dübel (z.B. Hohlraumdübel) angeschafft werden müssen. Des weiteren muss geprüft werden ob die Wand tragfähig ist. Das stellt man Fest beim Anbringen des ersten Bügels. Falls der Bügel samt Dübel einfach aus der Wand gerissen werden kann muss neu gebohrt werden oder der eingeklebt\/eingespachtelt werden. Gut ist es in diesem Falle noch etwas Wandfarbe übrig zu haben, um ggf. gespachtelte Stellen zu übermalen.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "b487af69-cbf0-4a05-a93b-138d25cb46e2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Worauf muss ich beim Aufbau der Regale achten?",
+            "content": "<p>Die Aufbauanleitung gibt detailliert Hinweise für den Schritt für Schritt Aufbau des Regals. https:\/\/www.studiohausen.com\/pages\/downloads. Es empfiehlt sich diese Hinweise einzuhalten, um eine falsche oder schadhafte Installation zu vermeiden. Die Schrauben sind Lackiert. Es empfiehlt sich die Schrauben nicht mit zu viel Kraft bzw. Umdrehungen des Akkuschraubers festzuziehen, weil sonst die Lackierung der Schrauben beschädigt werden könnte. <\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "f3b982af-cc37-41c2-8b3b-a1e1491a1467": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Kann ich Schäden am Regal reparieren?",
+            "content": "<p>Wir verwenden nur Massivholz, das sich leicht reparieren lässt. Wenn Sie Kratzer im Lack haben sollten, können Sie eine Holzwachspolitur verwenden, um die kleinen Kratzer herauszupolieren. Wenn Sie kleine Löcher oder Einschläge am Holz haben sollten, können Sie diese mit Holzwachs in der jeweiligen Holzfarbe schließen. Falls die Metallbügel Lackschäden aufweisen, dann können Sie diese mit Auto-Lack Stiften in dem jeweiligen RAL Farbton ausbessern.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "d5b276f1-ff51-49eb-871c-46d3cc8c6cc7": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wie sind die Lieferzeiten?",
+            "content": "<p>Normalerweise geben wir unsere Lieferzeiten mit 2-3 Wochen innerhalb der EU an.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "e745c550-9e85-4cf4-9715-7107a5e094d0": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Wann muss ich Importsteuer zahlen?",
+            "content": "<p>Importsteuern werden fällig, wenn unsere Waren in ein nicht EU Land versendet werden.<\/p><p>Sie erhalten eine Zahlungsaufforderung durch den Zusteller.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        },
+        "9fa913ff-0f40-46ba-8d60-53025c50983c": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Kann ich die Produkte auch als Gewerbetreibender kaufen?",
+            "content": "<p>Ja das können Sie. Hierfür kontaktieren Sie uns mit Ihrer vorliegenden Steuernummer unter <span style=\"text-decoration:underline\">info@studiohausen.com<\/span>. Wir bieten auch spezielle Preise für Architekten und Innenausstatter.<\/p>",
+            "page": "",
+            "icon": "none"
+          }
+        }
+      },
+      "block_order": [
+        "collapsible_tab_1",
+        "collapsible_tab_2",
+        "collapsible_tab_3",
+        "collapsible_tab_4",
+        "collapsible_tab_5",
+        "collapsible_tab_6",
+        "df2148bd-a627-413c-97bf-4d37444f064f",
+        "e66e6354-b3a5-43af-a88c-5baf2ebc3126",
+        "64d3b700-f265-425d-9b35-437014a7f669",
+        "d864f66d-2709-406a-95bc-e52560c54a14",
+        "b487af69-cbf0-4a05-a93b-138d25cb46e2",
+        "f3b982af-cc37-41c2-8b3b-a1e1491a1467",
+        "d5b276f1-ff51-49eb-871c-46d3cc8c6cc7",
+        "e745c550-9e85-4cf4-9715-7107a5e094d0",
+        "9fa913ff-0f40-46ba-8d60-53025c50983c"
+      ],
+      "settings": {
+        "title": "",
+        "subtitle": "",
+        "show_background": true,
+        "expanded": true,
+        "content_max_width": 850,
+        "expanded_content": false,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "faq"
+  ]
+}
