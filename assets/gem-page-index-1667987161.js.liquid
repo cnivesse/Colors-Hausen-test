@@ -330,7 +330,17 @@
   
     
   
-    
+    (function( jQuery ){
+  var $module = jQuery('#m-1673879025287').children('.module');
+  var mode = jQuery('.gryffeditor').hasClass('editing') ? 'dev' : 'production';
+  if (mode == 'production') {
+    jQuery(window).ready(function() {
+      $module.gfVideoBg();
+    })
+  } else {
+    $module.gfVideoBg();
+  }
+})( window.GemQuery || jQuery );
   
     
   
