@@ -1,6 +1,22 @@
 {% capture gemHeaderScripts %}
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css" class="gf-style">
-<link data-instant-track rel="stylesheet" type="text/css" href="https://d1um8515vdn9kb.cloudfront.net/files/vendor.css?refresh=1" class="gf-style" />{% endcapture %}{% assign gemHandleCheck = 'index.gem-1667987130-template, product.gem-1667987131-template' | split: ", " %}{% for h in gemHandleCheck %}{% if template == h %}{{ gemHeaderScripts }}{% endif %}{% endfor %}    
+<link data-instant-track rel="stylesheet" type="text/css" href="https://d1um8515vdn9kb.cloudfront.net/files/vendor.css?refresh=1" class="gf-style" />{% endcapture %}{% assign gemHandleCheck = 'index.gem-1667987130-template, product.gem-1667987131-template' | split: ", " %}{% for h in gemHandleCheck %}{% if template == h %}{{ gemHeaderScripts }}{% endif %}{% endfor %}
+<link rel="preconnect" href="https://ucarecdn.com">
+<link rel="dns-prefetch" href="https://ucarecdn.com">
+
+<link rel="preconnect" href="https://d1um8515vdn9kb.cloudfront.net">
+<link rel="dns-prefetch" href="https://d1um8515vdn9kb.cloudfront.net">
+
+<link rel="preconnect" href="https://maxcdn.bootstrapcdn.com">
+<link rel="dns-prefetch" href="https://maxcdn.bootstrapcdn.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+
+    
 {% if request.page_type == 'page'  and page.metafields.gempages.featuredImage != blank %}
       <meta property="og:image" content="{{ page.metafields.gempages.featuredImage }}" />
       <meta property="og:image:secure_url" content="{{ page.metafields.gempages.featuredImage }}" />
