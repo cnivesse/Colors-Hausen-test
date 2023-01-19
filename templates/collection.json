@@ -1,56 +1,5 @@
 {
   "sections": {
-    "3fcc2a64-0974-4909-b1ad-b46cc09dc677": {
-      "type": "slideshow",
-      "blocks": {
-        "template--15366539739183__3fcc2a64-0974-4909-b1ad-b46cc09dc677-167414109399dd74de-0": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/shrink_combinaison-09.jpg",
-            "slide_text_color": "is-dark",
-            "text_alignment": "center",
-            "heading": "",
-            "subheading": "",
-            "button": "",
-            "link": "",
-            "alignment": "center center"
-          }
-        },
-        "template--15366539739183__3fcc2a64-0974-4909-b1ad-b46cc09dc677-167414109399dd74de-1": {
-          "type": "image",
-          "settings": {
-            "slide_text_color": "is-light",
-            "text_alignment": "center",
-            "heading": "Üerschrift",
-            "subheading": "Untertitel",
-            "button": "",
-            "link": "",
-            "alignment": "center center"
-          }
-        }
-      },
-      "block_order": [
-        "template--15366539739183__3fcc2a64-0974-4909-b1ad-b46cc09dc677-167414109399dd74de-0",
-        "template--15366539739183__3fcc2a64-0974-4909-b1ad-b46cc09dc677-167414109399dd74de-1"
-      ],
-      "settings": {
-        "arrows": true,
-        "dots": true,
-        "autoplay": true,
-        "autoplay_speed": 5,
-        "use_fade": "false",
-        "slideshow_height": "large",
-        "color_light_slideshow": "#ffffff",
-        "color_dark_slideshow": "#121212",
-        "heading": "",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": true,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "main-collection": {
       "type": "main-collection",
       "settings": {
@@ -69,7 +18,6 @@
     }
   },
   "order": [
-    "3fcc2a64-0974-4909-b1ad-b46cc09dc677",
     "main-collection"
   ]
 }
