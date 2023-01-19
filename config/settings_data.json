@@ -73,23 +73,6 @@
       },
       "header": {
         "type": "header",
-        "blocks": {
-          "f78fb66f-667c-40af-8470-6ec7dbfdc692": {
-            "type": "mega",
-            "settings": {
-              "name": "SHRINK SHELVES",
-              "url-1": "shopify:\/\/collections\/shelves",
-              "text-1": "",
-              "url-2": "shopify:\/\/collections\/shrink",
-              "text-2": "",
-              "url-3": "",
-              "text-3": ""
-            }
-          }
-        },
-        "block_order": [
-          "f78fb66f-667c-40af-8470-6ec7dbfdc692"
-        ],
         "settings": {
           "main_nav_linklist": "main-menu",
           "show_main_menu_on_mobile": true,
