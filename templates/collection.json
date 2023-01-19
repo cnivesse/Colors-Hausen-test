@@ -15,24 +15,9 @@
         "expanded_content": false,
         "collapsed": true
       }
-    },
-    "d24be8a4-1ddc-4c45-bb5b-70338ebb6b27": {
-      "type": "featured-video",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/combinasion.gif",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
-        "heading": "",
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": true,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
-    "main-collection",
-    "d24be8a4-1ddc-4c45-bb5b-70338ebb6b27"
+    "main-collection"
   ]
 }
