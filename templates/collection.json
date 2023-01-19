@@ -1,21 +1,5 @@
 {
   "sections": {
-    "main-collection": {
-      "type": "main-collection",
-      "settings": {
-        "show_collection_title": true,
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "enable_filtering": false,
-        "filter_type": "regular",
-        "enable_sorting": false,
-        "show_labels": true,
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
-        "collapsed": true
-      }
-    },
     "3fcc2a64-0974-4909-b1ad-b46cc09dc677": {
       "type": "slideshow",
       "blocks": {
@@ -66,10 +50,26 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "enable_filtering": false,
+        "filter_type": "regular",
+        "enable_sorting": false,
+        "show_labels": true,
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true
+      }
     }
   },
   "order": [
-    "main-collection",
-    "3fcc2a64-0974-4909-b1ad-b46cc09dc677"
+    "3fcc2a64-0974-4909-b1ad-b46cc09dc677",
+    "main-collection"
   ]
 }
