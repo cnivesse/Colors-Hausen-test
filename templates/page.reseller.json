@@ -9,9 +9,23 @@
         "expanded_content": true,
         "collapsed": true
       }
+    },
+    "fcba6618-2aee-4847-9562-17734678f463": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<iframe src=\"https:\/\/www.orderchamp.com\/invites\/widget\/open?storefront=U3RvcmVmcm9udDoxMzY0MDY1NDY1NTMyNDE3&widget_type=type_big\" width=\"768px\" height=\"640\" frameborder=\"0\"><\/iframe>",
+        "show_as_section": true,
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "fcba6618-2aee-4847-9562-17734678f463"
   ]
 }
