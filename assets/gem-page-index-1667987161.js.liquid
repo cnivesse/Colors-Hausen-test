@@ -9,31 +9,6 @@
     
   
     (function( jQuery ){
-  var $module = jQuery('#m-1668005088282').children('.module');
-  var $product = $module.closest('[data-label="Product"]');
-  var productCurrentId = "";
-  if ($product.length > 0) {
-    productCurrentId = $product.attr("id");
-  }
-  var changeVariantFunction = function (variant) {
-    if(variant&&variant.id){
-      var productHandle = $module.attr("data-phandle");
-      var newHandle = "/products/"+productHandle+"?variant="+variant.id;
-      $module.find('a').attr("href",newHandle);
-    }
-  }
-  if (window.GEMSTORE) {
-    window.GEMSTORE.subscribe("product-" + productCurrentId + "-variant", changeVariantFunction);
-  }
-})( window.GemQuery || jQuery );
-  
-    
-  
-    
-  
-    
-  
-    (function( jQuery ){
   try {
     var $module = jQuery('#m-1669386967600').children('.module');   
     var navspeed = $module.data('navspeed'),
