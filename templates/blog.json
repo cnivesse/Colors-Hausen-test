@@ -22,7 +22,7 @@
         "layout": "list",
         "featured_images_fixed_height_enabled": false,
         "featured_images_fixed_height": 360,
-        "show_heading": true,
+        "show_heading": false,
         "show_background": true,
         "expanded": true,
         "expanded_content": false,
