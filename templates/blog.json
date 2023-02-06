@@ -52,10 +52,10 @@
         "subheading": "",
         "columns": 1,
         "align": "center",
-        "show_background": false,
+        "show_background": true,
         "expanded": true,
-        "content_max_width": 850,
-        "collapsed": false,
+        "content_max_width": 650,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
