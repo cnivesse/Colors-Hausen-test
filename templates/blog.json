@@ -1,1 +1,37 @@
-{"sections":{"main":{"type":"main-blog","settings":{"layout":"list","show_background":true,"expanded":true,"collapsed":true}}},"order":["main"]}
+{
+  "sections": {
+    "09903143-d232-40dd-978b-edf2bcebb51f": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Mugshot_small_b348e79f-04bd-473d-833f-887bf2f524f1.png",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "main": {
+      "type": "main-blog",
+      "settings": {
+        "layout": "list",
+        "featured_images_fixed_height_enabled": false,
+        "featured_images_fixed_height": 360,
+        "show_heading": true,
+        "show_background": true,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true
+      }
+    }
+  },
+  "order": [
+    "09903143-d232-40dd-978b-edf2bcebb51f",
+    "main"
+  ]
+}
