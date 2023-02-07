@@ -27,7 +27,7 @@
           "type": "button",
           "settings": {
             "text": "register",
-            "link": "",
+            "link": "https:\/\/hausen.affiliatery.staqlab.com\/partner\/signIn",
             "style": "solid",
             "size": "normal",
             "increase_space_before_block": true
