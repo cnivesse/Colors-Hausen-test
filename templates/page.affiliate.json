@@ -1,0 +1,60 @@
+{
+  "sections": {
+    "main": {
+      "type": "contact",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "477d07ff-532c-41ba-9d09-fc67306ef021": {
+      "type": "banner-with-text",
+      "blocks": {
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Become an affiliate",
+            "increase_space_before_block": true
+          }
+        },
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>By registering to our affiliate platform, you can earn money for each orders executed from your personalised link. Please contact us for more informations at info@studiohausen.com<\/p>",
+            "increase_space_before_block": true
+          }
+        },
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-2": {
+          "type": "button",
+          "settings": {
+            "text": "register",
+            "link": "",
+            "style": "solid",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-0",
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-1",
+        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/220624_StudioHausen_0108_mobile.png",
+        "image_position": "center center",
+        "text_position": "left",
+        "text_align": "left",
+        "expanded": false,
+        "expanded_content": false,
+        "content_max_width": 300,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "477d07ff-532c-41ba-9d09-fc67306ef021"
+  ]
+}
