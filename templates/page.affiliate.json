@@ -16,18 +16,11 @@
             "increase_space_before_block": true
           }
         },
-        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-1": {
-          "type": "paragraph",
-          "settings": {
-            "text": "<p>By registering to our affiliate platform, you can earn money for each orders executed from your personalised link. Please contact us for more informations at info@studiohausen.com<\/p>",
-            "increase_space_before_block": true
-          }
-        },
         "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-2": {
           "type": "button",
           "settings": {
             "text": "register",
-            "link": "",
+            "link": "https:\/\/hausen.affiliatery.staqlab.com\/partner\/signIn",
             "style": "solid",
             "size": "normal",
             "increase_space_before_block": true
@@ -36,7 +29,6 @@
       },
       "block_order": [
         "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-0",
-        "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-1",
         "template--15557731090479__477d07ff-532c-41ba-9d09-fc67306ef021-1675777423c9613229-2"
       ],
       "settings": {
@@ -51,10 +43,46 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "c2648cee-91e0-4f09-a658-a636becaabb2": {
+      "type": "rich-text",
+      "blocks": {
+        "template--15557731090479__c2648cee-91e0-4f09-a658-a636becaabb2-1675778280bb2fe9af-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "By registering to our affiliate platform, you can earn money for each orders executed from your personalised link. Please contact us for more informations",
+            "max_width": 800,
+            "increase_space_before_block": true
+          }
+        },
+        "template--15557731090479__c2648cee-91e0-4f09-a658-a636becaabb2-1675778280bb2fe9af-2": {
+          "type": "button",
+          "settings": {
+            "text": "Contact",
+            "link": "shopify:\/\/pages\/contact",
+            "style": "solid",
+            "size": "normal",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--15557731090479__c2648cee-91e0-4f09-a658-a636becaabb2-1675778280bb2fe9af-1",
+        "template--15557731090479__c2648cee-91e0-4f09-a658-a636becaabb2-1675778280bb2fe9af-2"
+      ],
+      "settings": {
+        "text_align": "center",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
-    "477d07ff-532c-41ba-9d09-fc67306ef021"
+    "477d07ff-532c-41ba-9d09-fc67306ef021",
+    "c2648cee-91e0-4f09-a658-a636becaabb2"
   ]
 }
