@@ -73,6 +73,9 @@
       },
       "header": {
         "type": "header",
+        "custom_css": [
+          ".section-header .header .main-nav ul li ul.tab {}"
+        ],
         "settings": {
           "main_nav_linklist": "main-menu",
           "show_main_menu_on_mobile": true,
