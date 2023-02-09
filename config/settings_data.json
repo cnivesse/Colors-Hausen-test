@@ -55,7 +55,7 @@
     "checkout_header_image": "shopify:\/\/shop_images\/artboard.jpg",
     "checkout_logo_image": "shopify:\/\/shop_images\/201022_hausen_Logo_h_832c56c8-ccf9-4ce2-9125-e6361b9731e3.png",
     "checkout_logo_position": "left",
-    "checkout_logo_size": "medium",
+    "checkout_logo_size": "small",
     "checkout_accent_color": "#44b918",
     "checkout_button_color": "#44b918",
     "color_share_text": "#ffffff",
