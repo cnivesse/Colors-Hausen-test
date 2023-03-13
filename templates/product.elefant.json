@@ -1,0 +1,288 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "radios",
+            "swatches_selector": "",
+            "popup_selector": "Taille",
+            "popup_text": "Guide des tailles",
+            "popup_page": "",
+            "increase_space_before_block": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_pickup_availability": true,
+            "increase_space_before_block": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Merkmale",
+            "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "question_mark",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Materialien",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "leather",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Abmessungen",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "truck",
+            "increase_space_before_block": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "facebook_sharing_products": true,
+            "twitter_sharing_products": true,
+            "pinterest_sharing_products": true,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_1",
+        "collapsible_tab_2",
+        "collapsible_tab_3",
+        "share"
+      ],
+      "settings": {
+        "thumbnails_position": "left",
+        "enable_sticky_info": true,
+        "zoom_enable": true,
+        "enable_video_looping": false,
+        "first_variant_media_enabled": false,
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false
+      }
+    },
+    "1660741460d0972f44": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "1660741460397976d0-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Caractéristiques",
+            "increase_space_before_block": false
+          }
+        },
+        "1660741460397976d0-2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>taille : 150x45x90 cm<\/p><p>poids : 15kg<\/p><p>materiaux : bois, métal<\/p><p><\/p>",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "1660741460397976d0-1",
+        "1660741460397976d0-2"
+      ],
+      "settings": {
+        "text_position": "left",
+        "show_background": true,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "16613370413d8ae6e4": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/monkey10_Lederfarben_DERU_cognac_23462_1920x1920_bada47f4-779e-4ce5-8501-58e5d67da5f9.jpg",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 400,
+        "video_mobile": "",
+        "expanded": true,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5": {
+      "type": "slideshow",
+      "blocks": {
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey8_Panorama_Deru1124_1920x1920_06b8aa33-87cd-441a-a590-4c83d4a76b24.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1340_1920x1920_14a64fa1-a19d-4ffd-9b14-cf4a1bbbf7d4.jpg",
+            "slide_text_color": "is-light",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "86ecfa55-3195-432c-ba70-4987cd064dba": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1370_1920x1920_f051dce1-94ec-42f7-b7f4-c45c878bf85f.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "741fa82a-0f7c-4182-9049-2c24c3531171": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey7_Gruppe_Deru23372_1920x1920_23f8dc5f-640b-4e85-be89-e6fc241ef209.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "5d475edd-1546-42b9-b689-aabbb7e0a948": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey6_Gruppe_Deru23370_1920x1920_e436a0b2-827f-4f9b-9bb5-3405ebbf8b90.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-0",
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1",
+        "86ecfa55-3195-432c-ba70-4987cd064dba",
+        "741fa82a-0f7c-4182-9049-2c24c3531171",
+        "5d475edd-1546-42b9-b689-aabbb7e0a948"
+      ],
+      "settings": {
+        "arrows": false,
+        "dots": true,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "use_fade": "false",
+        "slideshow_height": "medium",
+        "color_light_slideshow": "#ffffff",
+        "color_dark_slideshow": "#121212",
+        "heading": "",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "687be932-8bcd-4682-bd2c-462f8acc064e": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/monkey10_Lederfarbe_DERU_23459_1920x1920_1920x1920_d6ac187c-32dd-4920-8c46-e201b088f726.jpg",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660741460d0972f44",
+    "16613370413d8ae6e4",
+    "product-recommendations",
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5",
+    "687be932-8bcd-4682-bd2c-462f8acc064e"
+  ]
+}
