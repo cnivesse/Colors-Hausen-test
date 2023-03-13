@@ -44,7 +44,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
             "page": "",
             "icon": "washing",
             "increase_space_before_block": true
@@ -54,7 +54,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
             "page": "",
             "icon": "leaf",
             "increase_space_before_block": true
@@ -64,7 +64,7 @@
           "type": "collapsible_tab",
           "settings": {
             "heading": "Titre de l'onglet",
-            "content": "<p>Contenu de l'onglet<\/p>",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
             "page": "",
             "icon": "truck",
             "increase_space_before_block": true
@@ -136,19 +136,6 @@
         "show_on_mobile": true
       }
     },
-    "1660568962963a549c": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "<style>\n  \/* Frame 1 *\/\n\nposition: absolute;\nwidth: 1512px;\nheight: 2250px;\nleft: 0px;\ntop: 1599px;\n\n\n\n\/* StudioHausen10656 1 *\/\n\nposition: absolute;\nwidth: 691px;\nheight: 1037px;\nleft: 195px;\ntop: 217px;\n\nbackground: url(StudioHausen10656.jpg);\n\n\n\/* StudioHausen10606 2 *\/\n\nposition: absolute;\nwidth: 756px;\nheight: 862px;\nleft: 607px;\ntop: 1329px;\n\nbackground: url(StudioHausen10606.jpg);\n\n\n\/* TIMELESS *\/\n\nposition: absolute;\nwidth: 658px;\nheight: 349px;\nleft: 756px;\ntop: 524px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n\n\/* ECOLOGIC *\/\n\nposition: absolute;\nwidth: 716px;\nheight: 349px;\nleft: 101px;\ntop: 1743px;\n\nfont-family: 'Inter';\nfont-style: normal;\nfont-weight: 600;\nfont-size: 128px;\nline-height: 155px;\n\ncolor: #FFFFFF;\n\n\n  }\n<\/style>",
-        "show_as_section": true,
-        "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
@@ -194,14 +181,108 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5": {
+      "type": "slideshow",
+      "blocks": {
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-0": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey8_Panorama_Deru1124_1920x1920_06b8aa33-87cd-441a-a590-4c83d4a76b24.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1340_1920x1920_14a64fa1-a19d-4ffd-9b14-cf4a1bbbf7d4.jpg",
+            "slide_text_color": "is-light",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "86ecfa55-3195-432c-ba70-4987cd064dba": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1370_1920x1920_f051dce1-94ec-42f7-b7f4-c45c878bf85f.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "741fa82a-0f7c-4182-9049-2c24c3531171": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey7_Gruppe_Deru23372_1920x1920_23f8dc5f-640b-4e85-be89-e6fc241ef209.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "5d475edd-1546-42b9-b689-aabbb7e0a948": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/monkey6_Gruppe_Deru23370_1920x1920_e436a0b2-827f-4f9b-9bb5-3405ebbf8b90.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        }
+      },
+      "block_order": [
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-0",
+        "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1",
+        "86ecfa55-3195-432c-ba70-4987cd064dba",
+        "741fa82a-0f7c-4182-9049-2c24c3531171",
+        "5d475edd-1546-42b9-b689-aabbb7e0a948"
+      ],
+      "settings": {
+        "arrows": true,
+        "dots": true,
+        "autoplay": true,
+        "autoplay_speed": 5,
+        "use_fade": "false",
+        "slideshow_height": "medium",
+        "color_light_slideshow": "#ffffff",
+        "color_dark_slideshow": "#121212",
+        "heading": "",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
     "1660741460d0972f44",
-    "1660568962963a549c",
     "16613370413d8ae6e4",
     "product-recommendations",
-    "hero"
+    "hero",
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5"
   ]
 }
