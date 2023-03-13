@@ -15,26 +15,9 @@
         "expanded_content": false,
         "collapsed": true
       }
-    },
-    "bd885471-08a5-4e5d-bfee-aefccecf9107": {
-      "type": "hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/combinasion_3fc4fcaf-87b4-4375-94fe-4aaeaa7238aa.gif",
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
-    "main-collection",
-    "bd885471-08a5-4e5d-bfee-aefccecf9107"
+    "main-collection"
   ]
 }
