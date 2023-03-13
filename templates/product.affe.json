@@ -139,7 +139,7 @@
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
-        "image": "shopify:\/\/shop_images\/monkey10_Lederfarben_DERU_cognac_23462_1920x1920_a5e8e749-9dd4-454c-95fb-5c14dd75b9b5.jpg",
+        "image": "shopify:\/\/shop_images\/monkey10_Lederfarben_DERU_cognac_23462_1920x1920_43351b90-c754-4804-bb5a-e1f03ddd7344.jpg",
         "video": "",
         "alignment": "h-center v-center",
         "overlay_color": "#000000",
@@ -248,14 +248,14 @@
         "autoplay": true,
         "autoplay_speed": 5,
         "use_fade": "false",
-        "slideshow_height": "small",
+        "slideshow_height": "medium",
         "color_light_slideshow": "#ffffff",
         "color_dark_slideshow": "#121212",
         "heading": "",
         "show_background": false,
-        "expanded": false,
-        "expanded_content": false,
-        "collapsed": false,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
