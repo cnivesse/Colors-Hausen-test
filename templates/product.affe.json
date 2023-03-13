@@ -146,8 +146,8 @@
         "overlay_opacity": 0,
         "mobile_min_height": 400,
         "video_mobile": "",
-        "expanded": true,
-        "collapsed": true,
+        "expanded": false,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
@@ -255,7 +255,7 @@
         "show_background": false,
         "expanded": true,
         "expanded_content": true,
-        "collapsed": true,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
@@ -270,8 +270,8 @@
         "overlay_opacity": 0,
         "mobile_min_height": 500,
         "video_mobile": "",
-        "expanded": true,
-        "collapsed": true,
+        "expanded": false,
+        "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
