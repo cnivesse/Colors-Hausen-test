@@ -246,6 +246,19 @@
             "link": "",
             "alignment": "center center"
           }
+        },
+        "b91b757c-0d82-4f81-8662-7e7918ba6c64": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_05_17-Deru23446_1920x1920_b6ad45b3-eb0b-4d2e-ba33-121befdb39db.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
         }
       },
       "block_order": [
@@ -254,7 +267,8 @@
         "86ecfa55-3195-432c-ba70-4987cd064dba",
         "741fa82a-0f7c-4182-9049-2c24c3531171",
         "5d475edd-1546-42b9-b689-aabbb7e0a948",
-        "c20080a1-f7cc-40a9-b4dd-7c90383a5236"
+        "c20080a1-f7cc-40a9-b4dd-7c90383a5236",
+        "b91b757c-0d82-4f81-8662-7e7918ba6c64"
       ],
       "settings": {
         "arrows": false,
