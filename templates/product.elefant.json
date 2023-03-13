@@ -172,7 +172,7 @@
         "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-0": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/monkey8_Panorama_Deru1124_1920x1920_06b8aa33-87cd-441a-a590-4c83d4a76b24.jpg",
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1152_2_1920x1920_95c86c42-377d-469c-857f-7532aa4a9386.jpg",
             "slide_text_color": "is-dark",
             "text_alignment": "center",
             "heading": "",
@@ -185,7 +185,7 @@
         "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1340_1920x1920_14a64fa1-a19d-4ffd-9b14-cf4a1bbbf7d4.jpg",
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1168_1920x1920_166e3a53-0aea-466f-ae9b-d0b8584ac9dc.jpg",
             "slide_text_color": "is-light",
             "text_alignment": "center",
             "heading": "",
@@ -198,7 +198,7 @@
         "86ecfa55-3195-432c-ba70-4987cd064dba": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1370_1920x1920_f051dce1-94ec-42f7-b7f4-c45c878bf85f.jpg",
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1204_1920x1920_ca8d480a-2eb3-4bc3-ae1a-90531cb5a4ac.jpg",
             "slide_text_color": "is-dark",
             "text_alignment": "center",
             "heading": "",
@@ -211,7 +211,7 @@
         "741fa82a-0f7c-4182-9049-2c24c3531171": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/monkey7_Gruppe_Deru23372_1920x1920_23f8dc5f-640b-4e85-be89-e6fc241ef209.jpg",
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1237_1920x1920_af31f477-6600-4c44-95cd-999044517fc0.jpg",
             "slide_text_color": "is-dark",
             "text_alignment": "center",
             "heading": "",
@@ -224,7 +224,20 @@
         "5d475edd-1546-42b9-b689-aabbb7e0a948": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/monkey6_Gruppe_Deru23370_1920x1920_e436a0b2-827f-4f9b-9bb5-3405ebbf8b90.jpg",
+            "image": "shopify:\/\/shop_images\/2022_06_23-Deru1243_1920x1920_c9edfb58-3ffd-48b2-abc7-e93d6e267893.jpg",
+            "slide_text_color": "is-dark",
+            "text_alignment": "center",
+            "heading": "",
+            "subheading": "",
+            "button": "",
+            "link": "",
+            "alignment": "center center"
+          }
+        },
+        "c20080a1-f7cc-40a9-b4dd-7c90383a5236": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/2022_05_17-Deru23425_1920x1920_056b8eee-ad9a-40ac-827c-504d3ef53106.jpg",
             "slide_text_color": "is-dark",
             "text_alignment": "center",
             "heading": "",
@@ -240,7 +253,8 @@
         "template--18285820379468__0057f35a-b9bd-4476-b5a8-868b47c9b8c5-167870897576667f2f-1",
         "86ecfa55-3195-432c-ba70-4987cd064dba",
         "741fa82a-0f7c-4182-9049-2c24c3531171",
-        "5d475edd-1546-42b9-b689-aabbb7e0a948"
+        "5d475edd-1546-42b9-b689-aabbb7e0a948",
+        "c20080a1-f7cc-40a9-b4dd-7c90383a5236"
       ],
       "settings": {
         "arrows": false,
