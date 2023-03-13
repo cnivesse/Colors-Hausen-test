@@ -259,18 +259,18 @@
         "5d475edd-1546-42b9-b689-aabbb7e0a948"
       ],
       "settings": {
-        "arrows": true,
+        "arrows": false,
         "dots": true,
         "autoplay": true,
         "autoplay_speed": 5,
         "use_fade": "false",
-        "slideshow_height": "medium",
+        "slideshow_height": "small",
         "color_light_slideshow": "#ffffff",
         "color_dark_slideshow": "#121212",
         "heading": "",
         "show_background": false,
-        "expanded": true,
-        "expanded_content": true,
+        "expanded": false,
+        "expanded_content": false,
         "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
