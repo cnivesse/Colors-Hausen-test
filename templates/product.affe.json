@@ -232,7 +232,7 @@
         "autoplay": true,
         "autoplay_speed": 5,
         "use_fade": "false",
-        "slideshow_height": "medium",
+        "slideshow_height": "large",
         "color_light_slideshow": "#ffffff",
         "color_dark_slideshow": "#121212",
         "heading": "",
