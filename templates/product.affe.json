@@ -136,22 +136,6 @@
         "show_on_mobile": true
       }
     },
-    "16613370413d8ae6e4": {
-      "type": "hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/monkey10_Lederfarben_DERU_cognac_23462_1920x1920_bada47f4-779e-4ce5-8501-58e5d67da5f9.jpg",
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 400,
-        "video_mobile": "",
-        "expanded": true,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "disabled": true,
@@ -259,30 +243,12 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "687be932-8bcd-4682-bd2c-462f8acc064e": {
-      "type": "hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/monkey10_Lederfarbe_DERU_23459_1920x1920_1920x1920_d6ac187c-32dd-4920-8c46-e201b088f726.jpg",
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": true,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
     "main",
     "1660741460d0972f44",
-    "16613370413d8ae6e4",
     "product-recommendations",
-    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5",
-    "687be932-8bcd-4682-bd2c-462f8acc064e"
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5"
   ]
 }
