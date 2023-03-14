@@ -92,7 +92,7 @@
         "share"
       ],
       "settings": {
-        "thumbnails_position": "left",
+        "thumbnails_position": "bottom",
         "enable_sticky_info": true,
         "zoom_enable": true,
         "enable_video_looping": false,
