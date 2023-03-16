@@ -150,6 +150,22 @@
         "show_on_mobile": true
       }
     },
+    "3788709e-0e04-4426-a0e8-8b0bf6de0c05": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/deru_cognac_5c649d54-c6d0-49a0-b24f-5f6eb6f2c1df.png",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "0057f35a-b9bd-4476-b5a8-868b47c9b8c5": {
       "type": "slideshow",
       "blocks": {
@@ -293,6 +309,7 @@
     "main",
     "1660741460d0972f44",
     "product-recommendations",
+    "3788709e-0e04-4426-a0e8-8b0bf6de0c05",
     "0057f35a-b9bd-4476-b5a8-868b47c9b8c5",
     "be7bd509-cda3-421b-8a8b-e4c4a4bd24ef"
   ]
