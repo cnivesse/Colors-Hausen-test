@@ -243,12 +243,29 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "1606b6f4-91e6-419a-b8bc-f778a4e439db": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/deru_black.png",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
     "1660741460d0972f44",
     "product-recommendations",
-    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5"
+    "0057f35a-b9bd-4476-b5a8-868b47c9b8c5",
+    "1606b6f4-91e6-419a-b8bc-f778a4e439db"
   ]
 }
