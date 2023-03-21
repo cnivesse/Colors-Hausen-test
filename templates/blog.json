@@ -1,69 +1,20 @@
 {
   "sections": {
-    "09903143-d232-40dd-978b-edf2bcebb51f": {
-      "type": "hero",
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Mugshot_small_b348e79f-04bd-473d-833f-887bf2f524f1.png",
-        "video": "",
-        "alignment": "h-center v-center",
-        "overlay_color": "#000000",
-        "overlay_opacity": 0,
-        "mobile_min_height": 500,
-        "video_mobile": "",
-        "expanded": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "main": {
       "type": "main-blog",
       "settings": {
         "layout": "list",
         "featured_images_fixed_height_enabled": true,
-        "featured_images_fixed_height": 360,
+        "featured_images_fixed_height": 290,
         "show_heading": false,
-        "show_background": true,
+        "show_background": false,
         "expanded": true,
-        "expanded_content": false,
-        "collapsed": true
-      }
-    },
-    "8c395f78-6304-4468-851c-27bb53f56545": {
-      "type": "text-columns-with-images",
-      "blocks": {
-        "template--15366539673647__8c395f78-6304-4468-851c-27bb53f56545-16756817315b626e7b-0": {
-          "type": "text_column",
-          "settings": {
-            "show_image": true,
-            "image_type": "custom",
-            "image": "shopify:\/\/shop_images\/IMG_7700.jpg",
-            "title": "Exposition of the shelf and plagiarius at the Ambiente fair 23 of Frankfurt",
-            "text": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15366539673647__8c395f78-6304-4468-851c-27bb53f56545-16756817315b626e7b-0"
-      ],
-      "settings": {
-        "heading": "",
-        "subheading": "",
-        "columns": 1,
-        "align": "center",
-        "show_background": true,
-        "expanded": true,
-        "content_max_width": 650,
-        "collapsed": true,
-        "show_on_desktop": true,
-        "show_on_mobile": true
+        "expanded_content": true,
+        "collapsed": false
       }
     }
   },
   "order": [
-    "09903143-d232-40dd-978b-edf2bcebb51f",
-    "main",
-    "8c395f78-6304-4468-851c-27bb53f56545"
+    "main"
   ]
 }
