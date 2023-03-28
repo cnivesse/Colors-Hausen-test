@@ -1,1 +1,29 @@
-{"sections":{"cart":{"type":"cart","settings":{"expanded":false,"collapsed":true}}},"order":["cart"]}
+{
+  "sections": {
+    "cart": {
+      "type": "cart",
+      "settings": {
+        "show_background": true,
+        "expanded": false,
+        "collapsed": true
+      }
+    },
+    "44a741cd-260e-4fd7-9818-09d3c673025f": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<script\nsrc=\"https:\/\/www.paypal.com\/sdk\/js?client-id=AQ1XOvGCHuaiu6zT4uiWoktKxDc-6fo7tWm7YpiBVhZBu2BAeViZZIh2pL2GQiNF337FNjoOi99gRibI&currency=EUR&components=messages\">\n<\/script>\n\n<div\n  data-pp-message\n  data-pp-placement=\"product\"\n  data-pp-amount=\"120.00\">\n<\/div>",
+        "show_as_section": true,
+        "show_background": true,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "cart",
+    "44a741cd-260e-4fd7-9818-09d3c673025f"
+  ]
+}
