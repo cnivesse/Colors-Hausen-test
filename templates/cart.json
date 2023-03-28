@@ -16,7 +16,7 @@
         "show_background": true,
         "expanded": false,
         "expanded_content": false,
-        "collapsed": false,
+        "collapsed": true,
         "show_on_desktop": true,
         "show_on_mobile": true
       }
