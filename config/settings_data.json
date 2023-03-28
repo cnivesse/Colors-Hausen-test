@@ -151,7 +151,7 @@
           "cdae2d25-123c-40f7-aff1-a2a5feb2b48a"
         ],
         "settings": {
-          "footer_show_payments": false,
+          "footer_show_payments": true,
           "show_language_selector": true,
           "show_country_selector": true
         }
