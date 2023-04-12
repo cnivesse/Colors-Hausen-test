@@ -39,7 +39,7 @@
     "product_sale_tag_option": "discount",
     "product_sold_out_tag_enabled": true,
     "product_new_tag_enabled": false,
-    "product_grid_preview_enable": true,
+    "product_grid_preview_enable": false,
     "product_grid_interactive_enable": false,
     "product_grid_secondary_enable": true,
     "product_grid_mouseover_opacity": 80,
