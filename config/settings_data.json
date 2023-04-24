@@ -62,10 +62,13 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
+        "custom_css": [
+          "div {font-weight: 900px;}"
+        ],
         "settings": {
           "show_announcement": false,
           "home_page_only": false,
-          "top_banner_text": "Bestellen Sie Ihre Produkte vor dem 18. Dezember und erhalten Sie sie vor Weihnachten",
+          "top_banner_text": "SPRING CAMPAIGN : FREE SHIPPING WHEREVER YOU ARE !",
           "announcement_link": "",
           "color_announcement_text": "#121212",
           "color_announcement_bg": "#f3f0ee"
