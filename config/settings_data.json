@@ -63,7 +63,7 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "custom_css": [
-          "div {font-weight: 900;}"
+          ".announcement-bar p{font-weight: 900;}"
         ],
         "settings": {
           "show_announcement": true,
