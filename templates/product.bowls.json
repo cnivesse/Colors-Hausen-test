@@ -25,6 +25,13 @@
             "increase_space_before_block": false
           }
         },
+        "7d1119b4-8c71-4f3e-a7b5-a04b412adf9f": {
+          "type": "text",
+          "settings": {
+            "text": "<p>kostenlose Lieferung<\/p>",
+            "increase_space_before_block": true
+          }
+        },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
@@ -84,6 +91,7 @@
         "189f6097-1ee3-4e6b-93f9-4140258ee252",
         "title",
         "price",
+        "7d1119b4-8c71-4f3e-a7b5-a04b412adf9f",
         "variant_picker",
         "buy_buttons",
         "description",
