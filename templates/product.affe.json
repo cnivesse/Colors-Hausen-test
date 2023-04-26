@@ -26,6 +26,13 @@
             "increase_space_before_block": true
           }
         },
+        "b3a8d737-2f87-4319-b010-20993d7659f8": {
+          "type": "text",
+          "settings": {
+            "text": "<p>kostenlose Lieferung<\/p>",
+            "increase_space_before_block": true
+          }
+        },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
@@ -84,6 +91,7 @@
         "title",
         "price",
         "variant_picker",
+        "b3a8d737-2f87-4319-b010-20993d7659f8",
         "buy_buttons",
         "description",
         "collapsible_tab_1",

@@ -217,20 +217,6 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
-    },
-    "b7996223-b9d5-4944-b4db-06070a7521e9": {
-      "type": "newsletter",
-      "settings": {
-        "heading": "Abonnieren Sie unseren Newsletter",
-        "subheading": "<p>Sonderangebote, neue Produkte und Schlussverkäufe. Direkt in Ihren Posteingang.<\/p>",
-        "show_background": true,
-        "expanded": false,
-        "expanded_content": false,
-        "content_max_width": 700,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
     }
   },
   "order": [
@@ -239,7 +225,6 @@
     "66696f90-d8da-4b9e-9862-08bb2e9af20e",
     "16613370413d8ae6e4",
     "product-recommendations",
-    "166781276261463c89",
-    "b7996223-b9d5-4944-b4db-06070a7521e9"
+    "166781276261463c89"
   ]
 }
