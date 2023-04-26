@@ -1,0 +1,237 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "cf4c6713-dbe4-429d-9f31-0700c66317a1": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#000000",
+            "star_size": 15,
+            "text_align": "flex-end",
+            "product": "{{product}}",
+            "stars_text_empty": ""
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "increase_space_before_block": false
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "radios",
+            "swatches_selector": "",
+            "popup_selector": "Taille",
+            "popup_text": "Guide des tailles",
+            "popup_page": "",
+            "increase_space_before_block": true
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true,
+            "show_pickup_availability": true,
+            "increase_space_before_block": true
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_1": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Merkmale",
+            "content": "<p>{{ product.metafields.custom.product_materials | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "question_mark",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_2": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Materialien",
+            "content": "<p>{{ product.metafields.custom.shelves_material | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "leaf",
+            "increase_space_before_block": true
+          }
+        },
+        "collapsible_tab_3": {
+          "type": "collapsible_tab",
+          "settings": {
+            "heading": "Lieferung",
+            "content": "<p>{{ product.metafields.custom.delivery_set_1_set_2 | metafield_tag }}<\/p>",
+            "page": "",
+            "icon": "truck",
+            "increase_space_before_block": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "facebook_sharing_products": true,
+            "twitter_sharing_products": true,
+            "pinterest_sharing_products": true,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "cf4c6713-dbe4-429d-9f31-0700c66317a1",
+        "title",
+        "price",
+        "variant_picker",
+        "buy_buttons",
+        "description",
+        "collapsible_tab_1",
+        "collapsible_tab_2",
+        "collapsible_tab_3",
+        "share"
+      ],
+      "settings": {
+        "thumbnails_position": "left",
+        "enable_sticky_info": true,
+        "zoom_enable": true,
+        "enable_video_looping": false,
+        "first_variant_media_enabled": false,
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true
+      }
+    },
+    "1660741460d0972f44": {
+      "type": "image-with-text",
+      "disabled": true,
+      "blocks": {
+        "1660741460397976d0-1": {
+          "type": "heading",
+          "settings": {
+            "text": "Caractéristiques",
+            "increase_space_before_block": false
+          }
+        },
+        "1660741460397976d0-2": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>taille : 150x45x90 cm<\/p><p>poids : 15kg<\/p><p>materiaux : bois, métal<\/p><p><\/p>",
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "1660741460397976d0-1",
+        "1660741460397976d0-2"
+      ],
+      "settings": {
+        "text_position": "left",
+        "show_background": true,
+        "expanded": true,
+        "expanded_content": true,
+        "collapsed": true,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "66696f90-d8da-4b9e-9862-08bb2e9af20e": {
+      "type": "hero",
+      "settings": {
+        "image": "{{ product.metafields.custom.measurements.value }}",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "16613370413d8ae6e4": {
+      "type": "hero",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Untitled-2.png",
+        "video": "",
+        "alignment": "h-center v-center",
+        "overlay_color": "#000000",
+        "overlay_opacity": 0,
+        "mobile_min_height": 500,
+        "video_mobile": "",
+        "expanded": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "disabled": true,
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "166781276261463c89": {
+      "type": "apps",
+      "blocks": {
+        "8ad6f20e-f4a0-4376-b616-38ed5bd85222": {
+          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "8ad6f20e-f4a0-4376-b616-38ed5bd85222"
+      ],
+      "settings": {
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
+    "b7996223-b9d5-4944-b4db-06070a7521e9": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "Abonnieren Sie unseren Newsletter",
+        "subheading": "<p>Sonderangebote, neue Produkte und Schlussverkäufe. Direkt in Ihren Posteingang.<\/p>",
+        "show_background": true,
+        "expanded": false,
+        "expanded_content": false,
+        "content_max_width": 700,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1660741460d0972f44",
+    "66696f90-d8da-4b9e-9862-08bb2e9af20e",
+    "16613370413d8ae6e4",
+    "product-recommendations",
+    "166781276261463c89",
+    "b7996223-b9d5-4944-b4db-06070a7521e9"
+  ]
+}
