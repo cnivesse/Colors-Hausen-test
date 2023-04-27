@@ -7,7 +7,7 @@
         "show_collection_description": true,
         "show_collection_image": false,
         "enable_filtering": true,
-        "filter_type": "regular",
+        "filter_type": "tags",
         "enable_sorting": true,
         "show_labels": true,
         "show_background": false,
