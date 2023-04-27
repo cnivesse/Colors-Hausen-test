@@ -6,7 +6,7 @@
         "show_collection_title": true,
         "show_collection_description": true,
         "show_collection_image": false,
-        "enable_filtering": true,
+        "enable_filtering": false,
         "filter_type": "regular",
         "enable_sorting": true,
         "show_labels": true,
