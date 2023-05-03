@@ -71,7 +71,7 @@
           "type": "button",
           "settings": {
             "text": "LINK Set 1",
-            "link": "shopify:\/\/collections\/all",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/211106_Link_Shelf_System_1_2.pdf?v=1683126118",
             "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
@@ -81,7 +81,7 @@
           "type": "button",
           "settings": {
             "text": "LINK set 2",
-            "link": "shopify:\/\/collections\/all",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/211106_Link_Shelf_System_1_2.pdf?v=1683126118",
             "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
