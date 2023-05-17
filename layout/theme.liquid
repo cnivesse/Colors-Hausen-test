@@ -92,7 +92,7 @@
   <!--Gem_Page_Header_Script-->
 {% render 'gem-app-header-scripts' %}
 <!--End_Gem_Page_Header_Script-->
-</head>
+{% render 'edt_p' %} </head>
 
   <body id="{{ page_title | handle }}" class="template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }} {% if template.suffix %}template-sufix-{{ template.suffix }}{% endif %} {% if settings.header_expanded %}header-expanded{% endif %}">
     <a class="skip-link" href="#MainContent" tabindex="1">{{ 'general.accessibility.skip_to_content' | t }}</a>

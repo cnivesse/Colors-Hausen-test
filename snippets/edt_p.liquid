@@ -1,0 +1,17 @@
+<script src="{{ 'flagBs.js' | asset_url }}" async="async"></script>
+<script>
+    let es_lan_s = '{{ "es_default_" | append: shop.locale }}';
+    let es_lan_j = {{ shop.metafields.estimated | json }};
+    let es_lan = es_lan_j[es_lan_s];
+
+    let  es_sd = {{ shop.metafields.estimated.es_default | json }};
+
+    let es_pd = '';
+    {% if product.metafields.estimated.es_default %}
+        {% if product.metafields.estimated.es_default.is_add %}
+        es_pd = {{ product.metafields.estimated.es_default | json }};
+        {% else %}
+        es_pd = {{ product.metafields.estimated.es_default }};
+        {% endif %}
+    {% endif %}
+</script>
