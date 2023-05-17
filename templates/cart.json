@@ -8,6 +8,19 @@
         "collapsed": true
       }
     },
+    "254d55f8-3eff-46b9-bc5c-738362088f70": {
+      "type": "custom-liquid",
+      "settings": {
+        "custom_liquid": "<div id=\"edt-p\"><\/div>",
+        "show_as_section": true,
+        "show_background": true,
+        "expanded": false,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "44a741cd-260e-4fd7-9818-09d3c673025f": {
       "type": "custom-liquid",
       "settings": {
@@ -24,6 +37,7 @@
   },
   "order": [
     "cart",
+    "254d55f8-3eff-46b9-bc5c-738362088f70",
     "44a741cd-260e-4fd7-9818-09d3c673025f"
   ]
 }
