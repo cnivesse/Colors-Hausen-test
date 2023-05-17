@@ -26,8 +26,15 @@
             "increase_space_before_block": true
           }
         },
+        "6ce75e9e-1f70-404d-aa01-6bc6b5163d65": {
+          "type": "shopify:\/\/apps\/estimated-delivery-date-eta\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "settings": {
+            "heading": "ETA"
+          }
+        },
         "b3a8d737-2f87-4319-b010-20993d7659f8": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>kostenlose Lieferung<\/p>",
             "increase_space_before_block": true
@@ -91,6 +98,7 @@
         "title",
         "price",
         "variant_picker",
+        "6ce75e9e-1f70-404d-aa01-6bc6b5163d65",
         "b3a8d737-2f87-4319-b010-20993d7659f8",
         "buy_buttons",
         "description",
@@ -146,7 +154,6 @@
     },
     "product-recommendations": {
       "type": "product-recommendations",
-      "disabled": true,
       "settings": {
         "show_product_recommendations": true,
         "heading": "Tu pourrais aussi aimer",
