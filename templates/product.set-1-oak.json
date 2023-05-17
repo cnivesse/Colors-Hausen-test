@@ -36,8 +36,15 @@
             "increase_space_before_block": true
           }
         },
+        "acbcce8a-3873-4d60-bf33-50c09ab5fa09": {
+          "type": "shopify:\/\/apps\/estimated-delivery-date-eta\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "settings": {
+            "heading": "ETA"
+          }
+        },
         "0b20ed28-e8c9-4327-9933-db6f9351c46b": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>kostenlose Lieferung<\/p>",
             "increase_space_before_block": true
@@ -102,6 +109,7 @@
         "title",
         "price",
         "variant_picker",
+        "acbcce8a-3873-4d60-bf33-50c09ab5fa09",
         "0b20ed28-e8c9-4327-9933-db6f9351c46b",
         "buy_buttons",
         "description",
@@ -120,6 +128,19 @@
         "expanded": true,
         "expanded_content": false,
         "collapsed": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
       }
     },
     "1660741460d0972f44": {
@@ -187,20 +208,6 @@
         "show_on_mobile": true
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "1667812864cdcc12f9": {
       "type": "apps",
       "blocks": {
@@ -235,10 +242,10 @@
   },
   "order": [
     "main",
+    "product-recommendations",
     "1660741460d0972f44",
     "727b2327-4120-4fb6-b706-34d15d3ae03c",
     "16613370413d8ae6e4",
-    "product-recommendations",
     "1667812864cdcc12f9",
     "8c296e07-3805-4d11-88eb-abf26159492b"
   ]
