@@ -25,8 +25,15 @@
             "increase_space_before_block": false
           }
         },
+        "e57bcdbc-8adb-4ca0-85e4-1c81ce2c389f": {
+          "type": "shopify:\/\/apps\/estimated-delivery-date-eta\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "settings": {
+            "heading": "ETA"
+          }
+        },
         "80182281-c376-4e5d-bcb4-583d7c563a5a": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>kostenlose Lieferung<\/p>",
             "increase_space_before_block": true
@@ -101,6 +108,7 @@
         "cf4c6713-dbe4-429d-9f31-0700c66317a1",
         "title",
         "price",
+        "e57bcdbc-8adb-4ca0-85e4-1c81ce2c389f",
         "80182281-c376-4e5d-bcb4-583d7c563a5a",
         "variant_picker",
         "buy_buttons",
@@ -111,7 +119,7 @@
         "share"
       ],
       "settings": {
-        "thumbnails_position": "left",
+        "thumbnails_position": "bottom",
         "enable_sticky_info": true,
         "zoom_enable": true,
         "enable_video_looping": false,
@@ -120,6 +128,19 @@
         "expanded": true,
         "expanded_content": false,
         "collapsed": true
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
       }
     },
     "1660741460d0972f44": {
@@ -187,20 +208,6 @@
         "show_on_mobile": true
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "166781276261463c89": {
       "type": "apps",
       "blocks": {
@@ -221,10 +228,10 @@
   },
   "order": [
     "main",
+    "product-recommendations",
     "1660741460d0972f44",
     "66696f90-d8da-4b9e-9862-08bb2e9af20e",
     "16613370413d8ae6e4",
-    "product-recommendations",
     "166781276261463c89"
   ]
 }
