@@ -36,8 +36,15 @@
             "increase_space_before_block": true
           }
         },
+        "130a2722-bea3-43ca-9927-09e994381f80": {
+          "type": "shopify:\/\/apps\/estimated-delivery-date-eta\/blocks\/app-embed\/4a571afa-b01b-4db0-8dd8-6068aba2ef90",
+          "settings": {
+            "heading": "ETA"
+          }
+        },
         "5c66806a-c9f8-4e00-a9a5-48348bfb635d": {
           "type": "text",
+          "disabled": true,
           "settings": {
             "text": "<p>kostenlose Lieferung<\/p>",
             "increase_space_before_block": true
@@ -102,6 +109,7 @@
         "title",
         "price",
         "variant_picker",
+        "130a2722-bea3-43ca-9927-09e994381f80",
         "5c66806a-c9f8-4e00-a9a5-48348bfb635d",
         "buy_buttons",
         "description",
@@ -122,6 +130,19 @@
         "collapsed": false
       }
     },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "16613370413d8ae6e4": {
       "type": "hero",
       "settings": {
@@ -134,20 +155,6 @@
         "image_mobile": "{{ product.metafields.custom.artboard_mobile.value }}",
         "video_mobile": "",
         "expanded": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
         "collapsed": false,
         "show_on_desktop": true,
         "show_on_mobile": true
@@ -203,8 +210,8 @@
   },
   "order": [
     "main",
-    "16613370413d8ae6e4",
     "product-recommendations",
+    "16613370413d8ae6e4",
     "hero",
     "166781251785a4fcef",
     "7b064771-0f5c-448f-b801-ac9bb3d42619"
