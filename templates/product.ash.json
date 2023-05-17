@@ -130,6 +130,19 @@
         "collapsed": true
       }
     },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "show_product_recommendations": true,
+        "heading": "Tu pourrais aussi aimer",
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "1660741460d0972f44": {
       "type": "image-with-text",
       "disabled": true,
@@ -195,20 +208,6 @@
         "show_on_mobile": true
       }
     },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "disabled": true,
-      "settings": {
-        "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
-        "show_background": false,
-        "expanded": true,
-        "expanded_content": false,
-        "collapsed": false,
-        "show_on_desktop": true,
-        "show_on_mobile": true
-      }
-    },
     "166781276261463c89": {
       "type": "apps",
       "blocks": {
@@ -243,10 +242,10 @@
   },
   "order": [
     "main",
+    "product-recommendations",
     "1660741460d0972f44",
     "66696f90-d8da-4b9e-9862-08bb2e9af20e",
     "16613370413d8ae6e4",
-    "product-recommendations",
     "166781276261463c89",
     "b7996223-b9d5-4944-b4db-06070a7521e9"
   ]
