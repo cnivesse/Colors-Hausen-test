@@ -111,7 +111,7 @@
           "type": "button",
           "settings": {
             "text": "SHRINK",
-            "link": "shopify:\/\/collections\/all",
+            "link": "https:\/\/cdn.shopify.com\/s\/files\/1\/0581\/1781\/6367\/files\/220929_SHRINK_Manual.pdf?v=1684845499",
             "style": "accent",
             "size": "normal",
             "increase_space_before_block": true
