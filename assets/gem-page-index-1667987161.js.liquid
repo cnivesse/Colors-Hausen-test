@@ -99,7 +99,7 @@
 })( window.GemQuery || jQuery );
   
     (function( jQuery ){
-  var $module = jQuery('#m-1682589599209').children('.module');
+  var $module = jQuery('#m-1682589846282').children('.module');
   $module.gfV2HeroBanner({});
   
 })( window.GemQuery || jQuery );
@@ -107,10 +107,12 @@
     
   
     (function( jQuery ){
-  var $module = jQuery('#m-1682589846282').children('.module');
+  var $module = jQuery('#m-1682589599209').children('.module');
   $module.gfV2HeroBanner({});
   
 })( window.GemQuery || jQuery );
+  
+    
   
     
   
@@ -400,3 +402,14 @@
   
     
   
+                          (function( jQuery ){
+                              try{
+                                  if(jQuery().gfV2Lazyload){
+                                      var $module = jQuery(window);
+                                      $module.gfV2Lazyload({delay:125})
+                                  }
+                              }catch(err){
+                                  console.error(err)
+                              }
+                          })( window.GemQuery || jQuery );
+                      
