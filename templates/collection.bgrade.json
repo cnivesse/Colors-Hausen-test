@@ -1,0 +1,23 @@
+{
+  "sections": {
+    "main-collection": {
+      "type": "main-collection",
+      "settings": {
+        "show_collection_title": true,
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "enable_filtering": true,
+        "filter_type": "tags",
+        "enable_sorting": true,
+        "show_labels": true,
+        "show_background": false,
+        "expanded": true,
+        "expanded_content": false,
+        "collapsed": true
+      }
+    }
+  },
+  "order": [
+    "main-collection"
+  ]
+}
