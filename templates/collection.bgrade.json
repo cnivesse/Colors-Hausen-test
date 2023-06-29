@@ -1,5 +1,38 @@
 {
   "sections": {
+    "d084cc3c-86b5-4fdf-9337-ed118c39eb98": {
+      "type": "rich-text",
+      "blocks": {
+        "template--19180219138380__d084cc3c-86b5-4fdf-9337-ed118c39eb98-1688042243dac6f558-0": {
+          "type": "heading",
+          "settings": {
+            "text": "Was ist ein B-GRADE",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        },
+        "template--19180219138380__d084cc3c-86b5-4fdf-9337-ed118c39eb98-1688042243dac6f558-1": {
+          "type": "subheading",
+          "settings": {
+            "text": "Der Sommer ist die beste Zeit für einen Garagenverkauf, warum nicht auch für einen Lagerverkauf?\n\nWir leeren unser Lager und verkaufen Regale für 30% Nachlass. Diese Regale sind nicht neu, sondern bereits Ausstellungen, Messen oder Vorführungen verwendet wurden\noder anderweitige kleinste Mängel aufweisen. Trotzdem sind es vollfunktionsfähige und immer noch wunderschöne Regale",
+            "max_width": 700,
+            "increase_space_before_block": true
+          }
+        }
+      },
+      "block_order": [
+        "template--19180219138380__d084cc3c-86b5-4fdf-9337-ed118c39eb98-1688042243dac6f558-0",
+        "template--19180219138380__d084cc3c-86b5-4fdf-9337-ed118c39eb98-1688042243dac6f558-1"
+      ],
+      "settings": {
+        "text_align": "left",
+        "show_background": false,
+        "expanded": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
+    },
     "main-collection": {
       "type": "main-collection",
       "settings": {
@@ -18,6 +51,7 @@
     }
   },
   "order": [
+    "d084cc3c-86b5-4fdf-9337-ed118c39eb98",
     "main-collection"
   ]
 }
