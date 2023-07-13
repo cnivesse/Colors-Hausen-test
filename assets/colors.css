@@ -10006,6 +10006,5 @@ font-display:auto;font-style:italic;font-weight:200;font-stretch:normal;
 .tk-aktiv-grotesk-extended { font-family: "aktiv-grotesk-extended",sans-serif; }
 .tk-aktiv-grotesk-thin { font-family: "aktiv-grotesk-thin",sans-serif; }
 
-root {
-  --font-heading-family: "aktiv-grotesk", sans-serif  !important;
-}
+
+--font-heading-family: "aktiv-grotesk", sans-serif  !important;
