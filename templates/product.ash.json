@@ -134,7 +134,7 @@
       "type": "product-recommendations",
       "settings": {
         "show_product_recommendations": true,
-        "heading": "Tu pourrais aussi aimer",
+        "heading": "Dir könnte auch gefallen",
         "show_background": false,
         "expanded": true,
         "expanded_content": false,
