@@ -63,12 +63,12 @@
       "announcement-bar": {
         "type": "announcement-bar",
         "custom_css": [
-          ".announcement-bar p {font-weight: 900;}"
+          ".announcement-bar p {font-weight: 900; text-transform: uppercase;}"
         ],
         "settings": {
           "show_announcement": true,
           "home_page_only": false,
-          "top_banner_text": "KOSTENLOSE LIEFERUNG WELTWEIT",
+          "top_banner_text": "Letzter Tag der Kampagne zur kostenlosen Lieferung",
           "announcement_link": "",
           "color_announcement_text": "#121212",
           "color_announcement_bg": "#f3f0ee"
