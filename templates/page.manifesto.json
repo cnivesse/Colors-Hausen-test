@@ -90,12 +90,27 @@
         "show_on_desktop": true,
         "show_on_mobile": true
       }
+    },
+    "410cb3d9-3ba5-4ce6-b5b8-92f7fd8a59b9": {
+      "type": "featured-video",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/WhatsApp_Image_2023-08-15_at_01.20.38.jpg",
+        "video_url": "https:\/\/youtu.be\/rSc_K7KjEGo?si=INgECdEWp8M5wIRJ",
+        "heading": "test video",
+        "show_background": false,
+        "expanded": false,
+        "expanded_content": true,
+        "collapsed": false,
+        "show_on_desktop": true,
+        "show_on_mobile": true
+      }
     }
   },
   "order": [
     "main",
     "b71e0a77-9da6-40dd-af01-32b0693dc7f2",
     "1663691344e23ea01e",
-    "166369086561c4bb69"
+    "166369086561c4bb69",
+    "410cb3d9-3ba5-4ce6-b5b8-92f7fd8a59b9"
   ]
 }
